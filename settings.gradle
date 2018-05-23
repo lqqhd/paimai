@@ -1,1 +1,2 @@
 include ':app', ':CommonSDK', ':CommonService', ':CommonRes', ':XiaoxingArms', ':ModuleZhihu', ':ModuleGank', ':ModuleWelcome', 'ModuleGold','XiaoxingPagerBottomTabStrip'
+include ':refresh-layout', ':refresh-header', ':refresh-footer'

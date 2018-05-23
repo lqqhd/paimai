@@ -63,7 +63,9 @@ dependencies {
         implementation project(":CommonService")
     }
     implementation project(':XiaoxingPagerBottomTabStrip')
-
+    implementation project(':refresh-footer')
+    implementation project(':refresh-header')
+    implementation project(':refresh-layout')
     //tools
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]

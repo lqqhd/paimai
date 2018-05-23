@@ -18,6 +18,9 @@
             <option value="$PROJECT_DIR$/XiaoxingArms" />
             <option value="$PROJECT_DIR$/XiaoxingPagerBottomTabStrip" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/refresh-footer" />
+            <option value="$PROJECT_DIR$/refresh-header" />
+            <option value="$PROJECT_DIR$/refresh-layout" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
