@@ -1,1 +1,1 @@
-include ':app', ':CommonSDK', ':CommonService', ':CommonRes', ':arms', ':ModuleZhihu', ':ModuleGank', ':ModuleWelcome', 'ModuleGold','pager-bottom-tab-strip'
+include ':app', ':CommonSDK', ':CommonService', ':CommonRes', ':XiaoxingArms', ':ModuleZhihu', ':ModuleGank', ':ModuleWelcome', 'ModuleGold','XiaoxingPagerBottomTabStrip'

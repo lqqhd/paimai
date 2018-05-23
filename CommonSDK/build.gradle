@@ -37,7 +37,7 @@ android {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 //    api 'me.jessyan:arms:2.4.1'
-    api project(":arms")
+    api project(':XiaoxingArms')
 
     //tools
     api(rootProject.ext.dependencies["arouter"]) {
