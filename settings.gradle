@@ -1,1 +1,1 @@
-include ':app', ':CommonSDK', ':CommonService', ':CommonRes', ':arms', ':ModuleZhihu', ':ModuleGank', 'ModuleGold'
+include ':app', ':CommonSDK', ':CommonService', ':CommonRes', ':arms', ':ModuleZhihu', ':ModuleGank', ':ModuleWelcome', 'ModuleGold'

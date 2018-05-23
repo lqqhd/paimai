@@ -38,8 +38,8 @@ import java.io.ObjectOutputStream;
  * ================================================
  */
 public class DataHelper {
-    private static SharedPreferences mSharedPreferences;
     public static final String SP_NAME = "config";
+    private static SharedPreferences mSharedPreferences;
 
 
     private DataHelper() {
@@ -210,7 +210,6 @@ public class DataHelper {
         return "/mnt/sdcard/" + packageName;
     }
 
-
     /**
      * 创建未存在的文件夹
      *
@@ -274,7 +273,6 @@ public class DataHelper {
         return true;
     }
 
-
     public static String bytyToString(InputStream in) throws IOException {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         byte[] buf = new byte[1024];
@@ -285,6 +283,51 @@ public class DataHelper {
         String result = out.toString();
         out.close();
         return result;
+    }
+
+    /**
+     * 存储boolean重要信息到sharedPreferences
+     *
+     * @param context
+     * @param key
+     * @param value
+     */
+    public static void putBoolean(Context context, String key, boolean value) {
+        if (mSharedPreferences == null) {
+            mSharedPreferences = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
+        }
+        mSharedPreferences.edit().putBoolean(key, value).apply();
+    }
+
+    /**
+     * 获取bool信息
+     *
+     * @param context
+     * @param key
+     * @return
+     */
+    public static boolean getBoolean(Context context, String key) {
+
+        if (mSharedPreferences == null) {
+            mSharedPreferences = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
+        }
+        return mSharedPreferences.getBoolean(key, false);
+    }
+
+    /**
+     * 获取bool信息
+     *
+     * @param context
+     * @param key
+     * @param flag
+     * @return
+     */
+    public static boolean getBoolean(Context context, String key, boolean flag) {
+
+        if (mSharedPreferences == null) {
+            mSharedPreferences = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
+        }
+        return mSharedPreferences.getBoolean(key, flag);
     }
 
 }

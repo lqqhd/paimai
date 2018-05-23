@@ -38,17 +38,24 @@ public interface RouterHub {
     String ZHIHU = "/zhihu";//知乎组件
     String GANK = "/gank";//干货集中营组件
     String GOLD = "/gold";//稀土掘金组件
+    String WELCOME = "/welcome";//欢迎组件
 
     /**
      * 服务组件, 用于给每个组件暴露特有的服务
      */
     String SERVICE = "/service";
 
+    /**
+     * 欢迎分组
+     */
+    String WELCOME_SPLASHACTIVITY = WELCOME + "/SplashActivity";
+    String WELCOME_WELCOMEACTIVITY = WELCOME + "/WelcomeActivity";
+    String WELCOME_WELCOMEGUIDEACTIVITY = WELCOME + "/WelcomeGuideActivity";
 
     /**
      * 宿主 App 分组
      */
-    String APP_SPLASHACTIVITY = APP + "/SplashActivity";
+    //String APP_SPLASHACTIVITY = APP + "/SplashActivity";
     String APP_MAINACTIVITY = APP + "/MainActivity";
 
 

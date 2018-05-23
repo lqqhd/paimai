@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xiaoxing.paimai.mvp.ui.activity;
+package com.xiaoxing.welcome.mvp.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,7 +22,7 @@ import android.support.annotation.Nullable;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
-import com.xiaoxing.paimai.R;
+import com.xiaoxing.welcome.R;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,7 +39,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
-@Route(path = RouterHub.APP_SPLASHACTIVITY)
+@Route(path = RouterHub.WELCOME_SPLASHACTIVITY)
 public class SplashActivity extends BaseActivity {
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {

@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/public_app_name"
-        android:textColor="@color/color_f8f8e9"
+        android:textColor="@color/welcome_color_f8f8e9"
         android:textSize="@dimen/public_font_32sp"
         android:textStyle="bold" />
 </LinearLayout>
