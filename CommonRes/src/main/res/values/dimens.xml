@@ -17,6 +17,7 @@
     <dimen name="public_font_48sp">48sp</dimen>
 
     //高
+    <dimen name="public_height_0px">0px</dimen>
     <dimen name="public_height_8px">8px</dimen>
     <dimen name="public_height_16px">16px</dimen>
     <dimen name="public_height_26px">26px</dimen>

@@ -38,6 +38,7 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 //    api 'me.jessyan:arms:2.4.1'
     api project(":arms")
+
     //tools
     api(rootProject.ext.dependencies["arouter"]) {
         exclude module: 'support-v4'

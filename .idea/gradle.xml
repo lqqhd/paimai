@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/ModuleZhihu" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/arms" />
+            <option value="$PROJECT_DIR$/pager-bottom-tab-strip" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

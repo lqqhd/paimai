@@ -104,7 +104,7 @@ public class WelcomeActivity extends BaseActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
 
-                Utils.navigation(WelcomeActivity.this, RouterHub.APP_MAINACTIVITY);
+                Utils.navigation(WelcomeActivity.this, RouterHub.APP_PAIMAIMAINACTIVITY);
                 finish();
             }
         });

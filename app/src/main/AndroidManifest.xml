@@ -65,10 +65,14 @@
             android:name="com.xiaoxing.welcome.mvp.ui.WelcomeGuideActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-        <!--<activity-->
-        <!--android:name=".mvp.ui.activity.LoginActivity"-->
-        <!--android:configChanges="orientation|screenSize"-->
-        <!--android:screenOrientation="portrait" />-->
+        <activity
+            android:name=".mvp.ui.activity.PaiMaiMainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- <activity -->
+        <!-- android:name=".mvp.ui.activity.LoginActivity" -->
+        <!-- android:configChanges="orientation|screenSize" -->
+        <!-- android:screenOrientation="portrait" /> -->
     </application>
 
 </manifest>
