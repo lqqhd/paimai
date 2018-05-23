@@ -89,25 +89,25 @@ public class FragmentMine extends BaseFragment {
 //                toolbar.setAlpha(1 - Math.min(percent, 1));
 //            }
         });
-        scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-            private int lastScrollY = 0;
-            private int h = DensityUtil.dp2px(170);
-            private int color = ContextCompat.getColor(getActivity(), R.color.public_black) & 0x00ffffff;
-
-            @Override
-            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if (lastScrollY < h) {
-                    scrollY = Math.min(h, scrollY);
-                    mScrollY = scrollY > h ? h : scrollY;
-                    buttonBar.setAlpha(1f * mScrollY / h);
-                    toolbar.setBackgroundColor(((255 * mScrollY / h) << 24) | color);
-                    parallax.setTranslationY(mOffset - mScrollY);
-                }
-                lastScrollY = scrollY;
-            }
-        });
-        buttonBar.setAlpha(0);
-        toolbar.setBackgroundColor(0);
+//        scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+//            private int lastScrollY = 0;
+//            private int h = DensityUtil.dp2px(170);
+//            private int color = ContextCompat.getColor(getActivity(), R.color.colorPrimary) & 0x00ffffff;
+//
+//            @Override
+//            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//                if (lastScrollY < h) {
+//                    scrollY = Math.min(h, scrollY);
+//                    mScrollY = scrollY > h ? h : scrollY;
+//                    buttonBar.setAlpha(1f * mScrollY / h);
+//                    toolbar.setBackgroundColor(((255 * mScrollY / h) << 24) | color);
+//                    parallax.setTranslationY(mOffset - mScrollY);
+//                }
+//                lastScrollY = scrollY;
+//            }
+//        });
+//        buttonBar.setAlpha(0);
+//        toolbar.setBackgroundColor(0);
 
         return view;
     }
