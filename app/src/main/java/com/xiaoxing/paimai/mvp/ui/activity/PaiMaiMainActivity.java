@@ -58,8 +58,8 @@ public class PaiMaiMainActivity extends BaseActivity {
     private BaseTabItem newItem(int drawable, int checkedDrawable, String text) {
         SpecialTab mainTab = new SpecialTab(this);
         mainTab.initialize(drawable, checkedDrawable, text);
-        mainTab.setTextDefaultColor(0xFF888888);
-        mainTab.setTextCheckedColor(0xFF009688);
+        mainTab.setTextDefaultColor(getResources().getColor(R.color.menu_normal_color));
+        mainTab.setTextCheckedColor(getResources().getColor(R.color.menu_selected_color));
         return mainTab;
     }
 
@@ -69,8 +69,8 @@ public class PaiMaiMainActivity extends BaseActivity {
     private BaseTabItem newRoundItem(int drawable, int checkedDrawable, String text) {
         SpecialTabRound mainTab = new SpecialTabRound(this);
         mainTab.initialize(drawable, checkedDrawable, text);
-        mainTab.setTextDefaultColor(0xFF888888);
-        mainTab.setTextCheckedColor(0xFF009688);
+        mainTab.setTextDefaultColor(getResources().getColor(R.color.menu_normal_color));
+        mainTab.setTextCheckedColor(getResources().getColor(R.color.menu_selected_color));
         return mainTab;
     }
 }
