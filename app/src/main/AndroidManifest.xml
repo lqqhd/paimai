@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/public_AppTheme">
         <activity
-            android:name="com.xiaoxing.welcome.mvp.ui.SplashActivity"
+            android:name="com.xiaoxing.welcome.mvp.ui.WelcomeActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
@@ -62,7 +62,7 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.xiaoxing.welcome.mvp.ui.WelcomeActivity"
+            android:name="com.xiaoxing.welcome.mvp.ui.WelcomeGuideActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
         <!--<activity-->

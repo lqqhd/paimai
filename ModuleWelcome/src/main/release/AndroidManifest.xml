@@ -27,9 +27,6 @@
             android:name="design_height"
             android:value="1920" />
 
-        <!-- arms配置 -->
-        <meta-data
-            android:name="com.xiaoxing.welcome.app.GlobalConfiguration"
-            android:value="ConfigModule" />
+
     </application>
 </manifest>
