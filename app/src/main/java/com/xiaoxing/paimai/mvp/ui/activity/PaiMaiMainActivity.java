@@ -37,11 +37,11 @@ public class PaiMaiMainActivity extends BaseActivity {
         PageNavigationView tab = (PageNavigationView) findViewById(R.id.tab);
 
         NavigationController navigationController = tab.custom()
-                .addItem(newItem(R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, "首页"))
-                .addItem(newItem(R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, "分类"))
-                .addItem(newRoundItem(R.drawable.ic_nearby_gray_24dp, R.drawable.ic_nearby_teal_24dp, "发布"))
-                .addItem(newItem(R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, "消息"))
-                .addItem(newItem(R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, "我的"))
+                .addItem(newItem(R.mipmap.home_icon, R.mipmap.home_active_icon, "首页"))
+                .addItem(newItem(R.mipmap.cate_icon, R.mipmap.cate_active_icon, "分类"))
+                .addItem(newRoundItem(R.mipmap.fb_active_icon, R.mipmap.fb_active_icon, "发布"))
+                .addItem(newItem(R.mipmap.sns_icon, R.mipmap.sns_active_icon, "消息"))
+                .addItem(newItem(R.mipmap.mem_icon, R.mipmap.mem_active_icon, "我的"))
                 .build();
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);

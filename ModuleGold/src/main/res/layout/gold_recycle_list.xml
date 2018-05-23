@@ -24,7 +24,8 @@
             android:layout_width="@dimen/public_width_200px"
             android:layout_height="@dimen/public_height_200px"
             android:scaleType="centerCrop"
-            tools:src="@color/public_black"/>
+            tools:src="@color/public_black"
+            android:contentDescription="avatar" />
 
 
         <TextView

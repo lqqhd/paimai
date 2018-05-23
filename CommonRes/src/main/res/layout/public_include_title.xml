@@ -23,7 +23,8 @@
             android:layout_marginLeft="@dimen/public_mar_left_30px"
             android:layout_marginRight="@dimen/public_mar_right_30px"
             android:layout_centerVertical="true"
-            android:src="@drawable/public_ic_arrow_back_white_24dp"/>
+            android:src="@drawable/public_ic_arrow_back_white_24dp"
+            android:contentDescription="返回按钮" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
