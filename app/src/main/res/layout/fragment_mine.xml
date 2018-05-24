@@ -153,7 +153,7 @@
                 <RelativeLayout
                     android:id="@+id/rl_all_orders"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/mine_order_height"
+                    android:layout_height="@dimen/dp_50"
                     android:layout_marginTop="@dimen/dp_10"
                     android:background="@color/public_white">
 

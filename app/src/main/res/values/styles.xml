@@ -80,8 +80,8 @@
     </style>
     <!--我的-订单字体-->
     <style name="MineOrderText">
-        <item name="android:layout_width">@dimen/dp_25</item>
-        <item name="android:layout_height">@dimen/dp_25</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/dp_5</item>
         <item name="android:textColor">@color/mine_order_text</item>
         <item name="android:textSize">@dimen/public_font_12sp</item>

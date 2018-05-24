@@ -15,6 +15,7 @@
     <string name="mine_order_to_be_delivered">待发货</string>
     <string name="mine_order_pending_payment">待付款</string>
     <string name="head_title_mine">我的</string>
+    <string name="head_title_home">首页</string>
     <string name="mine_ordinary">普通</string>
     <string name="mine_phone">15800000000</string>
     <string name="mine_setting">设置</string>
