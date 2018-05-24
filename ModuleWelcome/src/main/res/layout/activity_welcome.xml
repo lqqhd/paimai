@@ -23,7 +23,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"
         android:gravity="center"
-        android:text="xialong"
+        android:text="Xiaoxing"
         android:textColor="@android:color/white"
         android:textSize="23sp"/>
 

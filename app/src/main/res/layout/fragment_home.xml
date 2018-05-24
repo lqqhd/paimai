@@ -12,6 +12,7 @@
         android:clipChildren="false"
         app:srlAccentColor="@android:color/white">
 
+
         <com.scwang.smartrefresh.layout.header.TwoLevelHeader
             android:id="@+id/header"
             android:layout_width="match_parent"
@@ -53,12 +54,14 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="?attr/actionBarSize">
 
-                <ImageView
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@string/app_name"
-                    android:src="@mipmap/welcomimg1" />
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    tools:listitem="@layout/listitem_movie_item" />
             </FrameLayout>
         </ScrollView>
 
@@ -67,6 +70,13 @@
             android:layout_height="wrap_content"
             app:srlPrimaryColor="@android:color/white" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:realtimeBlurRadius="10dp"
+        app:realtimeOverlayColor="@color/colorPrimaryOverlay" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
