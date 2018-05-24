@@ -23,4 +23,18 @@
     <color name="colorDivision">#33aaaaaa</color>
 
     <color name="line_color">#DADADA</color>
+
+
+    <color name="head_bg">#f6f6f6</color>
+    <color name="mine_phone">#2f2f2f</color>
+    <color name="mine_setting">#939393</color>
+    <color name="mine_fans">#8f8f8f</color>
+    <color name="mine_order">#020202</color>
+    <color name="mine_order_text">#484848</color>
+    <color name="mine_item_text">#111111</color>
+    <color name="mine_see_all_orders">#999999</color>
+    <color name="mine_headlines">#3e3e3e</color>
+    <color name="mine_about_penalties_for_violation">#3e3e3e</color>
+    <color name="mine_balance_value">#951627</color>
+
 </resources>

@@ -9,5 +9,28 @@
     <string name="setting">Setting</string>
     <string name="about_us">About Us</string>
     <string name="logout">Logout</string>
+    <string name="mine_order_after_sales">售后</string>
+    <string name="mine_order_be_evaluated">待评价</string>
+    <string name="mine_order_to_receive_goods">待收货</string>
+    <string name="mine_order_to_be_delivered">待发货</string>
+    <string name="mine_order_pending_payment">待付款</string>
+    <string name="head_title_mine">我的</string>
+    <string name="mine_ordinary">普通</string>
+    <string name="mine_phone">15800000000</string>
+    <string name="mine_setting">设置</string>
+    <string name="mine_fans">粉丝 0</string>
+    <string name="mine_attention">关注 0</string>
+    <string name="mine_1">|</string>
+    <string name="mine_order">我的订单</string>
+    <string name="mine_see_all_orders">查看全部订单</string>
+    <string name="mine_about_penalties_for_violation">关于违规处罚</string>
+    <string name="mine_recharge_immediately">立即充值</string>
+    <string name="mine_balance">余额</string>
+    <string name="mine_my_offer">我的报价</string>
+    <string name="mine_my_auction">我的竞拍</string>
+    <string name="mine_my_identification">我的鉴定</string>
+    <string name="mine_collection">收藏</string>
+    <string name="mine_falling_red_envelopes">天降红包</string>
+    <string name="mine_I_am_a_seller">我是卖家</string>
 
 </resources>

@@ -55,4 +55,53 @@
     <style name="AppTheme" parent="AppThemeBase">
         <!-- Customize your theme here. -->
     </style>
+
+
+    <!--我的-底部item图片-->
+    <style name="MineItemImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/dp_10</item>
+    </style>
+    <!--我的-底部字体-->
+    <style name="MineItemText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/dp_10</item>
+        <item name="android:textSize">@dimen/public_font_12sp</item>
+        <item name="android:textColor">@color/mine_item_text</item>
+    </style>
+    <!--我的-订单图片-->
+    <style name="MineOrderImage">
+        <item name="android:layout_width">@dimen/dp_25</item>
+        <item name="android:layout_height">@dimen/dp_25</item>
+    </style>
+    <!--我的-订单字体-->
+    <style name="MineOrderText">
+        <item name="android:layout_width">@dimen/dp_25</item>
+        <item name="android:layout_height">@dimen/dp_25</item>
+        <item name="android:layout_marginTop">@dimen/dp_5</item>
+        <item name="android:textColor">@color/mine_order_text</item>
+        <item name="android:textSize">@dimen/public_font_12sp</item>
+
+    </style>
+    <!--我的-订单LinearLayout-->
+    <style name="MineOrderLinearLayout">
+        <item name="android:layout_width">@dimen/dp_1</item>
+        <item name="android:layout_height">@dimen/dp_66</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+
+    </style>
+    我的-底部item-RelativeLayout
+    <style name="MineItemRelativeLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:background">@color/public_white</item>
+
+    </style>
+
 </resources>
