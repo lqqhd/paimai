@@ -96,7 +96,7 @@
         <item name="android:orientation">vertical</item>
 
     </style>
-    我的-底部item-RelativeLayout
+    <!--我的-底部item-RelativeLayout-->
     <style name="MineItemRelativeLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_45</item>
