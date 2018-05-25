@@ -74,7 +74,7 @@ public class FragmentMine extends BaseFragment {
 
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                refreshLayout.finishLoadMore(2000);
+                refreshLayout.finishLoadMore(0);
             }
 //            @Override
 //            public void onHeaderPulling(@NonNull RefreshHeader header, float percent, int offset, int bottomHeight, int maxDragHeight) {
