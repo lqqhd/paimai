@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/fragmentmyImageView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="@dimen/dp_10"
+    android:drawablePadding="@dimen/dp_10"
+    android:drawableRight="@mipmap/xuanze"
+    android:padding="@dimen/dp_5"
+    android:text="更多"
+    android:textColor="#7f7f7f"
+    android:textSize="@dimen/public_font_14sp" />
+
+
+
+

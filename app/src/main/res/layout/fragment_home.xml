@@ -48,7 +48,10 @@
                     app:is_auto_play="true" />
 
                 <include layout="@layout/include_tou_tiao" />
+
                 <include layout="@layout/include_zhuan_chang" />
+
+                <include layout="@layout/include_tui_guang" />
 
             </LinearLayout>
 
