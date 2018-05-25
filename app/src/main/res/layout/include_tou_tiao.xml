@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_45"
+    android:background="@color/public_white">
+
+    <ImageView
+        android:id="@+id/img_tou_tiao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:src="@mipmap/mem_news" />
+
+    <TextView
+        android:id="@+id/tv_fen_ge"
+        style="@style/AppTheme.Label"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_toRightOf="@+id/img_tou_tiao"
+        android:text="@string/mine_1"
+        android:textColor="@color/mine_fans"
+        android:textSize="@dimen/public_font_12sp" />
+
+    <TextView
+        style="@style/AppTheme.Label"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_2"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_toRightOf="@+id/tv_fen_ge"
+        android:text="@string/mine_about_penalties_for_violation"
+        android:textColor="@color/mine_about_penalties_for_violation"
+        android:textSize="@dimen/public_font_12sp" />
+
+
+</RelativeLayout>
