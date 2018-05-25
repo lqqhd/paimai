@@ -53,6 +53,8 @@
 
                 <include layout="@layout/include_tui_guang" />
 
+                <include layout="@layout/include_zhuang_chang_tui_guang" />
+
             </LinearLayout>
 
 
