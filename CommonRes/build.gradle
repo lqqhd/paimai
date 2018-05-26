@@ -31,4 +31,6 @@ dependencies {
     }
     api rootProject.ext.dependencies["paginate"]
     api rootProject.ext.dependencies["lottie"]
+    compile 'com.qmuiteam:qmui:1.1.2'
+
 }

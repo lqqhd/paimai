@@ -44,5 +44,6 @@
     <string name="seller_client_shi_ming_ren_zheng">实名认证：</string>
     <string name="seller_client_tui">退出登录</string>
     <string name="seller_client_she_zhi">设置</string>
+    <string name="seller_client_sheng_ri">生日</string>
 
 </resources>

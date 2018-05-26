@@ -14,7 +14,9 @@
 
         <include layout="@layout/public_toolbar" />
 
-        <RelativeLayout style="@style/public_MineItemRelativeLayout">
+        <RelativeLayout
+            android:id="@+id/rl_xing_ming"
+            style="@style/public_MineItemRelativeLayout">
 
 
             <TextView
@@ -40,7 +42,10 @@
 
         <include layout="@layout/public_line_horizontal" />
 
-        <RelativeLayout style="@style/public_MineItemRelativeLayout">
+        <RelativeLayout
+            android:id="@+id/rl_ni_cheng"
+
+            style="@style/public_MineItemRelativeLayout">
 
 
             <TextView
@@ -65,7 +70,9 @@
 
         <include layout="@layout/public_line_horizontal" />
 
-        <RelativeLayout style="@style/public_MineItemRelativeLayout">
+        <RelativeLayout
+            android:id="@+id/rl_xing_bie"
+            style="@style/public_MineItemRelativeLayout">
 
 
             <TextView
@@ -74,7 +81,7 @@
 
 
             <TextView
-                android:id="@+id/fragmentmyImageView2"
+                android:id="@+id/tv_xing_bie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -93,6 +100,37 @@
         <include layout="@layout/public_line_horizontal" />
 
         <RelativeLayout
+            android:id="@+id/rl_sheng_ri"
+            style="@style/public_MineItemRelativeLayout">
+
+
+            <TextView
+                style="@style/public_MineItemText"
+                android:text="@string/seller_client_sheng_ri" />
+
+
+            <TextView
+                android:id="@+id/tv_sheng_ri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_15"
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableRight="@mipmap/icon_next"
+                android:text=""
+                android:textColor="@color/public_mine_item_text"
+                android:textSize="@dimen/public_font_14sp" />
+
+
+        </RelativeLayout>
+
+        <include layout="@layout/public_line_horizontal" />
+
+        <RelativeLayout
+            android:id="@+id/rl_tou_xiang"
+
             style="@style/public_MineItemRelativeLayout"
             android:layout_height="@dimen/dp_80">
 
@@ -102,6 +140,7 @@
                 android:text="@string/seller_client_tou_xiang" />
 
             <ImageView
+                android:id="@+id/img_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -115,6 +154,7 @@
         <include layout="@layout/public_line_horizontal" />
 
         <RelativeLayout
+            android:id="@+id/rl_shou_huo_di_zhi"
             style="@style/public_MineItemRelativeLayout"
             android:layout_marginTop="@dimen/dp_10">
 
@@ -142,6 +182,7 @@
         <include layout="@layout/public_line_horizontal" />
 
         <RelativeLayout
+            android:id="@+id/rl_an_quan_zhong_xin"
             style="@style/public_MineItemRelativeLayout"
             android:layout_marginTop="@dimen/dp_10">
 
@@ -169,6 +210,7 @@
         <include layout="@layout/public_line_horizontal" />
 
         <RelativeLayout
+            android:id="@+id/rl_shi_ming_ren_zheng"
             style="@style/public_MineItemRelativeLayout"
             android:layout_marginTop="@dimen/dp_10">
 
@@ -195,6 +237,7 @@
 
 
         <Button
+            android:id="@+id/btn_sign_out"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:layout_marginLeft="@dimen/dp_10"
