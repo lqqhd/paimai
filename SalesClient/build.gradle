@@ -95,17 +95,17 @@ dependencies {
         compileOnly rootProject.ext.dependencies["canary-release"]
         compileOnly rootProject.ext.dependencies["junit"]
     }
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
-    compile 'com.youth.banner:banner:1.4.9'  //最新版本
-    compile 'com.github.mmin18:realtimeblurview:1.0.6'
+    implementation rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    implementation rootProject.ext.dependencies["banner"]
+    implementation rootProject.ext.dependencies["realtimeblurview"]
+    implementation rootProject.ext.dependencies["circleimageview"]
+    implementation rootProject.ext.dependencies["loadinglayout"]
+    implementation rootProject.ext.dependencies["avi_library"]
 
     implementation project(':XiaoxingPagerBottomTabStrip')
     implementation project(':refresh-footer')
     implementation project(':refresh-header')
     implementation project(':refresh-layout')
 
-    implementation 'de.hdodenhof:circleimageview:2.1.0'
-    compile 'com.github.czy1121:loadinglayout:1.0.1'
-    compile 'com.wang.avi:library:2.1.3'
 
 }

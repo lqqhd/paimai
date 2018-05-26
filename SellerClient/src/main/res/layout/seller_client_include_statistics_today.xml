@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:background="@color/public_white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_dai_fu_kuan"
+            style="@style/public_MineOrderLinearLayout">
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="今日成交额" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="￥0.00" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dai_fa_huo"
+            style="@style/public_MineOrderLinearLayout">
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="今日访客" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dai_ping_jia"
+            style="@style/public_MineOrderLinearLayout">
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="今日订单" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

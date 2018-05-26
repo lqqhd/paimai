@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:background="@color/public_white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_dai_fu_kuan"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/seller_mine_yu_e" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="余额" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dai_fa_huo"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/seller_mine_bao_jia_guan_li" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="报价管理" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dai_ping_jia"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/seller_mine_cang_pin_guan_li" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="藏品管理" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/seller_mine_zhan_ting_guan_li" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="展厅管理" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:background="@color/public_white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_zhuan_chang_guan_li"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/seller_mine_zhuan_chang_guan_li" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="专场管理" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_shen_qing_da_ting"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/seller_mine_shen_qing_da_ting" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="申请大厅" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_xin_shou_bi_xue"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/seller_mine_xin_shou_bi_xue" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="新手必学" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/seller_mine_fa_hong_bao" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="发红包" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

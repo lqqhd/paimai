@@ -18,7 +18,7 @@ import me.majiajie.pagerbottomtabstrip.SpecialTabRound;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
 import test.xiaoxing.com.salesclient.R;
 
-@Route(path = RouterHub.APP_PAIMAIMAINACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_PAIMAIMAINACTIVITY)
 public class PaiMaiMainActivity extends BaseActivity {
 
 

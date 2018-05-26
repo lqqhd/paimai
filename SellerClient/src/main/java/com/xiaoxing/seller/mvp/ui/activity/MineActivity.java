@@ -1,30 +1,33 @@
-package com.xiaoxing.seller.mvp.ui.mvp.ui.activity;
+package com.xiaoxing.seller.mvp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.xiaoxing.seller.R;
-import com.xiaoxing.seller.mvp.ui.di.component.DaggerMineActivityComponent;
-import com.xiaoxing.seller.mvp.ui.di.module.MineActivityModule;
-import com.xiaoxing.seller.mvp.ui.mvp.contract.MineActivityContract;
-import com.xiaoxing.seller.mvp.ui.mvp.presenter.MineActivityPresenter;
+import com.xiaoxing.seller.di.component.DaggerMineComponent;
+import com.xiaoxing.seller.di.module.MineModule;
+import com.xiaoxing.seller.mvp.contract.MineContract;
+import com.xiaoxing.seller.mvp.presenter.MinePresenter;
+
+import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-
-public class MineActivityActivity extends BaseActivity<MineActivityPresenter> implements MineActivityContract.View {
+@Route(path = RouterHub.SELLER_CLIENT_MINEACTIVITY)
+public class MineActivity extends BaseActivity<MinePresenter> implements MineContract.View {
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
-        DaggerMineActivityComponent //如找不到该类,请编译一下项目
+        DaggerMineComponent //如找不到该类,请编译一下项目
                 .builder()
                 .appComponent(appComponent)
-                .mineActivityModule(new MineActivityModule(this))
+                .mineModule(new MineModule(this))
                 .build()
                 .inject(this);
     }

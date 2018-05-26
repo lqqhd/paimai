@@ -18,7 +18,7 @@
     <string name="seller_client_mine_order_pending_payment">待付款</string>
     <string name="seller_client_head_title_mine">我的</string>
     <string name="seller_client_head_title_home">首页</string>
-    <string name="seller_client_mine_ordinary">普通</string>
+    <string name="seller_client_mine_free">自由</string>
     <string name="seller_client_mine_phone">15800000000</string>
     <string name="seller_client_mine_setting">设置</string>
     <string name="seller_client_mine_fans">粉丝 0</string>

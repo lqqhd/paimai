@@ -16,6 +16,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.DataHelper;
+import com.xiaoxing.welcome.BuildConfig;
 import com.xiaoxing.welcome.R;
 
 import java.util.Random;
@@ -103,8 +104,11 @@ public class WelcomeActivity extends BaseActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-
-                Utils.navigation(WelcomeActivity.this, RouterHub.APP_PAIMAIMAINACTIVITY);
+                if (BuildConfig.IS_SALALS_CLIENT) {
+                    Utils.navigation(WelcomeActivity.this, RouterHub.SALES_CLIENT_PAIMAIMAINACTIVITY);
+                } else {
+                    Utils.navigation(WelcomeActivity.this, RouterHub.SELLER_CLIENT_MINEACTIVITY);
+                }
                 finish();
             }
         });

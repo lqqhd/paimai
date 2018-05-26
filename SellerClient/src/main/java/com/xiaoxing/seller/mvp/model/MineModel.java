@@ -1,4 +1,4 @@
-package com.xiaoxing.seller.mvp.ui.mvp.model;
+package com.xiaoxing.seller.mvp.model;
 
 import android.app.Application;
 
@@ -10,18 +10,18 @@ import com.jess.arms.di.scope.ActivityScope;
 
 import javax.inject.Inject;
 
-import com.xiaoxing.seller.mvp.ui.mvp.contract.MineActivityContract;
+import com.xiaoxing.seller.mvp.contract.MineContract;
 
 
 @ActivityScope
-public class MineActivityModel extends BaseModel implements MineActivityContract.Model {
+public class MineModel extends BaseModel implements MineContract.Model {
     @Inject
     Gson mGson;
     @Inject
     Application mApplication;
 
     @Inject
-    public MineActivityModel(IRepositoryManager repositoryManager) {
+    public MineModel(IRepositoryManager repositoryManager) {
         super(repositoryManager);
     }
 

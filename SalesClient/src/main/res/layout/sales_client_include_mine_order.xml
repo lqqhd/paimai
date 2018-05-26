@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_all_orders"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/public_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:text="@string/sales_client_mine_order"
+            android:textColor="@color/sales_client_mine_order"
+            android:textSize="@dimen/public_font_16sp" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_168"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:src="@mipmap/xuanze" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@+id/imageView14"
+            android:layout_toStartOf="@+id/imageView14"
+            android:text="@string/sales_client_mine_see_all_orders"
+            android:textColor="@color/sales_client_mine_see_all_orders"
+            android:textSize="@dimen/public_font_12sp" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:background="@color/public_white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_dai_fu_kuan"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/order_dai_fu_kuan" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="@string/sales_client_mine_order_pending_payment" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dai_fa_huo"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/order_dai_fa_huo" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="@string/sales_client_mine_order_to_be_delivered" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dai_ping_jia"
+            style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/order_dai_shou_huo" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="@string/sales_client_mine_order_to_receive_goods" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/order_dai_ping_jia" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="@string/sales_client_mine_order_be_evaluated" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/public_MineOrderLinearLayout">
+
+            <ImageView
+                style="@style/public_MineOrderImage"
+                android:src="@mipmap/order_shou_hou" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="@string/sales_client_mine_order_after_sales" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_bao_xiu_dan"
+        style="@style/public_MineItemRelativeLayout"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/img_wo_de_bao_xiu_dan"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon1" />
+
+        <TextView
+            android:id="@+id/fragmentmyImageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/public_shape_red_bg_corner_5dp"
+            android:padding="@dimen/dp_5"
+            android:text="@string/sales_client_mine_recharge_immediately"
+            android:textColor="@color/public_white"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_wo_de_bao_xiu_dan"
+            android:text="@string/sales_client_mine_balance" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:gravity="right"
+            android:text="￥0.00元"
+            android:textColor="@color/sales_client_mine_balance_value"
+            android:textSize="@dimen/public_font_12sp" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+
+        <ImageView
+            android:id="@+id/img_wo_de_bao_jia"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon2" />
+
+        <include layout="@layout/sales_client_include_next_img" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_wo_de_bao_jia"
+            android:text="@string/sales_client_mine_my_offer" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/public_MineItemRelativeLayout"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/img_wo_de_jing_pai"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon3" />
+
+        <include layout="@layout/sales_client_include_next_img" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_wo_de_jing_pai"
+            android:text="@string/sales_client_mine_my_auction" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+
+        <ImageView
+            android:id="@+id/img_wo_de_jian_ding"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon5" />
+
+        <include layout="@layout/sales_client_include_next_img" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_wo_de_jian_ding"
+            android:text="@string/sales_client_mine_my_identification" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+
+        <ImageView
+            android:id="@+id/img_wo_de_shou_cang"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon6" />
+
+        <include layout="@layout/sales_client_include_next_img" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_wo_de_shou_cang"
+            android:text="@string/sales_client_mine_collection" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+
+        <ImageView
+            android:id="@+id/img_wo_de_hong_bao"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon7" />
+
+        <include layout="@layout/sales_client_include_next_img" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_wo_de_hong_bao"
+            android:text="@string/sales_client_mine_falling_red_envelopes" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        style="@style/public_MineItemRelativeLayout"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/img_wo_shi_mai_jia"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon9" />
+
+        <include layout="@layout/sales_client_include_next_img" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_wo_shi_mai_jia"
+            android:text="@string/sales_client_mine_I_am_a_seller" />
+
+
+    </RelativeLayout>
+</LinearLayout>

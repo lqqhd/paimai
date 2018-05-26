@@ -39,6 +39,8 @@ public interface RouterHub {
     String GANK = "/gank";//干货集中营组件
     String GOLD = "/gold";//稀土掘金组件
     String WELCOME = "/welcome";//欢迎组件
+    String SALES_CLIENT = "/sales_client";//买家
+    String SELLER_CLIENT = "/seller_client";//卖家
 
     /**
      * 服务组件, 用于给每个组件暴露特有的服务
@@ -57,7 +59,11 @@ public interface RouterHub {
      */
     //String APP_SPLASHACTIVITY = APP + "/SplashActivity";
     String APP_MAINACTIVITY = APP + "/MainActivity";
-    String APP_PAIMAIMAINACTIVITY = APP + "/PaiMaiMainActivity";
+    String SALES_CLIENT_PAIMAIMAINACTIVITY = SALES_CLIENT + "/PaiMaiMainActivity";
+    /**
+     * 卖家
+     */
+    String SELLER_CLIENT_MINEACTIVITY = SELLER_CLIENT + "/MineActivity";
 
 
     /**

@@ -34,7 +34,7 @@
         android:background="@drawable/public_shape_red_bg_corner_5dp"
         android:gravity="center"
         android:padding="@dimen/dp_5"
-        android:text="@string/seller_client_mine_ordinary"
+        android:text="@string/seller_client_mine_free"
         android:textColor="@color/public_white"
         android:textSize="@dimen/public_font_12sp" />
 

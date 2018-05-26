@@ -33,6 +33,8 @@ android {
             buildConfigField "boolean", "LOG_DEBUG", "true"
             buildConfigField "boolean", "USE_CANARY", "true"
             buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
+            buildConfigField "boolean", "IS_SALALS_CLIENT", "${isSalalsClient}"
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -41,6 +43,8 @@ android {
             buildConfigField "boolean", "LOG_DEBUG", "false"
             buildConfigField "boolean", "USE_CANARY", "false"
             buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
+            buildConfigField "boolean", "IS_SALALS_CLIENT", "${isSalalsClient}"
+
             minifyEnabled false
             shrinkResources false
             zipAlignEnabled true

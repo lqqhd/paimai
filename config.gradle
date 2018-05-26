@@ -108,7 +108,14 @@ ext {
             "umeng-analytics"          : "com.umeng.analytics:analytics:6.0.1",
 
             //
-            "ByeBurger":"com.github.githubwing:ByeBurger:${version["ByeBurgerVersion"]}"
+            "ByeBurger":"com.github.githubwing:ByeBurger:${version["ByeBurgerVersion"]}",
+            "BaseRecyclerViewAdapterHelper":"com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34",
+            "banner":"com.youth.banner:banner:1.4.9",
+            "realtimeblurview":"com.github.mmin18:realtimeblurview:1.0.6",
+            "circleimageview":"de.hdodenhof:circleimageview:2.1.0",
+            "loadinglayout":"com.github.czy1121:loadinglayout:1.0.1",
+            "avi_library":"com.wang.avi:library:2.1.3"
+
     ]
 
 

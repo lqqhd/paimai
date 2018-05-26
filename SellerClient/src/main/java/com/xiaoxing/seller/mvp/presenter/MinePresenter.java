@@ -1,4 +1,4 @@
-package com.xiaoxing.seller.mvp.ui.mvp.presenter;
+package com.xiaoxing.seller.mvp.presenter;
 
 import android.app.Application;
 
@@ -6,7 +6,7 @@ import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
-import com.xiaoxing.seller.mvp.ui.mvp.contract.MineActivityContract;
+import com.xiaoxing.seller.mvp.contract.MineContract;
 
 import javax.inject.Inject;
 
@@ -14,7 +14,7 @@ import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 
 
 @ActivityScope
-public class MineActivityPresenter extends BasePresenter<MineActivityContract.Model, MineActivityContract.View> {
+public class MinePresenter extends BasePresenter<MineContract.Model, MineContract.View> {
     @Inject
     RxErrorHandler mErrorHandler;
     @Inject
@@ -25,7 +25,7 @@ public class MineActivityPresenter extends BasePresenter<MineActivityContract.Mo
     AppManager mAppManager;
 
     @Inject
-    public MineActivityPresenter(MineActivityContract.Model model, MineActivityContract.View rootView) {
+    public MinePresenter(MineContract.Model model, MineContract.View rootView) {
         super(model, rootView);
     }
 
