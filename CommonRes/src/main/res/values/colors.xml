@@ -42,4 +42,9 @@
     <color name="public_color_979797">#979797</color>
     <color name="public_color_FED652">#FED652</color>
     <color name="public_color_148CF9">#148CF9</color>
+
+    <color name="public_mine_item_text">#111111</color>
+    <color name="public_mine_order_text">#484848</color>
+    <color name="public_client_line_color">#DADADA</color>
+
 </resources>

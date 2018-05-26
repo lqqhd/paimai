@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/panel_lyt"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@color/public_white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_100">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_overlay="true"
+        app:civ_border_width="@dimen/dp_3"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        android:src="@mipmap/image_avatar_5" />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/avatar"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:width="@dimen/dp_60"
+        android:background="@drawable/public_shape_red_bg_corner_5dp"
+        android:gravity="center"
+        android:padding="@dimen/dp_5"
+        android:text="@string/sales_client_mine_ordinary"
+        android:textColor="@color/public_white"
+        android:textSize="@dimen/public_font_12sp" />
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_toRightOf="@+id/avatar"
+        android:text="@string/sales_client_mine_phone"
+        android:textColor="@color/sales_client_mine_phone"
+        android:textSize="@dimen/public_font_16sp" />
+
+    <TextView
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/phone"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="@string/sales_client_mine_setting"
+        android:textColor="@color/sales_client_mine_setting"
+        android:textSize="@dimen/public_font_14sp" />
+
+
+    <LinearLayout
+        android:id="@+id/relationship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_toRightOf="@+id/avatar">
+
+        <TextView
+            android:id="@+id/relationship_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sales_client_mine_fans"
+            android:textColor="@color/sales_client_mine_fans"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="@string/sales_client_mine_1"
+            android:textColor="@color/sales_client_mine_fans"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <TextView
+            android:id="@+id/relationship_fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sales_client_mine_attention"
+            android:textColor="@color/sales_client_mine_fans"
+            android:textSize="@dimen/public_font_12sp" />
+    </LinearLayout>
+
+</RelativeLayout>

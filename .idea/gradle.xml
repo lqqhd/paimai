@@ -11,10 +11,9 @@
             <option value="$PROJECT_DIR$/CommonRes" />
             <option value="$PROJECT_DIR$/CommonSDK" />
             <option value="$PROJECT_DIR$/CommonService" />
-            <option value="$PROJECT_DIR$/ModuleGank" />
-            <option value="$PROJECT_DIR$/ModuleGold" />
             <option value="$PROJECT_DIR$/ModuleWelcome" />
-            <option value="$PROJECT_DIR$/ModuleZhihu" />
+            <option value="$PROJECT_DIR$/SalesClient" />
+            <option value="$PROJECT_DIR$/SellerClient" />
             <option value="$PROJECT_DIR$/XiaoxingArms" />
             <option value="$PROJECT_DIR$/XiaoxingPagerBottomTabStrip" />
             <option value="$PROJECT_DIR$/app" />

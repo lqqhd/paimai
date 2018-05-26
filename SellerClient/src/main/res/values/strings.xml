@@ -1,0 +1,39 @@
+<resources>
+    <string name="seller_client_knowledge_hierarchy">Knowledge hierarchy</string>
+    <string name="seller_client_home_pager">Home pager</string>
+    <string name="seller_client_navigation">Navigation</string>
+    <string name="seller_client_project">Project</string>
+    <string name="seller_client_my_collect">Collect</string>
+    <string name="seller_client_login_in">Login</string>
+    <string name="seller_client_setting">Setting</string>
+    <string name="seller_client_about_us">About Us</string>
+    <string name="seller_client_logout">Logout</string>
+
+    <string name="seller_client_app_name">sellerClient</string>
+
+    <string name="seller_client_mine_order_after_seller">售后</string>
+    <string name="seller_client_mine_order_be_evaluated">待评价</string>
+    <string name="seller_client_mine_order_to_receive_goods">待收货</string>
+    <string name="seller_client_mine_order_to_be_delivered">待发货</string>
+    <string name="seller_client_mine_order_pending_payment">待付款</string>
+    <string name="seller_client_head_title_mine">我的</string>
+    <string name="seller_client_head_title_home">首页</string>
+    <string name="seller_client_mine_ordinary">普通</string>
+    <string name="seller_client_mine_phone">15800000000</string>
+    <string name="seller_client_mine_setting">设置</string>
+    <string name="seller_client_mine_fans">粉丝 0</string>
+    <string name="seller_client_mine_attention">关注 0</string>
+    <string name="seller_client_mine_1">|</string>
+    <string name="seller_client_mine_order">我的订单</string>
+    <string name="seller_client_mine_see_all_orders">查看全部订单</string>
+    <string name="seller_client_mine_about_penalties_for_violation">关于违规处罚</string>
+    <string name="seller_client_mine_recharge_immediately">立即充值</string>
+    <string name="seller_client_mine_balance">余额</string>
+    <string name="seller_client_mine_my_offer">我的报价</string>
+    <string name="seller_client_mine_my_auction">我的竞拍</string>
+    <string name="seller_client_mine_my_identification">我的鉴定</string>
+    <string name="seller_client_mine_collection">收藏</string>
+    <string name="seller_client_mine_falling_red_envelopes">天降红包</string>
+    <string name="seller_client_mine_I_am_a_seller">我是卖家</string>
+
+</resources>
