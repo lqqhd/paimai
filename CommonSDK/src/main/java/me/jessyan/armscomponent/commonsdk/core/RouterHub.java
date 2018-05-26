@@ -64,6 +64,7 @@ public interface RouterHub {
      * 卖家
      */
     String SELLER_CLIENT_MINEACTIVITY = SELLER_CLIENT + "/MineActivity";
+    String SELLER_SETTING = SELLER_CLIENT + "/SettingActivity";
 
 
     /**

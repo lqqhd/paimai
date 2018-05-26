@@ -11,7 +11,8 @@
 
         <activity android:name=".mvp.ui.mvp.ui.activity.MineActivityActivity" />
         <activity android:name=".app.mvp.ui.activity.MineActivity" />
-        <activity android:name=".mvp.ui.activity.MineActivity"></activity>
+        <activity android:name=".mvp.ui.activity.MineActivity" />
+        <activity android:name=".mvp.ui.activity.SettingActivity"></activity>
     </application>
 
 </manifest>
