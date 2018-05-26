@@ -16,13 +16,16 @@ import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.seller.R;
+import com.xiaoxing.seller.R2;
 import com.xiaoxing.seller.di.component.DaggerMineComponent;
 import com.xiaoxing.seller.di.module.MineModule;
 import com.xiaoxing.seller.mvp.contract.MineContract;
 import com.xiaoxing.seller.mvp.presenter.MinePresenter;
 
+import butterknife.OnClick;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
@@ -146,8 +149,11 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
         finish();
     }
 
-//
-//    @OnClick(R.id.ll_setting)
-//    public void onViewClicked() {
-//    }
+
+    @OnClick(R2.id.ll_setting)
+    public void onViewClicked(View view) {
+        if (view.getId() == R.id.ll_setting) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_SETTING);
+        }
+    }
 }

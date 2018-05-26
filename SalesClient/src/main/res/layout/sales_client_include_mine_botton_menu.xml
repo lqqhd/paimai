@@ -55,7 +55,7 @@
             style="@style/public_MineItemImage"
             android:src="@mipmap/mem_icon2" />
 
-        <include layout="@layout/sales_client_include_next_img" />
+        <include layout="@layout/public_include_next_img" />
 
         <TextView
             style="@style/public_MineItemText"
@@ -74,7 +74,7 @@
             style="@style/public_MineItemImage"
             android:src="@mipmap/mem_icon3" />
 
-        <include layout="@layout/sales_client_include_next_img" />
+        <include layout="@layout/public_include_next_img" />
 
         <TextView
             style="@style/public_MineItemText"
@@ -93,7 +93,7 @@
             style="@style/public_MineItemImage"
             android:src="@mipmap/mem_icon5" />
 
-        <include layout="@layout/sales_client_include_next_img" />
+        <include layout="@layout/public_include_next_img" />
 
         <TextView
             style="@style/public_MineItemText"
@@ -112,7 +112,7 @@
             style="@style/public_MineItemImage"
             android:src="@mipmap/mem_icon6" />
 
-        <include layout="@layout/sales_client_include_next_img" />
+        <include layout="@layout/public_include_next_img" />
 
         <TextView
             style="@style/public_MineItemText"
@@ -131,7 +131,7 @@
             style="@style/public_MineItemImage"
             android:src="@mipmap/mem_icon7" />
 
-        <include layout="@layout/sales_client_include_next_img" />
+        <include layout="@layout/public_include_next_img" />
 
         <TextView
             style="@style/public_MineItemText"
@@ -151,7 +151,7 @@
             style="@style/public_MineItemImage"
             android:src="@mipmap/mem_icon9" />
 
-        <include layout="@layout/sales_client_include_next_img" />
+        <include layout="@layout/public_include_next_img" />
 
         <TextView
             style="@style/public_MineItemText"

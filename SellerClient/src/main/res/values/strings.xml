@@ -35,5 +35,14 @@
     <string name="seller_client_mine_collection">收藏</string>
     <string name="seller_client_mine_falling_red_envelopes">天降红包</string>
     <string name="seller_client_mine_I_am_a_seller">我是卖家</string>
+    <string name="seller_client_xing_ming">姓名：</string>
+    <string name="seller_client_ni_cheng">昵称：</string>
+    <string name="seller_client_xing_bie">性别：</string>
+    <string name="seller_client_tou_xiang">头像：</string>
+    <string name="seller_client_shou_huo_di_zhi">收货地址：</string>
+    <string name="seller_client_an_quan_zhong_xin">安全中心：</string>
+    <string name="seller_client_shi_ming_ren_zheng">实名认证：</string>
+    <string name="seller_client_tui">退出登录</string>
+    <string name="seller_client_she_zhi">设置</string>
 
 </resources>
