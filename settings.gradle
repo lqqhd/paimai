@@ -1,2 +1,3 @@
 include ':app', ':CommonSDK', ':CommonService', ':CommonRes', ':XiaoxingArms', ':ModuleWelcome', ':SalesClient', ':SellerClient', ':XiaoxingSetting', ':XiaoxingLogin','XiaoxingPagerBottomTabStrip'
 include ':refresh-layout', ':refresh-header', ':refresh-footer'
+include ':xedittext'

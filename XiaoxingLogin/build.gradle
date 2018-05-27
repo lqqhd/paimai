@@ -74,6 +74,7 @@ dependencies {
     //因为 CommonRes 依赖了 CommonSDK, 所以如果业务模块需要公共 UI 组件就依赖 CommonRes, 如果不需要就只依赖 CommonSDK
     api project(":CommonRes")
     api project(":CommonService")
+    api project(":xedittext")
     if (isBuildModule.toBoolean()) {
         //view
         annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
@@ -95,5 +96,4 @@ dependencies {
         compileOnly rootProject.ext.dependencies["canary-release"]
         compileOnly rootProject.ext.dependencies["junit"]
     }
-    compile 'com.xw.repo:xedittext:2.1.1@aar'
 }

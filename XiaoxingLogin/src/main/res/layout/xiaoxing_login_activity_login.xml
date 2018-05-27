@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:xedit="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -41,10 +41,10 @@
                     android:hint="请输入帐户名/手机号"
                     android:paddingLeft="@dimen/dp_10"
                     android:textSize="@dimen/public_font_14sp"
-                    app:x_clearDrawable="@mipmap/ic_clear"
-                    app:x_disableClear="true"
-                    app:x_hidePwdDrawable="@mipmap/ic_hide"
-                    app:x_showPwdDrawable="@mipmap/ic_show" />
+                    xedit:x_clearDrawable="@mipmap/ic_clear"
+                    xedit:x_disableClear="true"
+                    xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+                    xedit:x_showPwdDrawable="@mipmap/ic_show" />
 
 
                 <!--<include layout="@layout/public_line_horizontal" />-->
@@ -57,10 +57,10 @@
                     android:inputType="textPassword"
                     android:paddingLeft="@dimen/dp_10"
                     android:textSize="@dimen/public_font_14sp"
-                    app:x_clearDrawable="@mipmap/ic_clear"
-                    app:x_disableClear="true"
-                    app:x_hidePwdDrawable="@mipmap/ic_hide"
-                    app:x_showPwdDrawable="@mipmap/ic_show" />
+                    xedit:x_clearDrawable="@mipmap/ic_clear"
+                    xedit:x_disableClear="true"
+                    xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+                    xedit:x_showPwdDrawable="@mipmap/ic_show" />
             </LinearLayout>
 
 
