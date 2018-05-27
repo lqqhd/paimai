@@ -153,7 +153,7 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
     @OnClick(R2.id.ll_setting)
     public void onViewClicked(View view) {
         if (view.getId() == R.id.ll_setting) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_SETTING);
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_SETTING_SETTING);
         }
     }
 }

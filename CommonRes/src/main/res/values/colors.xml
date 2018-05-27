@@ -46,5 +46,6 @@
     <color name="public_mine_item_text">#111111</color>
     <color name="public_mine_order_text">#484848</color>
     <color name="public_client_line_color">#DADADA</color>
+    <color name="public_client_head_bg">#f6f6f6</color>
 
 </resources>

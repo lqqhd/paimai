@@ -41,6 +41,7 @@ public interface RouterHub {
     String WELCOME = "/welcome";//欢迎组件
     String SALES_CLIENT = "/sales_client";//买家
     String SELLER_CLIENT = "/seller_client";//卖家
+    String XIAO_XING_SETTING = "/xiao_xing_setting";//设置
 
     /**
      * 服务组件, 用于给每个组件暴露特有的服务
@@ -64,7 +65,10 @@ public interface RouterHub {
      * 卖家
      */
     String SELLER_CLIENT_MINEACTIVITY = SELLER_CLIENT + "/MineActivity";
-    String SELLER_SETTING = SELLER_CLIENT + "/SettingActivity";
+    /**
+     * 设置
+     */
+    String XIAO_XING_SETTING_SETTING = XIAO_XING_SETTING + "/SettingActivity";
 
 
     /**

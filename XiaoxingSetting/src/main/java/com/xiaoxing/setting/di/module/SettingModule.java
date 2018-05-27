@@ -1,12 +1,12 @@
-package com.xiaoxing.seller.di.module;
+package com.xiaoxing.setting.di.module;
 
 import com.jess.arms.di.scope.ActivityScope;
+import com.xiaoxing.setting.mvp.contract.SettingContract;
+import com.xiaoxing.setting.mvp.model.SettingModel;
 
 import dagger.Module;
 import dagger.Provides;
 
-import com.xiaoxing.seller.mvp.contract.SettingContract;
-import com.xiaoxing.seller.mvp.model.SettingModel;
 
 
 @Module

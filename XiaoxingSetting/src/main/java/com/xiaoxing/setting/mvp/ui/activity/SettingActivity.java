@@ -1,7 +1,8 @@
-package com.xiaoxing.seller.mvp.ui.activity;
+package com.xiaoxing.setting.mvp.ui.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,20 +19,21 @@ import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialogAction;
-import com.xiaoxing.seller.R;
-import com.xiaoxing.seller.R2;
-import com.xiaoxing.seller.di.component.DaggerSettingComponent;
-import com.xiaoxing.seller.di.module.SettingModule;
-import com.xiaoxing.seller.mvp.contract.SettingContract;
-import com.xiaoxing.seller.mvp.presenter.SettingPresenter;
+import com.xiaoxing.setting.R;
+import com.xiaoxing.setting.R2;
+import com.xiaoxing.setting.di.component.DaggerSettingComponent;
+import com.xiaoxing.setting.di.module.SettingModule;
+import com.xiaoxing.setting.mvp.contract.SettingContract;
+import com.xiaoxing.setting.mvp.presenter.SettingPresenter;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.addapp.pickers.picker.DatePicker;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_SETTING)
+@Route(path = RouterHub.XIAO_XING_SETTING_SETTING)
 public class SettingActivity extends BaseActivity<SettingPresenter> implements SettingContract.View {
     private int mCurrentDialogStyle = com.qmuiteam.qmui.R.style.QMUI_Dialog;
     @BindView(R2.id.title)
@@ -42,6 +44,8 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
     TextView tvXingMing;
     @BindView(R2.id.tv_ni_cheng)
     TextView tvNiCheng;
+    @BindView(R2.id.tv_sheng_ri)
+    TextView tvShengRi;
     @BindView(R2.id.tv_xing_bie)
     TextView tvXingBie;
     @BindView(R2.id.img_head)
@@ -65,12 +69,12 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
-        return R.layout.seller_client_activity_setting; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+        return R.layout.xiaoxing_setting__activity_setting; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        title.setText(getString(R.string.seller_client_she_zhi));
+        title.setText(getString(R.string.xiaoxing_setting_she_zhi));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,9 +126,9 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
         } else if (view.getId() == R.id.rl_xing_bie) {
             showSexDialog();
         } else if (view.getId() == R.id.rl_sheng_ri) {
-
+            onYearMonthDayPicker(tvShengRi);
         } else if (view.getId() == R.id.rl_tou_xiang) {
-
+            showTouXiangDialog();
         } else if (view.getId() == R.id.rl_shou_huo_di_zhi) {
 
         } else if (view.getId() == R.id.rl_an_quan_zhong_xin) {
@@ -194,4 +198,52 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
                 })
                 .create(mCurrentDialogStyle).show();
     }
+
+    private void showTouXiangDialog() {
+        final String[] items = new String[]{"相机", "相册", "取消"};
+        new QMUIDialog.MenuDialogBuilder(SettingActivity.this)
+                .addItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create(mCurrentDialogStyle).show();
+    }
+
+    public void onYearMonthDayPicker(View view) {
+        final DatePicker picker = new DatePicker(this);
+        picker.setCanLoop(true);
+        picker.setWheelModeEnable(true);
+        picker.setTopPadding(15);
+        picker.setRangeStart(2016, 8, 29);
+        picker.setRangeEnd(2111, 1, 11);
+        picker.setSelectedItem(2050, 10, 14);
+        picker.setWeightEnable(true);
+        picker.setLineColor(Color.BLACK);
+        picker.setOnDatePickListener(new DatePicker.OnYearMonthDayPickListener() {
+            @Override
+            public void onDatePicked(String year, String month, String day) {
+//                showToast(year + "-" + month + "-" + day);
+            }
+        });
+        picker.setOnWheelListener(new DatePicker.OnWheelListener() {
+            @Override
+            public void onYearWheeled(int index, String year) {
+                picker.setTitleText(year + "-" + picker.getSelectedMonth() + "-" + picker.getSelectedDay());
+            }
+
+            @Override
+            public void onMonthWheeled(int index, String month) {
+                picker.setTitleText(picker.getSelectedYear() + "-" + month + "-" + picker.getSelectedDay());
+            }
+
+            @Override
+            public void onDayWheeled(int index, String day) {
+                picker.setTitleText(picker.getSelectedYear() + "-" + picker.getSelectedMonth() + "-" + day);
+            }
+        });
+        picker.show();
+    }
+
 }

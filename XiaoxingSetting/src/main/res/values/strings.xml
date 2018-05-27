@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">XiaoxingSetting</string>
+    <string name="xiaoxing_setting_xing_ming">姓名：</string>
+    <string name="xiaoxing_setting_ni_cheng">昵称：</string>
+    <string name="xiaoxing_setting_xing_bie">性别：</string>
+    <string name="xiaoxing_setting_tou_xiang">头像：</string>
+    <string name="xiaoxing_setting_shou_huo_di_zhi">收货地址：</string>
+    <string name="xiaoxing_setting_an_quan_zhong_xin">安全中心：</string>
+    <string name="xiaoxing_setting_shi_ming_ren_zheng">实名认证：</string>
+    <string name="xiaoxing_setting_tui">退出登录</string>
+    <string name="xiaoxing_setting_she_zhi">设置</string>
+    <string name="xiaoxing_setting_sheng_ri">生日</string>
+
+</resources>

@@ -1,4 +1,4 @@
-package com.xiaoxing.seller.mvp.presenter;
+package com.xiaoxing.setting.mvp.presenter;
 
 import android.app.Application;
 
@@ -6,7 +6,7 @@ import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
-import com.xiaoxing.seller.mvp.contract.SettingContract;
+import com.xiaoxing.setting.mvp.contract.SettingContract;
 
 import javax.inject.Inject;
 

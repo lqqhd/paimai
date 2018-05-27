@@ -1,4 +1,4 @@
-package com.xiaoxing.seller.mvp.contract;
+package com.xiaoxing.setting.mvp.contract;
 
 import com.jess.arms.mvp.IView;
 import com.jess.arms.mvp.IModel;

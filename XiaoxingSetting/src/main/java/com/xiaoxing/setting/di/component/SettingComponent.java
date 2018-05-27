@@ -1,13 +1,11 @@
-package com.xiaoxing.seller.di.component;
-
-import dagger.Component;
+package com.xiaoxing.setting.di.component;
 
 import com.jess.arms.di.component.AppComponent;
-
-import com.xiaoxing.seller.di.module.SettingModule;
-
 import com.jess.arms.di.scope.ActivityScope;
-import com.xiaoxing.seller.mvp.ui.activity.SettingActivity;
+import com.xiaoxing.setting.di.module.SettingModule;
+import com.xiaoxing.setting.mvp.ui.activity.SettingActivity;
+
+import dagger.Component;
 
 @ActivityScope
 @Component(modules = SettingModule.class, dependencies = AppComponent.class)

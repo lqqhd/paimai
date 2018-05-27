@@ -97,5 +97,6 @@ dependencies {
     testImplementation rootProject.ext.dependencies["canary-release"]
 
     implementation rootProject.ext.dependencies["ByeBurger"]
+    implementation project(':XiaoxingSetting')
 
 }
