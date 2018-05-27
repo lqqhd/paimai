@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.xiaoxing.paimai">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,7 +17,8 @@
         android:icon="@mipmap/arms_log"
         android:label="@string/public_app_name"
         android:supportsRtl="true"
-        android:theme="@style/public_AppTheme">
+        android:theme="@style/public_AppTheme"
+        tools:replace="android:label">
         <activity
             android:name="com.xiaoxing.welcome.mvp.ui.WelcomeActivity"
             android:configChanges="orientation|screenSize"

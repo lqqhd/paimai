@@ -37,20 +37,30 @@
 
                 <com.xw.repo.XEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_50"
                     android:hint="请输入帐户名/手机号"
-                    app:x_disableClear="true" />
+                    android:paddingLeft="@dimen/dp_10"
+                    android:textSize="@dimen/public_font_14sp"
+                    app:x_clearDrawable="@mipmap/ic_clear"
+                    app:x_disableClear="true"
+                    app:x_hidePwdDrawable="@mipmap/ic_hide"
+                    app:x_showPwdDrawable="@mipmap/ic_show" />
 
 
-                <include layout="@layout/public_line_horizontal" />
+                <!--<include layout="@layout/public_line_horizontal" />-->
 
 
                 <com.xw.repo.XEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_50"
                     android:hint="请输入密码"
                     android:inputType="textPassword"
-                    app:x_disableClear="true" />
+                    android:paddingLeft="@dimen/dp_10"
+                    android:textSize="@dimen/public_font_14sp"
+                    app:x_clearDrawable="@mipmap/ic_clear"
+                    app:x_disableClear="true"
+                    app:x_hidePwdDrawable="@mipmap/ic_hide"
+                    app:x_showPwdDrawable="@mipmap/ic_show" />
             </LinearLayout>
 
 

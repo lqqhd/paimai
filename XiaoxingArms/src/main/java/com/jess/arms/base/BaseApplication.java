@@ -18,6 +18,7 @@ package com.jess.arms.base;
 import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.multidex.MultiDex;
 
 import com.jess.arms.base.delegate.AppDelegate;
 import com.jess.arms.base.delegate.AppLifecycles;
@@ -50,6 +51,8 @@ public class BaseApplication extends Application implements App {
         if (mAppDelegate == null)
             this.mAppDelegate = new AppDelegate(base);
         this.mAppDelegate.attachBaseContext(base);
+        MultiDex.install(this);
+
     }
 
     @Override
