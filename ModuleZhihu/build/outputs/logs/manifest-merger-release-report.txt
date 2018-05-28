@@ -1,0 +1,63 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+	package
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:3:11-51
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+	android:versionName
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+	android:versionCode
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:1-21:12
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:2:11-69
+application
+ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:5:5-19:19
+activity#me.jessyan.armscomponent.zhihu.mvp.ui.activity.ZhihuHomeActivity
+ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:6:9-10:51
+	android:screenOrientation
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:10:13-49
+	android:label
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:9:13-54
+	android:configChanges
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:8:13-59
+	android:name
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:7:13-62
+activity#me.jessyan.armscomponent.zhihu.mvp.ui.activity.DetailActivity
+ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:11:9-14:51
+	android:screenOrientation
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:14:13-49
+	android:configChanges
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:13:13-59
+	android:name
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:12:13-59
+meta-data#me.jessyan.armscomponent.zhihu.app.GlobalConfiguration
+ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:16:9-18:43
+	android:value
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:18:13-41
+	android:name
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml:17:13-82
+uses-sdk
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+		ADDED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
+		INJECTED from F:\android_work_new\Xiaoxing_PaiMai\ModuleZhihu\src\main\release\AndroidManifest.xml
