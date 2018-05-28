@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,6 +28,7 @@ import com.xiaoxing.setting.mvp.presenter.SettingPresenter;
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.addapp.pickers.picker.DatePicker;
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
@@ -37,10 +37,6 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 @Route(path = RouterHub.XIAO_XING_SETTING_SETTING)
 public class SettingActivity extends BaseActivity<SettingPresenter> implements SettingContract.View {
     private int mCurrentDialogStyle = com.qmuiteam.qmui.R.style.QMUI_Dialog;
-    @BindView(R2.id.title)
-    TextView title;
-    @BindView(R2.id.toolbar)
-    Toolbar toolbar;
     @BindView(R2.id.tv_xing_ming)
     TextView tvXingMing;
     @BindView(R2.id.tv_ni_cheng)
@@ -75,13 +71,7 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        title.setText(getString(R.string.xiaoxing_setting_she_zhi));
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                killMyself();
-            }
-        });
+        ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_setting_she_zhi));
     }
 
     @Override

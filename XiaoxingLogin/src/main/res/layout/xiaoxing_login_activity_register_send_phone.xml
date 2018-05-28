@@ -1,8 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xedit="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/public_white"
     android:orientation="vertical">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/public_white"
+        android:orientation="vertical">
+
+        <include layout="@layout/public_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/public_white"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_20">
+
+
+            <com.xw.repo.XEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@null"
+                android:hint="请输入11位手机号"
+                android:inputType="phone"
+                android:textColor="#B8B8B8"
+                android:textSize="@dimen/public_font_14sp"
+                xedit:x_clearDrawable="@mipmap/ic_clear"
+                xedit:x_disableClear="false"
+                xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+                xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+            <include layout="@layout/public_line_horizontal_margin_10" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/public_btn_selector_corner_35dp"
+                android:text="下一步"
+                android:textColor="@color/public_white"
+                android:textSize="@dimen/public_font_16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:checked="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="我已阅读并同意"
+                    android:textColor="#B4BAC3"
+                    android:textSize="@dimen/public_font_14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="《会员注册协议》"
+                    android:textColor="#B6A79B"
+                    android:textSize="@dimen/public_font_14sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

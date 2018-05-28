@@ -68,10 +68,28 @@
             android:name="com.xiaoxing.setting.mvp.ui.activity.SettingActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-        <!-- <activity -->
-        <!-- android:name=".mvp.ui.activity.LoginActivity" -->
-        <!-- android:configChanges="orientation|screenSize" -->
-        <!-- android:screenOrientation="portrait" /> -->
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.LoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.RegisterSendPhoneActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.RegisterVerificationCodeActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.ForgotPwdSendPhoneActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.ForgotPwdVerificationCodeActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>
