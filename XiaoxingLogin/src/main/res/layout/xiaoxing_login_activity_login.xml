@@ -115,15 +115,9 @@
 
                 <Button
                     android:id="@+id/btn_login"
-                    android:layout_width="fill_parent"
-                    android:layout_height="@dimen/dp_40"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:layout_marginRight="@dimen/dp_10"
+                    style="@style/public_Button"
                     android:layout_marginTop="@dimen/dp_10"
-                    android:background="@drawable/public_btn_selector_corner_35dp"
-                    android:text="登录"
-                    android:textColor="@color/public_white"
-                    android:textSize="@dimen/public_font_16sp" />
+                    android:text="登录" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

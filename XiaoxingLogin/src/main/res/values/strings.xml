@@ -4,4 +4,5 @@
     <string name="xiaoxing_login_register">注册</string>
     <string name="xiaoxing_login_protocol">协议</string>
     <string name="xiaoxing_login_verification">验证</string>
+    <string name="xiaoxing_login_set_pwd">设置密码</string>
 </resources>

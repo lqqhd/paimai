@@ -91,4 +91,13 @@
         <item name="android:layout_height">@dimen/dp_45</item>
         <item name="android:background">@color/public_white</item>
     </style>
+    <style name="public_Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:layout_marginLeft">@dimen/dp_10</item>
+        <item name="android:layout_marginRight">@dimen/dp_10</item>
+        <item name="android:background">@drawable/public_btn_selector_corner_35dp</item>
+        <item name="android:textColor">@color/public_white</item>
+        <item name="android:textSize">@dimen/public_font_16sp</item>
+    </style>
 </resources>
