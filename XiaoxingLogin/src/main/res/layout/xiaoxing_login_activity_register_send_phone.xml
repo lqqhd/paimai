@@ -6,7 +6,7 @@
     android:background="@color/public_white"
     android:orientation="vertical">
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/public_white"
@@ -87,5 +87,5 @@
 
 
         </LinearLayout>
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 </android.support.v4.widget.NestedScrollView>

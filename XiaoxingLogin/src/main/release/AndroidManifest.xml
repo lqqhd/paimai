@@ -15,7 +15,8 @@
         <activity android:name=".mvp.ui.activity.RegisterVerificationCodeActivity" />
         <activity android:name=".mvp.ui.activity.ForgotPwdSendPhoneActivity" />
         <activity android:name=".mvp.ui.activity.ForgotPwdVerificationCodeActivity" />
-        <activity android:name=".mvp.ui.activity.SetNewPasswordActivity"></activity>
+        <activity android:name=".mvp.ui.activity.SetNewPasswordActivity" />
+        <activity android:name=".mvp.ui.activity.RegisterSetPwdActivity"></activity>
     </application>
 
 </manifest>

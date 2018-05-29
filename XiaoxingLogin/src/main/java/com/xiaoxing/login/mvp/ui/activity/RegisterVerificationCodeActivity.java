@@ -78,8 +78,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
     @OnClick({R2.id.btn_next})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btn_next) {
-            Utils.navigation(RegisterVerificationCodeActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTERVERIFICATIONCODEACTIVITY);
+            Utils.navigation(RegisterVerificationCodeActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTERSETPWDACTIVITY);
         }
-
     }
 }
