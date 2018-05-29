@@ -97,6 +97,11 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.SetNewPasswordActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
 
     </application>
 

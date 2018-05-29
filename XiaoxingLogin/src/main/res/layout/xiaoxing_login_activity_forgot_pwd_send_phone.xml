@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:xedit="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <include layout="@layout/public_toolbar" />
+
+
+    <com.xw.repo.XEditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@null"
+        android:hint="请输入您的手机号/用户名"
+        android:textColor="#B8B8B8"
+        android:textSize="@dimen/public_font_14sp"
+        xedit:x_clearDrawable="@mipmap/ic_clear"
+        xedit:x_disableClear="false"
+        xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+        xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+    <include layout="@layout/public_line_horizontal_margin_10" />
+
+    <Button
+        android:id="@+id/btn_next"
+        style="@style/public_Button"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="下一步" />
+
 
 </com.zhy.autolayout.AutoLinearLayout>

@@ -15,6 +15,7 @@ import com.xiaoxing.login.di.module.SetNewPasswordModule;
 import com.xiaoxing.login.mvp.contract.SetNewPasswordContract;
 import com.xiaoxing.login.mvp.presenter.SetNewPasswordPresenter;
 
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -39,7 +40,7 @@ public class SetNewPasswordActivity extends BaseActivity<SetNewPasswordPresenter
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-
+        ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_set_pwd));
     }
 
     @Override
