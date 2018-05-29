@@ -15,6 +15,7 @@ import com.xiaoxing.login.di.module.RegisterVerificationCodeModule;
 import com.xiaoxing.login.mvp.contract.RegisterVerificationCodeContract;
 import com.xiaoxing.login.mvp.presenter.RegisterVerificationCodePresenter;
 
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -39,6 +40,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+        ToolbarUtils.initToolbarTitleNoBack(this, getString(R.string.xiaoxing_login_verification));
 
     }
 

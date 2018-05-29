@@ -3,4 +3,5 @@
     <string name="xiaoxing_login_login">登录</string>
     <string name="xiaoxing_login_register">注册</string>
     <string name="xiaoxing_login_protocol">协议</string>
+    <string name="xiaoxing_login_verification">验证</string>
 </resources>
