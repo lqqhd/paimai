@@ -15,6 +15,7 @@ import com.xiaoxing.login.di.module.ProtocolModule;
 import com.xiaoxing.login.mvp.contract.ProtocolContract;
 import com.xiaoxing.login.mvp.presenter.ProtocolPresenter;
 
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -39,6 +40,7 @@ public class ProtocolActivity extends BaseActivity<ProtocolPresenter> implements
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+        ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_protocol));
 
     }
 
