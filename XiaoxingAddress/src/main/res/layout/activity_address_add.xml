@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xedit="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_30"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:text="收件人:"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <com.xw.repo.XEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@color/public_white"
+            android:hint="请填写收件人姓名"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_14sp"
+            xedit:x_clearDrawable="@mipmap/ic_clear"
+            xedit:x_disableClear="false"
+            xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+            xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/public_line_horizontal_margin_10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:text="手机号码:"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <com.xw.repo.XEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@color/public_white"
+            android:hint="请填写联系人手机号码"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_14sp"
+            xedit:x_clearDrawable="@mipmap/ic_clear"
+            xedit:x_disableClear="false"
+            xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+            xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/public_line_horizontal_margin_10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:text="邮政编码:"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <com.xw.repo.XEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@color/public_white"
+            android:hint="请填写邮政编码"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_14sp"
+            xedit:x_clearDrawable="@mipmap/ic_clear"
+            xedit:x_disableClear="false"
+            xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+            xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/public_line_horizontal_margin_10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:text="所在地区:"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <com.xw.repo.XEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@color/public_white"
+            android:hint="请选择地区"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_14sp"
+            xedit:x_clearDrawable="@mipmap/ic_clear"
+            xedit:x_disableClear="false"
+            xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+            xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/public_line_horizontal_margin_10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:text="街道地址:"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <com.xw.repo.XEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@color/public_white"
+            android:hint="请填写街道地址"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_14sp"
+            xedit:x_clearDrawable="@mipmap/ic_clear"
+            xedit:x_disableClear="false"
+            xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+            xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/public_line_horizontal_margin_10" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_45"
+        android:layout_margin="@dimen/dp_10"
+        android:gravity="center"
+        android:text="设置默认地址" />
+
+    <Button
+        android:id="@+id/btn_ok"
+        style="@style/public_Button"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="完成" />
+
+
+</LinearLayout>

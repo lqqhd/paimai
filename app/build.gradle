@@ -100,5 +100,6 @@ dependencies {
     implementation rootProject.ext.dependencies["ByeBurger"]
     implementation project(':XiaoxingSetting')
     implementation project(':XiaoxingLogin')
+    implementation project(':XiaoxingAddress')
 
 }

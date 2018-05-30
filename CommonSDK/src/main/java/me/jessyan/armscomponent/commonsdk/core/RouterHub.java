@@ -43,6 +43,7 @@ public interface RouterHub {
     String SELLER_CLIENT = "/seller_client";//卖家
     String XIAO_XING_SETTING = "/xiao_xing_setting";//设置
     String XIAO_XING_LOGIN = "/xiao_xing_login";//登录
+    String XIAO_XING_ADDRESS = "/xiao_xing_address";//地址
 
     /**
      * 服务组件, 用于给每个组件暴露特有的服务
@@ -82,6 +83,11 @@ public interface RouterHub {
     String XIAO_XING_LOGIN_REGISTERSETPWDACTIVITY = XIAO_XING_LOGIN + "/RegisterSetPwdActivity";
     String XIAO_XING_LOGIN_REGISTERVERIFICATIONCODEACTIVITY = XIAO_XING_LOGIN + "/RegisterVerificationCodeActivity";
 
+    /**
+     * 地址
+     */
+    String XIAO_XING_ADDRESS_AddressAddActivity = XIAO_XING_ADDRESS + "/AddressAddActivity";
+    String XIAO_XING_ADDRESS_AddressListActivity = XIAO_XING_ADDRESS + "/AddressListActivity";
 
     /**
      * 知乎分组
