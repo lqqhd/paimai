@@ -22,6 +22,7 @@ import com.xiaoxing.seller.di.module.MineModule;
 import com.xiaoxing.seller.mvp.contract.MineContract;
 import com.xiaoxing.seller.mvp.presenter.MinePresenter;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
@@ -150,10 +151,22 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
     }
 
 
-    @OnClick(R2.id.ll_setting)
+    @OnClick({R2.id.ll_setting, R2.id.rl_all_orders, R2.id.ll_dai_fa_huo, R2.id.ll_dai_shou_huo, R2.id.ll_dai_ping_jia, R2.id.ll_shou_hou})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.ll_setting) {
             Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_SETTING_SETTING);
+        } else if (view.getId() == R.id.rl_all_orders) {
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_dai_fa_huo) {
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_dai_shou_huo) {
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_dai_ping_jia) {
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_shou_hou) {
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
         }
     }
+
+
 }

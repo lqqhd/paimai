@@ -44,6 +44,7 @@ public interface RouterHub {
     String XIAO_XING_SETTING = "/xiao_xing_setting";//设置
     String XIAO_XING_LOGIN = "/xiao_xing_login";//登录
     String XIAO_XING_ADDRESS = "/xiao_xing_address";//地址
+    String XIAO_XING_ORDER = "/xiao_xing_order";//订单
 
     /**
      * 服务组件, 用于给每个组件暴露特有的服务
@@ -86,8 +87,13 @@ public interface RouterHub {
     /**
      * 地址
      */
-    String XIAO_XING_ADDRESS_AddressAddActivity = XIAO_XING_ADDRESS + "/AddressAddActivity";
-    String XIAO_XING_ADDRESS_AddressListActivity = XIAO_XING_ADDRESS + "/AddressListActivity";
+    String XIAO_XING_ADDRESS_ADDRESSADDACTIVITY = XIAO_XING_ADDRESS + "/AddressAddActivity";
+    String XIAO_XING_ADDRESS_ADDRESSLISTACTIVITY = XIAO_XING_ADDRESS + "/AddressListActivity";
+
+    /**
+     * 订单
+     */
+    String XIAO_XING_ORDER_ORDERACTIVITY = XIAO_XING_ORDER + "/OrderActivity";
 
     /**
      * 知乎分组

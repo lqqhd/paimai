@@ -18,8 +18,12 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.scwang.smartrefresh.layout.api.RefreshFooter;
+import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.xiaoxing.address.R;
 import com.xiaoxing.address.di.component.DaggerAddressListComponent;
 import com.xiaoxing.address.di.module.AddressListModule;
@@ -35,6 +39,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
+import ezy.ui.layout.LoadingLayout;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.DynamicTimeFormat;
@@ -43,19 +48,19 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_ADDRESS_AddressListActivity)
+@Route(path = RouterHub.XIAO_XING_ADDRESS_ADDRESSLISTACTIVITY)
 public class AddressListActivity extends BaseActivity<AddressListPresenter> implements AddressListContract.View {
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
     private ClassicsHeader mClassicsHeader;
     private Drawable mDrawableProgress;
     private static boolean isFirstEnter = true;
-
+    private LoadingLayout mLoadingLayout;
     private DiZhiAdapter mAdapter;
     private View.OnClickListener mRightListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Utils.navigation(AddressListActivity.this, RouterHub.XIAO_XING_ADDRESS_AddressAddActivity);
+            Utils.navigation(AddressListActivity.this, RouterHub.XIAO_XING_ADDRESS_ADDRESSADDACTIVITY);
         }
     };
 
@@ -91,7 +96,6 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
         if (mDrawableProgress instanceof LayerDrawable) {
             mDrawableProgress = ((LayerDrawable) mDrawableProgress).getDrawable(0);
         }
-
         View view = findViewById(R.id.recyclerView);
         if (view instanceof RecyclerView) {
             RecyclerView recyclerView = (RecyclerView) view;
@@ -107,6 +111,7 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
             //触发自动刷新
             mRefreshLayout.autoRefresh();
         }
+
     }
 
     /**

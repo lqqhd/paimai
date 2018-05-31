@@ -13,7 +13,6 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/ll_dai_fu_kuan"
             style="@style/public_MineOrderLinearLayout">
 
             <TextView
@@ -27,7 +26,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_dai_fa_huo"
             style="@style/public_MineOrderLinearLayout">
 
             <TextView
@@ -41,7 +39,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_dai_ping_jia"
             style="@style/public_MineOrderLinearLayout">
 
             <TextView

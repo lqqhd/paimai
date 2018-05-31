@@ -121,7 +121,7 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
         } else if (view.getId() == R.id.rl_tou_xiang) {
             showTouXiangDialog();
         } else if (view.getId() == R.id.rl_shou_huo_di_zhi) {
-            Utils.navigation(SettingActivity.this, RouterHub.XIAO_XING_ADDRESS_AddressListActivity);
+            Utils.navigation(SettingActivity.this, RouterHub.XIAO_XING_ADDRESS_ADDRESSLISTACTIVITY);
         } else if (view.getId() == R.id.rl_an_quan_zhong_xin) {
 
         } else if (view.getId() == R.id.rl_shi_ming_ren_zheng) {

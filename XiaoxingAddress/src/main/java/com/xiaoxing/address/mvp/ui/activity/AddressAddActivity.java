@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_ADDRESS_AddressAddActivity)
+@Route(path = RouterHub.XIAO_XING_ADDRESS_ADDRESSADDACTIVITY)
 public class AddressAddActivity extends BaseActivity<AddressAddPresenter> implements AddressAddContract.View {
 
     @Override
