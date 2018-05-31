@@ -1,55 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/public_white">
+    android:orientation="vertical">
+
+    <include layout="@layout/public_toolbar_right_button" />
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srlDragRate="0.7"
-        app:srlEnableAutoLoadMore="true"
-        app:srlHeaderHeight="150dp"
-        app:srlHeaderInsetStart="?attr/actionBarSize"
-        app:srlHeaderMaxDragRate="1.3"
-        app:srlHeaderTriggerRate="0.5">
+        app:srlEnableAutoLoadMore="false"
+        app:srlEnableLoadMore="true">
 
-        <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifView"
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/gif_header_repast"
-            app:layout_srlBackgroundColor="@android:color/transparent"
-            app:layout_srlSpinnerStyle="Scale" />
+            android:layout_height="wrap_content"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlDrawableArrowSize="20dp"
+            app:srlDrawableMarginRight="20dp"
+            app:srlDrawableProgress="@drawable/ic_progress_puzzle"
+            app:srlDrawableProgressSize="20dp"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="500"
+            app:srlTextSizeTime="10dp"
+            app:srlTextSizeTitle="16sp"
+            app:srlTextTimeMarginTop="2dp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
+            android:background="@android:color/white"
             android:overScrollMode="never"
-            android:paddingTop="?attr/actionBarSize"
-            tools:listitem="@layout/listitem_address" />
+            tools:listitem="@android:layout/simple_list_item_2" />
 
         <com.scwang.smartrefresh.layout.footer.ClassicsFooter
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srlAccentColor="#888"
-            app:srlClassicsSpinnerStyle="Translate"
-            app:srlDrawableProgress="@drawable/ic_progress_puzzle" />
+            android:layout_height="wrap_content" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
-    <com.github.mmin18.widget.RealtimeBlurView
-        android:id="@+id/blurView"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:visibility="visible" />
-
-    <include layout="@layout/public_toolbar_right_button" />
-
-
-</FrameLayout>
+</LinearLayout>

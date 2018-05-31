@@ -1,22 +1,25 @@
 package com.xiaoxing.address.mvp.ui.activity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
-import com.scwang.smartrefresh.layout.util.DensityUtil;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.xiaoxing.address.R;
 import com.xiaoxing.address.di.component.DaggerAddressListComponent;
 import com.xiaoxing.address.di.module.AddressListModule;
@@ -25,26 +28,29 @@ import com.xiaoxing.address.mvp.presenter.AddressListPresenter;
 import com.xiaoxing.address.mvp.ui.adapter.DiZhiAdapter;
 import com.xiaoxing.address.mvp.ui.entity.AddressList;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.Random;
 
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
+import me.jessyan.armscomponent.commonsdk.utils.DynamicTimeFormat;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
+import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 @Route(path = RouterHub.XIAO_XING_ADDRESS_AddressListActivity)
 public class AddressListActivity extends BaseActivity<AddressListPresenter> implements AddressListContract.View {
-    private class Model {
-        int imageId;
-        int avatarId;
-        String name;
-        String nickname;
-    }
-
+    private RecyclerView mRecyclerView;
+    private RefreshLayout mRefreshLayout;
+    private ClassicsHeader mClassicsHeader;
+    private Drawable mDrawableProgress;
     private static boolean isFirstEnter = true;
+
     private DiZhiAdapter mAdapter;
     private View.OnClickListener mRightListener = new View.OnClickListener() {
         @Override
@@ -72,68 +78,35 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
     public void initData(@Nullable Bundle savedInstanceState) {
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithRightButton(this, getString(R.string.address_list), mRightListener);
 
-        final RefreshLayout refreshLayout = (RefreshLayout) findViewById(R.id.refreshLayout);
-        refreshLayout.setEnableFooterFollowWhenLoadFinished(true);
+        mRefreshLayout = (RefreshLayout) findViewById(R.id.refreshLayout);
 
-        //第一次进入演示刷新
-        if (isFirstEnter) {
-            isFirstEnter = false;
-            refreshLayout.autoRefresh();
+        int delta = new Random().nextInt(7 * 24 * 60 * 60 * 1000);
+        mClassicsHeader = (ClassicsHeader) mRefreshLayout.getRefreshHeader();
+        mClassicsHeader.setLastUpdateTime(new Date(System.currentTimeMillis() - delta));
+        mClassicsHeader.setTimeFormat(new SimpleDateFormat("更新于 MM-dd HH:mm", Locale.CHINA));
+        mClassicsHeader.setTimeFormat(new DynamicTimeFormat("更新于 %s"));
+
+//        mDrawableProgress = mClassicsHeader.getProgressView().getDrawable();
+        mDrawableProgress = ((ImageView) mClassicsHeader.findViewById(ClassicsHeader.ID_IMAGE_PROGRESS)).getDrawable();
+        if (mDrawableProgress instanceof LayerDrawable) {
+            mDrawableProgress = ((LayerDrawable) mDrawableProgress).getDrawable(0);
         }
 
-        //初始化列表和监听
         View view = findViewById(R.id.recyclerView);
         if (view instanceof RecyclerView) {
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.addItemDecoration(new DividerItemDecoration(this, VERTICAL));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
-            recyclerView.setAdapter(new DiZhiAdapter(loadModels()));
-
-            refreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
-                @Override
-                public void onRefresh(@NonNull final RefreshLayout refreshLayout) {
-                    refreshLayout.getLayout().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            refreshLayout.finishRefresh();
-                            refreshLayout.setNoMoreData(false);//恢复上拉状态
-                        }
-                    }, 2000);
-                }
-
-                @Override
-                public void onLoadMore(@NonNull final RefreshLayout refreshLayout) {
-                    refreshLayout.getLayout().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            refreshLayout.finishLoadMore();
-
-//                            if (mAdapter.getCount() > 12) {
-//                                Toast.makeText(getBaseContext(), "数据全部加载完毕", Toast.LENGTH_SHORT).show();
-//                                refreshLayout.finishLoadMoreWithNoMoreData();//设置之后，将不会再触发加载事件
-//                            } else {
-//                                mAdapter.loadMore(loadModels());
-//                                refreshLayout.finishLoadMore();
-//                            }
-                        }
-                    }, 1000);
-                }
-            });
-
-            refreshLayout.getLayout().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    refreshLayout.setHeaderInsetStart(DensityUtil.px2dp(toolbar.getHeight()));
-                }
-            }, 500);
+            recyclerView.setAdapter(mAdapter = new DiZhiAdapter(loadModels()));
+            mRecyclerView = recyclerView;
         }
 
-        //状态栏透明和间距处理
-        StatusBarUtil.darkMode(this);
-        StatusBarUtil.setPaddingSmart(this, view);
-        StatusBarUtil.setPaddingSmart(this, toolbar);
-        StatusBarUtil.setPaddingSmart(this, findViewById(R.id.blurView));
-
+        if (isFirstEnter) {
+            isFirstEnter = false;
+            //触发自动刷新
+            mRefreshLayout.autoRefresh();
+        }
     }
 
     /**

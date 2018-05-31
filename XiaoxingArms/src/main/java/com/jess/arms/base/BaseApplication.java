@@ -25,6 +25,7 @@ import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.Preconditions;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * ================================================
@@ -60,6 +61,8 @@ public class BaseApplication extends Application implements App {
         super.onCreate();
         if (mAppDelegate != null)
             this.mAppDelegate.onCreate(this);
+
+        CrashReport.initCrashReport(getApplicationContext(), "623ab9bcb9", false);
     }
 
     /**
