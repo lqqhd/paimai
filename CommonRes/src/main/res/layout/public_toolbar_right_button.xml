@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    style="@style/public_AppTheme.Toolbar"
+    android:background="@color/public_colorPrimary"
+    app:layout_collapseMode="pin"
+    app:navigationIcon="?homeAsUpIndicator">
+
+    <android.support.v7.widget.ButtonBarLayout
+        android:id="@+id/buttonBarLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="标题"
+            android:textColor="@color/public_white"
+            android:textSize="@dimen/public_font_16sp" />
+    </android.support.v7.widget.ButtonBarLayout>
+
+    <Button
+        android:id="@+id/btnRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@null"
+        android:text="添加"
+        android:textColor="@color/public_white"
+        android:textSize="@dimen/public_font_14sp" />
+</android.support.v7.widget.Toolbar>

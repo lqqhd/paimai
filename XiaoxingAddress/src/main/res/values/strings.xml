@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">XiaoxingAddress</string>
+    <string name="address_list">地址列表</string>
+    <string name="address_add">添加地址</string>
 </resources>

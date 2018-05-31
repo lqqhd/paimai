@@ -16,18 +16,20 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_10"
-            android:gravity="center"
+            android:layout_weight="1"
+            android:gravity="center|left"
             android:text="收件人:"
             android:textColor="#3D3D3D"
             android:textSize="@dimen/public_font_14sp" />
 
         <com.xw.repo.XEditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/dp_45"
             android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="4"
             android:background="@color/public_white"
             android:hint="请填写收件人姓名"
             android:paddingLeft="@dimen/dp_10"
@@ -50,18 +52,20 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_10"
-            android:gravity="center"
+            android:layout_weight="1"
+            android:gravity="center|left"
             android:text="手机号码:"
             android:textColor="#3D3D3D"
             android:textSize="@dimen/public_font_14sp" />
 
         <com.xw.repo.XEditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/dp_45"
             android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="4"
             android:background="@color/public_white"
             android:hint="请填写联系人手机号码"
             android:paddingLeft="@dimen/dp_10"
@@ -84,18 +88,21 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_10"
-            android:gravity="center"
+            android:layout_weight="1"
+            android:gravity="center|left"
+
             android:text="邮政编码:"
             android:textColor="#3D3D3D"
             android:textSize="@dimen/public_font_14sp" />
 
         <com.xw.repo.XEditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/dp_45"
             android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="4"
             android:background="@color/public_white"
             android:hint="请填写邮政编码"
             android:paddingLeft="@dimen/dp_10"
@@ -118,18 +125,21 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_10"
-            android:gravity="center"
+            android:layout_weight="1"
+            android:gravity="center|left"
+
             android:text="所在地区:"
             android:textColor="#3D3D3D"
             android:textSize="@dimen/public_font_14sp" />
 
         <com.xw.repo.XEditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/dp_45"
             android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="4"
             android:background="@color/public_white"
             android:hint="请选择地区"
             android:paddingLeft="@dimen/dp_10"
@@ -152,18 +162,20 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_10"
-            android:gravity="center"
+            android:layout_weight="1"
+            android:gravity="center|left"
             android:text="街道地址:"
             android:textColor="#3D3D3D"
             android:textSize="@dimen/public_font_14sp" />
 
         <com.xw.repo.XEditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/dp_45"
             android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="4"
             android:background="@color/public_white"
             android:hint="请填写街道地址"
             android:paddingLeft="@dimen/dp_10"

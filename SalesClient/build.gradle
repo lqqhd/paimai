@@ -7,7 +7,7 @@ apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    
+
     useLibrary 'org.apache.http.legacy'
 
     compileOptions {
@@ -95,17 +95,5 @@ dependencies {
         compileOnly rootProject.ext.dependencies["canary-release"]
         compileOnly rootProject.ext.dependencies["junit"]
     }
-    implementation rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
-    implementation rootProject.ext.dependencies["banner"]
-    implementation rootProject.ext.dependencies["realtimeblurview"]
-    implementation rootProject.ext.dependencies["circleimageview"]
-    implementation rootProject.ext.dependencies["loadinglayout"]
-    implementation rootProject.ext.dependencies["avi_library"]
-
-    implementation project(':XiaoxingPagerBottomTabStrip')
-    implementation project(':refresh-footer')
-    implementation project(':refresh-header')
-    implementation project(':refresh-layout')
-
 
 }

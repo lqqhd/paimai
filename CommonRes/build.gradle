@@ -31,6 +31,21 @@ dependencies {
     }
     api rootProject.ext.dependencies["paginate"]
     api rootProject.ext.dependencies["lottie"]
-    compile 'com.qmuiteam:qmui:1.1.2'
+    api 'com.qmuiteam:qmui:1.1.2'
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    api rootProject.ext.dependencies["banner"]
+    api rootProject.ext.dependencies["realtimeblurview"]
+    api rootProject.ext.dependencies["circleimageview"]
+    api rootProject.ext.dependencies["loadinglayout"]
+    api rootProject.ext.dependencies["avi_library"]
+
+    api project(':XiaoxingPagerBottomTabStrip')
+    api project(':refresh-footer')
+    api project(':refresh-header')
+    api project(':refresh-layout')
+
+    api 'com.github.addappcn:android-pickers:1.0.3'
+    api 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
+
 
 }

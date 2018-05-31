@@ -9,15 +9,13 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
-
+import com.xiaoxing.address.R;
 import com.xiaoxing.address.di.component.DaggerAddressAddComponent;
 import com.xiaoxing.address.di.module.AddressAddModule;
 import com.xiaoxing.address.mvp.contract.AddressAddContract;
 import com.xiaoxing.address.mvp.presenter.AddressAddPresenter;
 
-import com.xiaoxing.address.R;
-
-
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -42,6 +40,7 @@ public class AddressAddActivity extends BaseActivity<AddressAddPresenter> implem
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+        ToolbarUtils.initToolbarTitleBack(this, getString(R.string.address_add));
 
     }
 

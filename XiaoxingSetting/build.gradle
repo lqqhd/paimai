@@ -95,6 +95,5 @@ dependencies {
         compileOnly rootProject.ext.dependencies["canary-release"]
         compileOnly rootProject.ext.dependencies["junit"]
     }
-    compile 'com.github.addappcn:android-pickers:1.0.3'
 
 }
