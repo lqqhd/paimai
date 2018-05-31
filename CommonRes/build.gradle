@@ -40,6 +40,7 @@ dependencies {
     api rootProject.ext.dependencies["avi_library"]
 
     api project(':XiaoxingPagerBottomTabStrip')
+    api project(':XiaoxingFlycoTabLayout')
     api project(':refresh-footer')
     api project(':refresh-header')
     api project(':refresh-layout')
