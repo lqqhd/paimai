@@ -21,7 +21,7 @@ import com.xiaoxing.order.di.component.DaggerOrderComponent;
 import com.xiaoxing.order.di.module.OrderModule;
 import com.xiaoxing.order.mvp.contract.OrderContract;
 import com.xiaoxing.order.mvp.presenter.OrderPresenter;
-import com.xiaoxing.order.mvp.ui.fragment.SimpleCardFragment;
+import com.xiaoxing.order.mvp.ui.fragment.FragmentOrderList;
 
 import java.util.ArrayList;
 
@@ -57,7 +57,7 @@ public class OrderActivity extends BaseActivity<OrderPresenter> implements Order
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.order_order));
 
         for (String title : mTitles) {
-            mFragments.add(SimpleCardFragment.getInstance(title));
+            mFragments.add(new FragmentOrderList());
         }
         ViewPager vp = findViewById(R.id.vp);
         mAdapter = new MyPagerAdapter(getSupportFragmentManager());
