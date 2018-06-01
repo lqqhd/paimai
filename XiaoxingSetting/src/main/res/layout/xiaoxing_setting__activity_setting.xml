@@ -155,8 +155,7 @@
 
         <RelativeLayout
             android:id="@+id/rl_shou_huo_di_zhi"
-            style="@style/public_MineItemRelativeLayout"
-            android:layout_marginTop="@dimen/dp_10">
+            style="@style/public_MineItemRelativeLayout">
 
 
             <TextView
@@ -183,8 +182,7 @@
 
         <RelativeLayout
             android:id="@+id/rl_an_quan_zhong_xin"
-            style="@style/public_MineItemRelativeLayout"
-            android:layout_marginTop="@dimen/dp_10">
+            style="@style/public_MineItemRelativeLayout">
 
 
             <TextView
@@ -211,8 +209,7 @@
 
         <RelativeLayout
             android:id="@+id/rl_shi_ming_ren_zheng"
-            style="@style/public_MineItemRelativeLayout"
-            android:layout_marginTop="@dimen/dp_10">
+            style="@style/public_MineItemRelativeLayout">
 
 
             <TextView

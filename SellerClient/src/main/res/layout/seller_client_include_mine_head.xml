@@ -6,21 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
-    android:background="@color/public_white"
+    android:background="@drawable/public_ripple_bg"
     android:orientation="vertical"
     android:paddingTop="@dimen/dp_100">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
-        app:civ_border_color="@android:color/white"
-        app:civ_border_overlay="true"
-        app:civ_border_width="@dimen/dp_3"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_marginLeft="@dimen/dp_10"
         android:layout_marginStart="@dimen/dp_10"
-        android:src="@mipmap/image_avatar_5" />
+        android:src="@mipmap/image_avatar_5"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_overlay="true"
+        app:civ_border_width="@dimen/dp_3" />
 
     <TextView
         android:id="@+id/nickname"

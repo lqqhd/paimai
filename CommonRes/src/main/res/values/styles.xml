@@ -83,14 +83,16 @@
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
         <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/public_ripple_bg</item>
 
     </style>
     <!--我的-底部item-RelativeLayout-->
     <style name="public_MineItemRelativeLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_45</item>
-        <item name="android:background">@color/public_white</item>
+        <item name="android:background">@drawable/public_ripple_bg</item>
     </style>
+
     <style name="public_Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_45</item>
