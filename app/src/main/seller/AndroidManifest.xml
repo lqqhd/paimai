@@ -119,6 +119,40 @@
             android:name="com.xiaoxing.seller.mvp.ui.activity.HeadlinesActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.QuotationActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.CommodityManagementActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.ExhibitionManagementActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.SpecialManagementActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.ApplicationHallActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.NoviceMustLearnActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.RedEnvelopesActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
 
 
     </application>

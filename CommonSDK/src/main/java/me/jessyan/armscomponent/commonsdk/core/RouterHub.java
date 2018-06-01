@@ -69,6 +69,14 @@ public interface RouterHub {
      */
     String SELLER_CLIENT_MINEACTIVITY = SELLER_CLIENT + "/MineActivity";
     String SELLER_CLIENT_HEADLINESACTIVITY = SELLER_CLIENT + "/HeadlinesActivity";
+    String SELLER_CLIENT_BALANCEACTIVITY = SELLER_CLIENT + "/BalanceActivity";
+    String SELLER_CLIENT_APPLICATIONHALLACTIVITY = SELLER_CLIENT + "/ApplicationHallActivity";
+    String SELLER_CLIENT_COMMODITYMANAGEMENTACTIVITY = SELLER_CLIENT + "/CommodityManagementActivity";
+    String SELLER_CLIENT_EXHIBITIONMANAGEMENTACTIVITY = SELLER_CLIENT + "/ExhibitionManagementActivity";
+    String SELLER_CLIENT_NOVICEMUSTLEARNACTIVITY = SELLER_CLIENT + "/NoviceMustLearnActivity";
+    String SELLER_CLIENT_QUOTATIONACTIVITY = SELLER_CLIENT + "/QuotationActivity";
+    String SELLER_CLIENT_REDENVELOPESACTIVITY = SELLER_CLIENT + "/RedEnvelopesActivity";
+    String SELLER_CLIENT_SPECIALMANAGEMENTACTIVITY = SELLER_CLIENT + "/SpecialManagementActivity";
     /**
      * 设置
      */

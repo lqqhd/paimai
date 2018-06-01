@@ -14,6 +14,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/ll_balance"
             style="@style/public_MineOrderLinearLayout">
 
             <ImageView
@@ -27,6 +28,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_quotation"
             style="@style/public_MineOrderLinearLayout">
 
             <ImageView
@@ -40,6 +42,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_commodity_management"
             style="@style/public_MineOrderLinearLayout">
 
             <ImageView
@@ -52,7 +55,9 @@
 
         </LinearLayout>
 
-        <LinearLayout style="@style/public_MineOrderLinearLayout">
+        <LinearLayout
+            android:id="@+id/ll_exhibition_management"
+            style="@style/public_MineOrderLinearLayout">
 
             <ImageView
                 style="@style/public_MineOrderImage"
@@ -75,7 +80,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/ll_zhuan_chang_guan_li"
+            android:id="@+id/ll_special_management"
             style="@style/public_MineOrderLinearLayout">
 
             <ImageView
@@ -89,7 +94,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_shen_qing_da_ting"
+            android:id="@+id/ll_application_hall"
             style="@style/public_MineOrderLinearLayout">
 
             <ImageView
@@ -103,7 +108,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_xin_shou_bi_xue"
+            android:id="@+id/ll_novice_must_learn"
             style="@style/public_MineOrderLinearLayout">
 
             <ImageView
@@ -116,7 +121,9 @@
 
         </LinearLayout>
 
-        <LinearLayout style="@style/public_MineOrderLinearLayout">
+        <LinearLayout
+            android:id="@+id/ll_red_envelopes"
+            style="@style/public_MineOrderLinearLayout">
 
             <ImageView
                 style="@style/public_MineOrderImage"

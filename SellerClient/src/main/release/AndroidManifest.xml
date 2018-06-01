@@ -10,7 +10,15 @@
             android:value="ConfigModule" />
 
         <activity android:name=".mvp.ui.activity.MineActivity" />
-        <activity android:name=".mvp.ui.activity.HeadlinesActivity"></activity>
+        <activity android:name=".mvp.ui.activity.HeadlinesActivity" />
+        <activity android:name=".mvp.ui.activity.BalanceActivity" />
+        <activity android:name=".mvp.ui.activity.QuotationActivity" />
+        <activity android:name=".mvp.ui.activity.CommodityManagementActivity" />
+        <activity android:name=".mvp.ui.activity.SpecialManagementActivity" />
+        <activity android:name=".mvp.ui.activity.ApplicationHallActivity" />
+        <activity android:name=".mvp.ui.activity.NoviceMustLearnActivity" />
+        <activity android:name=".mvp.ui.activity.RedEnvelopesActivity" />
+        <activity android:name=".mvp.ui.activity.ExhibitionManagementActivity"></activity>
     </application>
 
 </manifest>

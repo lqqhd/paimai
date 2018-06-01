@@ -22,6 +22,7 @@ import com.xiaoxing.seller.di.module.MineModule;
 import com.xiaoxing.seller.mvp.contract.MineContract;
 import com.xiaoxing.seller.mvp.presenter.MinePresenter;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
@@ -145,7 +146,13 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
     }
 
 
-    @OnClick({R2.id.ll_setting, R2.id.rl_all_orders, R2.id.ll_dai_fa_huo, R2.id.ll_dai_shou_huo, R2.id.ll_dai_ping_jia, R2.id.ll_shou_hou, R2.id.ll_dai_fu_kuan, R2.id.rl_headlines})
+    @OnClick({
+            R2.id.ll_setting, R2.id.rl_all_orders, R2.id.ll_dai_fa_huo,
+            R2.id.ll_dai_shou_huo, R2.id.ll_dai_ping_jia, R2.id.ll_shou_hou,
+            R2.id.ll_dai_fu_kuan, R2.id.rl_headlines, R2.id.ll_balance,
+            R2.id.ll_quotation, R2.id.ll_commodity_management, R2.id.ll_exhibition_management,
+            R2.id.ll_special_management, R2.id.ll_application_hall, R2.id.ll_novice_must_learn,
+            R2.id.ll_red_envelopes})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.ll_setting) {
             Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_SETTING_SETTING);
@@ -163,7 +170,31 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
             Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
         } else if (view.getId() == R.id.rl_headlines) {
             Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_HEADLINESACTIVITY);
+        } else if (view.getId() == R.id.ll_balance) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_BALANCEACTIVITY);
+        } else if (view.getId() == R.id.ll_quotation) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_QUOTATIONACTIVITY);
+        } else if (view.getId() == R.id.ll_commodity_management) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_COMMODITYMANAGEMENTACTIVITY);
+        } else if (view.getId() == R.id.ll_exhibition_management) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_EXHIBITIONMANAGEMENTACTIVITY);
+        } else if (view.getId() == R.id.ll_special_management) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_SPECIALMANAGEMENTACTIVITY);
+        } else if (view.getId() == R.id.ll_application_hall) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_APPLICATIONHALLACTIVITY);
+        } else if (view.getId() == R.id.ll_novice_must_learn) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_NOVICEMUSTLEARNACTIVITY);
+        } else if (view.getId() == R.id.ll_red_envelopes) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_REDENVELOPESACTIVITY);
         }
+    }
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 
 
