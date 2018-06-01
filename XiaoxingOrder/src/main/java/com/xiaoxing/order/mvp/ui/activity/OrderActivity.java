@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.Toast;
 
@@ -26,6 +24,7 @@ import com.xiaoxing.order.mvp.ui.fragment.FragmentOrderList;
 import java.util.ArrayList;
 
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
+import me.jessyan.armscomponent.commonsdk.adapter.TopTabAdapter;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -33,7 +32,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 @Route(path = RouterHub.XIAO_XING_ORDER_ORDERACTIVITY)
 public class OrderActivity extends BaseActivity<OrderPresenter> implements OrderContract.View, OnTabSelectListener {
-    private MyPagerAdapter mAdapter;
+    private TopTabAdapter mAdapter;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private final String[] mTitles = {"全部", "待付款", "待发货", "已发货", "已收货", "售后"};
 
@@ -49,7 +48,7 @@ public class OrderActivity extends BaseActivity<OrderPresenter> implements Order
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
-        return R.layout.activity_order; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+        return R.layout.public_activity_top_tab; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
 
     @Override
@@ -60,7 +59,7 @@ public class OrderActivity extends BaseActivity<OrderPresenter> implements Order
             mFragments.add(new FragmentOrderList());
         }
         ViewPager vp = findViewById(R.id.vp);
-        mAdapter = new MyPagerAdapter(getSupportFragmentManager());
+        mAdapter = new TopTabAdapter(getSupportFragmentManager(), mFragments, mTitles);
         vp.setAdapter(mAdapter);
         SlidingTabLayout tabLayout_2 = findViewById(R.id.tl_2);
         tabLayout_2.setViewPager(vp);
@@ -111,24 +110,4 @@ public class OrderActivity extends BaseActivity<OrderPresenter> implements Order
         Toast.makeText(this, "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
     }
 
-    private class MyPagerAdapter extends FragmentPagerAdapter {
-        public MyPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragments.size();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mTitles[position];
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragments.get(position);
-        }
-    }
 }
