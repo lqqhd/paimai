@@ -18,17 +18,17 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.innodroid.expandablerecycler.ExpandableRecyclerAdapter;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.order.R;
+import com.xiaoxing.order.mvp.ui.adapter.OrderListAdapter;
 
-import java.util.Arrays;
-
-import static android.R.layout.simple_list_item_2;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
 /**
@@ -99,9 +99,16 @@ public class FragmentOrderList extends Fragment implements AdapterView.OnItemCli
                 }
             });
         }
-
+        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                mRefreshLayout.finishLoadMore();
+            }
+        });
 
     }
+
+    OrderListAdapter mOrderListAdapter;
 
 
     @Override
@@ -109,14 +116,19 @@ public class FragmentOrderList extends Fragment implements AdapterView.OnItemCli
         mRefreshLayout.getLayout().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
-                    @Override
-                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
-                        holder.text(android.R.id.text1, model.name());
-//                        holder.text(android.R.id.text2, model.name);
-//                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
-                    }
-                });
+
+                mOrderListAdapter = new OrderListAdapter(getActivity());
+                mOrderListAdapter.setMode(ExpandableRecyclerAdapter.MODE_ACCORDION);
+                mRecyclerView.setAdapter(mOrderListAdapter);
+                mOrderListAdapter.expandAll();
+//                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
+//                    @Override
+//                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
+//                        holder.text(android.R.id.text1, model.name());
+////                        holder.text(android.R.id.text2, model.name);
+////                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
+//                    }
+//                });
                 mRefreshLayout.finishRefresh();
                 mEmptyLayout.setVisibility(View.GONE);
             }
