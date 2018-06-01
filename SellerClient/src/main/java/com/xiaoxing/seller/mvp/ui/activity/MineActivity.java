@@ -23,6 +23,7 @@ import com.xiaoxing.seller.mvp.contract.MineContract;
 import com.xiaoxing.seller.mvp.presenter.MinePresenter;
 
 import butterknife.OnClick;
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
@@ -52,13 +53,7 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+        Toolbar toolbar = ToolbarUtils.initToolbarTitleNoBack(this, getString(R.string.seller_client_head_title_mine));
 
         //状态栏透明和间距处理
         StatusBarUtil.immersive(this);
@@ -150,7 +145,7 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
     }
 
 
-    @OnClick({R2.id.ll_setting, R2.id.rl_all_orders, R2.id.ll_dai_fa_huo, R2.id.ll_dai_shou_huo, R2.id.ll_dai_ping_jia, R2.id.ll_shou_hou, R2.id.ll_dai_fu_kuan})
+    @OnClick({R2.id.ll_setting, R2.id.rl_all_orders, R2.id.ll_dai_fa_huo, R2.id.ll_dai_shou_huo, R2.id.ll_dai_ping_jia, R2.id.ll_shou_hou, R2.id.ll_dai_fu_kuan, R2.id.rl_headlines})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.ll_setting) {
             Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_SETTING_SETTING);
@@ -166,6 +161,8 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
             Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
         } else if (view.getId() == R.id.ll_dai_fu_kuan) {
             Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.rl_headlines) {
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_HEADLINESACTIVITY);
         }
     }
 

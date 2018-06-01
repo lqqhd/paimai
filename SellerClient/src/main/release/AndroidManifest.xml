@@ -10,6 +10,7 @@
             android:value="ConfigModule" />
 
         <activity android:name=".mvp.ui.activity.MineActivity" />
+        <activity android:name=".mvp.ui.activity.HeadlinesActivity"></activity>
     </application>
 
 </manifest>

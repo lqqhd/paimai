@@ -30,7 +30,7 @@ public class ToolbarUtils {
         });
     }
 
-    public static void initToolbarTitleNoBack(final Activity activity, String title) {
+    public static Toolbar initToolbarTitleNoBack(final Activity activity, String title) {
         TextView tvTitle = activity.findViewById(R.id.title);
         Toolbar toolbar = activity.findViewById(R.id.toolbar);
 
@@ -43,6 +43,9 @@ public class ToolbarUtils {
 
             }
         });
+
+
+        return toolbar;
     }
 
     /**

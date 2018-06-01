@@ -68,6 +68,7 @@ public interface RouterHub {
      * 卖家
      */
     String SELLER_CLIENT_MINEACTIVITY = SELLER_CLIENT + "/MineActivity";
+    String SELLER_CLIENT_HEADLINESACTIVITY = SELLER_CLIENT + "/HeadlinesActivity";
     /**
      * 设置
      */
