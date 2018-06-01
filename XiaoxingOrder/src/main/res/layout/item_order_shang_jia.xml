@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@drawable/public_ripple_bg"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:drawablePadding="@dimen/dp_10"
+        android:drawableRight="@mipmap/icon_next"
+        android:text="古玩斋多品类"
+        android:textColor="#5E5E5E"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:src="@mipmap/arrow_down"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_zhuang_tai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="待付款"
+        android:textColor="#EB3238"
+        android:textSize="@dimen/public_font_14sp" />
+</RelativeLayout>

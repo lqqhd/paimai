@@ -54,6 +54,7 @@ public class FragmentOrderList extends Fragment implements AdapterView.OnItemCli
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_example_emptylayout_inner, container, false);
@@ -98,7 +99,10 @@ public class FragmentOrderList extends Fragment implements AdapterView.OnItemCli
                 }
             });
         }
+
+
     }
+
 
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {

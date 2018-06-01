@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_45"
+    android:background="@drawable/public_ripple_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="实付金额："
+        android:textColor="#272727"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <TextView
+        android:id="@+id/tv_jin_e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/tv_name"
+        android:text="￥2000"
+        android:textColor="#F06267"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <Button
+        android:id="@+id/btn_qu_fu_kuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_toLeftOf="@+id/btn_qu_xiao_ding_dan"
+        android:background="@drawable/public_shape_red_bg_corner_5dp"
+        android:text="去付款"
+        android:textColor="@color/public_white"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <Button
+        android:id="@+id/btn_qu_xiao_ding_dan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/dp_5"
+        android:background="@drawable/public_shape_red_border_corner_5dp"
+        android:text="取消订单"
+        android:textColor="#EA2329"
+        android:textSize="@dimen/public_font_14sp" />
+</RelativeLayout>
