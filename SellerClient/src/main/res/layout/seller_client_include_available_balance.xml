@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:background="@color/public_white"
+        android:orientation="horizontal">
+
+        <LinearLayout style="@style/public_MineOrderLinearLayout">
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="￥0.00" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="可用余额" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/public_MineOrderLinearLayout">
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="￥0.00" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="冻结款项" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/public_MineOrderLinearLayout">
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="￥0.00" />
+
+            <TextView
+                style="@style/public_MineOrderText"
+                android:text="总金额" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

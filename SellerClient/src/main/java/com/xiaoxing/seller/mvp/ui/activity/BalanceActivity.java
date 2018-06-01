@@ -15,6 +15,7 @@ import com.xiaoxing.seller.di.module.BalanceModule;
 import com.xiaoxing.seller.mvp.contract.BalanceContract;
 import com.xiaoxing.seller.mvp.presenter.BalancePresenter;
 
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -34,12 +35,12 @@ public class BalanceActivity extends BaseActivity<BalancePresenter> implements B
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
-        return R.layout.activity_balance; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+        return R.layout.seller_client_activity_balance; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-
+        ToolbarUtils.initToolbarTitleBack(this,getString(R.string.seller_client_balance));
     }
 
     @Override
