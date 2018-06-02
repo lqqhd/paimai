@@ -5,12 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.flyco.tablayout.SlidingTabLayout;
-import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -23,16 +19,15 @@ import com.xiaoxing.seller.mvp.presenter.QuotationPresenter;
 
 import java.util.ArrayList;
 
+import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
-import me.jessyan.armscomponent.commonsdk.adapter.TopTabAdapter;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 @Route(path = RouterHub.SELLER_CLIENT_QUOTATIONACTIVITY)
-public class QuotationActivity extends BaseActivity<QuotationPresenter> implements QuotationContract.View, OnTabSelectListener {
-    private TopTabAdapter mAdapter;
-    private ArrayList<Fragment> mFragments = new ArrayList<>();
+public class QuotationActivity extends BaseActivity<QuotationPresenter> implements QuotationContract.View {
+
     private final String[] mTitles = {"议价中", "已拒绝", "已接受"};
 
     @Override
@@ -54,22 +49,12 @@ public class QuotationActivity extends BaseActivity<QuotationPresenter> implemen
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.seller_client_quotation));
 
-        for (String title : mTitles) {
-            mFragments.add(new FragmentOrderList());
-        }
-        ViewPager vp = findViewById(R.id.vp);
-        mAdapter = new TopTabAdapter(getSupportFragmentManager(), mFragments, mTitles);
-        vp.setAdapter(mAdapter);
-        SlidingTabLayout tabLayout_2 = findViewById(R.id.tl_2);
-        tabLayout_2.setViewPager(vp);
-        tabLayout_2.setOnTabSelectListener(this);
-//        tabLayout_2.showDot(4);
-//
-//        tabLayout_2.showMsg(3, 5);
-//        tabLayout_2.setMsgMargin(3, 0, 10);
-//
-//        tabLayout_2.showMsg(5, 5);
-//        tabLayout_2.setMsgMargin(5, 0, 10);
+        ArrayList<Fragment> mFragments = new ArrayList<>();
+        mFragments.add(new FragmentOrderList());
+        mFragments.add(new FragmentOrderList());
+        mFragments.add(new FragmentOrderList());
+
+        SlidingTabLayoutUtil.init(this, mTitles, mFragments);
     }
 
     @Override
@@ -82,15 +67,6 @@ public class QuotationActivity extends BaseActivity<QuotationPresenter> implemen
 
     }
 
-    @Override
-    public void onTabSelect(int position) {
-        Toast.makeText(this, "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onTabReselect(int position) {
-        Toast.makeText(this, "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     public void showMessage(@NonNull String message) {
