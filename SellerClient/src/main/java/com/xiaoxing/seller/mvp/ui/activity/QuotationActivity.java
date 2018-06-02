@@ -55,7 +55,6 @@ public class QuotationActivity extends BaseActivity<QuotationPresenter> implemen
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.seller_client_quotation));
 
         for (String title : mTitles) {
-            //TODO 
             mFragments.add(new FragmentOrderList());
         }
         ViewPager vp = findViewById(R.id.vp);

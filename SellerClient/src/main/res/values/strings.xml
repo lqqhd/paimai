@@ -42,5 +42,6 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="seller_client_balance">余额</string>
     <string name="seller_client_quotation">报价管理</string>
+    <string name="seller_client_commodity_management">藏品管理</string>
 
 </resources>
