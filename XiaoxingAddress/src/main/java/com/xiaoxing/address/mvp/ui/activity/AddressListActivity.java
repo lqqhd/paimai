@@ -2,7 +2,6 @@ package com.xiaoxing.address.mvp.ui.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,17 +12,19 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
-import com.scwang.smartrefresh.layout.api.RefreshFooter;
-import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
+import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.address.R;
 import com.xiaoxing.address.di.component.DaggerAddressListComponent;
 import com.xiaoxing.address.di.module.AddressListModule;
@@ -32,24 +33,19 @@ import com.xiaoxing.address.mvp.presenter.AddressListPresenter;
 import com.xiaoxing.address.mvp.ui.adapter.DiZhiAdapter;
 import com.xiaoxing.address.mvp.ui.entity.AddressList;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.Random;
 
 import ezy.ui.layout.LoadingLayout;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.DynamicTimeFormat;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 @Route(path = RouterHub.XIAO_XING_ADDRESS_ADDRESSLISTACTIVITY)
-public class AddressListActivity extends BaseActivity<AddressListPresenter> implements AddressListContract.View {
+public class AddressListActivity extends BaseActivity<AddressListPresenter> implements AddressListContract.View, OnRefreshListener {
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
     private ClassicsHeader mClassicsHeader;
@@ -57,6 +53,10 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
     private static boolean isFirstEnter = true;
     private LoadingLayout mLoadingLayout;
     private DiZhiAdapter mAdapter;
+
+    private View mEmptyLayout;
+    private static boolean mIsNeedDemo = true;
+
     private View.OnClickListener mRightListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -76,42 +76,78 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
-        return R.layout.activity_address_list; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+        return R.layout.public_smart_refresh_layout_title_right_button; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithRightButton(this, getString(R.string.address_list), mRightListener);
 
-        mRefreshLayout = (RefreshLayout) findViewById(R.id.refreshLayout);
+        mRefreshLayout = findViewById(R.id.refreshLayout);
+        mRefreshLayout.setRefreshHeader(new ClassicsHeader(this).setSpinnerStyle(SpinnerStyle.FixedBehind).setPrimaryColorId(R.color.public_colorPrimary).setAccentColorId(android.R.color.white));
+        mRefreshLayout.setOnRefreshListener(this);
 
-        int delta = new Random().nextInt(7 * 24 * 60 * 60 * 1000);
-        mClassicsHeader = (ClassicsHeader) mRefreshLayout.getRefreshHeader();
-        mClassicsHeader.setLastUpdateTime(new Date(System.currentTimeMillis() - delta));
-        mClassicsHeader.setTimeFormat(new SimpleDateFormat("更新于 MM-dd HH:mm", Locale.CHINA));
-        mClassicsHeader.setTimeFormat(new DynamicTimeFormat("更新于 %s"));
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, VERTICAL));
 
-//        mDrawableProgress = mClassicsHeader.getProgressView().getDrawable();
-        mDrawableProgress = ((ImageView) mClassicsHeader.findViewById(ClassicsHeader.ID_IMAGE_PROGRESS)).getDrawable();
-        if (mDrawableProgress instanceof LayerDrawable) {
-            mDrawableProgress = ((LayerDrawable) mDrawableProgress).getDrawable(0);
+        mEmptyLayout = findViewById(R.id.empty);
+
+        ImageView image = (ImageView) findViewById(R.id.empty_image);
+        image.setImageResource(R.drawable.ic_empty);
+
+        TextView empty = (TextView) findViewById(R.id.empty_text);
+        empty.setText("暂无数据下拉刷新");
+
+        /*主动演示刷新*/
+        if (mIsNeedDemo) {
+            mRefreshLayout.getLayout().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (mIsNeedDemo) {
+                        mRefreshLayout.autoRefresh();
+                    }
+                }
+            }, 3000);
+            mRefreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
+                @Override
+                public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
+                    mIsNeedDemo = false;
+                }
+            });
         }
-        View view = findViewById(R.id.recyclerView);
-        if (view instanceof RecyclerView) {
-            RecyclerView recyclerView = (RecyclerView) view;
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            recyclerView.addItemDecoration(new DividerItemDecoration(this, VERTICAL));
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
-            recyclerView.setAdapter(mAdapter = new DiZhiAdapter(loadModels()));
-            mRecyclerView = recyclerView;
-        }
+        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                mRefreshLayout.finishLoadMore();
+            }
+        });
 
-        if (isFirstEnter) {
-            isFirstEnter = false;
-            //触发自动刷新
-            mRefreshLayout.autoRefresh();
-        }
+    }
 
+    @Override
+    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+        mRefreshLayout.getLayout().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(AddressListActivity.this));
+                mRecyclerView.addItemDecoration(new DividerItemDecoration(AddressListActivity.this, VERTICAL));
+                mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+                mRecyclerView.setAdapter(mAdapter = new DiZhiAdapter(loadModels()));
+//                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
+//                    @Override
+//                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
+//                        holder.text(android.R.id.text1, model.name());
+////                        holder.text(android.R.id.text2, model.name);
+////                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
+//                    }
+//                });
+                mRefreshLayout.finishRefresh();
+                mEmptyLayout.setVisibility(View.GONE);
+            }
+        }, 2000);
     }
 
     /**

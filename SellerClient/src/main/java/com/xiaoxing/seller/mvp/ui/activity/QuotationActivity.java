@@ -14,6 +14,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.xiaoxing.order.mvp.ui.fragment.FragmentOrderList;
 import com.xiaoxing.seller.R;
 import com.xiaoxing.seller.di.component.DaggerQuotationComponent;
 import com.xiaoxing.seller.di.module.QuotationModule;
@@ -32,7 +33,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 public class QuotationActivity extends BaseActivity<QuotationPresenter> implements QuotationContract.View, OnTabSelectListener {
     private TopTabAdapter mAdapter;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
-    private final String[] mTitles = {"议价中", "已拒绝", "已接受","议价中", "已拒绝", "已接受"};
+    private final String[] mTitles = {"议价中", "已拒绝", "已接受"};
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -55,7 +56,7 @@ public class QuotationActivity extends BaseActivity<QuotationPresenter> implemen
 
         for (String title : mTitles) {
             //TODO 
-            mFragments.add(new Fragment());
+            mFragments.add(new FragmentOrderList());
         }
         ViewPager vp = findViewById(R.id.vp);
         mAdapter = new TopTabAdapter(getSupportFragmentManager(), mFragments, mTitles);

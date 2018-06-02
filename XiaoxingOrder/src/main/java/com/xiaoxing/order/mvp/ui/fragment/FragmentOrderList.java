@@ -36,6 +36,9 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentOrderList extends Fragment implements AdapterView.OnItemClickListener, OnRefreshListener {
+
+    OrderListAdapter mOrderListAdapter;
+
     public enum Item {
         ThirdParty("集成第三方控件", FragmentOrderList.class),
         NestedInner("内部嵌套", FragmentOrderList.class),
@@ -57,7 +60,7 @@ public class FragmentOrderList extends Fragment implements AdapterView.OnItemCli
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_example_emptylayout_inner, container, false);
+        return inflater.inflate(R.layout.public_smart_refresh_layout_no_title, container, false);
     }
 
     @Override
@@ -107,8 +110,6 @@ public class FragmentOrderList extends Fragment implements AdapterView.OnItemCli
         });
 
     }
-
-    OrderListAdapter mOrderListAdapter;
 
 
     @Override
