@@ -20,7 +20,8 @@
         <activity android:name=".mvp.ui.activity.RedEnvelopesActivity" />
         <activity android:name=".mvp.ui.activity.ExhibitionManagementActivity" />
         <activity android:name=".mvp.ui.activity.RedEnvelopesAddActivity" />
-        <activity android:name=".mvp.ui.activity.SpecialManagementAddActivity"></activity>
+        <activity android:name=".mvp.ui.activity.SpecialManagementAddActivity" />
+        <activity android:name=".mvp.ui.activity.BalanceDetailsActivity"></activity>
     </application>
 
 </manifest>

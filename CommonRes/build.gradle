@@ -48,5 +48,6 @@ dependencies {
     api 'com.github.addappcn:android-pickers:1.0.3'
     api 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
 
+    api project(":xedittext")
 
 }

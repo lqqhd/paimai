@@ -95,6 +95,5 @@ dependencies {
         compileOnly rootProject.ext.dependencies["canary-release"]
         compileOnly rootProject.ext.dependencies["junit"]
     }
-    api project(":xedittext")
 
 }

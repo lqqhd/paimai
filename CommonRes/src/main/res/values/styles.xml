@@ -102,6 +102,15 @@
         <item name="android:textColor">@color/public_white</item>
         <item name="android:textSize">@dimen/public_font_16sp</item>
     </style>
+    <style name="public_button_corner_5dp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:layout_marginLeft">@dimen/dp_10</item>
+        <item name="android:layout_marginRight">@dimen/dp_10</item>
+        <item name="android:background">@drawable/public_btn_selector_corner_5dp</item>
+        <item name="android:textColor">@color/public_white</item>
+        <item name="android:textSize">@dimen/public_font_16sp</item>
+    </style>
 
     <style name="public_CustomRadioBtn">
         <item name="android:button">@drawable/public_mycustome_radio_selctor</item>

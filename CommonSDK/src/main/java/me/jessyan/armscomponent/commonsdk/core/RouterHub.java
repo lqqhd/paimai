@@ -79,6 +79,7 @@ public interface RouterHub {
     String SELLER_CLIENT_SPECIALMANAGEMENTACTIVITY = SELLER_CLIENT + "/SpecialManagementActivity";
     String SELLER_CLIENT_REDENVELOPESADDACTIVITY = SELLER_CLIENT + "/RedEnvelopesAddActivity";
     String SELLER_CLIENT_SPECIALMANAGEMENTADDACTIVITY = SELLER_CLIENT + "/SpecialManagementAddActivity";
+    String SELLER_CLIENT_BALANCEDETAILSACTIVITY = SELLER_CLIENT + "/BalanceDetailsActivity";
     /**
      * 设置
      */
