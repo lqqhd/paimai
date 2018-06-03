@@ -18,7 +18,9 @@
         <activity android:name=".mvp.ui.activity.ApplicationHallActivity" />
         <activity android:name=".mvp.ui.activity.NoviceMustLearnActivity" />
         <activity android:name=".mvp.ui.activity.RedEnvelopesActivity" />
-        <activity android:name=".mvp.ui.activity.ExhibitionManagementActivity"></activity>
+        <activity android:name=".mvp.ui.activity.ExhibitionManagementActivity" />
+        <activity android:name=".mvp.ui.activity.RedEnvelopesAddActivity" />
+        <activity android:name=".mvp.ui.activity.SpecialManagementAddActivity"></activity>
     </application>
 
 </manifest>

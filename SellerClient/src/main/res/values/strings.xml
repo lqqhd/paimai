@@ -46,6 +46,9 @@
     <string name="seller_client_exhibition_management">展厅管理</string>
     <string name="seller_client_Special_management">专场管理</string>
     <string name="seller_client_application_hall">申请大厅</string>
+    <string name="seller_client_red_envelopes">用户红包</string>
+    <string name="seller_client_red_envelopes_add">添加红包</string>
+    <string name="seller_client_special_management_add">添加专场</string>
 
 
 </resources>

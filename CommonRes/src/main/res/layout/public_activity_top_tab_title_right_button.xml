@@ -8,7 +8,6 @@
 
     <include layout="@layout/public_toolbar_right_button" />
 
-
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tl_2"
         android:layout_width="match_parent"

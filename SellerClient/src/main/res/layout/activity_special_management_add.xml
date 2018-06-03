@@ -5,10 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/public_toolbar_right_button" />
-
-
-
+    <include layout="@layout/public_toolbar" />
 
 
 </LinearLayout>

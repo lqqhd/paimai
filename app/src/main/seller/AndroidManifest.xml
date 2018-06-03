@@ -153,6 +153,15 @@
             android:name="com.xiaoxing.seller.mvp.ui.activity.RedEnvelopesActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.RedEnvelopesAddActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.SpecialManagementAddActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
 
 
     </application>
