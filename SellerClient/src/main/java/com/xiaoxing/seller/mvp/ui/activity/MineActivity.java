@@ -22,7 +22,6 @@ import com.xiaoxing.seller.di.module.MineModule;
 import com.xiaoxing.seller.mvp.contract.MineContract;
 import com.xiaoxing.seller.mvp.presenter.MinePresenter;
 
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
@@ -187,14 +186,6 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
         } else if (view.getId() == R.id.ll_red_envelopes) {
             Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_REDENVELOPESACTIVITY);
         }
-    }
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 
 

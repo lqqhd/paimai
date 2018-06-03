@@ -102,4 +102,8 @@
         <item name="android:textColor">@color/public_white</item>
         <item name="android:textSize">@dimen/public_font_16sp</item>
     </style>
+
+    <style name="public_CustomRadioBtn">
+        <item name="android:button">@drawable/public_mycustome_radio_selctor</item>
+    </style>
 </resources>

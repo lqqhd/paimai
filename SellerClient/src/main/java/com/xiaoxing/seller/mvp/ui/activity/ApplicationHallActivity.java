@@ -41,7 +41,6 @@ public class ApplicationHallActivity extends BaseActivity<ApplicationHallPresent
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.seller_client_application_hall));
-
     }
 
     @Override
