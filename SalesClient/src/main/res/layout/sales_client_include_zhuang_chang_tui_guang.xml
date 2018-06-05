@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/dp_10"
+    android:background="@drawable/public_ripple_bg"
     android:orientation="vertical">
 
     <RelativeLayout style="@style/public_MineItemRelativeLayout">
@@ -23,6 +24,236 @@
     </RelativeLayout>
 
     <include layout="@layout/public_line_horizontal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/dp_10"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_imgs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_100"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_100"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_100"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_imgs"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center|left"
+            android:text="古钱币"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center|left"
+            android:text="3时 12分 26s 开始"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_time"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center|left"
+            android:text="家里的老物件"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_12sp" />
+
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_60"
+            android:background="#408A71"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_yu_zhan_zhong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3070"
+                android:gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text="预展中"
+                android:textColor="@color/public_white"
+                android:textSize="@dimen/public_font_12sp" />
+
+            <TextView
+                android:id="@+id/tv_ren_shu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text="192"
+                android:textColor="@color/public_white"
+                android:textSize="@dimen/public_font_12sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text="人围观"
+                android:textColor="@color/public_white"
+                android:textSize="@dimen/public_font_12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/dp_10"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_imgs2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_100"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_100"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_100"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_name_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_imgs2"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center|left"
+            android:text="中国古代铜钱大展"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <TextView
+            android:id="@+id/tv_time_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name_1"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center|left"
+            android:text="3时 12分 26s 开始"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <TextView
+            android:id="@+id/tv_title_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_time_1"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center|left"
+            android:text="陈阁老古钱玩"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_12sp" />
+
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_60"
+            android:background="#408A71"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_yu_zhan_zhong_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3070"
+                android:gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text="预展中"
+                android:textColor="@color/public_white"
+                android:textSize="@dimen/public_font_12sp" />
+
+            <TextView
+                android:id="@+id/tv_ren_shu_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text="192"
+                android:textColor="@color/public_white"
+                android:textSize="@dimen/public_font_12sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text="人围观"
+                android:textColor="@color/public_white"
+                android:textSize="@dimen/public_font_12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
 </LinearLayout>

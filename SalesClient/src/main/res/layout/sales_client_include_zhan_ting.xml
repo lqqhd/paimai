@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@drawable/public_ripple_bg"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_20">
+
+    <RelativeLayout
+        android:id="@+id/rl_bao_xiu_dan"
+        style="@style/public_MineItemRelativeLayout">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="展厅推广"
+            android:textColor="@color/public_black"
+            android:textSize="@dimen/public_font_16sp" />
+
+        <include layout="@layout/sales_client_include_more" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/public_ripple_bg">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/rl1_img1"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <ImageView
+                android:id="@+id/rl1_img2"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_toRightOf="@+id/rl1_img1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <ImageView
+                android:id="@+id/rl1_img3"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_below="@+id/rl1_img2"
+                android:layout_toRightOf="@+id/rl1_img1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl1_img1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:gravity="center|left"
+                android:text="回流小店"
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/rl2_img1"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <ImageView
+                android:id="@+id/rl2_img2"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_toRightOf="@+id/rl2_img1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <ImageView
+                android:id="@+id/rl2_img3"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_below="@+id/rl2_img2"
+                android:layout_toRightOf="@+id/rl2_img1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl2_img1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:gravity="center|left"
+                android:text="鸳鸯祠堂"
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_14sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -23,14 +23,18 @@ import com.jess.arms.di.component.AppComponent;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
-import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
-import test.xiaoxing.com.salesclient.R;
-
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.OnClick;
+import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
+import test.xiaoxing.com.salesclient.R;
+import test.xiaoxing.com.salesclient.R2;
 
 public class FragmentHome extends BaseFragment {
 
@@ -220,6 +224,15 @@ public class FragmentHome extends BaseFragment {
         protected void convert(BaseViewHolder viewHolder, Movie item) {
             Glide.with(mContext).load(item.picaddr).into((ImageView) viewHolder.getView(R.id.lmi_avatar));
         }
+    }
+
+    @OnClick({R2.id.rl_tou_tiao})
+    public void onViewClicked(View view) {
+
+        if (view.getId() == R.id.rl_tou_tiao) {
+            Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_HEADLINESACTIVITY);
+        }
+
     }
 
 }
