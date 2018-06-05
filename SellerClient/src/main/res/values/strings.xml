@@ -49,6 +49,7 @@
     <string name="seller_client_red_envelopes">用户红包</string>
     <string name="seller_client_red_envelopes_add">添加红包</string>
     <string name="seller_client_special_management_add">添加专场</string>
+    <string name="seller_client_balance_details">余额明细</string>
 
 
 </resources>

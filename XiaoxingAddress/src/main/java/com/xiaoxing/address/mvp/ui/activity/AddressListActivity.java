@@ -1,7 +1,6 @@
 package com.xiaoxing.address.mvp.ui.activity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -36,7 +35,6 @@ import com.xiaoxing.address.mvp.ui.entity.AddressList;
 import java.util.ArrayList;
 import java.util.List;
 
-import ezy.ui.layout.LoadingLayout;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
@@ -48,10 +46,6 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 public class AddressListActivity extends BaseActivity<AddressListPresenter> implements AddressListContract.View, OnRefreshListener {
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
-    private ClassicsHeader mClassicsHeader;
-    private Drawable mDrawableProgress;
-    private static boolean isFirstEnter = true;
-    private LoadingLayout mLoadingLayout;
     private DiZhiAdapter mAdapter;
 
     private View mEmptyLayout;
