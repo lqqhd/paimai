@@ -50,4 +50,6 @@ dependencies {
 
     api project(":xedittext")
 
+    api "q.rorbin:VerticalTabLayout:1.2.5"
+
 }
