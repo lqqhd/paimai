@@ -83,7 +83,9 @@
 
     <include layout="@layout/public_line_horizontal" />
 
-    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+    <RelativeLayout
+        android:id="@+id/rl_ti_xian"
+        style="@style/public_MineItemRelativeLayout">
 
 
         <TextView
@@ -108,7 +110,8 @@
     <include layout="@layout/public_line_horizontal" />
 
     <RelativeLayout
-        android:id="@+id/rl_ti_xian"
+
+        android:id="@+id/rl_xiao_bao_jin"
         style="@style/public_MineItemRelativeLayout">
 
 

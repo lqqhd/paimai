@@ -75,7 +75,7 @@ public class BalanceActivity extends BaseActivity<BalancePresenter> implements B
     }
 
 
-    @OnClick({R2.id.rl_wo_de_zi_chan, R2.id.rl_chong_zhi, R2.id.rl_ti_xian, R2.id.tl_yin_hang_ka, R2.id.rl_zhi_fu_an_quan})
+    @OnClick({R2.id.rl_wo_de_zi_chan, R2.id.rl_chong_zhi, R2.id.rl_ti_xian, R2.id.tl_yin_hang_ka, R2.id.rl_zhi_fu_an_quan, R2.id.rl_xiao_bao_jin})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.rl_wo_de_zi_chan) {
@@ -83,7 +83,9 @@ public class BalanceActivity extends BaseActivity<BalancePresenter> implements B
         } else if (view.getId() == R.id.rl_chong_zhi) {
             Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCERECHARGEACTIVITY);
         } else if (view.getId() == R.id.rl_ti_xian) {
-            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEDETAILSACTIVITY);
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEWITHDRAWLOGINACTIVITY);
+        } else if (view.getId() == R.id.rl_xiao_bao_jin) {
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEWITHDRAWLOGINACTIVITY);
         } else if (view.getId() == R.id.tl_yin_hang_ka) {
             Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEDETAILSACTIVITY);
         } else if (view.getId() == R.id.rl_zhi_fu_an_quan) {
