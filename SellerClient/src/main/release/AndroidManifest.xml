@@ -28,7 +28,10 @@
         <activity android:name=".mvp.ui.activity.BalanceWithDrawActivity" />
         <activity android:name=".mvp.ui.activity.BalanceXiaoBaoJinActivity" />
         <activity android:name=".mvp.ui.activity.BalanceXiaoBaoJinJiaoNaActivity" />
-        <activity android:name=".mvp.ui.activity.BalanceVerifiedActivity"></activity>
+        <activity android:name=".mvp.ui.activity.BalanceVerifiedActivity" />
+        <activity android:name=".mvp.ui.activity.BalancePaymentSecurityActivity" />
+        <activity android:name=".mvp.ui.activity.BalanceAddBankCardActivity" />
+        <activity android:name=".mvp.ui.activity.BalanceAddBankCardListActivity"></activity>
     </application>
 
 </manifest>

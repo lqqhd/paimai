@@ -53,7 +53,9 @@
     <string name="seller_client_balance_recharge">充值</string>
     <string name="seller_client_balance_withdraw">提现</string>
     <string name="seller_client_balance_xiao_bao_jin">消保金</string>
+    <string name="seller_client_balance_add_bank_card">银行卡</string>
     <string name="seller_client_balance_verified">实名认证</string>
+    <string name="seller_client_balance_payment_security">支付安全</string>
 
 
 </resources>
