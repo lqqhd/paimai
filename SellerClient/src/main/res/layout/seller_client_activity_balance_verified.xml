@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xedit="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/public_ripple_bg"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:xedit="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/public_ripple_bg"
+        android:orientation="vertical">
+
+        <include layout="@layout/public_toolbar" />
+
+        <TextView
+            android:id="@+id/dsada"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center|left"
+            android:text="请上传真实的个人信息，认证通过后将无法修改"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <include layout="@layout/public_line_horizontal_margin_10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1.5"
+                android:gravity="center|left"
+                android:text="姓名："
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_14sp" />
+
+            <com.xw.repo.XEditText
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="4"
+                android:background="@color/public_white"
+                android:hint="请输入您的姓名"
+                android:paddingLeft="@dimen/dp_10"
+                android:textColor="#B8B8B8"
+                android:textSize="@dimen/public_font_14sp"
+                xedit:x_clearDrawable="@mipmap/ic_clear"
+                xedit:x_disableClear="false"
+                xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+                xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+
+        </LinearLayout>
+
+        <include layout="@layout/public_line_horizontal_margin_10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1.5"
+                android:gravity="center|left"
+                android:text="身份证号："
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_14sp" />
+
+            <com.xw.repo.XEditText
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="4"
+                android:background="@color/public_white"
+                android:hint="请输入您的身份证号"
+                android:paddingLeft="@dimen/dp_10"
+                android:textColor="#B8B8B8"
+                android:textSize="@dimen/public_font_14sp"
+                xedit:x_clearDrawable="@mipmap/ic_clear"
+                xedit:x_disableClear="false"
+                xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+                xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+
+        </LinearLayout>
+
+        <include layout="@layout/public_line_horizontal_margin_10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1.5"
+                android:gravity="center|left"
+                android:text="身份证照片："
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="4"
+                android:background="@color/public_white"
+                android:hint="注：拍照时对焦在证件的文字上"
+                android:paddingLeft="@dimen/dp_10"
+                android:textColor="@color/qmui_config_color_red"
+                android:textColorHint="@color/qmui_config_color_red"
+                android:textSize="@dimen/public_font_12sp" />
+
+
+        </LinearLayout>
+
+        <include layout="@layout/public_line_horizontal_margin_10" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_shang_chuan"
+            style="@style/public_Button"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="确定上传" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
