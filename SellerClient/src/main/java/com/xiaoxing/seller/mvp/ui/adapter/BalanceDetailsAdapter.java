@@ -16,7 +16,7 @@ import java.util.List;
 
 public class BalanceDetailsAdapter extends BaseQuickAdapter<BalanceDetails, BaseViewHolder> {
     public BalanceDetailsAdapter(@Nullable List<BalanceDetails> data) {
-        super(R.layout.listitem_balance_details, data);
+        super(R.layout.seller_client_listitem_balance_details, data);
     }
 
     @Override

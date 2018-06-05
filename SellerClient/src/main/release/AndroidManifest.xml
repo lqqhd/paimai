@@ -21,7 +21,9 @@
         <activity android:name=".mvp.ui.activity.ExhibitionManagementActivity" />
         <activity android:name=".mvp.ui.activity.RedEnvelopesAddActivity" />
         <activity android:name=".mvp.ui.activity.SpecialManagementAddActivity" />
-        <activity android:name=".mvp.ui.activity.BalanceDetailsActivity"></activity>
+        <activity android:name=".mvp.ui.activity.BalanceDetailsActivity" />
+        <activity android:name=".mvp.ui.activity.BalanceRechargeActivity" />
+        <activity android:name=".mvp.ui.activity.BalanceRechargePaymentActivity"></activity>
     </application>
 
 </manifest>

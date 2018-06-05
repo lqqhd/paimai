@@ -168,6 +168,15 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceRechargeActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceRechargePaymentActivity"
+             android:configChanges="orientation|screenSize"
+             android:screenOrientation="portrait" />
 
     </application>
 
