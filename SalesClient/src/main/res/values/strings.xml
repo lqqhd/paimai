@@ -35,5 +35,6 @@
     <string name="sales_client_mine_collection">收藏</string>
     <string name="sales_client_mine_falling_red_envelopes">天降红包</string>
     <string name="sales_client_mine_I_am_a_seller">我是卖家</string>
+    <string name="sales_client_release">发布</string>
 
 </resources>

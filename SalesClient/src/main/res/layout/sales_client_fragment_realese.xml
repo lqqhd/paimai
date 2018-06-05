@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/public_ripple_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_toolbar" />
+
+    <TextView
+        android:id="@+id/tv_wei_pai_cang_pin_fa_bu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="微拍藏品发布"
+        android:textColor="#3D3D3D"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <TextView
+        android:id="@+id/tv_zhuan_chang_huo_dong_fa_huo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="专场活动发布"
+        android:textColor="#3D3D3D"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <TextView
+        android:id="@+id/tv_zhan_ting_cang_pin_fa_bu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="展厅藏品发布"
+        android:textColor="#3D3D3D"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <include layout="@layout/public_line_horizontal" />
+
+</LinearLayout>
