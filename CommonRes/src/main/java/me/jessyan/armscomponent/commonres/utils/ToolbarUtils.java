@@ -1,6 +1,7 @@
 package me.jessyan.armscomponent.commonres.utils;
 
 import android.app.Activity;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,16 @@ public class ToolbarUtils {
             }
         });
 
+
+        return toolbar;
+    }
+
+    public static Toolbar initToolbarTitleNoBack(View view, final Fragment fragment, String title) {
+        TextView tvTitle = view.findViewById(R.id.title);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+
+        tvTitle.setText(title);
+        toolbar.setNavigationIcon(null);
 
         return toolbar;
     }

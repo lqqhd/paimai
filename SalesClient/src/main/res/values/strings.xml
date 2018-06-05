@@ -1,7 +1,7 @@
 <resources>
     <string name="sales_client_knowledge_hierarchy">Knowledge hierarchy</string>
     <string name="sales_client_home_pager">Home pager</string>
-    <string name="sales_client_navigation">Navigation</string>
+    <string name="sales_client_navigation">分类</string>
     <string name="sales_client_project">Project</string>
     <string name="sales_client_my_collect">Collect</string>
     <string name="sales_client_login_in">Login</string>
