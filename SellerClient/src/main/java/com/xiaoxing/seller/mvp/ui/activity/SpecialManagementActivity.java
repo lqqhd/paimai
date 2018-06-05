@@ -64,9 +64,8 @@ public class SpecialManagementActivity extends BaseActivity<SpecialManagementPre
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        ToolbarUtils.initToolbarTitleBack(this, getString(R.string.seller_client_exhibition_management));
 
-        ToolbarUtils.initToolbarTitleBackWithRightButton(this, getString(R.string.seller_client_red_envelopes), mRightListener);
+        ToolbarUtils.initToolbarTitleBackWithRightButton(this, getString(R.string.seller_client_exhibition_management), mRightListener);
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new FragmentOrderList());

@@ -15,6 +15,7 @@ import com.xiaoxing.seller.di.module.NoviceMustLearnModule;
 import com.xiaoxing.seller.mvp.contract.NoviceMustLearnContract;
 import com.xiaoxing.seller.mvp.presenter.NoviceMustLearnPresenter;
 
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -39,7 +40,7 @@ public class NoviceMustLearnActivity extends BaseActivity<NoviceMustLearnPresent
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-
+        ToolbarUtils.initToolbarTitleBack(this, getString(R.string.seller_client_novice_must_learn));
     }
 
     @Override

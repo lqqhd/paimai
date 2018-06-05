@@ -37,9 +37,6 @@
     <string name="seller_client_mine_I_am_a_seller">我是卖家</string>
 
     <string name="seller_client_mine_headlines">头条</string>
-    <string name="title_activity_exhibition_management">ExhibitionManagement</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="seller_client_balance">余额</string>
     <string name="seller_client_quotation">报价管理</string>
     <string name="seller_client_commodity_management">藏品管理</string>
@@ -56,6 +53,7 @@
     <string name="seller_client_balance_add_bank_card">银行卡</string>
     <string name="seller_client_balance_verified">实名认证</string>
     <string name="seller_client_balance_payment_security">支付安全</string>
+    <string name="seller_client_novice_must_learn">新手必学</string>
 
 
 </resources>
