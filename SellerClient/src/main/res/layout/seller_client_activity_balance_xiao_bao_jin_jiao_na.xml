@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xedit="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:text="消保金(元)"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <com.xw.repo.XEditText
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="4"
+            android:background="@color/public_white"
+            android:hint="请填写需要缴纳的消保金"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_14sp"
+            xedit:x_clearDrawable="@mipmap/ic_clear"
+            xedit:x_disableClear="false"
+            xedit:x_hidePwdDrawable="@mipmap/ic_hide"
+            xedit:x_showPwdDrawable="@mipmap/ic_show" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/public_line_horizontal_margin_10" />
+
+    <Button
+        android:id="@+id/btn_jiao_na"
+        style="@style/public_Button"
+        android:layout_marginTop="@dimen/dp_30"
+        android:text="缴纳消保金" />
+
+
+</LinearLayout>

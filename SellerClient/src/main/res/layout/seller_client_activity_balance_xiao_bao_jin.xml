@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_toolbar" />
+
+    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:text="消保金余额" />
+
+        <TextView
+            android:id="@+id/tv_jin_e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="￥100"
+            android:textColor="@color/public_mine_item_text"
+            android:textSize="@dimen/public_font_14sp" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <Button
+        android:id="@+id/btn_jiao_na"
+        style="@style/public_Button"
+        android:layout_marginTop="@dimen/dp_30"
+        android:text="缴纳消保金" />
+
+
+</LinearLayout>

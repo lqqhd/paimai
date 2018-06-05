@@ -85,7 +85,7 @@ public class BalanceActivity extends BaseActivity<BalancePresenter> implements B
         } else if (view.getId() == R.id.rl_ti_xian) {
             Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEWITHDRAWLOGINACTIVITY);
         } else if (view.getId() == R.id.rl_xiao_bao_jin) {
-            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEWITHDRAWLOGINACTIVITY);
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEXIAOBAOJINACTIVITY);
         } else if (view.getId() == R.id.tl_yin_hang_ka) {
             Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEDETAILSACTIVITY);
         } else if (view.getId() == R.id.rl_zhi_fu_an_quan) {

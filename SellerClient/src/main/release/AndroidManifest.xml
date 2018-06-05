@@ -25,7 +25,9 @@
         <activity android:name=".mvp.ui.activity.BalanceRechargeActivity" />
         <activity android:name=".mvp.ui.activity.BalanceRechargePaymentActivity" />
         <activity android:name=".mvp.ui.activity.BalanceWithDrawLoginActivity" />
-        <activity android:name=".mvp.ui.activity.BalanceWithDrawActivity"></activity>
+        <activity android:name=".mvp.ui.activity.BalanceWithDrawActivity" />
+        <activity android:name=".mvp.ui.activity.BalanceXiaoBaoJinActivity" />
+        <activity android:name=".mvp.ui.activity.BalanceXiaoBaoJinJiaoNaActivity"></activity>
     </application>
 
 </manifest>

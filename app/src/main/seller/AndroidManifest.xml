@@ -174,19 +174,29 @@
             android:screenOrientation="portrait" />
 
         <activity
-             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceRechargePaymentActivity"
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceRechargePaymentActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceWithDrawLoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceWithDrawActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceXiaoBaoJinActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceXiaoBaoJinJiaoNaActivity"
              android:configChanges="orientation|screenSize"
              android:screenOrientation="portrait" />
 
-        <activity
-             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceWithDrawLoginActivity"
-             android:configChanges="orientation|screenSize"
-             android:screenOrientation="portrait" />
-
-        <activity
-             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceWithDrawActivity"
-             android:configChanges="orientation|screenSize"
-             android:screenOrientation="portrait" />
 
     </application>
 

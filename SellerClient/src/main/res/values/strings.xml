@@ -52,6 +52,7 @@
     <string name="seller_client_balance_details">余额明细</string>
     <string name="seller_client_balance_recharge">充值</string>
     <string name="seller_client_balance_withdraw">提现</string>
+    <string name="seller_client_balance_xiao_bao_jin">消保金</string>
 
 
 </resources>

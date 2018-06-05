@@ -84,6 +84,8 @@ public interface RouterHub {
     String SELLER_CLIENT_BALANCERECHARGEPAYMENTACTIVITY = SELLER_CLIENT + "/BalanceRechargePaymentActivity";
     String SELLER_CLIENT_BALANCEWITHDRAWLOGINACTIVITY = SELLER_CLIENT + "/BalanceWithDrawLoginActivity";
     String SELLER_CLIENT_BALANCEWITHDRAWACTIVITY = SELLER_CLIENT + "/BalanceWithDrawActivity";
+    String SELLER_CLIENT_BALANCEXIAOBAOJINACTIVITY = SELLER_CLIENT + "/BalanceXiaoBaoJinActivity";
+    String SELLER_CLIENT_BALANCEXIAOBAOJINJIAONAACTIVITY = SELLER_CLIENT + "/BalanceXiaoBaoJinJiaoNaActivity";
     /**
      * 设置
      */
