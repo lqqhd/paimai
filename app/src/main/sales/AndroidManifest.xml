@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.xiaoxing.paimai">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,9 +15,10 @@
         android:name="com.jess.arms.base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/arms_log"
-        android:label="@string/public_app_name"
+        android:label="@string/public_app_sales_name"
         android:supportsRtl="true"
-        android:theme="@style/public_AppTheme">
+        android:theme="@style/public_AppTheme"
+        tools:replace="android:label">
         <activity
             android:name="com.xiaoxing.welcome.mvp.ui.WelcomeActivity"
             android:configChanges="orientation|screenSize"
@@ -62,10 +64,63 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-        <!-- <activity -->
-        <!-- android:name=".mvp.ui.activity.LoginActivity" -->
-        <!-- android:configChanges="orientation|screenSize" -->
-        <!-- android:screenOrientation="portrait" /> -->
+
+        <activity
+            android:name="com.xiaoxing.setting.mvp.ui.activity.SettingActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.LoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.RegisterSendPhoneActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.RegisterVerificationCodeActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.ForgotPwdSendPhoneActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.ForgotPwdVerificationCodeActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.ProtocolActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.RegisterSetPwdActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.login.mvp.ui.activity.SetNewPasswordActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.address.mvp.ui.activity.AddressListActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.address.mvp.ui.activity.AddressAddActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.order.mvp.ui.activity.OrderActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.HeadlinesActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
