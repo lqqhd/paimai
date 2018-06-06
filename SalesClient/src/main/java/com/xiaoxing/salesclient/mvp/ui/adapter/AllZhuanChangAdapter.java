@@ -15,18 +15,14 @@ import xiaoxing.com.salesclient.R;
  * Created by tad on 2017/11/16.
  */
 
-public class ZhuanChangProductsAdapter extends BaseQuickAdapter<AddressList, BaseViewHolder> {
-    public ZhuanChangProductsAdapter(@Nullable List<AddressList> data) {
-        super(R.layout.listitem_zhuan_chang_products, data);
+public class AllZhuanChangAdapter extends BaseQuickAdapter<AddressList, BaseViewHolder> {
+    public AllZhuanChangAdapter(@Nullable List<AddressList> data) {
+        super(R.layout.sales_client_listitem_all_zhuan_chang, data);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, AddressList item) {
 
-        helper.setText(R.id.tv_name, item.getName());
-        helper.setText(R.id.tv_phone, item.getPhone());
-        helper.setText(R.id.tv_address, item.getAddress());
-        helper.setText(R.id.btn_mo_ren, "默认");
 
     }
 }

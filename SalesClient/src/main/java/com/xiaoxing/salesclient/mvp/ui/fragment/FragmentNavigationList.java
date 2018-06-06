@@ -134,7 +134,7 @@ public class FragmentNavigationList extends BaseFragment {
 //            mTabLayout.setVisibility(View.INVISIBLE);
 //            mDivider.setVisibility(View.INVISIBLE);
 //        }
-        NavigationAdapter adapter = new NavigationAdapter(R.layout.item_navigation, navigationListData);
+        NavigationAdapter adapter = new NavigationAdapter(R.layout.sales_client_item_navigation, navigationListData);
         mRecyclerView.setAdapter(adapter);
         mManager = new GridLayoutManager(getActivity(), 3);
         mRecyclerView.setLayoutManager(mManager);

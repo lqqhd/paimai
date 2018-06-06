@@ -14,7 +14,8 @@ import com.xiaoxing.salesclient.di.component.DaggerZhuanChangComponent;
 import com.xiaoxing.salesclient.di.module.ZhuanChangModule;
 import com.xiaoxing.salesclient.mvp.contract.ZhuanChangContract;
 import com.xiaoxing.salesclient.mvp.presenter.ZhuanChangPresenter;
-import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentZhuanChangProductsList;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentAllZhuanChang;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentReMenPaiMai;
 
 import java.util.ArrayList;
 
@@ -52,9 +53,9 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
         ToolbarUtils.initToolbarTitleBackWithSearch(this);
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(new FragmentZhuanChangProductsList());
-        mFragments.add(new FragmentZhuanChangProductsList());
-        mFragments.add(new FragmentZhuanChangProductsList());
+        mFragments.add(new FragmentAllZhuanChang());
+        mFragments.add(new FragmentReMenPaiMai());
+        mFragments.add(new FragmentReMenPaiMai());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
     }
