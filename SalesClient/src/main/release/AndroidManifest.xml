@@ -9,7 +9,8 @@
             android:name="com.xiaoxing.salesclient.app.GlobalConfiguration"
             android:value="ConfigModule" />
 
-        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhuanChangActivity"></activity>
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhuanChangActivity" />
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.HeadlinesActivity"></activity>
     </application>
 
 </manifest>

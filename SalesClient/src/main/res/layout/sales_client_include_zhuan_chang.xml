@@ -12,6 +12,7 @@
 
 
         <ImageView
+            android:id="@+id/img_zhuan_chang"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -19,6 +20,7 @@
             android:src="@mipmap/home_zhuang_chang_ad1" />
 
         <ImageView
+            android:id="@+id/img_wei_pai"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -34,6 +36,7 @@
 
 
         <ImageView
+            android:id="@+id/img_cang_pin"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -41,6 +44,7 @@
             android:src="@mipmap/home_zhuang_chang_ad3" />
 
         <ImageView
+            android:id="@+id/img_zhan_ting"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -48,6 +52,7 @@
             android:src="@mipmap/home_zhuang_chang_ad4" />
 
         <ImageView
+            android:id="@+id/img_gu_sou"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

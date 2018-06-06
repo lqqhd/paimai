@@ -122,6 +122,10 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhuanChangActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.HeadlinesActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
 
     </application>
 

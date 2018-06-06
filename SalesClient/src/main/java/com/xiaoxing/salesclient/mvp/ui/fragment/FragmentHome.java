@@ -234,13 +234,22 @@ public class FragmentHome extends BaseFragment {
         }
     }
 
-    @OnClick({R2.id.rl_tou_tiao})
+    @OnClick({R2.id.rl_tou_tiao, R2.id.img_zhuan_chang, R2.id.img_wei_pai, R2.id.img_cang_pin, R2.id.img_zhan_ting, R2.id.img_gu_sou})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.rl_tou_tiao) {
-            Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_HEADLINESACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_HEADLINESACTIVITY);
+        } else if (view.getId() == R.id.img_zhuan_chang) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+        } else if (view.getId() == R.id.img_wei_pai) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+        } else if (view.getId() == R.id.img_cang_pin) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+        } else if (view.getId() == R.id.img_zhan_ting) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+        } else if (view.getId() == R.id.img_gu_sou) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
         }
-
     }
 
 }
