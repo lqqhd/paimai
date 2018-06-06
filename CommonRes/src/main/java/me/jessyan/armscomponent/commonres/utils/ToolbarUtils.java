@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import me.jessyan.armscomponent.commonres.R;
@@ -37,6 +38,22 @@ public class ToolbarUtils {
 
         tvTitle.setText(title);
         toolbar.setNavigationIcon(null);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.finish();
+
+            }
+        });
+
+
+        return toolbar;
+    }
+
+    public static Toolbar initToolbarTitleBackWithSearch(final Activity activity) {
+        EditText et_search = activity.findViewById(R.id.et_search);
+        Toolbar toolbar = activity.findViewById(R.id.toolbar);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

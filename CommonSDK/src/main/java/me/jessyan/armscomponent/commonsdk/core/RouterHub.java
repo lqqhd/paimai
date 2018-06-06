@@ -64,6 +64,7 @@ public interface RouterHub {
     //String APP_SPLASHACTIVITY = APP + "/SplashActivity";
     String APP_MAINACTIVITY = APP + "/MainActivity";
     String SALES_CLIENT_PAIMAIMAINACTIVITY = SALES_CLIENT + "/PaiMaiMainActivity";
+    String SALES_CLIENT_ZHUANCHANGACTIVITY = SALES_CLIENT + "/ZhuanChangActivity";
     /**
      * 卖家
      */

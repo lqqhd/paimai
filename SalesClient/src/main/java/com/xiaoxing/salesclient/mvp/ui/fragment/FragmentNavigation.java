@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.fragment;
+package com.xiaoxing.salesclient.mvp.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
-import test.xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R;
 
 public class FragmentNavigation extends BaseFragment {
 

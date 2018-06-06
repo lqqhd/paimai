@@ -1,16 +1,16 @@
-package com.xiaoxing.salesclient.mvp.adapter;
+package com.xiaoxing.salesclient.mvp.ui.adapter;
 
 
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.xiaoxing.salesclient.mvp.entity.FeedArticleData;
-import com.xiaoxing.salesclient.mvp.entity.NavigationListData;
+import com.xiaoxing.salesclient.mvp.ui.entity.FeedArticleData;
+import com.xiaoxing.salesclient.mvp.ui.entity.NavigationListData;
 
 import java.util.List;
 
-import test.xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R;
 
 
 /**

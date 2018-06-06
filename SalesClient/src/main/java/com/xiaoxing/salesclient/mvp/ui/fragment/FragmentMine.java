@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.fragment;
+package com.xiaoxing.salesclient.mvp.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,7 +16,7 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
-import test.xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R;
 
 public class FragmentMine extends BaseFragment {
 

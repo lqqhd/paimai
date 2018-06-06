@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/public_ripple_bg"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="#EEEFF1"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@color/public_white"
+            android:button="@null"
+            android:gravity="center"
+            android:text="大行"
+            android:textColor="@color/public_black" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@color/public_white"
+            android:button="@null"
+            android:gravity="center"
+            android:text="行家"
+            android:textColor="@color/public_black" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@color/public_white"
+            android:button="@null"
+            android:gravity="center"
+            android:text="自由"
+            android:textColor="@color/public_black" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:overScrollMode="never"
+                    tools:listitem="@android:layout/simple_list_item_2" />
+
+                <include
+                    android:id="@+id/empty"
+                    layout="@layout/_loading_layout_empty" />
+            </FrameLayout>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

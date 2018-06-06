@@ -117,10 +117,12 @@
             android:name="com.xiaoxing.order.mvp.ui.activity.OrderActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+
         <activity
-            android:name="com.xiaoxing.seller.mvp.ui.activity.HeadlinesActivity"
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhuanChangActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

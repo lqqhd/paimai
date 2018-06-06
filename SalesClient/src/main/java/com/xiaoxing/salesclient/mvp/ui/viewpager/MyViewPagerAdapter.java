@@ -1,14 +1,14 @@
-package com.xiaoxing.salesclient.mvp.viewpager;
+package com.xiaoxing.salesclient.mvp.ui.viewpager;
 
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.xiaoxing.salesclient.mvp.fragment.FragmentHome;
-import com.xiaoxing.salesclient.mvp.fragment.FragmentMine;
-import com.xiaoxing.salesclient.mvp.fragment.FragmentNavigation;
-import com.xiaoxing.salesclient.mvp.fragment.FragmentRelease;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentMine;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentNavigation;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentRelease;
 
 public class MyViewPagerAdapter extends FragmentPagerAdapter {
 

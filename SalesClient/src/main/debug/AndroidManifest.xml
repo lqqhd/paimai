@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="test.xiaoxing.com.salesclient">
+    package="xiaoxing.com.salesclient">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,7 +13,7 @@
     <application
         android:name="com.jess.arms.base.BaseApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/test"
         android:label="@string/salas_client_app_name"
         android:supportsRtl="true"
         android:theme="@style/public_AppTheme">

@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.fragment;
+package com.xiaoxing.salesclient.mvp.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,7 +11,7 @@ import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
-import test.xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R;
 
 public class FragmentRelease extends BaseFragment {
 

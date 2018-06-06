@@ -8,7 +8,7 @@ import android.support.v4.view.ViewPager;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
-import com.xiaoxing.salesclient.mvp.viewpager.MyViewPagerAdapter;
+import com.xiaoxing.salesclient.mvp.ui.viewpager.MyViewPagerAdapter;
 
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
@@ -16,7 +16,7 @@ import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 import me.majiajie.pagerbottomtabstrip.SpecialTab;
 import me.majiajie.pagerbottomtabstrip.SpecialTabRound;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
-import test.xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R;
 
 @Route(path = RouterHub.SALES_CLIENT_PAIMAIMAINACTIVITY)
 public class PaiMaiMainActivity extends BaseActivity {
@@ -46,7 +46,7 @@ public class PaiMaiMainActivity extends BaseActivity {
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager(), navigationController.getItemCount()));
-
+        viewPager.setOffscreenPageLimit(5);
         //自动适配ViewPager页面切换
         navigationController.setupWithViewPager(viewPager);
     }

@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.adapter;
+package com.xiaoxing.salesclient.mvp.ui.adapter;
 
 import android.view.View;
 import android.widget.TextView;
@@ -7,7 +7,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import test.xiaoxing.com.salesclient.R2;
+import xiaoxing.com.salesclient.R2;
 
 /**
  * @author quchao

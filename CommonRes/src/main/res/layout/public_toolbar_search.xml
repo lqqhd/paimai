@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    style="@style/public_AppTheme.Toolbar"
+    android:background="@color/public_colorPrimary"
+    app:layout_collapseMode="pin"
+    app:navigationIcon="?homeAsUpIndicator">
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/public_search_bg"
+        android:drawableLeft="@mipmap/home_search1_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:text="寻找感兴趣的商品"
+        android:textColor="#999999"
+        android:textSize="@dimen/public_font_12sp" />
+
+</android.support.v7.widget.Toolbar>

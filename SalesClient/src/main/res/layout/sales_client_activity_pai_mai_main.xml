@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.xiaoxing.salesclient.mvp.viewpager.NoTouchViewPager
+    <com.xiaoxing.salesclient.mvp.ui.viewpager.NoTouchViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

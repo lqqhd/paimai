@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.entity;
+package com.xiaoxing.salesclient.mvp.ui.entity;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.fragment;
+package com.xiaoxing.salesclient.mvp.ui.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -24,6 +24,7 @@ import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerClickListener;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
@@ -33,8 +34,8 @@ import butterknife.OnClick;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
-import test.xiaoxing.com.salesclient.R;
-import test.xiaoxing.com.salesclient.R2;
+import xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R2;
 
 public class FragmentHome extends BaseFragment {
 
@@ -93,6 +94,13 @@ public class FragmentHome extends BaseFragment {
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(BANNER_ITEMS);
         banner.start();
+
+        banner.setOnBannerClickListener(new OnBannerClickListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+            }
+        });
 
         final Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

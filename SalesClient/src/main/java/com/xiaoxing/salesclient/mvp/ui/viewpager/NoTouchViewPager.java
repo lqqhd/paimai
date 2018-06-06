@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.viewpager;
+package com.xiaoxing.salesclient.mvp.ui.viewpager;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

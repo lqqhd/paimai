@@ -13,7 +13,8 @@ import com.squareup.leakcanary.RefWatcher;
 
 import java.util.List;
 
-import test.xiaoxing.com.salesclient.BuildConfig;
+import xiaoxing.com.salesclient.BuildConfig;
+
 
 /**
  * ================================================

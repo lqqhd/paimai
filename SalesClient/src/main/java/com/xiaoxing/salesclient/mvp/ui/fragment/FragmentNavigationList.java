@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.fragment;
+package com.xiaoxing.salesclient.mvp.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,9 +13,9 @@ import android.widget.LinearLayout;
 
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
-import com.xiaoxing.salesclient.mvp.adapter.NavigationAdapter;
-import com.xiaoxing.salesclient.mvp.entity.FeedArticleData;
-import com.xiaoxing.salesclient.mvp.entity.NavigationListData;
+import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationAdapter;
+import com.xiaoxing.salesclient.mvp.ui.entity.FeedArticleData;
+import com.xiaoxing.salesclient.mvp.ui.entity.NavigationListData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +25,8 @@ import q.rorbin.verticaltablayout.VerticalTabLayout;
 import q.rorbin.verticaltablayout.adapter.TabAdapter;
 import q.rorbin.verticaltablayout.widget.ITabView;
 import q.rorbin.verticaltablayout.widget.TabView;
-import test.xiaoxing.com.salesclient.R;
-import test.xiaoxing.com.salesclient.R2;
+import xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R2;
 
 public class FragmentNavigationList extends BaseFragment {
 
