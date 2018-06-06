@@ -11,7 +11,8 @@
 
         <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhuanChangActivity" />
         <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.HeadlinesActivity" />
-        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiActivity"></activity>
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiActivity" />
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.CangPinActivity"></activity>
     </application>
 
 </manifest>

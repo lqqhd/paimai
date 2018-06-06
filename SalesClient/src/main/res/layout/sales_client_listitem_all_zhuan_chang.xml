@@ -50,7 +50,7 @@
             android:gravity="center|left"
             android:text="古钱币"
             android:textColor="#3D3D3D"
-            android:textSize="@dimen/public_font_12sp" />
+            android:textSize="@dimen/public_font_14sp" />
 
         <TextView
             android:id="@+id/tv_time"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"
             android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
             android:gravity="center|left"
             android:text="3时 12分 26s 开始"
             android:textColor="#3D3D3D"
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_time"
             android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
             android:gravity="center|left"
             android:text="家里的老物件"
             android:textColor="#3D3D3D"

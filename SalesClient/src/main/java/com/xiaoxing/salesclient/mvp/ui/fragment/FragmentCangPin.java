@@ -22,7 +22,7 @@ import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
-import com.xiaoxing.salesclient.mvp.ui.adapter.WeiPaiAdapter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.CangPinAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
 import java.util.ArrayList;
@@ -36,9 +36,9 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
  * 使用示例-空布页面
  * A simple {@link Fragment} subclass.
  */
-public class FragmentWeiPai extends Fragment implements OnRefreshListener {
+public class FragmentCangPin extends Fragment implements OnRefreshListener {
 
-    private WeiPaiAdapter mAdapter;
+    private CangPinAdapter mAdapter;
 
 
     private View mEmptyLayout;
@@ -63,7 +63,7 @@ public class FragmentWeiPai extends Fragment implements OnRefreshListener {
 
         mRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
 
         mEmptyLayout = root.findViewById(R.id.empty);
@@ -109,7 +109,7 @@ public class FragmentWeiPai extends Fragment implements OnRefreshListener {
                 mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
                 mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
                 mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                mRecyclerView.setAdapter(mAdapter = new WeiPaiAdapter(loadModels()));
+                mRecyclerView.setAdapter(mAdapter = new CangPinAdapter(loadModels()));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
