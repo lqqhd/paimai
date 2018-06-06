@@ -242,7 +242,7 @@ public class FragmentHome extends BaseFragment {
         } else if (view.getId() == R.id.img_zhuan_chang) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
         } else if (view.getId() == R.id.img_wei_pai) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEIPAIACTIVITY);
         } else if (view.getId() == R.id.img_cang_pin) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
         } else if (view.getId() == R.id.img_zhan_ting) {

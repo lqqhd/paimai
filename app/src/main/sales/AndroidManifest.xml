@@ -127,6 +127,11 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
 
+        <activity
+             android:name="com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiActivity"
+             android:configChanges="orientation|screenSize"
+             android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
