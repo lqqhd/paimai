@@ -8,7 +8,7 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/dp_40"
         android:background="#EEEFF1"
         android:orientation="horizontal">
 
@@ -22,6 +22,7 @@
             android:button="@null"
             android:gravity="center"
             android:text="大行"
+            android:textSize="@dimen/public_font_12sp"
             android:textColor="@color/public_black" />
 
         <RadioButton
@@ -33,6 +34,8 @@
             android:button="@null"
             android:gravity="center"
             android:text="行家"
+            android:textSize="@dimen/public_font_12sp"
+
             android:textColor="@color/public_black" />
 
         <RadioButton
@@ -44,6 +47,7 @@
             android:button="@null"
             android:gravity="center"
             android:text="自由"
+            android:textSize="@dimen/public_font_12sp"
             android:textColor="@color/public_black" />
     </RadioGroup>
 
