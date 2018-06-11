@@ -41,12 +41,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-
-                <com.youth.banner.Banner
-                    android:id="@+id/convenientBanner"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    app:is_auto_play="true" />
+                <include layout="@layout/public_banner" />
 
                 <include layout="@layout/sales_client_include_tou_tiao" />
 

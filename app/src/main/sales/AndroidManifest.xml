@@ -140,6 +140,10 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhanTingActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
 
     </application>
 

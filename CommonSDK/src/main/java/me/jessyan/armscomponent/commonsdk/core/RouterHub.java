@@ -69,6 +69,7 @@ public interface RouterHub {
     String SALES_CLIENT_WEIPAIACTIVITY = SALES_CLIENT + "/WeiPaiActivity";
     String SALES_CLIENT_CANGPINACTIVITY = SALES_CLIENT + "/CangPinActivity";
     String SALES_CLIENT_ZHANTINGACTIVITY = SALES_CLIENT + "/ZhanTingActivity";
+    String SALES_CLIENT_WEIPAIDETAILACTIVITY = SALES_CLIENT + "/WeiPaiDetailActivity";
 
     /**
      * 卖家

@@ -1,6 +1,5 @@
 package com.xiaoxing.salesclient.mvp.ui.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,11 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jess.arms.base.BaseFragment;
@@ -23,9 +18,11 @@ import com.jess.arms.di.component.AppComponent;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
+import com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiTuiGuangHomeAdapter;
+import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
+import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerClickListener;
-import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +65,7 @@ public class FragmentHome extends BaseFragment {
             "]";
     private int mOffset = 0;
     private int mScrollY = 0;
-    private QuickAdapter mAdapter;
+    private WeiPaiTuiGuangHomeAdapter mAdapter;
 
     public static FragmentHome newInstance(String content) {
         Bundle args = new Bundle();
@@ -172,7 +169,7 @@ public class FragmentHome extends BaseFragment {
 
         final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
-        mAdapter = new QuickAdapter();
+        mAdapter = new WeiPaiTuiGuangHomeAdapter(getActivity());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -193,19 +190,6 @@ public class FragmentHome extends BaseFragment {
 
     }
 
-    public static class BannerItem {
-
-        public int pic;
-        public String title;
-
-        public BannerItem() {
-        }
-
-        public BannerItem(String title, int pic) {
-            this.pic = pic;
-            this.title = title;
-        }
-    }
 
     public static class Movie {
         public String actors;
@@ -216,23 +200,6 @@ public class FragmentHome extends BaseFragment {
         public String shortinfo;
     }
 
-    public class GlideImageLoader extends ImageLoader {
-        @Override
-        public void displayImage(Context context, Object path, ImageView imageView) {
-            imageView.setImageResource(((BannerItem) path).pic);
-        }
-    }
-
-    public class QuickAdapter extends BaseQuickAdapter<Movie, BaseViewHolder> {
-        public QuickAdapter() {
-            super(R.layout.sales_client_listitem_wei_pai_tui_guang);
-        }
-
-        @Override
-        protected void convert(BaseViewHolder viewHolder, Movie item) {
-            Glide.with(mContext).load(item.picaddr).into((ImageView) viewHolder.getView(R.id.lmi_avatar));
-        }
-    }
 
     @OnClick({
             R2.id.rl_tou_tiao, R2.id.img_zhuan_chang, R2.id.img_wei_pai,

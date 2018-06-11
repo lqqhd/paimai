@@ -30,7 +30,8 @@
 
         <TextView
             android:id="@+id/lmi_grade"
-            android:layout_width="wrap_content"        android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"
             android:minWidth="50dp"
             android:textColor="@android:color/holo_orange_dark"
@@ -38,14 +39,16 @@
 
         <TextView
             android:id="@+id/lmi_describe"
-            android:layout_width="wrap_content"        android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"
             android:minWidth="100dp"
             tools:background="#fff0f0f0" />
 
         <TextView
             android:id="@+id/lmi_actor"
-            android:layout_width="wrap_content"        android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"
             android:minWidth="100dp"
             tools:background="#fff0f0f0" />
