@@ -34,10 +34,8 @@
             tl:tl_underline_color="#1A000000"
             tl:tl_underline_height="1dp" />
 
-        <TextView
-            android:layout_width="0.399dp"
-            android:layout_height="match_parent"
-            android:textColor="@color/public_client_line_color" />
+
+        <include layout="@layout/public_line_vertical" />
 
         <TextView
             android:id="@+id/tv_shan_xuan"

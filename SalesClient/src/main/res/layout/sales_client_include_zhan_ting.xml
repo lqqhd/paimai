@@ -8,7 +8,7 @@
     android:paddingBottom="@dimen/dp_20">
 
     <RelativeLayout
-        android:id="@+id/rl_bao_xiu_dan"
+        android:id="@+id/rl_zhan_ting_tui_guang"
         style="@style/public_MineItemRelativeLayout">
 
 

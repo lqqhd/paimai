@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/rl_bao_xiu_dan"
+        android:id="@+id/rl_wei_pai_tui_guang"
         style="@style/public_MineItemRelativeLayout">
 
 

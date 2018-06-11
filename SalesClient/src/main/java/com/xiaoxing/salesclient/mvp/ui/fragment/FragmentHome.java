@@ -234,7 +234,10 @@ public class FragmentHome extends BaseFragment {
         }
     }
 
-    @OnClick({R2.id.rl_tou_tiao, R2.id.img_zhuan_chang, R2.id.img_wei_pai, R2.id.img_cang_pin, R2.id.img_zhan_ting, R2.id.img_gu_sou})
+    @OnClick({
+            R2.id.rl_tou_tiao, R2.id.img_zhuan_chang, R2.id.img_wei_pai,
+            R2.id.img_cang_pin, R2.id.img_zhan_ting, R2.id.img_gu_sou,
+            R2.id.rl_wei_pai_tui_guang, R2.id.rl_zhuan_chang_tui_guang, R2.id.rl_zhan_ting_tui_guang})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.rl_tou_tiao) {
@@ -249,6 +252,12 @@ public class FragmentHome extends BaseFragment {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGACTIVITY);
         } else if (view.getId() == R.id.img_gu_sou) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+        } else if (view.getId() == R.id.rl_wei_pai_tui_guang) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEIPAIACTIVITY);
+        } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+        } else if (view.getId() == R.id.rl_zhan_ting_tui_guang) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGACTIVITY);
         }
     }
 

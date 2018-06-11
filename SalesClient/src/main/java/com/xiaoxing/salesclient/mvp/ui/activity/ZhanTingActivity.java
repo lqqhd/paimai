@@ -41,7 +41,7 @@ public class ZhanTingActivity extends BaseActivity<ZhanTingPresenter> implements
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
-        return R.layout.public_activity_top_tab; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+        return R.layout.sales_client_activity_zhuan_chang; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
 
     @Override

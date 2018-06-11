@@ -6,7 +6,9 @@
     android:background="@drawable/public_ripple_bg"
     android:orientation="vertical">
 
-    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+    <RelativeLayout
+        android:id="@+id/rl_zhuan_chang_tui_guang"
+        style="@style/public_MineItemRelativeLayout">
 
 
         <TextView
