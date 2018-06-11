@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_wei_pai_item"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_5">
+
+    <ImageView
+        android:id="@+id/lmi_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:contentDescription="@string/salas_client_app_name"
+        android:scaleType="fitXY"
+        android:src="@mipmap/wei_pai_tui_guang_goods"
+        tools:background="#fff0f0f0" />
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@+id/lmi_avatar"
+        android:background="@color/public_white"
+        android:gravity="center"
+        android:text="清乾隆"
+        android:textColor="#444444"
+        android:textSize="@dimen/public_font_12sp" />
+
+</RelativeLayout>
+

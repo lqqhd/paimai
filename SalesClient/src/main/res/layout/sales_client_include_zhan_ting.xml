@@ -29,6 +29,7 @@
     <include layout="@layout/public_line_horizontal" />
 
     <LinearLayout
+        android:id="@+id/rl_zhan_ting_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/public_ripple_bg">
