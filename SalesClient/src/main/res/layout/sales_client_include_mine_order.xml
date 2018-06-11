@@ -84,7 +84,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_dai_ping_jia"
+            android:id="@+id/ll_dai_shou_huo"
             style="@style/public_MineOrderLinearLayout">
 
             <ImageView
@@ -97,7 +97,9 @@
 
         </LinearLayout>
 
-        <LinearLayout style="@style/public_MineOrderLinearLayout">
+        <LinearLayout
+            android:id="@+id/ll_dai_ping_jia"
+            style="@style/public_MineOrderLinearLayout">
 
             <ImageView
                 style="@style/public_MineOrderImage"
@@ -109,7 +111,9 @@
 
         </LinearLayout>
 
-        <LinearLayout style="@style/public_MineOrderLinearLayout">
+        <LinearLayout
+            android:id="@+id/ll_shou_hou"
+            style="@style/public_MineOrderLinearLayout">
 
             <ImageView
                 style="@style/public_MineOrderImage"

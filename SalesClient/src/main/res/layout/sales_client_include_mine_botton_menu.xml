@@ -144,7 +144,8 @@
 
     <RelativeLayout
         style="@style/public_MineItemRelativeLayout"
-        android:layout_marginTop="@dimen/dp_10">
+        android:layout_marginTop="@dimen/dp_10"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/img_wo_shi_mai_jia"

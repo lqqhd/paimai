@@ -15,8 +15,12 @@ import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 
+import butterknife.OnClick;
+import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R2;
 
 public class FragmentMine extends BaseFragment {
 
@@ -120,4 +124,30 @@ public class FragmentMine extends BaseFragment {
     public void setData(@Nullable Object data) {
 
     }
+
+    @OnClick({
+            R2.id.panel_lyt, R2.id.rl_all_orders, R2.id.ll_dai_fu_kuan,
+            R2.id.ll_dai_fa_huo, R2.id.ll_dai_ping_jia, R2.id.ll_dai_shou_huo,
+            R2.id.ll_shou_hou, R2.id.rl_tou_tiao})
+    public void onViewClicked(View view) {
+
+        if (view.getId() == R.id.panel_lyt) {
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_SETTING_SETTING);
+        } else if (view.getId() == R.id.rl_all_orders) {
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_dai_fu_kuan) {
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_dai_fa_huo) {
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_dai_ping_jia) {
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_dai_shou_huo) {
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.ll_shou_hou) {
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+        } else if (view.getId() == R.id.rl_tou_tiao) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_HEADLINESACTIVITY);
+        }
+    }
+
 }
