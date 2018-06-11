@@ -30,7 +30,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implements ZhuanChangContract.View {
 
 
-    private final String[] mTitles = {"所有专场", "热门拍品", "我的关注"};
+    private final String[] mTitles = {"所有专场", "热门拍品", "我的关注","筛选"};
 
 
     @Override
