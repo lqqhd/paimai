@@ -21,6 +21,8 @@ import xiaoxing.com.salesclient.R;
 @Route(path = RouterHub.SALES_CLIENT_PAIMAIMAINACTIVITY)
 public class PaiMaiMainActivity extends BaseActivity {
 
+    private static PaiMaiMainActivity instance;
+    private ViewPager viewPager;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -34,6 +36,7 @@ public class PaiMaiMainActivity extends BaseActivity {
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+        instance = this;
         PageNavigationView tab = (PageNavigationView) findViewById(R.id.tab);
 
         NavigationController navigationController = tab.custom()
@@ -44,7 +47,7 @@ public class PaiMaiMainActivity extends BaseActivity {
                 .addItem(newItem(R.mipmap.mem_icon, R.mipmap.mem_active_icon, "我的"))
                 .build();
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager(), navigationController.getItemCount()));
         viewPager.setOffscreenPageLimit(5);
         //自动适配ViewPager页面切换
@@ -72,5 +75,14 @@ public class PaiMaiMainActivity extends BaseActivity {
         mainTab.setTextDefaultColor(getResources().getColor(R.color.sales_client_menu_normal_color));
         mainTab.setTextCheckedColor(getResources().getColor(R.color.sales_client_menu_selected_color));
         return mainTab;
+    }
+
+    public static PaiMaiMainActivity getInstance() {
+
+        return instance;
+    }
+
+    public void setCurrentItem(int postion) {
+        viewPager.setCurrentItem(postion);
     }
 }

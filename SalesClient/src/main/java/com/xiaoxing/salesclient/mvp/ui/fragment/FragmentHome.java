@@ -27,6 +27,7 @@ import com.jiang.android.indicatordialog.IndicatorDialog;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
+import com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity;
 import com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiTuiGuangHomeAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.BaseDialogTipAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
@@ -77,7 +78,7 @@ public class FragmentHome extends BaseFragment {
     private int mOffset = 0;
     private int mScrollY = 0;
     private WeiPaiTuiGuangHomeAdapter mAdapter;
-
+    private IndicatorDialog dialog;
 
     public static FragmentHome newInstance(String content) {
 
@@ -213,7 +214,7 @@ public class FragmentHome extends BaseFragment {
         Resources resources = getResources();
         DisplayMetrics dm = resources.getDisplayMetrics();
         int height = dm.heightPixels;
-        IndicatorDialog dialog = new IndicatorBuilder(getActivity())
+        dialog = new IndicatorBuilder(getActivity())
                 .width(300)
                 .animator(R.style.dialog_exit)
                 .height((int) (height * 0.5))
@@ -252,7 +253,18 @@ public class FragmentHome extends BaseFragment {
 
                     @Override
                     public void onItemClick(View v, int position) {
-                        Toast.makeText(getActivity(), "你点击了:" + position, Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                        switch (position) {
+                            case 0:
+                                PaiMaiMainActivity.getInstance().setCurrentItem(0);
+                                break;
+                            case 1:
+                                PaiMaiMainActivity.getInstance().setCurrentItem(1);
+                                break;
+                            case 2:
+                                Utils.navigation(getActivity(), RouterHub.XIAO_XING_LOGIN_LOGINACTIVITY);
+                                break;
+                        }
                     }
 
                     @Override
