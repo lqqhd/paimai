@@ -17,7 +17,7 @@
         android:drawablePadding="@dimen/dp_10"
         android:paddingLeft="@dimen/dp_15"
         android:paddingRight="@dimen/dp_15"
-        android:text="寻找感兴趣的商品"
+        android:hint="寻找感兴趣的商品"
         android:textColor="#999999"
         android:textSize="@dimen/public_font_12sp" />
 

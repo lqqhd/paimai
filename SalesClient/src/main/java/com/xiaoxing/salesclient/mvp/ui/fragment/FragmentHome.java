@@ -215,7 +215,7 @@ public class FragmentHome extends BaseFragment {
         DisplayMetrics dm = resources.getDisplayMetrics();
         int height = dm.heightPixels;
         IndicatorDialog dialog = new IndicatorBuilder(getActivity())
-                .width(500)
+                .width(300)
                 .animator(R.style.dialog_exit)
                 .height((int) (height * 0.5))
                 .height(-1)
