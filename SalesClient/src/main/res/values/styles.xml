@@ -1,2 +1,8 @@
 <resources>
+
+    <style name="dialog_exit">
+        <item name="@android:windowEnterAnimation">@anim/in_translate_top</item>
+        <item name="@android:windowExitAnimation">@anim/out_translate_top</item>
+    </style>
+
 </resources>

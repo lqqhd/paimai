@@ -1,5 +1,7 @@
 package com.xiaoxing.salesclient.mvp.ui.fragment;
 
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,18 +9,25 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
+import com.jiang.android.indicatordialog.IndicatorBuilder;
+import com.jiang.android.indicatordialog.IndicatorDialog;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiTuiGuangHomeAdapter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.BaseDialogTipAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
 import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
@@ -35,7 +44,8 @@ import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
 public class FragmentHome extends BaseFragment {
-
+    private List<String> mLists = new ArrayList<>();
+    private List<Integer> mICons = new ArrayList<>();
     public static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
         add(new BannerItem("最后的骑士", R.mipmap.image_movie_header_48621499931969370));
         add(new BannerItem("三生三世十里桃花", R.mipmap.image_movie_header_12981501221820220));
@@ -67,7 +77,9 @@ public class FragmentHome extends BaseFragment {
     private int mScrollY = 0;
     private WeiPaiTuiGuangHomeAdapter mAdapter;
 
+
     public static FragmentHome newInstance(String content) {
+
         Bundle args = new Bundle();
         args.putString("", content);
         FragmentHome fragment = new FragmentHome();
@@ -103,6 +115,7 @@ public class FragmentHome extends BaseFragment {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showTopDialog(v, 0.1f, IndicatorBuilder.GRAVITY_LEFT);
             }
         });
 
@@ -177,7 +190,81 @@ public class FragmentHome extends BaseFragment {
         final List<Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<Movie>>() {
         }.getType());
         mAdapter.replaceData(movies);
+
         return view;
+    }
+
+    private void initDrawer(Bundle savedInstanceState) {
+
+    }
+
+
+
+
+    private void showTopDialog(View v, float v1, int gravityCenter) {
+        mLists.clear();
+        mICons.clear();
+        mLists.add("首页");
+        mICons.add(R.mipmap.home_icon);
+        mLists.add("分类");
+        mICons.add(R.mipmap.cate_icon);
+        mLists.add("会员");
+        mICons.add(R.mipmap.mem_icon);
+
+        Resources resources = getResources();
+        DisplayMetrics dm = resources.getDisplayMetrics();
+        int height = dm.heightPixels;
+        IndicatorDialog dialog = new IndicatorBuilder(getActivity())
+                .width(500)
+                .animator(R.style.dialog_exit)
+                .height((int) (height * 0.5))
+                .height(-1)
+                .ArrowDirection(IndicatorBuilder.TOP)
+                .bgColor(Color.WHITE)
+                .gravity(gravityCenter)
+                .dimEnabled(true)
+                .ArrowRectage(v1)
+                .radius(18)
+                .layoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false))
+                .adapter(new BaseDialogTipAdapter() {
+                    @Override
+                    public void onBindView(BaseViewHolder holder, int position) {
+                        TextView tv = holder.getView(R.id.item_add);
+                        tv.setText(mLists.get(position));
+                        tv.setCompoundDrawablesWithIntrinsicBounds(mICons.get(position), 0, 0, 0);
+
+//                        if (position == mLists.size() - 1) {
+//                            holder.setVisibility(R.id.item_line, BaseViewHolder.GONE);
+//                        } else {
+//                            holder.setVisibility(R.id.item_line, BaseViewHolder.VISIBLE);
+//
+//                        }
+                    }
+
+                    @Override
+                    public int getLayoutID(int position) {
+                        return R.layout.item;
+                    }
+
+                    @Override
+                    public boolean clickable() {
+                        return true;
+                    }
+
+                    @Override
+                    public void onItemClick(View v, int position) {
+                        Toast.makeText(getActivity(), "你点击了:" + position, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public int getItemCount() {
+                        return mLists.size();
+                    }
+                }).create();
+
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.show(v);
+
     }
 
     @Override
