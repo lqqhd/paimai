@@ -13,6 +13,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -199,17 +200,15 @@ public class FragmentHome extends BaseFragment {
     }
 
 
-
-
     private void showTopDialog(View v, float v1, int gravityCenter) {
         mLists.clear();
         mICons.clear();
         mLists.add("首页");
-        mICons.add(R.mipmap.home_icon);
+        mICons.add(R.mipmap.home_icon_left);
         mLists.add("分类");
-        mICons.add(R.mipmap.cate_icon);
+        mICons.add(R.mipmap.cate_icon_left);
         mLists.add("会员");
-        mICons.add(R.mipmap.mem_icon);
+        mICons.add(R.mipmap.mem_icon_left);
 
         Resources resources = getResources();
         DisplayMetrics dm = resources.getDisplayMetrics();
@@ -230,9 +229,9 @@ public class FragmentHome extends BaseFragment {
                     @Override
                     public void onBindView(BaseViewHolder holder, int position) {
                         TextView tv = holder.getView(R.id.item_add);
+                        ImageView img = holder.getView(R.id.img);
                         tv.setText(mLists.get(position));
-                        tv.setCompoundDrawablesWithIntrinsicBounds(mICons.get(position), 0, 0, 0);
-
+                        img.setImageDrawable(getResources().getDrawable(mICons.get(position)));
 //                        if (position == mLists.size() - 1) {
 //                            holder.setVisibility(R.id.item_line, BaseViewHolder.GONE);
 //                        } else {
