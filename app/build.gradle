@@ -74,7 +74,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     if (!isBuildModule.toBoolean()) {
-        implementation project(":ModuleWelcome")
+        implementation project(":XiaoxingWelcome")
         if (isSalalsClient.toBoolean()) {
             implementation project(":SalesClient")
         } else {

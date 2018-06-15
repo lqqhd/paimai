@@ -11,7 +11,6 @@
             <option value="$PROJECT_DIR$/CommonRes" />
             <option value="$PROJECT_DIR$/CommonSDK" />
             <option value="$PROJECT_DIR$/CommonService" />
-            <option value="$PROJECT_DIR$/ModuleWelcome" />
             <option value="$PROJECT_DIR$/SalesClient" />
             <option value="$PROJECT_DIR$/SellerClient" />
             <option value="$PROJECT_DIR$/XiaoxingAddress" />
@@ -24,6 +23,7 @@
             <option value="$PROJECT_DIR$/XiaoxingOrder" />
             <option value="$PROJECT_DIR$/XiaoxingPagerBottomTabStrip" />
             <option value="$PROJECT_DIR$/XiaoxingSetting" />
+            <option value="$PROJECT_DIR$/XiaoxingWelcome" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/refresh-footer" />
             <option value="$PROJECT_DIR$/refresh-header" />
