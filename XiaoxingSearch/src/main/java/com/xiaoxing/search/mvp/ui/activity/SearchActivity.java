@@ -217,7 +217,7 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
         Cursor cursor = helper.getReadableDatabase().rawQuery(
                 "select id as _id,name from records where name like '%" + tempName + "%' order by id desc ", null);
         // 创建adapter适配器对象
-        adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, new String[]{"name"},
+        adapter = new SimpleCursorAdapter(this, R.layout.item_search_history, cursor, new String[]{"name"},
                 new int[]{android.R.id.text1}, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         // 设置适配器
         listView.setAdapter(adapter);
