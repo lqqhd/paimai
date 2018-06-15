@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/public_ripple_bg"
     android:orientation="vertical">
 
     <include layout="@layout/public_toolbar_search" />
@@ -9,6 +11,7 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/public_ripple_bg"
         android:fillViewport="true">
 
         <LinearLayout
@@ -19,15 +22,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="20dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_tip"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="@dimen/dp_40"
                     android:gravity="left|center_vertical"
-                    android:text="搜索历史" />
+                    android:paddingLeft="@dimen/dp_10"
+                    android:text="搜索历史"
+                    android:textColor="@color/public_black"
+                    android:textSize="@dimen/public_font_14sp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -53,14 +58,34 @@
                 android:layout_height="40dp"
                 android:background="#F6F6F6"
                 android:gravity="center"
-                android:text="清除搜索历史" />
+                android:text="清除搜索历史"
+                android:textSize="@dimen/public_font_12sp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="20dp"
                 android:background="#EEEEEE" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/dp_10"
+                android:text="热门搜索"
+                android:textColor="@color/public_black"
+                android:textSize="@dimen/public_font_14sp" />
+
+            <com.xiaoxing.search.mvp.ui.view.TagGroup
+                android:id="@+id/tag_group_small"
+                style="@style/TagGroup.Small"
+                android:layout_margin="@dimen/dp_10"
+                app:atg_backgroundColor="#F4F5F5"
+                app:atg_borderColor="#F4F5F5"
+                app:atg_textColor="@color/public_black" />
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
+
 </LinearLayout>

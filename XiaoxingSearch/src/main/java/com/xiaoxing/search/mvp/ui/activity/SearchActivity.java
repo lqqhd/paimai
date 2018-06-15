@@ -32,7 +32,9 @@ import com.xiaoxing.search.di.module.SearchModule;
 import com.xiaoxing.search.mvp.contract.SearchContract;
 import com.xiaoxing.search.mvp.presenter.SearchPresenter;
 import com.xiaoxing.search.mvp.ui.helper.RecordSQLiteOpenHelper;
+import com.xiaoxing.search.mvp.ui.helper.TagsManager;
 import com.xiaoxing.search.mvp.ui.view.MyListView;
+import com.xiaoxing.search.mvp.ui.view.TagGroup;
 
 import java.util.Date;
 
@@ -48,9 +50,10 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
     private MyListView listView;
     private TextView tv_clear;
     private RecordSQLiteOpenHelper helper = new RecordSQLiteOpenHelper(this);
-    ;
     private SQLiteDatabase db;
     private BaseAdapter adapter;
+    private TagGroup mSmallTagGroup;
+    private TagsManager mTagsManager;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -82,10 +85,6 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
         listView = (MyListView) findViewById(R.id.listView);
         tv_clear = (TextView) findViewById(R.id.tv_clear);
 
-        // 调整EditText左边的搜索按钮的大小
-        Drawable drawable = getResources().getDrawable(R.mipmap.home_search1_icon);
-        drawable.setBounds(0, 0, 60, 60);// 第一0是距左边距离，第二0是距上边距离，60分别是长宽
-        et_search.setCompoundDrawables(drawable, null, null, null);// 只放左边
         // 清空搜索历史
         tv_clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,7 +161,44 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
         // 第一次进入查询所有的历史记录
         queryData("");
 
+        MyTagGroupOnClickListener tgClickListener = new MyTagGroupOnClickListener();
 
+        mTagsManager = TagsManager.getInstance(getApplicationContext());
+        String[] tags = {"小星001", "小星001", "小星001小星001小星001小星001"};
+        mSmallTagGroup = (TagGroup) findViewById(R.id.tag_group_small);
+        if (tags != null && tags.length > 0) {
+            mSmallTagGroup.setTags(tags);
+        }
+        mSmallTagGroup.setOnClickListener(tgClickListener);
+        mSmallTagGroup.setOnTagClickListener(mTagClickListener);
+
+
+    }
+
+    private TagGroup.OnTagClickListener mTagClickListener = new TagGroup.OnTagClickListener() {
+        @Override
+        public void onTagClick(String tag) {
+            Toast.makeText(SearchActivity.this, tag, Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    class MyTagGroupOnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            launchTagEditorActivity();
+        }
+    }
+
+    protected void launchTagEditorActivity() {
+//        Intent intent = new Intent(SearchActivity.this, TagEditorActivity.class);
+//        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        String[] tags = mTagsManager.getTags();
+//        mSmallTagGroup.setTags(tags);
     }
 
     /**
