@@ -42,18 +42,20 @@
 
             <ImageView
                 android:id="@+id/rl1_img1"
-                android:layout_width="@dimen/dp_100"
+                android:layout_width="@dimen/dp_120"
                 android:layout_height="@dimen/dp_100"
+                android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
-                android:src="@mipmap/test" />
+                android:src="@mipmap/goods_001" />
 
             <ImageView
                 android:id="@+id/rl1_img2"
                 android:layout_width="@dimen/dp_50"
                 android:layout_height="@dimen/dp_50"
                 android:layout_toRightOf="@+id/rl1_img1"
+                android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
-                android:src="@mipmap/test" />
+                android:src="@mipmap/goods_003" />
 
             <ImageView
                 android:id="@+id/rl1_img3"
@@ -61,8 +63,9 @@
                 android:layout_height="@dimen/dp_50"
                 android:layout_below="@+id/rl1_img2"
                 android:layout_toRightOf="@+id/rl1_img1"
+                android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
-                android:src="@mipmap/test" />
+                android:src="@mipmap/goods_004" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -70,6 +73,7 @@
                 android:layout_below="@+id/rl1_img1"
                 android:layout_marginLeft="@dimen/dp_10"
                 android:gravity="center|left"
+                android:padding="@dimen/dp_5"
                 android:text="回流小店"
                 android:textColor="#3D3D3D"
                 android:textSize="@dimen/public_font_14sp" />
@@ -83,10 +87,11 @@
 
             <ImageView
                 android:id="@+id/rl2_img1"
-                android:layout_width="@dimen/dp_100"
+                android:layout_width="@dimen/dp_120"
                 android:layout_height="@dimen/dp_100"
+                android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
-                android:src="@mipmap/test" />
+                android:src="@mipmap/goods_002" />
 
             <ImageView
                 android:id="@+id/rl2_img2"
@@ -94,16 +99,18 @@
                 android:layout_height="@dimen/dp_50"
                 android:layout_toRightOf="@+id/rl2_img1"
                 android:scaleType="fitXY"
-                android:src="@mipmap/test" />
+                android:padding="@dimen/dp_5"
+                android:src="@mipmap/goods_004" />
 
             <ImageView
                 android:id="@+id/rl2_img3"
                 android:layout_width="@dimen/dp_50"
                 android:layout_height="@dimen/dp_50"
+                android:padding="@dimen/dp_5"
                 android:layout_below="@+id/rl2_img2"
                 android:layout_toRightOf="@+id/rl2_img1"
                 android:scaleType="fitXY"
-                android:src="@mipmap/test" />
+                android:src="@mipmap/goods_003" />
 
             <TextView
                 android:layout_width="wrap_content"
