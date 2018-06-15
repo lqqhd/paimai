@@ -106,5 +106,6 @@ dependencies {
     implementation project(':XiaoxingLogin')
     implementation project(':XiaoxingAddress')
     implementation project(':XiaoxingOrder')
+    implementation project(':XiaoxingSearch')
 
 }

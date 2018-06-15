@@ -51,7 +51,6 @@ public class ToolbarUtils {
     }
 
     public static Toolbar initToolbarTitleBackWithSearch(final Activity activity) {
-        EditText et_search = activity.findViewById(R.id.et_search);
         Toolbar toolbar = activity.findViewById(R.id.toolbar);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

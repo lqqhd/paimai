@@ -13,6 +13,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -113,6 +114,13 @@ public class FragmentHome extends BaseFragment {
         });
 
         final Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        EditText et_search = toolbar.findViewById(R.id.et_search);
+        et_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.navigation(getActivity(), RouterHub.XIAO_XING_SEARCH_SearchActivity);
+            }
+        });
         toolbar.setNavigationIcon(R.mipmap.home_head_left_icon);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

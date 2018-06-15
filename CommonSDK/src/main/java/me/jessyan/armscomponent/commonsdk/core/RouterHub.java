@@ -45,6 +45,7 @@ public interface RouterHub {
     String XIAO_XING_LOGIN = "/xiao_xing_login";//登录
     String XIAO_XING_ADDRESS = "/xiao_xing_address";//地址
     String XIAO_XING_ORDER = "/xiao_xing_order";//订单
+    String XIAO_XING_SEARCH = "/xiao_xing_search";//搜索
 
     /**
      * 服务组件, 用于给每个组件暴露特有的服务
@@ -57,6 +58,8 @@ public interface RouterHub {
     String WELCOME_SPLASHACTIVITY = WELCOME + "/SplashActivity";
     String WELCOME_WELCOMEACTIVITY = WELCOME + "/WelcomeActivity";
     String WELCOME_WELCOMEGUIDEACTIVITY = WELCOME + "/WelcomeGuideActivity";
+
+    String XIAO_XING_SEARCH_SearchActivity = XIAO_XING_SEARCH + "/SearchActivity";
 
     /**
      * 宿主 App 分组
