@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
@@ -49,9 +50,9 @@ public class FragmentHome extends BaseFragment {
     private List<String> mLists = new ArrayList<>();
     private List<Integer> mICons = new ArrayList<>();
     public static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
-        add(new BannerItem("最后的骑士", R.mipmap.image_movie_header_48621499931969370));
-        add(new BannerItem("三生三世十里桃花", R.mipmap.image_movie_header_12981501221820220));
-        add(new BannerItem("豆福传", R.mipmap.image_movie_header_12231501221682438));
+        add(new BannerItem("最后的骑士", R.mipmap.banner_001));
+        add(new BannerItem("三生三世十里桃花", R.mipmap.banner_001));
+        add(new BannerItem("豆福传", R.mipmap.banner_001));
     }};
     public static String JSON_MOVIES = "[" +
             "{\"actors\":\"丹尼斯·威缇可宁|Emma|Nikki|Jiayao|Wang|Maggie|Mao|Gang-yun|Sa\",\"filmName\":\"神灵寨\",\"grade\":\"5.0\",\"picaddr\":\"http://app.infunpw.com/commons/images/cinema/cinema_films/3823.jpg\",\"releasedate\":\"2017-07-31\",\"shortinfo\":\"父亲忽病危 新娘真够黑\",\"type\":\"剧情|喜剧\"}," +
@@ -200,6 +201,13 @@ public class FragmentHome extends BaseFragment {
         final List<Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<Movie>>() {
         }.getType());
         mAdapter.replaceData(movies);
+
+
+        // 为ViewFlipper添加广告条
+        ViewFlipper vf = (ViewFlipper) view.findViewById(R.id.marquee_view);
+        vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
+        vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
+        vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
 
         return view;
     }
