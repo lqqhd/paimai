@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/XiaoxingArms" />
             <option value="$PROJECT_DIR$/XiaoxingCar" />
             <option value="$PROJECT_DIR$/XiaoxingDrawer" />
+            <option value="$PROJECT_DIR$/XiaoxingEeditText" />
             <option value="$PROJECT_DIR$/XiaoxingExpandableRecycler" />
             <option value="$PROJECT_DIR$/XiaoxingFlycoTabLayout" />
             <option value="$PROJECT_DIR$/XiaoxingLogin" />
@@ -28,7 +29,6 @@
             <option value="$PROJECT_DIR$/refresh-footer" />
             <option value="$PROJECT_DIR$/refresh-header" />
             <option value="$PROJECT_DIR$/refresh-layout" />
-            <option value="$PROJECT_DIR$/xedittext" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,6 +1,6 @@
 include ':app', ':CommonSDK', ':CommonService', ':CommonRes', ':XiaoxingArms', ':XiaoxingWelcome', ':SalesClient', ':SellerClient', ':XiaoxingSetting', ':XiaoxingLogin', ':XiaoxingAddress', ':XiaoxingOrder', ':XiaoxingCar','XiaoxingPagerBottomTabStrip'
 include ':refresh-layout', ':refresh-header', ':refresh-footer'
-include ':xedittext'
+include ':XiaoxingEeditText'
 include ':XiaoxingFlycoTabLayout'
 include ':XiaoxingExpandableRecycler'
 include ':XiaoxingDrawer'
