@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.OnClick;
+import cn.iwgang.countdownview.CountdownView;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
@@ -201,15 +202,26 @@ public class FragmentHome extends BaseFragment {
         final List<Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<Movie>>() {
         }.getType());
         mAdapter.replaceData(movies);
+        initTouTiao(view);
+        initTuiGuangData(view);
+        return view;
+    }
 
-
+    private void initTouTiao(View view) {
         // 为ViewFlipper添加广告条
         ViewFlipper vf = (ViewFlipper) view.findViewById(R.id.marquee_view);
         vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
         vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
         vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
+    }
 
-        return view;
+    private void initTuiGuangData(View view) {
+        CountdownView mCvCountdownViewTest4 = (CountdownView) view.findViewById(R.id.cv_countdownView_zhuan_chang_tui_guang_001);
+        long time4 = (long) 150 * 24 * 60 * 60 * 1000;
+        mCvCountdownViewTest4.start(time4);
+
+        CountdownView cv_countdownView_zhuan_chang_tui_guang_002 = (CountdownView) view.findViewById(R.id.cv_countdownView_zhuan_chang_tui_guang_002);
+        cv_countdownView_zhuan_chang_tui_guang_002.start(time4);
     }
 
     private void initDrawer(Bundle savedInstanceState) {

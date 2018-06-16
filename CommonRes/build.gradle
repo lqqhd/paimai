@@ -50,6 +50,7 @@ dependencies {
 
     api project(':XiaoxingEeditText')
     api project(":XiaoxingDrawer")
+    api project(":XiaoxingCountdownView")
 
     api "q.rorbin:VerticalTabLayout:1.2.5"
     api 'com.github.jiang111:IndicatorDialog:2.0.1'
