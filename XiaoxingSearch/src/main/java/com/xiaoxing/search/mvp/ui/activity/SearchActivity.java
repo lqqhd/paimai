@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -34,7 +33,7 @@ import com.xiaoxing.search.mvp.presenter.SearchPresenter;
 import com.xiaoxing.search.mvp.ui.helper.RecordSQLiteOpenHelper;
 import com.xiaoxing.search.mvp.ui.helper.TagsManager;
 import com.xiaoxing.search.mvp.ui.view.MyListView;
-import com.xiaoxing.search.mvp.ui.view.TagGroup;
+import me.jessyan.armscomponent.commonres.view.TagGroup;
 
 import java.util.Date;
 

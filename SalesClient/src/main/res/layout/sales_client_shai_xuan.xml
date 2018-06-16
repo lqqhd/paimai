@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDEEF2"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/public_white"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_chong_zhi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="重置"
+            android:textColor="#AFAFAF"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="筛选"
+            android:textColor="@color/public_black"
+            android:textSize="@dimen/public_font_16sp" />
+
+        <Button
+            android:id="@+id/btn_que_ding"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center|right"
+            android:paddingRight="@dimen/dp_10"
+            android:text="确定"
+            android:textColor="#AFAFAF"
+            android:textSize="@dimen/public_font_14sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/public_white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="类目"
+            android:textColor="@color/public_black"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <me.jessyan.armscomponent.commonres.view.flowtag.FlowTagLayout
+            android:id="@+id/mobile_flow_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/public_white" />
+    </LinearLayout>
+
+</LinearLayout>

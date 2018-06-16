@@ -1,4 +1,4 @@
-package com.xiaoxing.search.mvp.ui.view;
+package me.jessyan.armscomponent.commonres.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -28,10 +28,11 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.TextView;
 
-import com.xiaoxing.search.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import me.jessyan.armscomponent.commonres.R;
 
 /**
  * A <code>TagGroup</code> is a special layout with a set of tags.

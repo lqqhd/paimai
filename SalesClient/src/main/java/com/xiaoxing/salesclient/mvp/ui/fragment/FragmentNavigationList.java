@@ -30,7 +30,7 @@ import xiaoxing.com.salesclient.R2;
 
 public class FragmentNavigationList extends BaseFragment {
 
-    private String[] cates = {"陶瓷陶器", "玉器玉雕", "古币纸钱", "收藏杂项", "铜器铜雕", "中国书画", "古典家具", "邮票邮品", "齐化奇石", "金银珠宝", "专题收藏", "雕品工艺", "图书报刊", "西画雕塑"};
+    public static String[] cates = {"陶瓷陶器", "玉器玉雕", "古币纸钱", "收藏杂项", "铜器铜雕", "中国书画", "古典家具", "邮票邮品", "齐化奇石", "金银珠宝", "专题收藏", "雕品工艺", "图书报刊", "西画雕塑"};
 
     @BindView(R2.id.navigation_tab_layout)
     VerticalTabLayout mTabLayout;
