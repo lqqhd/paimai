@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_navigation_cat1"
+    style="@style/public_MineItemRelativeLayout">
+
+
+    <TextView
+        android:id="@+id/item_navigation_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="分类标题"
+        android:textColor="@color/public_black"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <include layout="@layout/sales_client_include_more" />
+
+
+</RelativeLayout>

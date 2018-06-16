@@ -13,9 +13,13 @@ import com.jess.arms.di.component.AppComponent;
 
 import java.util.ArrayList;
 
+import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
+import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R2;
 
 public class FragmentNavigation extends BaseFragment {
 
@@ -57,6 +61,12 @@ public class FragmentNavigation extends BaseFragment {
 
     @Override
     public void setData(@Nullable Object data) {
+
+    }
+
+    @OnClick(R2.id.et_search)
+    void toSearch() {
+        Utils.navigation(getActivity(), RouterHub.XIAO_XING_SEARCH_SearchActivity);
 
     }
 }

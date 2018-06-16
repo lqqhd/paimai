@@ -11,9 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.innodroid.expandablerecycler.ExpandableRecyclerAdapter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationAdapter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.FeedArticleData;
 import com.xiaoxing.salesclient.mvp.ui.entity.NavigationListData;
 
@@ -134,9 +136,13 @@ public class FragmentNavigationList extends BaseFragment {
 //            mTabLayout.setVisibility(View.INVISIBLE);
 //            mDivider.setVisibility(View.INVISIBLE);
 //        }
-        NavigationAdapter adapter = new NavigationAdapter(R.layout.sales_client_item_navigation, navigationListData);
-        mRecyclerView.setAdapter(adapter);
-        mManager = new GridLayoutManager(getActivity(), 3);
+//        NavigationAdapter adapter = new NavigationAdapter(R.layout.sales_client_item_navigation, navigationListData);
+        NavigationListAdapter navigationListAdapter = new NavigationListAdapter(getActivity());
+        navigationListAdapter.setMode(ExpandableRecyclerAdapter.MODE_ACCORDION);
+        mRecyclerView.setAdapter(navigationListAdapter);
+        navigationListAdapter.expandAll();
+//        mManager = new GridLayoutManager(getActivity(), 3);
+        mManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mManager);
         leftRightLinkage();
     }
