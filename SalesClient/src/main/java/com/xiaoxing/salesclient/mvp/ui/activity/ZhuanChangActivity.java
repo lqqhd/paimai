@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.EditText;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
@@ -22,6 +25,7 @@ import java.util.ArrayList;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -30,7 +34,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implements ZhuanChangContract.View {
 
 
-    private final String[] mTitles = {"所有专场", "热门拍品", "我的关注","筛选"};
+    private final String[] mTitles = {"所有专场", "热门拍品", "我的关注", "筛选"};
 
 
     @Override
@@ -50,7 +54,15 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        ToolbarUtils.initToolbarTitleBackWithSearch(this);
+        Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithSearch(this);
+
+        EditText et_search = toolbar.findViewById(R.id.et_search);
+        et_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.navigation(ZhuanChangActivity.this, RouterHub.XIAO_XING_SEARCH_SearchActivity);
+            }
+        });
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new FragmentAllZhuanChang());

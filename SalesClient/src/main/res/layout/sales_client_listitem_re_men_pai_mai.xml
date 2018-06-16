@@ -16,8 +16,9 @@
             android:layout_width="@dimen/dp_100"
             android:layout_height="@dimen/dp_100"
             android:layout_weight="1"
+            android:padding="@dimen/dp_5"
             android:scaleType="fitXY"
-            android:src="@mipmap/test" />
+            android:src="@mipmap/goods_003" />
 
 
         <TextView

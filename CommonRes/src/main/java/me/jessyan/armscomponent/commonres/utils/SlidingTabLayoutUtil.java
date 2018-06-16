@@ -27,12 +27,12 @@ public class SlidingTabLayoutUtil {
         tabLayout_2.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
-                Toast.makeText(activity, "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(activity, "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onTabReselect(int position) {
-                Toast.makeText(activity, "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(activity, "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
             }
         });
 //        tabLayout_2.showDot(4);

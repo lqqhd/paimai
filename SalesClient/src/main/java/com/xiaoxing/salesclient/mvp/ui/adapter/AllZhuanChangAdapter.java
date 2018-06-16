@@ -8,6 +8,7 @@ import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
 import java.util.List;
 
+import cn.iwgang.countdownview.CountdownView;
 import xiaoxing.com.salesclient.R;
 
 
@@ -23,6 +24,12 @@ public class AllZhuanChangAdapter extends BaseQuickAdapter<AddressList, BaseView
     @Override
     protected void convert(BaseViewHolder helper, AddressList item) {
 
+        initCountdownView(helper);
+    }
 
+    private void initCountdownView(BaseViewHolder viewHolder) {
+        CountdownView mCvCountdownViewTest4 = (CountdownView) viewHolder.getView(R.id.cv_countdownView);
+        long time4 = (long) 150 * 24 * 60 * 60 * 1000;
+        mCvCountdownViewTest4.start(time4);
     }
 }
