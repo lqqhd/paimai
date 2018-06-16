@@ -7,8 +7,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jess.arms.base.BaseActivity;
@@ -18,6 +21,7 @@ import com.xiaoxing.salesclient.di.component.DaggerZhanTingDetailComponent;
 import com.xiaoxing.salesclient.di.module.ZhanTingDetailModule;
 import com.xiaoxing.salesclient.mvp.contract.ZhanTingDetailContract;
 import com.xiaoxing.salesclient.mvp.presenter.ZhanTingDetailPresenter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.ZhanTingTuiGuangDetailAdapter;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentAllZhuanChang;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentCangPin;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome;
@@ -25,10 +29,14 @@ import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R2;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome.JSON_MOVIES;
@@ -36,7 +44,10 @@ import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome.JSON_MOVIES;
 @Route(path = RouterHub.SALES_CLIENT_ZHANTINGDETAILACTIVITY)
 public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter> implements ZhanTingDetailContract.View {
 
+    @BindView(R2.id.tv_guan_zhu)
+    TextView mTvGuanZhu;
     private ZhanTingTuiGuangDetailAdapter mAdapter;
+
     private final String[] mTitles = {"展厅商品", "微拍商品", "专场"};
 
     @Override
@@ -67,7 +78,13 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
         final List<FragmentHome.Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<FragmentHome.Movie>>() {
         }.getType());
         mAdapter.replaceData(movies);
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Utils.navigation(ZhanTingDetailActivity.this, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
 
+            }
+        });
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new FragmentCangPin());
@@ -102,5 +119,12 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
     @Override
     public void killMyself() {
         finish();
+    }
+
+
+    @OnClick(R2.id.tv_guan_zhu)
+    void guanZhu() {
+        Utils.navigation(ZhanTingDetailActivity.this, RouterHub.XIAO_XING_LOGIN_LOGINACTIVITY);
+
     }
 }

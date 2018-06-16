@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.ui.activity;
+package com.xiaoxing.salesclient.mvp.ui.adapter;
 
 import android.content.Context;
 import android.view.View;

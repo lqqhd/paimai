@@ -44,7 +44,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        ToolbarUtils.initToolbarTitleNoBack(this, getString(R.string.xiaoxing_login_login));
+        ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_login));
     }
 
     @Override

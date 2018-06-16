@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
@@ -28,6 +29,8 @@ import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
@@ -118,6 +121,13 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
 ////                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
 //                    }
 //                });
+                mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                        Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+
+                    }
+                });
                 mRefreshLayout.finishRefresh();
                 mEmptyLayout.setVisibility(View.GONE);
             }
