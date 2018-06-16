@@ -33,6 +33,7 @@
     <color name="sales_client_navigation_tv_selected">#52524F</color>
     <color name="sales_client_navigation_tv_normal">#B8B8B8</color>
 
-
+    <color name="sales_client_software_textColor_selected">@color/public_white</color>
+    <color name="sales_client_software_textColor_unselected">#292929</color>
 
 </resources>

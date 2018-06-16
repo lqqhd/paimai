@@ -17,6 +17,7 @@ import java.util.List;
  * 原理：重写{@link ViewGroup#onMeasure(int, int)}
  * 和{@link ViewGroup#onLayout(boolean, int, int, int, int)}
  * 方法
+ * Created by HanHailong on 15/10/19.
  */
 public class FlowTagLayout extends ViewGroup {
 
@@ -292,9 +293,11 @@ public class FlowTagLayout extends ViewGroup {
      * 清除所有被选择的选项
      *
      * @author https://github.com/wanyt
+     *
      * @time 2016年11月13日16:07:23
+     *
      */
-    public void clearAllOption() {
+    public void clearAllOption(){
         for (int i = 0; i < mAdapter.getCount(); i++) {
             if (mCheckedTagArray.get(i)) {
                 getChildAt(i).setSelected(false);

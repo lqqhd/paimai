@@ -65,7 +65,7 @@ public class TagAdapter<T> extends BaseAdapter implements OnInitSelectedPosition
     @Override
     public boolean isSelectedPosition(int position) {
         if (position % 2 == 0) {
-            return true;
+            return false;
         }
         return false;
     }

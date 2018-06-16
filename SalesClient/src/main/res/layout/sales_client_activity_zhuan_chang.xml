@@ -32,7 +32,7 @@
                 tl:tl_divider_color="#1A000000"
                 tl:tl_divider_padding="13dp"
                 tl:tl_divider_width="1dp"
-                tl:tl_indicator_color="#000000"
+                tl:tl_indicator_color="#661F26"
                 tl:tl_indicator_height="1.5dp"
                 tl:tl_indicator_width_equal_title="true"
                 tl:tl_tab_padding="0dp"
@@ -67,6 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end"
+        android:background="@color/public_white"
         android:fitsSystemWindows="false" />
 
 </android.support.v4.widget.DrawerLayout>
