@@ -127,8 +127,8 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (drawer.isDrawerOpen(GravityCompat.END)) {
+            drawer.closeDrawer(GravityCompat.END);
         } else {
             super.onBackPressed();
         }
@@ -156,12 +156,12 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        drawer.closeDrawer(GravityCompat.END);
         return true;
     }
 
     @OnClick(R2.id.tv_shai_xuan)
     void shaiXuan() {
-        drawer.openDrawer(GravityCompat.START);
+        drawer.openDrawer(GravityCompat.END);
     }
 }
