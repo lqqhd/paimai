@@ -303,6 +303,7 @@ public class FlowTagLayout extends ViewGroup {
                 getChildAt(i).setSelected(false);
             }
         }
+        mCheckedTagArray.clear();
     }
 
     public void setOnTagClickListener(OnTagClickListener onTagClickListener) {
