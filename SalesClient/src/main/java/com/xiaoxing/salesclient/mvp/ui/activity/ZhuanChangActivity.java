@@ -10,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,7 +45,7 @@ import xiaoxing.com.salesclient.R2;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 @Route(path = RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY)
-public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implements ZhuanChangContract.View, NavigationView.OnNavigationItemSelectedListener {
+public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implements ZhuanChangContract.View {
 
 
     private final String[] mTitles = {"所有专场", "热门拍品", "我的关注", "筛选"};
@@ -101,11 +100,7 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
 //        drawer.addDrawerListener(toggle);
 //        toggle.syncState();
 
-        navigationView.setNavigationItemSelectedListener(this);
-
-
         initTag();
-
 
     }
 
@@ -153,6 +148,7 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
         });
 
         initMobileData();
+
     }
 
     private void initMobileData() {
@@ -164,6 +160,21 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
         mMobileTagAdapter.onlyAddAll(dataSource);
     }
 
+
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.END)) {
+            drawer.closeDrawer(GravityCompat.END);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+    @OnClick(R2.id.tv_shai_xuan)
+    void shaiXuan() {
+        drawer.openDrawer(GravityCompat.END);
+    }
 
     @Override
     public void showLoading() {
@@ -193,42 +204,4 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
     }
 
 
-    @Override
-    public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.END)) {
-            drawer.closeDrawer(GravityCompat.END);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-//        int id = item.getItemId();
-//
-//        if (id == R.id.nav_camera) {
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
-
-        drawer.closeDrawer(GravityCompat.END);
-        return true;
-    }
-
-    @OnClick(R2.id.tv_shai_xuan)
-    void shaiXuan() {
-        drawer.openDrawer(GravityCompat.END);
-    }
 }
