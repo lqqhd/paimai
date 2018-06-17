@@ -153,7 +153,7 @@ public class FragmentMine extends BaseFragment {
         } else if (view.getId() == R.id.tv_chong_zhi) {
             Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCERECHARGEACTIVITY);
         } else if (view.getId() == R.id.rl_mine_quotation) {
-//            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_MINEQUOTATIONACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_MINEQUOTATIONACTIVITY);
         }
     }
 

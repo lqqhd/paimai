@@ -203,6 +203,10 @@
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceAddBankCardActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.MineQuotationActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
 
     </application>
 
