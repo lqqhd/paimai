@@ -47,5 +47,6 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="sales_client_mine_quotation">我的报价</string>
+    <string name="sales_client_wo_de_jing_pai">我的竞拍</string>
 
 </resources>

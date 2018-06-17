@@ -29,7 +29,7 @@ import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity;
-import com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiTuiGuangHomeAdapter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.WeiPaiTuiGuangHomeAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.BaseDialogTipAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
 import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;

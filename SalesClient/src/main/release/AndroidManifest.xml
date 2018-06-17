@@ -16,7 +16,10 @@
         <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhanTingActivity" />
         <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiDetailActivity" />
         <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhanTingDetailActivity" />
-        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.MineQuotationActivity"></activity>
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.MineQuotationActivity" />
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.WoDeJingPaiActivity" />
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ShouCangActivity" />
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.TianJiangHongBaoActivity"></activity>
     </application>
 
 </manifest>
