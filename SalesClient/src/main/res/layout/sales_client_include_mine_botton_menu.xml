@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/rl_bao_xiu_dan"
+        android:id="@+id/rl_balance"
         style="@style/public_MineItemRelativeLayout"
         android:layout_marginTop="@dimen/dp_10">
 
@@ -15,7 +15,7 @@
             android:src="@mipmap/mem_icon1" />
 
         <TextView
-            android:id="@+id/fragmentmyImageView2"
+            android:id="@+id/tv_chong_zhi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -48,7 +48,7 @@
 
     <include layout="@layout/public_line_horizontal" />
 
-    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+    <RelativeLayout android:id="@+id/rl_mine_quotation" style="@style/public_MineItemRelativeLayout">
 
         <ImageView
             android:id="@+id/img_wo_de_bao_jia"

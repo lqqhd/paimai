@@ -128,7 +128,8 @@ public class FragmentMine extends BaseFragment {
     @OnClick({
             R2.id.panel_lyt, R2.id.rl_all_orders, R2.id.ll_dai_fu_kuan,
             R2.id.ll_dai_fa_huo, R2.id.ll_dai_ping_jia, R2.id.ll_dai_shou_huo,
-            R2.id.ll_shou_hou, R2.id.rl_tou_tiao})
+            R2.id.ll_shou_hou, R2.id.rl_tou_tiao, R2.id.rl_balance,
+            R2.id.tv_chong_zhi, R2.id.rl_mine_quotation})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.panel_lyt) {
@@ -147,6 +148,12 @@ public class FragmentMine extends BaseFragment {
             Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
         } else if (view.getId() == R.id.rl_tou_tiao) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_HEADLINESACTIVITY);
+        } else if (view.getId() == R.id.rl_balance) {
+            Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCEACTIVITY);
+        } else if (view.getId() == R.id.tv_chong_zhi) {
+            Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCERECHARGEACTIVITY);
+        } else if (view.getId() == R.id.rl_mine_quotation) {
+//            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_MINEQUOTATIONACTIVITY);
         }
     }
 

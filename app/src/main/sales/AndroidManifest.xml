@@ -153,6 +153,56 @@
             android:name="com.xiaoxing.search.mvp.ui.activity.SearchActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceDetailsActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceRechargeActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceRechargePaymentActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceWithDrawLoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceWithDrawActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceXiaoBaoJinActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceXiaoBaoJinJiaoNaActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceVerifiedActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalancePaymentSecurityActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceAddBankCardActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
 
     </application>
 
