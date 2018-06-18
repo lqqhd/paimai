@@ -38,7 +38,7 @@
                 android:hint="请输入专场名"
                 android:paddingLeft="@dimen/dp_10"
                 android:textColor="#B8B8B8"
-                android:textSize="@dimen/public_font_14sp"
+                android:textSize="@dimen/public_font_12sp"
                 xedit:x_clearDrawable="@mipmap/ic_clear"
                 xedit:x_disableClear="false"
                 xedit:x_hidePwdDrawable="@mipmap/ic_hide"
@@ -78,7 +78,7 @@
                 android:paddingRight="@dimen/dp_10"
                 android:text="请选择分类"
                 android:textColor="#B8B8B8"
-                android:textSize="@dimen/public_font_14sp" />
+                android:textSize="@dimen/public_font_12sp" />
 
         </LinearLayout>
 
@@ -89,10 +89,12 @@
             android:layout_height="100dp"
             android:layout_marginTop="@dimen/dp_5"
             android:background="@color/public_white"
+            android:gravity="left"
             android:hint="专场描述"
+            android:padding="@dimen/dp_10"
             android:paddingLeft="@dimen/dp_10"
             android:textColor="#B8B8B8"
-            android:textSize="@dimen/public_font_14sp"
+            android:textSize="@dimen/public_font_12sp"
             xedit:x_clearDrawable="@mipmap/ic_clear"
             xedit:x_disableClear="false"
             xedit:x_hidePwdDrawable="@mipmap/ic_hide"
@@ -128,7 +130,7 @@
                 android:paddingRight="@dimen/dp_10"
                 android:text="请选择专场开始时间"
                 android:textColor="#B8B8B8"
-                android:textSize="@dimen/public_font_14sp" />
+                android:textSize="@dimen/public_font_12sp" />
 
         </LinearLayout>
 
@@ -163,11 +165,20 @@
                 android:paddingRight="@dimen/dp_10"
                 android:text="1分钟"
                 android:textColor="#B8B8B8"
-                android:textSize="@dimen/public_font_14sp" />
+                android:textSize="@dimen/public_font_12sp" />
 
         </LinearLayout>
 
         <include layout="@layout/public_line_horizontal_margin_10" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="发布即表示同意《服务协议》"
+            android:textColor="#3D3D3D"
+            android:textSize="@dimen/public_font_12sp" />
 
     </LinearLayout>
 
