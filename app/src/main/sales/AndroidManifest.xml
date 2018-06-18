@@ -219,6 +219,18 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.TianJiangHongBaoActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.ChuangJianWeiPaiActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.ChuangJianZhanPinActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.ChuangJianZhuanChangActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
 
     </application>
 

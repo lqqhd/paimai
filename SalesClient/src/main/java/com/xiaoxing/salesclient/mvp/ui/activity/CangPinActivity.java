@@ -81,6 +81,13 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithSearch(this);
         mTvChuangJianName.setText("展品发布");
         mRlChuangJian.setVisibility(View.VISIBLE);
+        mRlChuangJian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.navigation(CangPinActivity.this, RouterHub.SALES_CLIENT_CHUANGJIANZHANPINACTIVITY);
+
+            }
+        });
         EditText et_search = toolbar.findViewById(R.id.et_search);
         et_search.setOnClickListener(new View.OnClickListener() {
             @Override

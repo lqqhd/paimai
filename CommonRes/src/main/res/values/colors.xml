@@ -47,5 +47,6 @@
     <color name="public_mine_order_text">#484848</color>
     <color name="public_client_line_color">#E4E4E4</color>
     <color name="public_client_head_bg">#f6f6f6</color>
+    <color name="public_red">#761e1c</color>
 
 </resources>

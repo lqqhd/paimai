@@ -86,6 +86,13 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithSearch(this);
         mTvChuangJianName.setText("创建专场");
         mRlChuangJian.setVisibility(View.VISIBLE);
+        mRlChuangJian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.navigation(ZhuanChangActivity.this, RouterHub.SALES_CLIENT_CHUANGJIANZHUANCHANGACTIVITY);
+
+            }
+        });
         EditText et_search = toolbar.findViewById(R.id.et_search);
         et_search.setOnClickListener(new View.OnClickListener() {
             @Override

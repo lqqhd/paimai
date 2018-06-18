@@ -81,6 +81,13 @@ public class WeiPaiActivity extends BaseActivity<WeiPaiPresenter> implements Wei
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithSearch(this);
         mTvChuangJianName.setText("微拍发布");
         mRlChuangJian.setVisibility(View.VISIBLE);
+        mRlChuangJian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.navigation(WeiPaiActivity.this, RouterHub.SALES_CLIENT_CHUANGJIANWEIPAIACTIVITY);
+
+            }
+        });
         EditText et_search = toolbar.findViewById(R.id.et_search);
         et_search.setOnClickListener(new View.OnClickListener() {
             @Override
