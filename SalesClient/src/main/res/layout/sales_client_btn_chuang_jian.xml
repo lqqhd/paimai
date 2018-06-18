@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_70"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/shape_rl_chuang_jian"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/shape_btn_chuang_jian"
+        android:text="+"
+        android:textColor="@color/public_white"
+        android:textSize="@dimen/public_font_20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@+id/btn_add"
+        android:gravity="center"
+        android:text="创建专场"
+        android:textColor="#741614"
+        android:textSize="@dimen/public_font_12sp" />
+
+
+</RelativeLayout>

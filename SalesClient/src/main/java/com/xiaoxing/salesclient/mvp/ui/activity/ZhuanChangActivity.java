@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -52,6 +53,11 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
 
     @BindView(R2.id.tv_shai_xuan)
     TextView mTvShaiXuan;
+    @BindView(R2.id.tv_chuang_jian_name)
+    TextView mTvChuangJianName;
+    @BindView(R2.id.rl_chuan_jian)
+    RelativeLayout mRlChuangJian;
+
     @BindView(R2.id.drawer_layout)
     DrawerLayout drawer;
     @BindView(R2.id.nav_view)
@@ -78,7 +84,8 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithSearch(this);
-
+        mTvChuangJianName.setText("创建专场");
+        mRlChuangJian.setVisibility(View.VISIBLE);
         EditText et_search = toolbar.findViewById(R.id.et_search);
         et_search.setOnClickListener(new View.OnClickListener() {
             @Override

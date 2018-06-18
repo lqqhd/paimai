@@ -7,19 +7,24 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tl="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/public_white"
         android:orientation="vertical">
 
-        <include layout="@layout/public_toolbar_search" />
+        <include
+            android:id="@+id/toolbar"
+            style="@style/public_AppTheme.Toolbar"
+            layout="@layout/public_toolbar_search" />
 
 
         <LinearLayout
+            android:id="@+id/ll_tab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
             android:orientation="horizontal">
 
 
@@ -59,8 +64,45 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/vp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_tab" />
+
+        <RelativeLayout
+            android:id="@+id/rl_chuan_jian"
+            android:layout_width="@dimen/dp_70"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shape_rl_chuang_jian"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/shape_btn_chuang_jian"
+                android:text="+"
+                android:textColor="@color/public_white"
+                android:textSize="@dimen/public_font_20sp" />
+
+            <TextView
+                android:id="@+id/tv_chuang_jian_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_below="@+id/btn_add"
+                android:gravity="center"
+                android:text="创建专场"
+                android:textColor="#741614"
+                android:textSize="@dimen/public_font_12sp" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
