@@ -413,7 +413,7 @@
             android:layout_alignParentBottom="true"
             android:layout_weight="1"
             android:background="@color/public_red"
-            android:text="存入仓库"
+            android:text="立即发布"
             android:textColor="@color/public_white"
             android:textSize="@dimen/public_font_14sp" />
     </LinearLayout>
