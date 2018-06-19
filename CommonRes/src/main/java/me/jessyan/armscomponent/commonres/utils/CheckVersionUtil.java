@@ -26,13 +26,13 @@ public class CheckVersionUtil {
                     @Nullable
                     @Override
                     public UIData onRequestVersionSuccess(String result) {
-                        Toast.makeText(context, "request successful", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "request successful", Toast.LENGTH_SHORT).show();
                         return crateUIData(context);
                     }
 
                     @Override
                     public void onRequestVersionFailure(String message) {
-                        Toast.makeText(context, "request failed", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "request failed", Toast.LENGTH_SHORT).show();
 
                     }
                 });

@@ -8,6 +8,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -53,6 +54,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
+    private List<AddressList> mAddressLists = new ArrayList<>();
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -66,12 +68,11 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
-        return R.layout.activity_zhan_ting_goods_list; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+        return R.layout.sales_client_activity_zhan_ting_goods_list; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-
 
         ToolbarUtils.initToolbarTitleBack(this, "专场");
 
@@ -83,6 +84,18 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(ZhanTingGoodsListActivity.this));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(ZhanTingGoodsListActivity.this, VERTICAL));
+        mAdapter = new ZhanTingGoodsListAdapter(mAddressLists);
+        LayoutInflater inflater = LayoutInflater.from(ZhanTingGoodsListActivity.this);
+        View headView = inflater.inflate(R.layout.sales_client_activity_zhan_ting_goods_list_head, null, false);
+        mAdapter.addHeaderView(headView);
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+
+            }
+        });
+        mRecyclerView.setAdapter(mAdapter);
 
         mEmptyLayout = findViewById(R.id.empty);
 
@@ -123,27 +136,8 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         mRefreshLayout.getLayout().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(ZhanTingGoodsListActivity.this));
-                mRecyclerView.addItemDecoration(new DividerItemDecoration(ZhanTingGoodsListActivity.this, VERTICAL));
-                mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                mRecyclerView.setAdapter(mAdapter = new ZhanTingGoodsListAdapter(loadModels()));
-//                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
-//                    @Override
-//                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
-//                        holder.text(android.R.id.text1, model.name());
-////                        holder.text(android.R.id.text2, model.name);
-////                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
-//                    }
-//                });
-
-                mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
-
-                    }
-                });
+                mAddressLists.addAll(loadModels());
+                mAdapter.notifyDataSetChanged();
                 mRefreshLayout.finishRefresh();
                 mEmptyLayout.setVisibility(View.GONE);
             }
@@ -156,7 +150,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     private List<AddressList> loadModels() {
         List<AddressList> addressLists = new ArrayList<>();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 25; i++) {
 
             AddressList addressList = new AddressList();
             addressList.setName("name" + i);

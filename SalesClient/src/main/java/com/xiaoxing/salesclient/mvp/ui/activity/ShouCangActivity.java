@@ -8,7 +8,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -69,7 +68,7 @@ public class ShouCangActivity extends BaseActivity<ShouCangPresenter> implements
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
-        return R.layout.activity_shou_cang; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+        return R.layout.sales_client_activity_shou_cang; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
 
     @Override

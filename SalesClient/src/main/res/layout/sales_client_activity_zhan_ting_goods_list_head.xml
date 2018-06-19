@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/public_ripple_bg"
     android:orientation="vertical">
 
-    <include layout="@layout/public_toolbar" />
 
     <TextView
         android:id="@+id/tv_time"
@@ -124,37 +123,6 @@
 
 
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <com.scwang.smartrefresh.layout.SmartRefreshLayout
-            android:id="@+id/refreshLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/white"
-                    android:overScrollMode="never"
-                    tools:listitem="@android:layout/simple_list_item_2" />
-
-                <include
-                    android:id="@+id/empty"
-                    layout="@layout/_loading_layout_empty" />
-            </FrameLayout>
-        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-
-    </LinearLayout>
 
 
 </LinearLayout>
