@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:countdownView="http://schemas.android.com/apk/res-auto"
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,19 +28,46 @@
 
                 <include layout="@layout/public_banner" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_40"
                     android:layout_alignParentBottom="true"
-                    android:background="#751D1C"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp_10"
-                    android:text="距结束 7天 21时 51分 43秒"
-                    android:textColor="@color/public_white"
-                    android:textSize="@dimen/public_font_16sp" />
+                    android:background="#751D1C">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:text="距结束"
+                        android:textColor="@color/public_white"
+                        android:textSize="@dimen/public_font_16sp" />
+
+                    <cn.iwgang.countdownview.CountdownView
+                        android:id="@+id/cv_countdownViewTest4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        countdownView:isShowDay="true"
+                        countdownView:isShowHour="true"
+                        countdownView:isShowMillisecond="true"
+                        countdownView:isShowMinute="true"
+                        countdownView:isShowSecond="true"
+                        countdownView:isTimeTextBold="true"
+                        countdownView:suffixDay="天"
+                        countdownView:suffixGravity="bottom"
+                        countdownView:suffixHour="时"
+                        countdownView:suffixMillisecond="毫秒"
+                        countdownView:suffixMinute="钟"
+                        countdownView:suffixSecond="秒"
+                        countdownView:suffixTextColor="@color/public_white"
+                        countdownView:suffixTextSize="@dimen/public_font_14sp"
+                        countdownView:timeTextColor="@color/public_white"
+                        countdownView:timeTextSize="@dimen/public_font_16sp" />
+                </LinearLayout>
 
             </RelativeLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -547,15 +575,30 @@
         android:orientation="horizontal">
 
 
-        <TextView
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:paddingLeft="@dimen/dp_10"
-            android:text="咨询"
-            android:textColor="#595959"
-            android:textSize="@dimen/public_font_14sp" />
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_5">
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ww2_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:gravity="center"
+                android:text="咨询"
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_12sp" />
+
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="0dp"

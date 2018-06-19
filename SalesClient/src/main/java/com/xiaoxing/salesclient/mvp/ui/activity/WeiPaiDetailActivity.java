@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -23,6 +24,7 @@ import com.youth.banner.listener.OnBannerClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.iwgang.countdownview.CountdownView;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
@@ -76,14 +78,21 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
             }
         });
 
+
         ArrayList<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new FragmentZhanTing());
         mFragments.add(new FragmentZhanTing());
         mFragments.add(new FragmentZhanTing());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
-    }
 
+        initCountdownView();
+    }
+    private void initCountdownView() {
+        CountdownView mCvCountdownViewTest4 = (CountdownView) findViewById(R.id.cv_countdownViewTest4);
+        long time4 = (long) 150 * 24 * 60 * 60 * 1000;
+        mCvCountdownViewTest4.start(time4);
+    }
     @Override
     public void showLoading() {
 
