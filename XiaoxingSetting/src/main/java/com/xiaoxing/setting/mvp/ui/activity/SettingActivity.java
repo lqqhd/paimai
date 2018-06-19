@@ -123,9 +123,9 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
         } else if (view.getId() == R.id.rl_shou_huo_di_zhi) {
             Utils.navigation(SettingActivity.this, RouterHub.XIAO_XING_ADDRESS_ADDRESS_LIST_ACTIVITY);
         } else if (view.getId() == R.id.rl_an_quan_zhong_xin) {
-
+            Utils.navigation(SettingActivity.this, RouterHub.SELLER_CLIENT_SECURITY_CENTER_ACTIVITY);
         } else if (view.getId() == R.id.rl_shi_ming_ren_zheng) {
-
+            Utils.navigation(SettingActivity.this, RouterHub.SELLER_CLIENT_BALANCE_VERIFIED_ACTIVITY);
         } else if (view.getId() == R.id.btn_sign_out) {
             showConfirmMessageDialog();
         }

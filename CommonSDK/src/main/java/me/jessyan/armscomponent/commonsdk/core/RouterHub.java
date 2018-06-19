@@ -109,6 +109,7 @@ public interface RouterHub {
     String SELLER_CLIENT_BALANCE_PAYMENT_SECURITY_ACTIVITY = SELLER_CLIENT + "/BalancePaymentSecurityActivity";
     String SELLER_CLIENT_BALANCE_ADD_BANK_CARD_ACTIVITY = SELLER_CLIENT + "/BalanceAddBankCardActivity";
     String SELLER_CLIENT_BALANCE_ADD_BANK_CARD_LIST_ACTIVITY = SELLER_CLIENT + "/BalanceAddBankCardListActivity";
+    String SELLER_CLIENT_SECURITY_CENTER_ACTIVITY = SELLER_CLIENT + "/SecurityCenterActivity";
     /**
      * 设置
      */

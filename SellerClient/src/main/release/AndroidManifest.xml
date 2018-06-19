@@ -31,7 +31,8 @@
         <activity android:name=".mvp.ui.activity.BalanceVerifiedActivity" />
         <activity android:name=".mvp.ui.activity.BalancePaymentSecurityActivity" />
         <activity android:name=".mvp.ui.activity.BalanceAddBankCardActivity" />
-        <activity android:name=".mvp.ui.activity.BalanceAddBankCardListActivity"></activity>
+        <activity android:name=".mvp.ui.activity.BalanceAddBankCardListActivity" />
+        <activity android:name=".mvp.ui.activity.SecurityCenterActivity"></activity>
     </application>
 
 </manifest>
