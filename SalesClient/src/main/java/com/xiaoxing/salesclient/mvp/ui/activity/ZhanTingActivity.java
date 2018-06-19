@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.GravityCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
@@ -22,17 +21,15 @@ import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentZhanTing;
 
 import java.util.ArrayList;
 
-import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
-import xiaoxing.com.salesclient.R2;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_ZHANTINGACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_ZHAN_TING_ACTIVITY)
 public class ZhanTingActivity extends BaseActivity<ZhanTingPresenter> implements ZhanTingContract.View {
     private final String[] mTitles = {"最新", "诚信", "最旺", "排行"};
 

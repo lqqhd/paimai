@@ -23,7 +23,7 @@ import xiaoxing.com.salesclient.R;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_CHUANGJIANZHUANCHANGACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_CHUANG_JIAN_ZHUAN_CHANG_ACTIVITY)
 public class ChuangJianZhuanChangActivity extends BaseActivity<ChuangJianZhuanChangPresenter> implements ChuangJianZhuanChangContract.View {
 
     @Override

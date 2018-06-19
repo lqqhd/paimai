@@ -45,7 +45,7 @@ import xiaoxing.com.salesclient.R;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_TIANJIANGHONGBAOACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_TIAN_JIANG_HONG_BAO_ACTIVITY)
 public class TianJiangHongBaoActivity extends BaseActivity<TianJiangHongBaoPresenter> implements TianJiangHongBaoContract.View, OnRefreshListener {
     private AllZhuanChangAdapter mAdapter;
 
@@ -138,7 +138,7 @@ public class TianJiangHongBaoActivity extends BaseActivity<TianJiangHongBaoPrese
                 mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        Utils.navigation(TianJiangHongBaoActivity.this, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+                        Utils.navigation(TianJiangHongBaoActivity.this, RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
 
                     }
                 });

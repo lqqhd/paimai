@@ -46,7 +46,7 @@ import xiaoxing.com.salesclient.R2;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_ZHANTINGGOODSLISTACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY)
 public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPresenter> implements ZhanTingGoodsListContract.View, OnRefreshListener {
     private ZhanTingGoodsListAdapter mAdapter;
 
@@ -93,14 +93,14 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         rl_dian_pu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_ZHANTINGDETAILACTIVITY);
+                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
             }
         });
         mAdapter.addHeaderView(headView);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
 
             }
         });
@@ -202,7 +202,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
 
     @OnClick(R2.id.rl_dian_pu)
     void toDianPu() {
-        Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_ZHANTINGDETAILACTIVITY);
+        Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
 
     }
 }

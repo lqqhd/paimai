@@ -124,7 +124,7 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
                 mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+                        Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
 
                     }
                 });

@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.chad.library.adapter.base.BaseViewHolder;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -32,7 +31,7 @@ import xiaoxing.com.salesclient.R;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY)
 public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> implements WeiPaiDetailContract.View {
 
 

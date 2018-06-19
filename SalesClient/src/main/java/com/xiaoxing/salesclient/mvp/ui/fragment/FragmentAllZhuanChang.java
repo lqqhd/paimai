@@ -125,7 +125,7 @@ public class FragmentAllZhuanChang extends Fragment implements OnRefreshListener
                 mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGGOODSLISTACTIVITY);
+                        Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
 
                     }
                 });

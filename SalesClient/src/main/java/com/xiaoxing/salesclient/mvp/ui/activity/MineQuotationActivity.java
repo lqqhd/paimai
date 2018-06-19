@@ -28,7 +28,7 @@ import xiaoxing.com.salesclient.R;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_MINEQUOTATIONACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_MINE_QUOTATION_ACTIVITY)
 public class MineQuotationActivity extends BaseActivity<MineQuotationPresenter> implements MineQuotationContract.View {
     private final String[] mTitles = {"全部", "已接受", "已拒绝"};
 

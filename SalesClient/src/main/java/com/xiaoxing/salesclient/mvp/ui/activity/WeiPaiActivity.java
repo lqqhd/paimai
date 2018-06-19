@@ -44,7 +44,7 @@ import xiaoxing.com.salesclient.R2;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_WEIPAIACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_WEI_PAI_ACTIVITY)
 public class WeiPaiActivity extends BaseActivity<WeiPaiPresenter> implements WeiPaiContract.View {
     private final String[] mTitles = {"综合", "价格", "最新"};
     @BindView(R2.id.tv_shai_xuan)
@@ -84,7 +84,7 @@ public class WeiPaiActivity extends BaseActivity<WeiPaiPresenter> implements Wei
         mRlChuangJian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.navigation(WeiPaiActivity.this, RouterHub.SALES_CLIENT_CHUANGJIANWEIPAIACTIVITY);
+                Utils.navigation(WeiPaiActivity.this, RouterHub.SALES_CLIENT_CHUANG_JIAN_WEI_PAI_ACTIVITY);
 
             }
         });

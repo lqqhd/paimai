@@ -90,7 +90,7 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_CANGPINACTIVITY);
+                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY);
                 }
             });
         }
@@ -119,7 +119,7 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
             rl_navigation_cat1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_CANGPINACTIVITY);
+                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY);
                 }
             });
 

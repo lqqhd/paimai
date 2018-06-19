@@ -35,7 +35,7 @@ public class WeiPaiTuiGuangHomeAdapter extends BaseQuickAdapter<FragmentHome.Mov
         rl_wei_pai_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.navigation(mContext, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+                Utils.navigation(mContext, RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
 
             }
         });

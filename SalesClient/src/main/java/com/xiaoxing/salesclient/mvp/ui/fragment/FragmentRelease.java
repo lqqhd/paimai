@@ -75,11 +75,11 @@ public class FragmentRelease extends BaseFragment {
     public void onClick(View view) {
         int i = view.getId();
         if (i == R.id.tv_wei_pai_cang_pin_fa_bu) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_CHUANGJIANWEIPAIACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_CHUANG_JIAN_WEI_PAI_ACTIVITY);
         } else if (i == R.id.tv_zhuan_chang_huo_dong_fa_huo) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_CHUANGJIANZHUANCHANGACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_CHUANG_JIAN_ZHUAN_CHANG_ACTIVITY);
         } else if (i == R.id.tv_zhan_ting_cang_pin_fa_bu) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_CHUANGJIANZHANPINACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_CHUANG_JIAN_ZHAN_PIN_ACTIVITY);
         }
     }
 }

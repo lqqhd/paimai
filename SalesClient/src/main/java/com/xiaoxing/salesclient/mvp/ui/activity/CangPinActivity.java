@@ -44,7 +44,7 @@ import xiaoxing.com.salesclient.R2;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_CANGPINACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY)
 public class CangPinActivity extends BaseActivity<CangPinPresenter> implements CangPinContract.View {
     private final String[] mTitles = {"最新", "我的关注"};
     @BindView(R2.id.tv_shai_xuan)
@@ -84,7 +84,7 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
         mRlChuangJian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.navigation(CangPinActivity.this, RouterHub.SALES_CLIENT_CHUANGJIANZHANPINACTIVITY);
+                Utils.navigation(CangPinActivity.this, RouterHub.SALES_CLIENT_CHUANG_JIAN_ZHAN_PIN_ACTIVITY);
 
             }
         });

@@ -89,7 +89,7 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
         mRlChuangJian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.navigation(ZhuanChangActivity.this, RouterHub.SALES_CLIENT_CHUANGJIANZHUANCHANGACTIVITY);
+                Utils.navigation(ZhuanChangActivity.this, RouterHub.SALES_CLIENT_CHUANG_JIAN_ZHUAN_CHANG_ACTIVITY);
 
             }
         });

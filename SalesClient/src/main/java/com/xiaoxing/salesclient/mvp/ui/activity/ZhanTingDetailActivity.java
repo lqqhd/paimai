@@ -41,7 +41,7 @@ import xiaoxing.com.salesclient.R2;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome.JSON_MOVIES;
 
-@Route(path = RouterHub.SALES_CLIENT_ZHANTINGDETAILACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY)
 public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter> implements ZhanTingDetailContract.View {
 
     @BindView(R2.id.tv_guan_zhu)
@@ -81,7 +81,7 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Utils.navigation(ZhanTingDetailActivity.this, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+                Utils.navigation(ZhanTingDetailActivity.this, RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
 
             }
         });

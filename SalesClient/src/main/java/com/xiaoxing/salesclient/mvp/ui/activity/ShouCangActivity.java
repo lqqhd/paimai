@@ -45,7 +45,7 @@ import xiaoxing.com.salesclient.R;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_SHOUCANGACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_SHOU_CANG_ACTIVITY)
 public class ShouCangActivity extends BaseActivity<ShouCangPresenter> implements ShouCangContract.View, OnRefreshListener {
 
     private AllZhuanChangAdapter mAdapter;
@@ -138,7 +138,7 @@ public class ShouCangActivity extends BaseActivity<ShouCangPresenter> implements
                 mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        Utils.navigation(ShouCangActivity.this, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+                        Utils.navigation(ShouCangActivity.this, RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
 
                     }
                 });

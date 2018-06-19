@@ -148,19 +148,19 @@ public class FragmentMine extends BaseFragment {
         } else if (view.getId() == R.id.ll_shou_hou) {
             Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
         } else if (view.getId() == R.id.rl_tou_tiao) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_HEADLINESACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_HEAD_LINES_ACTIVITY);
         } else if (view.getId() == R.id.rl_balance) {
             Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCEACTIVITY);
         } else if (view.getId() == R.id.tv_chong_zhi) {
             Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCERECHARGEACTIVITY);
         } else if (view.getId() == R.id.rl_mine_quotation) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_MINEQUOTATIONACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_MINE_QUOTATION_ACTIVITY);
         } else if (view.getId() == R.id.rl_wo_de_jing_pai) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WODEJINGPAIACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WO_DE_JING_PAI_ACTIVITY);
         } else if (view.getId() == R.id.rl_shou_cang) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_SHOUCANGACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_SHOU_CANG_ACTIVITY);
         } else if (view.getId() == R.id.rl_tian_jiang_hong_bao) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_TIANJIANGHONGBAOACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_TIAN_JIANG_HONG_BAO_ACTIVITY);
         }
     }
 

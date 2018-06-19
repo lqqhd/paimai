@@ -25,7 +25,7 @@ import xiaoxing.com.salesclient.R2;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_HEADLINESACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_HEAD_LINES_ACTIVITY)
 public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implements HeadlinesContract.View {
     @BindView(R2.id.tv_title)
     TextView tvTitle;

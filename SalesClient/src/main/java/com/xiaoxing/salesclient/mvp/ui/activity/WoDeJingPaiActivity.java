@@ -28,7 +28,7 @@ import xiaoxing.com.salesclient.R;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SALES_CLIENT_WODEJINGPAIACTIVITY)
+@Route(path = RouterHub.SALES_CLIENT_WO_DE_JING_PAI_ACTIVITY)
 public class WoDeJingPaiActivity extends BaseActivity<WoDeJingPaiPresenter> implements WoDeJingPaiContract.View {
     private final String[] mTitles = {"全部", "已接受", "已拒绝"};
 

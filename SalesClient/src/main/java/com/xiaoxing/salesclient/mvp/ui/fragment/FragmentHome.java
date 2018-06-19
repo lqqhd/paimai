@@ -335,29 +335,29 @@ public class FragmentHome extends BaseFragment {
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.rl_tou_tiao) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_HEADLINESACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_HEAD_LINES_ACTIVITY);
         } else if (view.getId() == R.id.img_zhuan_chang) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
         } else if (view.getId() == R.id.img_wei_pai) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEIPAIACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_ACTIVITY);
         } else if (view.getId() == R.id.img_cang_pin) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_CANGPINACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY);
         } else if (view.getId() == R.id.img_zhan_ting) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_ACTIVITY);
         } else if (view.getId() == R.id.img_gu_sou) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
         } else if (view.getId() == R.id.rl_wei_pai_tui_guang) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEIPAIACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
         } else if (view.getId() == R.id.rl_zhan_ting_tui_guang) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhan_ting_detail) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGDETAILACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGGOODSLISTACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail_1) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGGOODSLISTACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
         }
     }
 
