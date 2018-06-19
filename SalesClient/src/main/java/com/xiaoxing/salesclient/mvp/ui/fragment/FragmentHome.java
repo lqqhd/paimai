@@ -290,7 +290,7 @@ public class FragmentHome extends BaseFragment {
                                 PaiMaiMainActivity.getInstance().setCurrentItem(1);
                                 break;
                             case 2:
-                                Utils.navigation(getActivity(), RouterHub.XIAO_XING_LOGIN_LOGINACTIVITY);
+                                Utils.navigation(getActivity(), RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
                                 break;
                         }
                     }

@@ -40,7 +40,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCEDETAILSACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_DETAILS_ACTIVITY)
 public class BalanceDetailsActivity extends BaseActivity<BalanceDetailsPresenter> implements BalanceDetailsContract.View, OnRefreshListener {
 
     private RecyclerView mRecyclerView;

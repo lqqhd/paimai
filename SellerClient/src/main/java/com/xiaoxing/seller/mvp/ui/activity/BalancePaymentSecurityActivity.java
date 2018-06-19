@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCEPAYMENTSECURITYACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_PAYMENT_SECURITY_ACTIVITY)
 public class BalancePaymentSecurityActivity extends BaseActivity<BalancePaymentSecurityPresenter> implements BalancePaymentSecurityContract.View {
 
     @Override

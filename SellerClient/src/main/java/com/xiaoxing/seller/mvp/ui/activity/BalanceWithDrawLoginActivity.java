@@ -24,7 +24,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCEWITHDRAWLOGINACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_WITH_DRAW_LOGIN_ACTIVITY)
 public class BalanceWithDrawLoginActivity extends BaseActivity<BalanceWithDrawLoginPresenter> implements BalanceWithDrawLoginContract.View {
 
     @Override
@@ -79,6 +79,6 @@ public class BalanceWithDrawLoginActivity extends BaseActivity<BalanceWithDrawLo
     @OnClick(R2.id.btn_next)
     public void onViewClicked() {
 
-        Utils.navigation(BalanceWithDrawLoginActivity.this, RouterHub.SELLER_CLIENT_BALANCEWITHDRAWACTIVITY);
+        Utils.navigation(BalanceWithDrawLoginActivity.this, RouterHub.SELLER_CLIENT_BALANCE_WITH_DRAW_ACTIVITY);
     }
 }

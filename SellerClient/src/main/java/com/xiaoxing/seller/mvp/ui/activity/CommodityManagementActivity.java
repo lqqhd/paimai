@@ -25,7 +25,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_COMMODITYMANAGEMENTACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_COMMODITY_MANAGEMENT_ACTIVITY)
 public class CommodityManagementActivity extends BaseActivity<CommodityManagementPresenter> implements CommodityManagementContract.View {
 
     private final String[] mTitles = {"全部", "微拍", "议价", "展厅", "仓库"};

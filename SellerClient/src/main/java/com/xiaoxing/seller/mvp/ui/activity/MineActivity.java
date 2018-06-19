@@ -30,7 +30,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_MINEACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_MINE_ACTIVITY)
 public class MineActivity extends BaseActivity<MinePresenter> implements MineContract.View {
 
     private int mOffset = 0;
@@ -156,35 +156,35 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
         if (view.getId() == R.id.ll_setting) {
             Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_SETTING_SETTING);
         } else if (view.getId() == R.id.rl_all_orders) {
-            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_fa_huo) {
-            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_shou_huo) {
-            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_ping_jia) {
-            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_shou_hou) {
-            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_fu_kuan) {
-            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.rl_headlines) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_HEADLINESACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_HEADLINES_ACTIVITY);
         } else if (view.getId() == R.id.ll_balance) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_BALANCEACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_BALANCE_ACTIVITY);
         } else if (view.getId() == R.id.ll_quotation) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_QUOTATIONACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_QUOTATION_ACTIVITY);
         } else if (view.getId() == R.id.ll_commodity_management) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_COMMODITYMANAGEMENTACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_COMMODITY_MANAGEMENT_ACTIVITY);
         } else if (view.getId() == R.id.ll_exhibition_management) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_EXHIBITIONMANAGEMENTACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_EXHIBITION_MANAGEMENT_ACTIVITY);
         } else if (view.getId() == R.id.ll_special_management) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_SPECIALMANAGEMENTACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_SPECIAL_MANAGEMENT_ACTIVITY);
         } else if (view.getId() == R.id.ll_application_hall) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_APPLICATIONHALLACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_APPLICATIO_NHALL_ACTIVITY);
         } else if (view.getId() == R.id.ll_novice_must_learn) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_NOVICEMUSTLEARNACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_NOVICE_MUSTLEARN_ACTIVITY);
         } else if (view.getId() == R.id.ll_red_envelopes) {
-            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_REDENVELOPESACTIVITY);
+            Utils.navigation(MineActivity.this, RouterHub.SELLER_CLIENT_RED_ENVELOPES_ACTIVITY);
         }
     }
 

@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_APPLICATIONHALLACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_APPLICATIO_NHALL_ACTIVITY)
 public class ApplicationHallActivity extends BaseActivity<ApplicationHallPresenter> implements ApplicationHallContract.View {
 
     @Override

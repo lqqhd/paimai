@@ -30,7 +30,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_SPECIALMANAGEMENTACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_SPECIAL_MANAGEMENT_ACTIVITY)
 public class SpecialManagementActivity extends BaseActivity<SpecialManagementPresenter> implements SpecialManagementContract.View {
 
     private final String[] mTitles = {"全部", "未发布", "已发布"};
@@ -41,7 +41,7 @@ public class SpecialManagementActivity extends BaseActivity<SpecialManagementPre
         @Override
         public void onClick(View v) {
 
-            Utils.navigation(SpecialManagementActivity.this, RouterHub.SELLER_CLIENT_SPECIALMANAGEMENTADDACTIVITY);
+            Utils.navigation(SpecialManagementActivity.this, RouterHub.SELLER_CLIENT_SPECIAL_MANAGEMENT_ADD_ACTIVITY);
 
         }
     };

@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_LOGIN_SETNEWPASSWORDACTIVITY)
+@Route(path = RouterHub.XIAO_XING_LOGIN_SET_NEW_PASSWORD_ACTIVITY)
 public class SetNewPasswordActivity extends BaseActivity<SetNewPasswordPresenter> implements SetNewPasswordContract.View {
 
     @Override

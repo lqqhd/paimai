@@ -107,7 +107,7 @@ public class WelcomeActivity extends BaseActivity {
                 if (BuildConfig.IS_SALALS_CLIENT) {
                     Utils.navigation(WelcomeActivity.this, RouterHub.SALES_CLIENT_PAI_MAI_MAIN_ACTIVITY);
                 } else {
-                    Utils.navigation(WelcomeActivity.this, RouterHub.XIAO_XING_LOGIN_LOGINACTIVITY);
+                    Utils.navigation(WelcomeActivity.this, RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
                 }
                 finish();
             }

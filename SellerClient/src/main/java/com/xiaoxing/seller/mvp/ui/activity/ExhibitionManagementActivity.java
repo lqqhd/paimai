@@ -25,7 +25,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_EXHIBITIONMANAGEMENTACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_EXHIBITION_MANAGEMENT_ACTIVITY)
 public class ExhibitionManagementActivity extends BaseActivity<ExhibitionManagementPresenter> implements ExhibitionManagementContract.View {
 
     private final String[] mTitles = {"全部", "未发布", "已发布"};

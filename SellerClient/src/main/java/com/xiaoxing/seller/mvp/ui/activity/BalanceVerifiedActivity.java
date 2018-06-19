@@ -23,7 +23,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCEVERIFIEDACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_VERIFIED_ACTIVITY)
 public class BalanceVerifiedActivity extends BaseActivity<BalanceVerifiedPresenter> implements BalanceVerifiedContract.View {
 
     @Override
@@ -76,6 +76,6 @@ public class BalanceVerifiedActivity extends BaseActivity<BalanceVerifiedPresent
 
     @OnClick(R2.id.btn_shang_chuan)
     public void onViewClicked() {
-        Utils.navigation(BalanceVerifiedActivity.this, RouterHub.SELLER_CLIENT_BALANCEADDBANKCARDACTIVITY);
+        Utils.navigation(BalanceVerifiedActivity.this, RouterHub.SELLER_CLIENT_BALANCE_ADD_BANK_CARD_ACTIVITY);
     }
 }

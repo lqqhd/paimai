@@ -24,7 +24,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_LOGIN_REGISTERVERIFICATIONCODEACTIVITY)
+@Route(path = RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY)
 public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerificationCodePresenter> implements RegisterVerificationCodeContract.View {
 
     @Override
@@ -78,7 +78,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
     @OnClick({R2.id.btn_next})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btn_next) {
-            Utils.navigation(RegisterVerificationCodeActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTERSETPWDACTIVITY);
+            Utils.navigation(RegisterVerificationCodeActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_SET_PWD_ACTIVITY);
         }
     }
 }

@@ -26,7 +26,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 
-@Route(path = RouterHub.XIAO_XING_ORDER_ORDERACTIVITY)
+@Route(path = RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY)
 public class OrderActivity extends BaseActivity<OrderPresenter> implements OrderContract.View {
 
     private final String[] mTitles = {"全部", "待付款", "待发货", "已发货", "已收货", "售后"};

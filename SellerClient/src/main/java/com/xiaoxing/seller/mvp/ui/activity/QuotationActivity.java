@@ -25,7 +25,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_QUOTATIONACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_QUOTATION_ACTIVITY)
 public class QuotationActivity extends BaseActivity<QuotationPresenter> implements QuotationContract.View {
 
     private final String[] mTitles = {"议价中", "已拒绝", "已接受"};

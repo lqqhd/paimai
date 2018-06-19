@@ -23,7 +23,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCEXIAOBAOJINACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_XIAO_BAO_JIN_ACTIVITY)
 public class BalanceXiaoBaoJinActivity extends BaseActivity<BalanceXiaoBaoJinPresenter> implements BalanceXiaoBaoJinContract.View {
 
     @Override
@@ -76,6 +76,6 @@ public class BalanceXiaoBaoJinActivity extends BaseActivity<BalanceXiaoBaoJinPre
     @OnClick(R2.id.btn_jiao_na)
     public void onViewClicked() {
 
-        Utils.navigation(BalanceXiaoBaoJinActivity.this, RouterHub.SELLER_CLIENT_BALANCEXIAOBAOJINJIAONAACTIVITY);
+        Utils.navigation(BalanceXiaoBaoJinActivity.this, RouterHub.SELLER_CLIENT_BALANCE_XIAO_BAO_JIN_JIAO_NA_ACTIVITY);
     }
 }

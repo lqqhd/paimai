@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_LOGIN_PROTOCOLACTIVITY)
+@Route(path = RouterHub.XIAO_XING_LOGIN_PROTOCOL_ACTIVITY)
 public class ProtocolActivity extends BaseActivity<ProtocolPresenter> implements ProtocolContract.View {
 
     @Override

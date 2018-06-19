@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_SPECIALMANAGEMENTADDACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_SPECIAL_MANAGEMENT_ADD_ACTIVITY)
 public class SpecialManagementAddActivity extends BaseActivity<SpecialManagementAddPresenter> implements SpecialManagementAddContract.View {
 
     @Override

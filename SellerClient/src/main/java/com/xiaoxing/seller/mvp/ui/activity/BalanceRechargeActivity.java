@@ -24,7 +24,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCERECHARGEACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_RECHARGE_ACTIVITY)
 public class BalanceRechargeActivity extends BaseActivity<BalanceRechargePresenter> implements BalanceRechargeContract.View {
 
     @Override
@@ -83,6 +83,6 @@ public class BalanceRechargeActivity extends BaseActivity<BalanceRechargePresent
 
     @OnClick(R2.id.btn_next)
     public void onViewClicked() {
-        Utils.navigation(BalanceRechargeActivity.this, RouterHub.SELLER_CLIENT_BALANCERECHARGEPAYMENTACTIVITY);
+        Utils.navigation(BalanceRechargeActivity.this, RouterHub.SELLER_CLIENT_BALANCE_RECHARGE_PAYMENT_ACTIVITY);
     }
 }

@@ -42,7 +42,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_ADDRESS_ADDRESSLISTACTIVITY)
+@Route(path = RouterHub.XIAO_XING_ADDRESS_ADDRESS_LIST_ACTIVITY)
 public class AddressListActivity extends BaseActivity<AddressListPresenter> implements AddressListContract.View, OnRefreshListener {
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
@@ -54,7 +54,7 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
     private View.OnClickListener mRightListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Utils.navigation(AddressListActivity.this, RouterHub.XIAO_XING_ADDRESS_ADDRESSADDACTIVITY);
+            Utils.navigation(AddressListActivity.this, RouterHub.XIAO_XING_ADDRESS_ADDRESS_ADD_ACTIVITY);
         }
     };
 

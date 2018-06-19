@@ -44,7 +44,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import static android.widget.LinearLayout.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCEADDBANKCARDLISTACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_ADD_BANK_CARD_LIST_ACTIVITY)
 public class BalanceAddBankCardListActivity extends BaseActivity<BalanceAddBankCardListPresenter> implements BalanceAddBankCardListContract.View, OnRefreshListener {
 
 
@@ -61,7 +61,7 @@ public class BalanceAddBankCardListActivity extends BaseActivity<BalanceAddBankC
         @Override
         public void onClick(View v) {
 
-            Utils.navigation(BalanceAddBankCardListActivity.this, RouterHub.SELLER_CLIENT_BALANCEVERIFIEDACTIVITY);
+            Utils.navigation(BalanceAddBankCardListActivity.this, RouterHub.SELLER_CLIENT_BALANCE_VERIFIED_ACTIVITY);
 
         }
     };

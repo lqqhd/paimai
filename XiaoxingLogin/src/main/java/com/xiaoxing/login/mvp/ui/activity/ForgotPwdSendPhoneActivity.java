@@ -24,7 +24,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_LOGIN_FORGOTPWDSENDPHONEACTIVITY)
+@Route(path = RouterHub.XIAO_XING_LOGIN_FORGOT_PWD_SEND_PHONE_ACTIVITY)
 public class ForgotPwdSendPhoneActivity extends BaseActivity<ForgotPwdSendPhonePresenter> implements ForgotPwdSendPhoneContract.View {
 
     @Override
@@ -78,7 +78,7 @@ public class ForgotPwdSendPhoneActivity extends BaseActivity<ForgotPwdSendPhoneP
     @OnClick({R2.id.btn_next})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btn_next) {
-            Utils.navigation(ForgotPwdSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_FORGOTPWDVERIFICATIONCODEACTIVITY);
+            Utils.navigation(ForgotPwdSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_FORGOT_PWD_VERIFICATION_CODE_ACTIVITY);
         }
 
     }

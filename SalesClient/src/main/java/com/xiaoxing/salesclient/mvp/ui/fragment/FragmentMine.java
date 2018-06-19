@@ -136,23 +136,23 @@ public class FragmentMine extends BaseFragment {
         if (view.getId() == R.id.panel_lyt) {
             Utils.navigation(getActivity(), RouterHub.XIAO_XING_SETTING_SETTING);
         } else if (view.getId() == R.id.rl_all_orders) {
-            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_fu_kuan) {
-            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_fa_huo) {
-            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_ping_jia) {
-            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_shou_huo) {
-            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_shou_hou) {
-            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDERACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.rl_tou_tiao) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_HEAD_LINES_ACTIVITY);
         } else if (view.getId() == R.id.rl_balance) {
-            Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCEACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCE_ACTIVITY);
         } else if (view.getId() == R.id.tv_chong_zhi) {
-            Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCERECHARGEACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SELLER_CLIENT_BALANCE_RECHARGE_ACTIVITY);
         } else if (view.getId() == R.id.rl_mine_quotation) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_MINE_QUOTATION_ACTIVITY);
         } else if (view.getId() == R.id.rl_wo_de_jing_pai) {

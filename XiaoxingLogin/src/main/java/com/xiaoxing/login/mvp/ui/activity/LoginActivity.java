@@ -24,7 +24,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_LOGIN_LOGINACTIVITY)
+@Route(path = RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY)
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
 
     @Override
@@ -78,11 +78,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @OnClick({R2.id.tv_forgot_pwd, R2.id.tv_reg, R2.id.btn_login})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.tv_reg) {
-            Utils.navigation(LoginActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTERSENDPHONEACTIVITY);
+            Utils.navigation(LoginActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_SEND_PHONE_ACTIVITY);
         } else if (view.getId() == R.id.tv_forgot_pwd) {
-            Utils.navigation(LoginActivity.this, RouterHub.XIAO_XING_LOGIN_FORGOTPWDSENDPHONEACTIVITY);
+            Utils.navigation(LoginActivity.this, RouterHub.XIAO_XING_LOGIN_FORGOT_PWD_SEND_PHONE_ACTIVITY);
         } else if (view.getId() == R.id.btn_login) {
-            Utils.navigation(LoginActivity.this, RouterHub.SELLER_CLIENT_MINEACTIVITY);
+            Utils.navigation(LoginActivity.this, RouterHub.SELLER_CLIENT_MINE_ACTIVITY);
         }
 
     }

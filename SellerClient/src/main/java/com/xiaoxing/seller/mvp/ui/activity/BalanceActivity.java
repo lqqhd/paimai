@@ -24,7 +24,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCEACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_ACTIVITY)
 public class BalanceActivity extends BaseActivity<BalancePresenter> implements BalanceContract.View {
 
     @Override
@@ -79,17 +79,17 @@ public class BalanceActivity extends BaseActivity<BalancePresenter> implements B
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.rl_wo_de_zi_chan) {
-            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEDETAILSACTIVITY);
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCE_DETAILS_ACTIVITY);
         } else if (view.getId() == R.id.rl_chong_zhi) {
-            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCERECHARGEACTIVITY);
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCE_RECHARGE_ACTIVITY);
         } else if (view.getId() == R.id.rl_ti_xian) {
-            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEWITHDRAWLOGINACTIVITY);
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCE_WITH_DRAW_LOGIN_ACTIVITY);
         } else if (view.getId() == R.id.rl_xiao_bao_jin) {
-            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEXIAOBAOJINACTIVITY);
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCE_XIAO_BAO_JIN_ACTIVITY);
         } else if (view.getId() == R.id.tl_yin_hang_ka) {
-            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEADDBANKCARDLISTACTIVITY);
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCE_ADD_BANK_CARD_LIST_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhi_fu_an_quan) {
-            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCEPAYMENTSECURITYACTIVITY);
+            Utils.navigation(BalanceActivity.this, RouterHub.SELLER_CLIENT_BALANCE_PAYMENT_SECURITY_ACTIVITY);
         }
 
     }

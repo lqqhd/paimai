@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_BALANCEWITHDRAWACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_BALANCE_WITH_DRAW_ACTIVITY)
 public class BalanceWithDrawActivity extends BaseActivity<BalanceWithDrawPresenter> implements BalanceWithDrawContract.View {
 
     @Override

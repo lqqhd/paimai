@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_LOGIN_REGISTERSETPWDACTIVITY)
+@Route(path = RouterHub.XIAO_XING_LOGIN_REGISTER_SET_PWD_ACTIVITY)
 public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter> implements RegisterSetPwdContract.View {
 
     @Override

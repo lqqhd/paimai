@@ -124,7 +124,7 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
 
     @OnClick(R2.id.tv_guan_zhu)
     void guanZhu() {
-        Utils.navigation(ZhanTingDetailActivity.this, RouterHub.XIAO_XING_LOGIN_LOGINACTIVITY);
+        Utils.navigation(ZhanTingDetailActivity.this, RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
 
     }
 }

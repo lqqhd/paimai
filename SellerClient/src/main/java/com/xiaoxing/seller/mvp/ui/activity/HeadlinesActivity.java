@@ -26,7 +26,7 @@ import me.jessyan.armscomponent.commonsdk.utils.WebviewUtil;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_HEADLINESACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_HEADLINES_ACTIVITY)
 public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implements HeadlinesContract.View {
 
     @BindView(R2.id.tv_title)

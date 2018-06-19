@@ -25,7 +25,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_REDENVELOPESACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_RED_ENVELOPES_ACTIVITY)
 public class RedEnvelopesActivity extends BaseActivity<RedEnvelopesPresenter> implements RedEnvelopesContract.View {
 
     @BindView(R2.id.btnRight)
@@ -34,7 +34,7 @@ public class RedEnvelopesActivity extends BaseActivity<RedEnvelopesPresenter> im
         @Override
         public void onClick(View v) {
 
-            Utils.navigation(RedEnvelopesActivity.this, RouterHub.SELLER_CLIENT_REDENVELOPESADDACTIVITY);
+            Utils.navigation(RedEnvelopesActivity.this, RouterHub.SELLER_CLIENT_RED_ENVELOPES_ADD_ACTIVITY);
 
         }
     };

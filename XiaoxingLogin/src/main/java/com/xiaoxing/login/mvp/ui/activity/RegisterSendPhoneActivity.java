@@ -24,7 +24,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.XIAO_XING_LOGIN_REGISTERSENDPHONEACTIVITY)
+@Route(path = RouterHub.XIAO_XING_LOGIN_REGISTER_SEND_PHONE_ACTIVITY)
 public class RegisterSendPhoneActivity extends BaseActivity<RegisterSendPhonePresenter> implements RegisterSendPhoneContract.View {
 
     @Override
@@ -78,9 +78,9 @@ public class RegisterSendPhoneActivity extends BaseActivity<RegisterSendPhonePre
     @OnClick({R2.id.btn_next, R2.id.tv_xie_yi})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btn_next) {
-            Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTERVERIFICATIONCODEACTIVITY);
+            Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY);
         } else if (view.getId() == R.id.tv_xie_yi) {
-            Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_PROTOCOLACTIVITY);
+            Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_PROTOCOL_ACTIVITY);
         }
 
     }

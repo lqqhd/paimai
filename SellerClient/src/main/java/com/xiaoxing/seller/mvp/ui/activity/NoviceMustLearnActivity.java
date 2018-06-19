@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_NOVICEMUSTLEARNACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_NOVICE_MUSTLEARN_ACTIVITY)
 public class NoviceMustLearnActivity extends BaseActivity<NoviceMustLearnPresenter> implements NoviceMustLearnContract.View {
 
     @Override

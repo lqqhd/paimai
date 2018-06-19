@@ -20,7 +20,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-@Route(path = RouterHub.SELLER_CLIENT_REDENVELOPESADDACTIVITY)
+@Route(path = RouterHub.SELLER_CLIENT_RED_ENVELOPES_ADD_ACTIVITY)
 public class RedEnvelopesAddActivity extends BaseActivity<RedEnvelopesAddPresenter> implements RedEnvelopesAddContract.View {
 
     @Override
