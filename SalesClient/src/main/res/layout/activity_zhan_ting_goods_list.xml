@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/public_ripple_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_toolbar" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="#327258"
+        android:gravity="center"
+        android:text="06月20日19:35开始"
+        android:textColor="@color/public_white"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="古钱币"
+        android:textColor="@color/public_black"
+        android:textSize="@dimen/public_font_16sp" />
+
+    <TextView
+        android:id="@+id/tv_pai_pin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_25"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="拍品6件 围观87次 出价0次"
+        android:textColor="#3D3D3D"
+        android:textSize="@dimen/public_font_12sp" />
+
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="古钱币，祖传的，联系电话13705606217"
+        android:textColor="#3D3D3D"
+        android:textSize="@dimen/public_font_12sp" />
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/rl_dian_pu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/public_white">
+
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/arms_log" />
+
+
+        <TextView
+            android:id="@+id/tv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_toRightOf="@+id/img"
+            android:gravity="center|left"
+            android:padding="@dimen/dp_5"
+            android:text="xx的店铺"
+            android:textColor="@color/public_black"
+            android:textSize="@dimen/public_font_14sp" />
+
+        <TextView
+            android:id="@+id/tv_dian_pu_bao_zheng_jin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_shop_name"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_toRightOf="@+id/img"
+            android:gravity="center|left"
+            android:text="店铺保证金"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <TextView
+            android:id="@+id/tv_hao_ping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_shop_name"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_toRightOf="@+id/tv_dian_pu_bao_zheng_jin"
+            android:gravity="center|left"
+            android:text="0"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:gravity="center|left"
+            android:text="进入展厅"
+            android:textColor="#B8B8B8"
+            android:textSize="@dimen/public_font_14sp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:overScrollMode="never"
+                    tools:listitem="@android:layout/simple_list_item_2" />
+
+                <include
+                    android:id="@+id/empty"
+                    layout="@layout/_loading_layout_empty" />
+            </FrameLayout>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

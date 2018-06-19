@@ -1,21 +1,22 @@
-package com.xiaoxing.salesclient.mvp.ui.fragment;
+package com.xiaoxing.salesclient.mvp.ui.activity;
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.jess.arms.base.BaseActivity;
+import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.utils.ArmsUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
@@ -23,25 +24,29 @@ import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
-import com.xiaoxing.salesclient.mvp.ui.adapter.AllZhuanChangAdapter;
+import com.xiaoxing.salesclient.di.component.DaggerZhanTingGoodsListComponent;
+import com.xiaoxing.salesclient.di.module.ZhanTingGoodsListModule;
+import com.xiaoxing.salesclient.mvp.contract.ZhanTingGoodsListContract;
+import com.xiaoxing.salesclient.mvp.presenter.ZhanTingGoodsListPresenter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.ZhanTingGoodsListAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.OnClick;
+import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R2;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
+import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-/**
- * 使用示例-空布页面
- * A simple {@link Fragment} subclass.
- */
-public class FragmentAllZhuanChang extends Fragment implements OnRefreshListener {
-
-    private AllZhuanChangAdapter mAdapter;
+@Route(path = RouterHub.SALES_CLIENT_ZHANTINGGOODSLISTACTIVITY)
+public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPresenter> implements ZhanTingGoodsListContract.View, OnRefreshListener {
+    private ZhanTingGoodsListAdapter mAdapter;
 
 
     private View mEmptyLayout;
@@ -49,32 +54,42 @@ public class FragmentAllZhuanChang extends Fragment implements OnRefreshListener
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
 
-
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.sales_client_fragment_all_zhuan_chang, container, false);
+    public void setupActivityComponent(@NonNull AppComponent appComponent) {
+        DaggerZhanTingGoodsListComponent //如找不到该类,请编译一下项目
+                .builder()
+                .appComponent(appComponent)
+                .zhanTingGoodsListModule(new ZhanTingGoodsListModule(this))
+                .build()
+                .inject(this);
     }
 
     @Override
-    public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(root, savedInstanceState);
+    public int initView(@Nullable Bundle savedInstanceState) {
+        return R.layout.activity_zhan_ting_goods_list; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
+    }
+
+    @Override
+    public void initData(@Nullable Bundle savedInstanceState) {
 
 
-        mRefreshLayout = root.findViewById(R.id.refreshLayout);
-        mRefreshLayout.setRefreshHeader(new ClassicsHeader(getActivity()).setSpinnerStyle(SpinnerStyle.FixedBehind).setPrimaryColorId(R.color.public_colorPrimary).setAccentColorId(android.R.color.white));
+        ToolbarUtils.initToolbarTitleBack(this, "专场");
+
+        mRefreshLayout = findViewById(R.id.refreshLayout);
+        mRefreshLayout.setRefreshHeader(new ClassicsHeader(ZhanTingGoodsListActivity.this).setSpinnerStyle(SpinnerStyle.FixedBehind).setPrimaryColorId(R.color.public_colorPrimary).setAccentColorId(android.R.color.white));
         mRefreshLayout.setOnRefreshListener(this);
 
-        mRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(ZhanTingGoodsListActivity.this));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(ZhanTingGoodsListActivity.this, VERTICAL));
 
-        mEmptyLayout = root.findViewById(R.id.empty);
+        mEmptyLayout = findViewById(R.id.empty);
 
-        ImageView image = (ImageView) root.findViewById(R.id.empty_image);
+        ImageView image = (ImageView) findViewById(R.id.empty_image);
         image.setImageResource(R.drawable.ic_empty);
 
-        TextView empty = (TextView) root.findViewById(R.id.empty_text);
+        TextView empty = (TextView) findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
 
         /*主动演示刷新*/
@@ -109,10 +124,10 @@ public class FragmentAllZhuanChang extends Fragment implements OnRefreshListener
             @Override
             public void run() {
 
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(ZhanTingGoodsListActivity.this));
+                mRecyclerView.addItemDecoration(new DividerItemDecoration(ZhanTingGoodsListActivity.this, VERTICAL));
                 mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                mRecyclerView.setAdapter(mAdapter = new AllZhuanChangAdapter(loadModels()));
+                mRecyclerView.setAdapter(mAdapter = new ZhanTingGoodsListAdapter(loadModels()));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
@@ -125,7 +140,7 @@ public class FragmentAllZhuanChang extends Fragment implements OnRefreshListener
                 mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGGOODSLISTACTIVITY);
+                        Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
 
                     }
                 });
@@ -154,4 +169,37 @@ public class FragmentAllZhuanChang extends Fragment implements OnRefreshListener
         return addressLists;
     }
 
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showMessage(@NonNull String message) {
+        checkNotNull(message);
+        ArmsUtils.snackbarText(message);
+    }
+
+    @Override
+    public void launchActivity(@NonNull Intent intent) {
+        checkNotNull(intent);
+        ArmsUtils.startActivity(intent);
+    }
+
+    @Override
+    public void killMyself() {
+        finish();
+    }
+
+    @OnClick(R2.id.rl_dian_pu)
+    void toDianPu() {
+        Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_ZHANTINGDETAILACTIVITY);
+
+    }
 }

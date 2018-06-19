@@ -232,6 +232,11 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhanTingGoodsListActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

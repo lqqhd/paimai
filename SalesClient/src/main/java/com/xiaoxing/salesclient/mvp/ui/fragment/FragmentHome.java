@@ -355,9 +355,9 @@ public class FragmentHome extends BaseFragment {
         } else if (view.getId() == R.id.rl_zhan_ting_detail) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGDETAILACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGGOODSLISTACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail_1) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEIPAIDETAILACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHANTINGGOODSLISTACTIVITY);
         }
     }
 
