@@ -1,8 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/public_white"
     android:orientation="vertical">
 
-</LinearLayout>
+    <include
+        android:id="@+id/toolbar"
+        style="@style/public_AppTheme.Toolbar"
+        layout="@layout/public_toolbar_search" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:orientation="horizontal">
+
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tl_2"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@color/public_white"
+            tl:tl_divider_color="#1A000000"
+            tl:tl_divider_padding="13dp"
+            tl:tl_divider_width="1dp"
+            tl:tl_indicator_color="#661F26"
+            tl:tl_indicator_height="1.5dp"
+            tl:tl_indicator_width_equal_title="true"
+            tl:tl_tab_padding="0dp"
+            tl:tl_tab_space_equal="true"
+            tl:tl_textSelectColor="#661F26"
+            tl:tl_textUnselectColor="#111111"
+            tl:tl_underline_color="#1A000000"
+            tl:tl_underline_height="1dp" />
+
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_tab" />
+
+    <RelativeLayout
+        android:id="@+id/rl_chuan_jian"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_rl_chuang_jian"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/shape_btn_chuang_jian"
+            android:text="+"
+            android:textColor="@color/public_white"
+            android:textSize="@dimen/public_font_20sp" />
+
+        <TextView
+            android:id="@+id/tv_chuang_jian_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/btn_add"
+            android:gravity="center"
+            android:text="创建专场"
+            android:textColor="#741614"
+            android:textSize="@dimen/public_font_12sp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
+
+

@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -87,6 +88,14 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         mAdapter = new ZhanTingGoodsListAdapter(mAddressLists);
         LayoutInflater inflater = LayoutInflater.from(ZhanTingGoodsListActivity.this);
         View headView = inflater.inflate(R.layout.sales_client_activity_zhan_ting_goods_list_head, null, false);
+
+        RelativeLayout rl_dian_pu = headView.findViewById(R.id.rl_dian_pu);
+        rl_dian_pu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_ZHANTINGDETAILACTIVITY);
+            }
+        });
         mAdapter.addHeaderView(headView);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -98,7 +107,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         mRecyclerView.setAdapter(mAdapter);
 
         mEmptyLayout = findViewById(R.id.empty);
-
+        mEmptyLayout.setVisibility(View.GONE);
         ImageView image = (ImageView) findViewById(R.id.empty_image);
         image.setImageResource(R.drawable.ic_empty);
 

@@ -104,7 +104,7 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
         ArrayList<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new FragmentAllZhuanChang());
         mFragments.add(new FragmentReMenPaiMai());
-        mFragments.add(new FragmentReMenPaiMai());
+        mFragments.add(new FragmentAllZhuanChang());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
 

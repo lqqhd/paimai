@@ -25,24 +25,23 @@
 
         <TextView
             android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dp_50"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_toRightOf="@+id/img"
             android:background="@drawable/public_shape_red_bg_corner_5dp"
-            android:gravity="center|left"
+            android:gravity="center"
             android:padding="@dimen/dp_5"
             android:text="大行"
             android:textColor="@color/public_white"
-            android:textSize="@dimen/public_font_14sp" />
+            android:textSize="@dimen/public_font_12sp" />
 
         <TextView
             android:id="@+id/tv_shop_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_10"
-
             android:layout_marginTop="@dimen/dp_5"
             android:layout_toRightOf="@+id/tv_name"
             android:gravity="center|left"
@@ -93,17 +92,17 @@
 
         <TextView
             android:id="@+id/tv_ren_shu"
-            android:layout_width="@dimen/dp_60"
+            android:layout_width="@dimen/dp_50"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dp_10"
             android:background="@drawable/public_shape_red_bg_corner_5dp"
             android:gravity="center"
-            android:padding="@dimen/dp_8"
+            android:padding="@dimen/dp_5"
             android:text="进入"
             android:textColor="@color/public_white"
-            android:textSize="@dimen/public_font_14sp" />
+            android:textSize="@dimen/public_font_12sp" />
 
 
     </RelativeLayout>

@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_100"
         android:paddingBottom="@dimen/dp_10">
 
 
@@ -62,19 +62,33 @@
             android:textSize="@dimen/public_font_12sp" />
 
 
-        <TextView
-            android:id="@+id/tv_ren_shu"
+        <LinearLayout
+            android:id="@+id/ll_pai_mai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dp_10"
-            android:gravity="center"
-            android:padding="@dimen/dp_5"
-            android:text="立即拍"
-            android:textColor="#ACACAD"
-            android:textSize="@dimen/public_font_14sp" />
+            android:orientation="vertical">
 
+
+            <ImageView
+                android:id="@+id/img_pai_mai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/icon_pai_mai" />
+
+            <TextView
+                android:id="@+id/tv_ren_shu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_5"
+                android:text="立即拍"
+                android:textColor="#ACACAD"
+                android:textSize="@dimen/public_font_12sp" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
