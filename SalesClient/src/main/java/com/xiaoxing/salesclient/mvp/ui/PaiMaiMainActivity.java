@@ -4,14 +4,26 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
+import com.uuch.adlibrary.AdConstant;
+import com.uuch.adlibrary.AdManager;
+import com.uuch.adlibrary.bean.AdInfo;
+import com.uuch.adlibrary.utils.DisplayUtil;
 import com.xiaoxing.salesclient.mvp.ui.viewpager.MyViewPagerAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import me.jessyan.armscomponent.commonres.utils.CheckVersionUtil;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
 import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 import me.majiajie.pagerbottomtabstrip.SpecialTab;
@@ -24,10 +36,61 @@ public class PaiMaiMainActivity extends BaseActivity {
 
     private static PaiMaiMainActivity instance;
     private ViewPager viewPager;
+    private List<AdInfo> advList = null;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
 
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Fresco.initialize(this);
+        initDisplayOpinion();
+        initAdData();
+        showDialog();
+    }
+
+    /**
+     * 初始化数据
+     */
+    private void initAdData() {
+        advList = new ArrayList<>();
+        AdInfo adInfo = new AdInfo();
+        adInfo.setActivityImg("https://raw.githubusercontent.com/yipianfengye/android-adDialog/master/images/testImage1.png");
+        advList.add(adInfo);
+
+        adInfo = new AdInfo();
+        adInfo.setActivityImg("https://raw.githubusercontent.com/yipianfengye/android-adDialog/master/images/testImage2.png");
+        advList.add(adInfo);
+    }
+
+    private void initDisplayOpinion() {
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        DisplayUtil.density = dm.density;
+        DisplayUtil.densityDPI = dm.densityDpi;
+        DisplayUtil.screenWidthPx = dm.widthPixels;
+        DisplayUtil.screenhightPx = dm.heightPixels;
+        DisplayUtil.screenWidthDip = DisplayUtil.px2dip(getApplicationContext(), dm.widthPixels);
+        DisplayUtil.screenHightDip = DisplayUtil.px2dip(getApplicationContext(), dm.heightPixels);
+    }
+
+    private void showDialog() {
+        AdManager adManager = new AdManager(this, advList);
+
+        adManager.setOnImageClickListener(new AdManager.OnImageClickListener() {
+            @Override
+            public void onImageClick(View view, AdInfo advInfo) {
+                Toast.makeText(PaiMaiMainActivity.this, "您点击了ViewPagerItem...", Toast.LENGTH_SHORT).show();
+
+                Utils.navigation(PaiMaiMainActivity.this, RouterHub.SALES_CLIENT_HUO_DONG_ACTIVITY);
+
+            }
+        })
+                .setPadding(100)
+                .setWidthPerHeight(0.5f)
+                .showAdDialog(AdConstant.ANIM_UP_TO_DOWN);
     }
 
     @Override

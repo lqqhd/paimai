@@ -205,7 +205,7 @@ public class FragmentHome extends BaseFragment {
         initTouTiao(view);
         initTuiGuangData(view);
         return view;
-    }
+    } 
 
     private void initTouTiao(View view) {
         // 为ViewFlipper添加广告条

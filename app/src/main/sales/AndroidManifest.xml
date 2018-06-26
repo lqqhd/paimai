@@ -240,6 +240,10 @@
             android:name="com.xiaoxing.seller.mvp.ui.activity.SecurityCenterActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.HuoDongActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
 
     </application>
 

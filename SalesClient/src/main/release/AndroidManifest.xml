@@ -23,7 +23,8 @@
         <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ChuangJianZhuanChangActivity" />
         <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ChuangJianWeiPaiActivity" />
         <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ChuangJianZhanPinActivity" />
-        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhanTingGoodsListActivity"></activity>
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhanTingGoodsListActivity" />
+        <activity android:name="com.xiaoxing.salesclient.mvp.ui.activity.HuoDongActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,2 @@
+/* integrate-oldAndNew share.js md5:bd1684443c838a1d647de5ec3028f4e4 */
+"use strict";$(".share-fade-main").on("click",function(){$(".share-fade-main").removeClass("mainIn").addClass("mainOut"),setTimeout(function(){$(".share-fade-main").hide(),$(".share-fade-main").removeClass("mainOut")},600)});

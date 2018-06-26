@@ -1,0 +1,2 @@
+/* integrate-oldAndNew danmu.js md5:3c52c636280603acdb69459346754e69 */
+"use strict";var style=document.createElement("style");document.head.appendChild(style);var width=$(window).width();var from="from { visibility: visible; -webkit-transform: translateX("+width+"px); }";var to="to { visibility: visible; -webkit-transform: translateX(-100%); }";style.sheet.insertRule("@-webkit-keyframes danmu { "+from+" "+to+" }",0);
