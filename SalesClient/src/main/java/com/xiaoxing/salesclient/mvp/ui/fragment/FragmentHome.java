@@ -1,10 +1,12 @@
 package com.xiaoxing.salesclient.mvp.ui.fragment;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +20,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.alibaba.mobileim.IYWLoginService;
+import com.alibaba.mobileim.YWAPI;
+import com.alibaba.mobileim.YWIMKit;
+import com.alibaba.mobileim.YWLoginParam;
+import com.alibaba.mobileim.channel.event.IWxCallback;
+import com.alibaba.mobileim.conversation.EServiceContact;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -46,6 +54,8 @@ import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
+
+import static com.jess.arms.base.BaseApplication.APP_KEY;
 
 public class FragmentHome extends BaseFragment {
     private List<String> mLists = new ArrayList<>();
@@ -205,7 +215,7 @@ public class FragmentHome extends BaseFragment {
         initTouTiao(view);
         initTuiGuangData(view);
         return view;
-    } 
+    }
 
     private void initTouTiao(View view) {
         // 为ViewFlipper添加广告条
@@ -345,7 +355,7 @@ public class FragmentHome extends BaseFragment {
         } else if (view.getId() == R.id.img_zhan_ting) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_ACTIVITY);
         } else if (view.getId() == R.id.img_gu_sou) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_SEARCH_SearchActivity);
         } else if (view.getId() == R.id.rl_wei_pai_tui_guang) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang) {

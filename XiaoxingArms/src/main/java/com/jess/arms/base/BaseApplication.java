@@ -20,6 +20,8 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
 
+import com.alibaba.mobileim.YWAPI;
+import com.alibaba.wxlib.util.SysUtil;
 import com.jess.arms.base.delegate.AppDelegate;
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.di.component.AppComponent;
@@ -39,6 +41,9 @@ import com.tencent.bugly.crashreport.CrashReport;
  */
 public class BaseApplication extends Application implements App {
     private AppLifecycles mAppDelegate;
+
+//    public static String APP_KEY = "24945482";
+    public static String APP_KEY = "23015524";
 
     /**
      * 这里会在 {@link BaseApplication#onCreate} 之前被调用,可以做一些较早的初始化
@@ -63,6 +68,21 @@ public class BaseApplication extends Application implements App {
             this.mAppDelegate.onCreate(this);
 
         CrashReport.initCrashReport(getApplicationContext(), "623ab9bcb9", false);
+
+        //必须首先执行这部分代码, 如果在":TCMSSevice"进程中，无需进行云旺（OpenIM）和app业务的初始化，以节省内存;
+        SysUtil.setApplication(this);
+        if (SysUtil.isTCMSServiceProcess(this))
+
+        {
+            return;
+        }
+        //第一个参数是Application Context
+        //这里的APP_KEY即应用创建时申请的APP_KEY，同时初始化必须是在主进程中
+        if (SysUtil.isMainProcess())
+
+        {
+            YWAPI.init(this, APP_KEY);
+        }
     }
 
     /**
@@ -78,8 +98,8 @@ public class BaseApplication extends Application implements App {
     /**
      * 将 {@link AppComponent} 返回出去, 供其它地方使用, {@link AppComponent} 接口中声明的方法所返回的实例, 在 {@link #getAppComponent()} 拿到对象后都可以直接使用
      *
-     * @see ArmsUtils#obtainAppComponentFromContext(Context) 可直接获取 {@link AppComponent}
      * @return AppComponent
+     * @see ArmsUtils#obtainAppComponentFromContext(Context) 可直接获取 {@link AppComponent}
      */
     @NonNull
     @Override

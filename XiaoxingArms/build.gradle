@@ -118,6 +118,12 @@ dependencies {
     compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
     compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
 
+    //必选
+    compile 'com.alibaba.mobileim:IMCore:2.0.2.1@aar'
+    //可选，如果使用SDK的UI必须添加该依赖，如果不使用SDK的UI，完全自己开发UI则无需添加该依赖
+    compile 'com.alibaba.mobileim:IMKit:2.0.2.1@aar'
+    //可选，如果使用小视频功能必须添加该依赖，如果不使用小视频功能则无需添加该依赖
+    compile 'com.alibaba.mobileim:RecorderSDK:1.0.0@aar'
 }
 
 //apply from: 'bintray.gradle'

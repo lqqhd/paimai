@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentMessage;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentMine;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentNavigation;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentRelease;
@@ -33,7 +34,7 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
                 fragment = FragmentRelease.newInstance(position + "");
                 break;
             case 3:
-                fragment = FragmentMine.newInstance(position + "");
+                fragment = FragmentMessage.newInstance(position + "");
                 break;
             case 4:
                 fragment = FragmentMine.newInstance(position + "");

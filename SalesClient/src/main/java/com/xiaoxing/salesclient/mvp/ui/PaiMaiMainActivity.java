@@ -1,14 +1,22 @@
 package com.xiaoxing.salesclient.mvp.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.mobileim.IYWLoginService;
+import com.alibaba.mobileim.YWAPI;
+import com.alibaba.mobileim.YWIMKit;
+import com.alibaba.mobileim.YWLoginParam;
+import com.alibaba.mobileim.channel.event.IWxCallback;
+import com.alibaba.mobileim.conversation.EServiceContact;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
@@ -29,7 +37,10 @@ import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 import me.majiajie.pagerbottomtabstrip.SpecialTab;
 import me.majiajie.pagerbottomtabstrip.SpecialTabRound;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
+import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectedListener;
 import xiaoxing.com.salesclient.R;
+
+import static com.jess.arms.base.BaseApplication.APP_KEY;
 
 @Route(path = RouterHub.SALES_CLIENT_PAI_MAI_MAIN_ACTIVITY)
 public class PaiMaiMainActivity extends BaseActivity {
@@ -117,6 +128,55 @@ public class PaiMaiMainActivity extends BaseActivity {
         viewPager.setOffscreenPageLimit(5);
         //自动适配ViewPager页面切换
         navigationController.setupWithViewPager(viewPager);
+        navigationController.addTabItemSelectedListener(new OnTabItemSelectedListener() {
+            @Override
+            public void onSelected(int index, int old) {
+                if (index == 3) {
+
+                    setCurrentItem(0);
+                    //此实现不一定要放在Application onCreate中
+                    final String userid = "testpro1";
+                    //此对象获取到后，保存为全局对象，供APP使用
+                    //此对象跟用户相关，如果切换了用户，需要重新获取
+                    YWIMKit mIMKit = YWAPI.getIMKitInstance(userid, APP_KEY);
+
+                    //开始登录
+                    String password = "taobao1234";
+                    IYWLoginService loginService = mIMKit.getLoginService();
+                    YWLoginParam loginParam = YWLoginParam.createLoginParam(userid, password);
+                    loginService.login(loginParam, new IWxCallback() {
+
+                        @Override
+                        public void onSuccess(Object... arg0) {
+
+                            final String target = "testpro2"; //消息接收者ID
+                            final String appkey = "23015524"; //消息接收者appKey
+                            Intent intent = mIMKit.getChattingActivityIntent(target, appkey);
+                            startActivity(intent);
+
+
+//                            EServiceContact contact = new EServiceContact("testpro2", 0);
+//                            Fragment fragment = mIMKit.getChattingFragment(contact);
+                        }
+
+                        @Override
+                        public void onProgress(int arg0) {
+                            // TODO Auto-generated method stub
+                        }
+
+                        @Override
+                        public void onError(int errCode, String description) {
+                            //如果登录失败，errCode为错误码,description是错误的具体描述信息
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onRepeat(int index) {
+
+            }
+        });
     }
 
 

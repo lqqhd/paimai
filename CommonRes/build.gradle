@@ -61,4 +61,5 @@ dependencies {
     api "q.rorbin:VerticalTabLayout:1.2.5"
     api 'com.github.jiang111:IndicatorDialog:2.0.1'
     api 'com.allenliu.versionchecklib:library:2.0.5'
+
 }

@@ -130,7 +130,7 @@ public class FragmentMine extends BaseFragment {
             R2.id.ll_dai_fa_huo, R2.id.ll_dai_ping_jia, R2.id.ll_dai_shou_huo,
             R2.id.ll_shou_hou, R2.id.rl_tou_tiao, R2.id.rl_balance,
             R2.id.tv_chong_zhi, R2.id.rl_mine_quotation, R2.id.rl_wo_de_jing_pai,
-            R2.id.rl_shou_cang, R2.id.rl_tian_jiang_hong_bao})
+            R2.id.rl_shou_cang, R2.id.rl_tian_jiang_hong_bao, R2.id.rl_wo_de_jian_ding})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.panel_lyt) {
@@ -161,6 +161,8 @@ public class FragmentMine extends BaseFragment {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_SHOU_CANG_ACTIVITY);
         } else if (view.getId() == R.id.rl_tian_jiang_hong_bao) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_TIAN_JIANG_HONG_BAO_ACTIVITY);
+        } else if (view.getId() == R.id.rl_wo_de_jian_ding) {
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_SEARCH_SearchActivity);
         }
     }
 

@@ -89,7 +89,7 @@
 
     <include layout="@layout/public_line_horizontal" />
 
-    <RelativeLayout style="@style/public_MineItemRelativeLayout">
+    <RelativeLayout android:id="@+id/rl_wo_de_jian_ding" style="@style/public_MineItemRelativeLayout">
 
         <ImageView
             android:id="@+id/img_wo_de_jian_ding"
