@@ -18,7 +18,7 @@
         android:label="@string/public_app_seller_name"
         android:supportsRtl="true"
         android:theme="@style/public_AppTheme"
-        tools:replace="android:label,icon,theme">
+        tools:replace="label,icon,theme,allowBackup,supportsRtl,name">
         <activity
             android:name="com.xiaoxing.welcome.mvp.ui.WelcomeActivity"
             android:configChanges="orientation|screenSize"

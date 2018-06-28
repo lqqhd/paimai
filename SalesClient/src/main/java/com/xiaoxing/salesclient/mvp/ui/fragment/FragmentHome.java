@@ -1,12 +1,10 @@
 package com.xiaoxing.salesclient.mvp.ui.fragment;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,12 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import com.alibaba.mobileim.IYWLoginService;
-import com.alibaba.mobileim.YWAPI;
-import com.alibaba.mobileim.YWIMKit;
-import com.alibaba.mobileim.YWLoginParam;
-import com.alibaba.mobileim.channel.event.IWxCallback;
-import com.alibaba.mobileim.conversation.EServiceContact;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -37,8 +29,8 @@ import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity;
-import com.xiaoxing.salesclient.mvp.ui.adapter.WeiPaiTuiGuangHomeAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.BaseDialogTipAdapter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.WeiPaiTuiGuangHomeAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
 import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
@@ -55,11 +47,8 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
-import static com.jess.arms.base.BaseApplication.APP_KEY;
-
 public class FragmentHome extends BaseFragment {
-    private List<String> mLists = new ArrayList<>();
-    private List<Integer> mICons = new ArrayList<>();
+
     public static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
         add(new BannerItem("最后的骑士", R.mipmap.banner_001));
         add(new BannerItem("三生三世十里桃花", R.mipmap.banner_001));
@@ -240,6 +229,8 @@ public class FragmentHome extends BaseFragment {
 
 
     private void showTopDialog(View v, float v1, int gravityCenter) {
+        List<String> mLists = new ArrayList<>();
+        List<Integer> mICons = new ArrayList<>();
         mLists.clear();
         mICons.clear();
         mLists.add("首页");

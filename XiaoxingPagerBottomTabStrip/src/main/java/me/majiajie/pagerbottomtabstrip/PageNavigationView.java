@@ -47,9 +47,9 @@ public class PageNavigationView extends ViewGroup
     private OnTabItemSelectedListener mTabItemListener = new OnTabItemSelectedListener() {
         @Override
         public void onSelected(int index, int old) {
-            if(mViewPager != null){
-                mViewPager.setCurrentItem(index,false);
-            }
+//            if(mViewPager != null){
+//                mViewPager.setCurrentItem(index,false);
+//            }
         }
         @Override
         public void onRepeat(int index) {}
