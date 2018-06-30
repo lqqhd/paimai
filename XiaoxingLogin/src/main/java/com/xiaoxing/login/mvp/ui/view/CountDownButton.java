@@ -128,11 +128,8 @@ public class CountDownButton extends android.support.v7.widget.AppCompatButton {
                     onClickListener.onClick(this);
                 }
                 if (mEnableCountDown && rect.contains((int) event.getRawX(), (int) event.getRawY())) {
-                    // 设置按钮不可点击
-                    setEnabled(false);
-                    // 开始倒计时
-                    mCountDownTimer.start();
-                    isCountDownNow = true;
+                    startCountdown();
+
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -141,6 +138,14 @@ public class CountDownButton extends android.support.v7.widget.AppCompatButton {
                 break;
         }
         return super.onTouchEvent(event);
+    }
+
+    public void startCountdown() {
+        // 设置按钮不可点击
+        setEnabled(false);
+        // 开始倒计时
+        mCountDownTimer.start();
+        isCountDownNow = true;
     }
 
     public void setEnableCountDown(boolean enableCountDown) {

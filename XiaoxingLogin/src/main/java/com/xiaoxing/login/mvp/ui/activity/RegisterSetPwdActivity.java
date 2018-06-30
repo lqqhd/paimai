@@ -4,24 +4,39 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
+import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.xiaoxing.login.R;
+import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerRegisterSetPwdComponent;
 import com.xiaoxing.login.di.module.RegisterSetPwdModule;
 import com.xiaoxing.login.mvp.contract.RegisterSetPwdContract;
 import com.xiaoxing.login.mvp.presenter.RegisterSetPwdPresenter;
+import com.xw.repo.XEditText;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 @Route(path = RouterHub.XIAO_XING_LOGIN_REGISTER_SET_PWD_ACTIVITY)
 public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter> implements RegisterSetPwdContract.View {
+
+    @BindView(R2.id.xet_new_password)
+    XEditText xetNewPassword;
+    @BindView(R2.id.xet_new_password_again)
+    XEditText xetNewPasswordAgain;
+    @BindView(R2.id.btn_ok)
+    Button btnOk;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -69,5 +84,43 @@ public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter
     @Override
     public void killMyself() {
         finish();
+    }
+
+    private void wanCheng() {
+
+        if (TextUtils.isEmpty(getNewPassword())) {
+
+            SnackbarUtils.Short(btnOk, "新密码不能为空").info().show();
+            return;
+        }
+        if (TextUtils.isEmpty(getNewPasswordAgain())) {
+
+            SnackbarUtils.Short(btnOk, "确认密码不能为空").info().show();
+            return;
+        }
+
+        if (!getNewPassword().equals(getNewPasswordAgain())) {
+            SnackbarUtils.Short(btnOk, "两次密码输入的不一致，请重新输入").info().show();
+            return;
+        }
+        SnackbarUtils.Short(btnOk, "设置成功").info().show();
+        killMyself();
+    }
+
+    @NonNull
+    private String getNewPasswordAgain() {
+        return xetNewPasswordAgain.getText().toString();
+    }
+
+    @NonNull
+    private String getNewPassword() {
+        return xetNewPassword.getText().toString();
+    }
+
+
+    @OnClick(R2.id.btn_ok)
+    public void onClick() {
+        wanCheng();
+
     }
 }

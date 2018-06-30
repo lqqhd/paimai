@@ -19,6 +19,7 @@
         android:textSize="@dimen/public_font_14sp" />
 
     <TextView
+        android:id="@+id/tv_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_10"
@@ -36,12 +37,14 @@
 
 
         <com.xw.repo.XEditText
+            android:id="@+id/xet_code"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp_45"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_weight="1.5"
             android:background="@color/public_white"
             android:hint="请输入验证码"
+            android:paddingRight="@dimen/dp_10"
             android:textColor="#B8B8B8"
             android:textSize="@dimen/public_font_14sp"
             xedit:x_clearDrawable="@mipmap/ic_clear"
@@ -56,6 +59,7 @@
             android:layout_marginRight="@dimen/dp_10"
             android:layout_weight="1"
             android:background="#F2F2F2"
+            android:gravity="center"
             android:text="获取验证码"
             android:textColor="@color/public_black"
             count:cdFinishText="重新获取验证码"

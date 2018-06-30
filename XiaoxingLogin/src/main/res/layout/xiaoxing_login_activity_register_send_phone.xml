@@ -23,6 +23,7 @@
 
 
             <com.xw.repo.XEditText
+                android:id="@+id/xet_phone"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_50"
                 android:layout_marginLeft="@dimen/dp_10"
@@ -53,6 +54,7 @@
                 android:layout_marginTop="@dimen/dp_10">
 
                 <CheckBox
+                    android:id="@+id/cb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"

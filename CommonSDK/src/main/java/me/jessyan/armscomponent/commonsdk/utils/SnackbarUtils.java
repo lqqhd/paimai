@@ -182,7 +182,7 @@ public class SnackbarUtils {
         </shape>
         <color name="design_snackbar_background_color">#323232</color>
         */
-        return new SnackbarUtils(new WeakReference<Snackbar>(Snackbar.make(view, message, Snackbar.LENGTH_SHORT))).backColor(Color.parseColor("#393a3f"));
+        return new SnackbarUtils(new WeakReference<Snackbar>(Snackbar.make(view, message, Snackbar.LENGTH_SHORT))).gravityFrameLayout(Gravity.TOP).backColor(Color.parseColor("#393a3f"));
     }
 
     /**

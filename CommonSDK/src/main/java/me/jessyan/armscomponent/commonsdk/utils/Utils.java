@@ -67,4 +67,16 @@ public class Utils {
     public static void navigation(Context context, String path) {
         ARouter.getInstance().build(path).navigation(context);
     }
+
+    public static void navigation(Context context, String path, Bundle bundle) {
+        ARouter.getInstance().build(path).with(bundle).navigation(context);
+    }
+
+    public static void navigation(Context context, String path, int resultCode) {
+        ARouter.getInstance().build(path).withFlags(resultCode).navigation(context);
+    }
+
+    public static void navigation(Context context, String path, Bundle bundle, int resultCode) {
+        ARouter.getInstance().build(path).with(bundle).withFlags(resultCode).navigation(context);
+    }
 }

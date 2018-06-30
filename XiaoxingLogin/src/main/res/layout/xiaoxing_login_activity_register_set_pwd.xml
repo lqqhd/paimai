@@ -20,6 +20,7 @@
         android:visibility="gone" />
 
     <com.xw.repo.XEditText
+        android:id="@+id/xet_new_password"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
         android:layout_marginLeft="@dimen/dp_10"
@@ -49,6 +50,7 @@
         android:visibility="gone" />
 
     <com.xw.repo.XEditText
+        android:id="@+id/xet_new_password_again"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
         android:layout_marginLeft="@dimen/dp_10"
