@@ -44,6 +44,7 @@
 
 
                     <com.xw.repo.XEditText
+                        android:id="@+id/xet_username"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_50"
                         android:layout_marginLeft="@dimen/dp_10"
@@ -62,6 +63,7 @@
 
 
                     <com.xw.repo.XEditText
+                        android:id="@+id/xet_password"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_50"
                         android:layout_marginLeft="@dimen/dp_10"
@@ -155,6 +157,7 @@
                 </LinearLayout>
 
                 <ImageView
+                    android:id="@+id/img_wechat"
                     android:layout_width="@dimen/dp_50"
                     android:layout_height="@dimen/dp_50"
                     android:layout_gravity="center_horizontal"

@@ -17,6 +17,7 @@ package me.jessyan.armscomponent.commonsdk.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
@@ -41,6 +42,18 @@ public class Utils {
      */
     public static void navigation(String path) {
         ARouter.getInstance().build(path).navigation();
+    }
+
+    public static void navigation(String path, Bundle bundle) {
+        ARouter.getInstance().build(path).with(bundle).navigation();
+    }
+
+    public static void navigation(String path, int resultCode) {
+        ARouter.getInstance().build(path).withFlags(resultCode).navigation();
+    }
+
+    public static void navigation(String path, Bundle bundle, int resultCode) {
+        ARouter.getInstance().build(path).with(bundle).withFlags(resultCode).navigation();
     }
 
     /**
