@@ -1,5 +1,6 @@
 package com.xiaoxing.salesclient.mvp.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,24 +9,36 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
+import com.xiaoxing.salesclient.mvp.ui.activity.ScreenshotShowActivity;
 
+import butterknife.BindView;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.ScreenShotUtil;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
+import static me.jessyan.armscomponent.commonsdk.utils.ScreenShotUtil.boolean_save;
+import static me.jessyan.armscomponent.commonsdk.utils.ScreenShotUtil.fn_permission;
+
 public class FragmentMine extends BaseFragment {
 
     private int mOffset = 0;
     private int mScrollY = 0;
+    private NestedScrollView scrollView;
+    @BindView(R2.id.right_button)
+    TextView mBtnRight;
+
 
     public static FragmentMine newInstance(String content) {
         Bundle args = new Bundle();
@@ -41,25 +54,35 @@ public class FragmentMine extends BaseFragment {
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        ScreenShotUtil.onRequestPermissionsResult(requestCode, grantResults);
+    }
+
+    @Override
     public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.sales_client_fragment_mine, null);
+
+
+        final View parallax = view.findViewById(R.id.parallax);
+        final View buttonBar = view.findViewById(R.id.buttonBarLayout);
+        scrollView = (NestedScrollView) view.findViewById(R.id.scrollView);
+        final RefreshLayout refreshLayout = (RefreshLayout) view.findViewById(R.id.refreshLayout);
+
+        fn_permission(getActivity());
 
         final Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
             }
         });
 
         //状态栏透明和间距处理
         StatusBarUtil.immersive(getActivity());
         StatusBarUtil.setPaddingSmart(getActivity(), toolbar);
-
-        final View parallax = view.findViewById(R.id.parallax);
-        final View buttonBar = view.findViewById(R.id.buttonBarLayout);
-        final NestedScrollView scrollView = (NestedScrollView) view.findViewById(R.id.scrollView);
-        final RefreshLayout refreshLayout = (RefreshLayout) view.findViewById(R.id.refreshLayout);
 
 
         refreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
@@ -130,7 +153,8 @@ public class FragmentMine extends BaseFragment {
             R2.id.ll_dai_fa_huo, R2.id.ll_dai_ping_jia, R2.id.ll_dai_shou_huo,
             R2.id.ll_shou_hou, R2.id.rl_tou_tiao, R2.id.rl_balance,
             R2.id.tv_chong_zhi, R2.id.rl_mine_quotation, R2.id.rl_wo_de_jing_pai,
-            R2.id.rl_shou_cang, R2.id.rl_tian_jiang_hong_bao, R2.id.rl_wo_de_jian_ding})
+            R2.id.rl_shou_cang, R2.id.rl_tian_jiang_hong_bao, R2.id.rl_wo_de_jian_ding
+            , R2.id.right_button})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.panel_lyt) {
@@ -163,6 +187,16 @@ public class FragmentMine extends BaseFragment {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_TIAN_JIANG_HONG_BAO_ACTIVITY);
         } else if (view.getId() == R.id.rl_wo_de_jian_ding) {
             Utils.navigation(getActivity(), RouterHub.XIAO_XING_SEARCH_SearchActivity);
+        } else if (view.getId() == R.id.right_button) {
+
+            if (boolean_save) {
+                Intent intent = new Intent(getActivity(), ScreenshotShowActivity.class);
+                startActivity(intent);
+
+            } else {
+                ScreenShotUtil.screenShotCreate(scrollView);
+                mBtnRight.setText("查看名片");
+            }
         }
     }
 

@@ -21,7 +21,6 @@ import com.xiaoxing.login.mvp.presenter.LoginPresenter;
 import com.xw.repo.XEditText;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;

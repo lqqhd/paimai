@@ -245,6 +245,16 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.ScreenshotCreateActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.ScreenshotShowActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>

@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+
+    <Button
+        android:id="@+id/btn_screenshot"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:text="Take ScreenShot" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:id="@+id/ll_linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="小星aaaaa"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/arms_log" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/arms_log" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/arms_log" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/arms_log" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/arms_log" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/arms_log" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
