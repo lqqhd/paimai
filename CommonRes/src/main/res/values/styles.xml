@@ -90,6 +90,7 @@
     <style name="public_MineItemRelativeLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:clickable">true</item>
         <item name="android:background">@drawable/public_ripple_bg</item>
     </style>
 

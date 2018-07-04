@@ -19,6 +19,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.alibaba.mobileim.YWAPI;
 import com.alibaba.wxlib.util.SysUtil;
@@ -39,7 +40,7 @@ import com.tencent.bugly.crashreport.CrashReport;
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
-public class BaseApplication extends Application implements App {
+public class BaseApplication extends MultiDexApplication implements App {
     private AppLifecycles mAppDelegate;
 
 //    public static String APP_KEY = "24945482";
