@@ -20,7 +20,7 @@
         android:theme="@style/public_AppTheme"
         tools:replace="label,icon,theme,allowBackup,supportsRtl,name">
         <activity
-            android:name="com.xiaoxing.welcome.mvp.ui.WelcomeActivity"
+            android:name="com.xiaoxing.login.mvp.ui.activity.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
@@ -70,10 +70,10 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name="com.xiaoxing.login.mvp.ui.activity.LoginActivity"
-            android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait" />
+        <!--<activity-->
+        <!--android:name="com.xiaoxing.login.mvp.ui.activity.LoginActivity"-->
+        <!--android:configChanges="orientation|screenSize"-->
+        <!--android:screenOrientation="portrait" />-->
         <activity
             android:name="com.xiaoxing.login.mvp.ui.activity.RegisterSendPhoneActivity"
             android:configChanges="orientation|screenSize"

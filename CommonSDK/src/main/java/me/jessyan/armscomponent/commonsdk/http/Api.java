@@ -25,7 +25,7 @@ package me.jessyan.armscomponent.commonsdk.http;
  * ================================================
  */
 public interface Api {
-    String APP_DOMAIN = "https://api.github.com";
+    String APP_DOMAIN = "http://47.100.103.123";
 
     String REQUEST_SUCCESS = "200";
 

@@ -6,11 +6,19 @@ import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
+import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.RxLifecycleUtils;
 import com.xiaoxing.login.mvp.contract.LoginContract;
+import com.xiaoxing.login.mvp.model.entity.Login;
+import com.xiaoxing.login.mvp.model.entity.LoginBaseResponse;
 
 import javax.inject.Inject;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
+import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
+import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
 
 
 @ActivityScope
@@ -27,6 +35,26 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
     @Inject
     public LoginPresenter(LoginContract.Model model, LoginContract.View rootView) {
         super(model, rootView);
+    }
+
+
+    public void doLogin(String user_name, String password) {
+
+        mModel.doLogin("woaixuxiaoxing", "dsc.user.login.get", "fan", "123456").subscribeOn(Schedulers.io())
+//                .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .doOnSubscribe(disposable -> {
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+                })
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))//使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .subscribe(new ErrorHandleSubscriber<LoginBaseResponse<Login>>(mErrorHandler) {
+
+                    @Override
+                    public void onNext(LoginBaseResponse<Login> loginLoginBaseResponse) {
+                        ArmsUtils.snackbarText("登录Api请求测试成功");
+                    }
+                });
     }
 
     @Override

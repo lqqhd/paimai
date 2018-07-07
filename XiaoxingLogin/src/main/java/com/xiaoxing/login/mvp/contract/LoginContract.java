@@ -1,7 +1,11 @@
 package com.xiaoxing.login.mvp.contract;
 
-import com.jess.arms.mvp.IView;
 import com.jess.arms.mvp.IModel;
+import com.jess.arms.mvp.IView;
+import com.xiaoxing.login.mvp.model.entity.Login;
+import com.xiaoxing.login.mvp.model.entity.LoginBaseResponse;
+
+import io.reactivex.Observable;
 
 
 public interface LoginContract {
@@ -12,6 +16,6 @@ public interface LoginContract {
 
     //Model层定义接口,外部只需关心Model返回的数据,无需关心内部细节,即是否使用缓存
     interface Model extends IModel {
-
+        Observable<LoginBaseResponse<Login>> doLogin(String app_key, String method, String user_name, String password);
     }
 }
