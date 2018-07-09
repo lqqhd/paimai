@@ -115,7 +115,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         }
 
         if (getUsername().equals("1234") && getPassword().equals("123456")) {
-            mPresenter.doLogin(getUsername(), getPassword());
+            mPresenter.doLogin(this, getUsername(), getPassword());
 
 //            Utils.navigation(LoginActivity.this, RouterHub.SELLER_CLIENT_MINE_ACTIVITY);
 
@@ -136,4 +136,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         return xetUsername.getText().toString();
     }
 
+    @Override
+    public void doLoginSuccess() {
+    }
 }

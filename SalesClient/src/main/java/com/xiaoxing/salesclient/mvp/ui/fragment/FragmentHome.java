@@ -22,12 +22,18 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jess.arms.base.BaseFragment;
+import com.jess.arms.base.BaseLazyFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.jiang.android.indicatordialog.IndicatorBuilder;
 import com.jiang.android.indicatordialog.IndicatorDialog;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
+import com.xiaoxing.salesclient.di.component.DaggerFragmentHomeComponent;
+import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
+import com.xiaoxing.salesclient.mvp.contract.FragmentHomeContract;
+import com.xiaoxing.salesclient.mvp.model.entity.Index;
+import com.xiaoxing.salesclient.mvp.presenter.FragmentHomePresenter;
 import com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity;
 import com.xiaoxing.salesclient.mvp.ui.adapter.BaseDialogTipAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.WeiPaiTuiGuangHomeAdapter;
@@ -47,7 +53,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
-public class FragmentHome extends BaseFragment {
+public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements FragmentHomeContract.View {
 
     public static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
         add(new BannerItem("最后的骑士", R.mipmap.banner_001));
@@ -92,7 +98,12 @@ public class FragmentHome extends BaseFragment {
 
     @Override
     public void setupFragmentComponent(@NonNull AppComponent appComponent) {
-
+        DaggerFragmentHomeComponent //如找不到该类,请编译一下项目
+                .builder()
+                .appComponent(appComponent)
+                .fragmentHomeModule(new FragmentHomeModule(this))
+                .build()
+                .inject(this);
     }
 
     @Override
@@ -309,11 +320,24 @@ public class FragmentHome extends BaseFragment {
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+        getIndexData();
+    }
 
+    private void getIndexData() {
+        mPresenter.getIndex();
     }
 
     @Override
     public void setData(@Nullable Object data) {
+    }
+
+    @Override
+    public void getIndexDataSuccess(Index index) {
+
+    }
+
+    @Override
+    public void showMessage(@NonNull String message) {
 
     }
 

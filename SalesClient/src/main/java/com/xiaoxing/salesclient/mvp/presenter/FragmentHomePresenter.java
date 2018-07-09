@@ -1,16 +1,16 @@
-package com.xiaoxing.login.mvp.presenter;
+package com.xiaoxing.salesclient.mvp.presenter;
 
 import android.app.Application;
-import android.content.Context;
 
+import com.jess.arms.base.BaseResponse;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.RxLifecycleUtils;
-import com.xiaoxing.login.mvp.contract.LoginContract;
-import com.xiaoxing.login.mvp.model.entity.Login;
+import com.xiaoxing.salesclient.mvp.contract.FragmentHomeContract;
+import com.xiaoxing.salesclient.mvp.model.entity.Index;
 
 import javax.inject.Inject;
 
@@ -21,7 +21,7 @@ import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 
 
 @ActivityScope
-public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginContract.View> {
+public class FragmentHomePresenter extends BasePresenter<FragmentHomeContract.Model, FragmentHomeContract.View> {
     @Inject
     RxErrorHandler mErrorHandler;
     @Inject
@@ -32,29 +32,25 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
     AppManager mAppManager;
 
     @Inject
-    public LoginPresenter(LoginContract.Model model, LoginContract.View rootView) {
+    public FragmentHomePresenter(FragmentHomeContract.Model model, FragmentHomeContract.View rootView) {
         super(model, rootView);
+
+
     }
 
+    public void getIndex() {
 
-    public void doLogin(Context context, String user_name, String password) {
+        mModel.getIndex().subscribeOn(Schedulers.single())
+                //                .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
 
-        mModel.doLogin("woaixuxiaoxing", "dsc.user.login.get", "fan", "123456").subscribeOn(Schedulers.io())
-//                .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
-                .doOnSubscribe(disposable -> {
-                }).subscribeOn(AndroidSchedulers.mainThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doFinally(() -> {
-                })
                 .compose(RxLifecycleUtils.bindToLifecycle(mRootView))//使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
-                .subscribe(new ErrorHandleSubscriber<Login>(mErrorHandler) {
-                    @Override
-                    public void onNext(Login login) {
+                .subscribe(new ErrorHandleSubscriber<BaseResponse<Index>>(mErrorHandler) {
 
-                        ArmsUtils.snackbarText("Api登录请求测试成功");
+                    @Override
+                    public void onNext(BaseResponse<Index> loginBaseResponse) {
+                        ArmsUtils.snackbarText("登录Api请求测试成功");
                     }
                 });
-
     }
 
     @Override

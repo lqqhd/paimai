@@ -1,4 +1,4 @@
-package me.jessyan.armscomponent.commonsdk.utils;
+package com.jess.arms.utils;
 
 import android.content.Context;
 import android.os.Handler;

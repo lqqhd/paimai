@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import com.xiaoxing.login.mvp.contract.LoginContract;
 import com.xiaoxing.login.mvp.model.api.service.LoginService;
 import com.xiaoxing.login.mvp.model.entity.Login;
-import com.xiaoxing.login.mvp.model.entity.LoginBaseResponse;
+import com.jess.arms.base.BaseResponse;
 
 import io.reactivex.Observable;
 
@@ -39,7 +39,7 @@ public class LoginModel extends BaseModel implements LoginContract.Model {
 
 
     @Override
-    public Observable<LoginBaseResponse<Login>> doLogin(String app_key, String method, String user_name, String password) {
+    public Observable<Login> doLogin(String app_key, String method, String user_name, String password) {
         return mRepositoryManager
                 .obtainRetrofitService(LoginService.class)
                 .doLogin(app_key, method, user_name, password);
