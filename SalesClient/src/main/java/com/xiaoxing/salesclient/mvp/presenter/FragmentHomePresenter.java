@@ -41,9 +41,13 @@ public class FragmentHomePresenter extends BasePresenter<FragmentHomeContract.Mo
 
     public void getIndex() {
 
-        mModel.getIndex().subscribeOn(Schedulers.single())
+        mModel.getIndex().subscribeOn(Schedulers.io())
                 //                .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
-
+                .doOnSubscribe(disposable -> {
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+                })
                 .compose(RxLifecycleUtils.bindToLifecycle(mRootView))//使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
                 .subscribe(new ErrorHandleSubscriber<BaseResponse<Index>>(mErrorHandler) {
 

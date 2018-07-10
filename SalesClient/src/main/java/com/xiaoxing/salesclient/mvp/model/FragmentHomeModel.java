@@ -38,6 +38,6 @@ public class FragmentHomeModel extends BaseModel implements FragmentHomeContract
 
     @Override
     public Observable<BaseResponse<Index>> getIndex() {
-        return mRepositoryManager.obtainCacheService(SalesService.class).getIndex();
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).getIndex();
     }
 }
