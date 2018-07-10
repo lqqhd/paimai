@@ -35,11 +35,11 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> implements WeiPaiDetailContract.View {
 
 
-    private static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
-        add(new BannerItem("最后的骑士", R.mipmap.banner_001));
-        add(new BannerItem("三生三世十里桃花", R.mipmap.banner_001));
-        add(new BannerItem("豆福传", R.mipmap.banner_001));
-    }};
+//    private static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
+//        add(new BannerItem("最后的骑士", R.mipmap.banner_001));
+//        add(new BannerItem("三生三世十里桃花", R.mipmap.banner_001));
+//        add(new BannerItem("豆福传", R.mipmap.banner_001));
+//    }};
 
     private final String[] mTitles = {"拍品详情", "帮助及保障", "其他拍品"};
 
@@ -64,18 +64,18 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
         ToolbarUtils.initToolbarTitleBack(this, "微拍推广详情");
 
 
-        Banner banner = findViewById(R.id.convenientBanner);
-
-        banner.setImageLoader(new GlideImageLoader());
-        banner.setImages(BANNER_ITEMS);
-        banner.start();
-
-        banner.setOnBannerClickListener(new OnBannerClickListener() {
-            @Override
-            public void OnBannerClick(int position) {
-//                Utils.navigation(WeiPaiDetailActivity.this, RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
-            }
-        });
+//        Banner banner = findViewById(R.id.convenientBanner);
+//
+//        banner.setImageLoader(new GlideImageLoader());
+//        banner.setImages(BANNER_ITEMS);
+//        banner.start();
+//
+//        banner.setOnBannerClickListener(new OnBannerClickListener() {
+//            @Override
+//            public void OnBannerClick(int position) {
+////                Utils.navigation(WeiPaiDetailActivity.this, RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+//            }
+//        });
 
 
         ArrayList<Fragment> mFragments = new ArrayList<>();

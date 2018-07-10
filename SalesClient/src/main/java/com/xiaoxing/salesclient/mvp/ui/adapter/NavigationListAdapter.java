@@ -23,7 +23,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
-import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome.BANNER_ITEMS;
+//import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome.BANNER_ITEMS;
 
 public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationListAdapter.NavigationListItem> {
     public static final int TYPE_SHANG_JIA_NAME = 1000; //商家名称
@@ -60,18 +60,18 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
 
         public ShangJiaNameViewHolder(View view) {
             super(view);
-            Banner banner = view.findViewById(R.id.convenientBanner);
-
-            banner.setImageLoader(new GlideImageLoader());
-            banner.setImages(BANNER_ITEMS);
-            banner.start();
-
-            banner.setOnBannerClickListener(new OnBannerClickListener() {
-                @Override
-                public void OnBannerClick(int position) {
-                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
-                }
-            });
+//            Banner banner = view.findViewById(R.id.convenientBanner);
+//
+//            banner.setImageLoader(new GlideImageLoader());
+//            banner.setImages(BANNER_ITEMS);
+//            banner.start();
+//
+//            banner.setOnBannerClickListener(new OnBannerClickListener() {
+//                @Override
+//                public void OnBannerClick(int position) {
+//                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+//                }
+//            });
         }
 
         public void bind(int position) {

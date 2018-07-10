@@ -9,17 +9,16 @@ import java.util.List;
  */
 public class Index {
 
+
     /**
-     * result : success
-     * error : 0
-     * msg : 成功获取数据
-     * info : {"list":[{"user_id":"81","aite_id":"","email":"","user_name":"fan","nick_name":"花瓣2","password":"3195e8f17d08374e57b5341d8a4d7022","question":"","answer":"","sex":"0","birthday":"0000-00-00","user_money":"1001.00","frozen_money":"8000.00","pay_points":"0","rank_points":"0","address_id":"0","reg_time":"1530557605","last_login":"1530855407","last_time":"0000-00-00 00:00:00","last_ip":"127.0.0.1","visit_count":"7","user_rank":"6","is_special":"0","ec_salt":"7946","salt":"0","parent_id":"0","flag":"0","alias":"","msn":"","qq":"","office_phone":"","home_phone":"","mobile_phone":"13276380514","is_validated":"1","credit_line":"0.00","passwd_question":null,"passwd_answer":null,"user_picture":"","old_user_picture":"","report_time":"0","drp_parent_id":"0","token":"48c63665cd830995212f84ff7cabf7ed","time_out":"1531527624"}],"filter":{"page":1,"page_size":15,"record_count":1,"page_count":1},"page_count":1,"record_count":1}
+     * result : true
+     * next : false
+     * data : {"banner":[{"goods_id":"910","goods_name":"古书","goods_number":"6","shop_price":"3000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958971037.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958971708.jpg","last_update":"1530958998"},{"goods_id":"909","goods_name":"字画1","goods_number":"5","shop_price":"0.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958877665.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958877783.jpg","last_update":"1530958996"},{"goods_id":"908","goods_name":"太师椅","goods_number":"4","shop_price":"3000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958811379.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958811442.jpg","last_update":"1530959000"}],"article":[{"article_id":"66","title":"乐拍头条重要通知","add_time":"1531615549"},{"article_id":"65","title":"7月8日晚专场","add_time":"1531615549"},{"article_id":"64","title":"卖家入住流程","add_time":"1531615549"},{"article_id":"62","title":"玉器的鉴别方法","add_time":"1490724253"},{"article_id":"61","title":"古董鉴别方法","add_time":"1490724217"}],"weipai":[{"goods_id":"911","goods_name":"字画5","goods_number":"2","shop_price":"6000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530959062805.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530959062471.jpg","last_update":"1530959084"},{"goods_id":"907","goods_name":"桌子","goods_number":"3","shop_price":"30000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958731867.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958731596.jpg","last_update":"1530959014"},{"goods_id":"906","goods_name":"花瓶","goods_number":"3","shop_price":"2000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530955495843.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530955495710.jpg","last_update":"1530957313"},{"goods_id":"905","goods_name":"椅子","goods_number":"994","shop_price":"0.01","goods_thumb":"http://47.100.103.123/data/gallery_album/2/thumb_img/1494985265759726303.jpg","goods_img":"http://47.100.103.123/data/gallery_album/2/images/1494985265262573638.jpg","last_update":"1530955689"},{"goods_id":"904","goods_name":"测试产品001","goods_number":"989","shop_price":"0.10","goods_thumb":"http://47.100.103.123/data/gallery_album/2/thumb_img/1494985268545005438.jpg","goods_img":"http://47.100.103.123/data/gallery_album/2/images/1494985268890006696.jpg","last_update":"1508738926"}],"zhuanchang":[{"goods_id":"913","goods_name":"玉器3","cat_id":"3","shop_price":"40000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531016358458.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531016358426.jpg","last_update":"1531016363"},{"goods_id":"912","goods_name":"玉器1","cat_id":"3","shop_price":"1444.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531015034851.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531015034582.jpg","last_update":"1531015144"}],"store":[{"ru_id":"81","shop_logo":"","logo_thumb":"http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531031144777138297.jpg","street_thumb":"http://47.100.103.123/data/store_street/street_thumb/1531030573826726960.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/1531031144663448469.jpg","sort_order":"3"}]}
      */
 
     private String result;
-    private int error;
-    private String msg;
-    private InfoBean info;
+    private String next;
+    private DataBean data;
 
     public String getResult() {
         return result;
@@ -29,544 +28,396 @@ public class Index {
         this.result = result;
     }
 
-    public int getError() {
-        return error;
+    public String getNext() {
+        return next;
     }
 
-    public void setError(int error) {
-        this.error = error;
+    public void setNext(String next) {
+        this.next = next;
     }
 
-    public String getMsg() {
-        return msg;
+    public DataBean getData() {
+        return data;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setData(DataBean data) {
+        this.data = data;
     }
 
-    public InfoBean getInfo() {
-        return info;
-    }
+    public static class DataBean {
+        private List<BannerBean> banner;
+        private List<ArticleBean> article;
+        private List<WeipaiBean> weipai;
+        private List<ZhuanchangBean> zhuanchang;
+        private List<StoreBean> store;
 
-    public void setInfo(InfoBean info) {
-        this.info = info;
-    }
-
-    public static class InfoBean {
-        /**
-         * list : [{"user_id":"81","aite_id":"","email":"","user_name":"fan","nick_name":"花瓣2","password":"3195e8f17d08374e57b5341d8a4d7022","question":"","answer":"","sex":"0","birthday":"0000-00-00","user_money":"1001.00","frozen_money":"8000.00","pay_points":"0","rank_points":"0","address_id":"0","reg_time":"1530557605","last_login":"1530855407","last_time":"0000-00-00 00:00:00","last_ip":"127.0.0.1","visit_count":"7","user_rank":"6","is_special":"0","ec_salt":"7946","salt":"0","parent_id":"0","flag":"0","alias":"","msn":"","qq":"","office_phone":"","home_phone":"","mobile_phone":"13276380514","is_validated":"1","credit_line":"0.00","passwd_question":null,"passwd_answer":null,"user_picture":"","old_user_picture":"","report_time":"0","drp_parent_id":"0","token":"48c63665cd830995212f84ff7cabf7ed","time_out":"1531527624"}]
-         * filter : {"page":1,"page_size":15,"record_count":1,"page_count":1}
-         * page_count : 1
-         * record_count : 1
-         */
-
-        private FilterBean filter;
-        private int page_count;
-        private int record_count;
-        private List<ListBean> list;
-
-        public FilterBean getFilter() {
-            return filter;
+        public List<BannerBean> getBanner() {
+            return banner;
         }
 
-        public void setFilter(FilterBean filter) {
-            this.filter = filter;
+        public void setBanner(List<BannerBean> banner) {
+            this.banner = banner;
         }
 
-        public int getPage_count() {
-            return page_count;
+        public List<ArticleBean> getArticle() {
+            return article;
         }
 
-        public void setPage_count(int page_count) {
-            this.page_count = page_count;
+        public void setArticle(List<ArticleBean> article) {
+            this.article = article;
         }
 
-        public int getRecord_count() {
-            return record_count;
+        public List<WeipaiBean> getWeipai() {
+            return weipai;
         }
 
-        public void setRecord_count(int record_count) {
-            this.record_count = record_count;
+        public void setWeipai(List<WeipaiBean> weipai) {
+            this.weipai = weipai;
         }
 
-        public List<ListBean> getList() {
-            return list;
+        public List<ZhuanchangBean> getZhuanchang() {
+            return zhuanchang;
         }
 
-        public void setList(List<ListBean> list) {
-            this.list = list;
+        public void setZhuanchang(List<ZhuanchangBean> zhuanchang) {
+            this.zhuanchang = zhuanchang;
         }
 
-        public static class FilterBean {
+        public List<StoreBean> getStore() {
+            return store;
+        }
+
+        public void setStore(List<StoreBean> store) {
+            this.store = store;
+        }
+
+        public static class BannerBean {
             /**
-             * page : 1
-             * page_size : 15
-             * record_count : 1
-             * page_count : 1
+             * goods_id : 910
+             * goods_name : 古书
+             * goods_number : 6
+             * shop_price : 3000.00
+             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958971037.jpg
+             * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1530958971708.jpg
+             * last_update : 1530958998
              */
 
-            private int page;
-            private int page_size;
-            private int record_count;
-            private int page_count;
+            private String goods_id;
+            private String goods_name;
+            private String goods_number;
+            private String shop_price;
+            private String goods_thumb;
+            private String goods_img;
+            private String last_update;
 
-            public int getPage() {
-                return page;
+            public String getGoods_id() {
+                return goods_id;
             }
 
-            public void setPage(int page) {
-                this.page = page;
+            public void setGoods_id(String goods_id) {
+                this.goods_id = goods_id;
             }
 
-            public int getPage_size() {
-                return page_size;
+            public String getGoods_name() {
+                return goods_name;
             }
 
-            public void setPage_size(int page_size) {
-                this.page_size = page_size;
+            public void setGoods_name(String goods_name) {
+                this.goods_name = goods_name;
             }
 
-            public int getRecord_count() {
-                return record_count;
+            public String getGoods_number() {
+                return goods_number;
             }
 
-            public void setRecord_count(int record_count) {
-                this.record_count = record_count;
+            public void setGoods_number(String goods_number) {
+                this.goods_number = goods_number;
             }
 
-            public int getPage_count() {
-                return page_count;
+            public String getShop_price() {
+                return shop_price;
             }
 
-            public void setPage_count(int page_count) {
-                this.page_count = page_count;
+            public void setShop_price(String shop_price) {
+                this.shop_price = shop_price;
+            }
+
+            public String getGoods_thumb() {
+                return goods_thumb;
+            }
+
+            public void setGoods_thumb(String goods_thumb) {
+                this.goods_thumb = goods_thumb;
+            }
+
+            public String getGoods_img() {
+                return goods_img;
+            }
+
+            public void setGoods_img(String goods_img) {
+                this.goods_img = goods_img;
+            }
+
+            public String getLast_update() {
+                return last_update;
+            }
+
+            public void setLast_update(String last_update) {
+                this.last_update = last_update;
             }
         }
 
-        public static class ListBean {
+        public static class ArticleBean {
             /**
-             * user_id : 81
-             * aite_id :
-             * email :
-             * user_name : fan
-             * nick_name : 花瓣2
-             * password : 3195e8f17d08374e57b5341d8a4d7022
-             * question :
-             * answer :
-             * sex : 0
-             * birthday : 0000-00-00
-             * user_money : 1001.00
-             * frozen_money : 8000.00
-             * pay_points : 0
-             * rank_points : 0
-             * address_id : 0
-             * reg_time : 1530557605
-             * last_login : 1530855407
-             * last_time : 0000-00-00 00:00:00
-             * last_ip : 127.0.0.1
-             * visit_count : 7
-             * user_rank : 6
-             * is_special : 0
-             * ec_salt : 7946
-             * salt : 0
-             * parent_id : 0
-             * flag : 0
-             * alias :
-             * msn :
-             * qq :
-             * office_phone :
-             * home_phone :
-             * mobile_phone : 13276380514
-             * is_validated : 1
-             * credit_line : 0.00
-             * passwd_question : null
-             * passwd_answer : null
-             * user_picture :
-             * old_user_picture :
-             * report_time : 0
-             * drp_parent_id : 0
-             * token : 48c63665cd830995212f84ff7cabf7ed
-             * time_out : 1531527624
+             * article_id : 66
+             * title : 乐拍头条重要通知
+             * add_time : 1531615549
              */
 
-            private String user_id;
-            private String aite_id;
-            private String email;
-            private String user_name;
-            private String nick_name;
-            private String password;
-            private String question;
-            private String answer;
-            private String sex;
-            private String birthday;
-            private String user_money;
-            private String frozen_money;
-            private String pay_points;
-            private String rank_points;
-            private String address_id;
-            private String reg_time;
-            private String last_login;
-            private String last_time;
-            private String last_ip;
-            private String visit_count;
-            private String user_rank;
-            private String is_special;
-            private String ec_salt;
-            private String salt;
-            private String parent_id;
-            private String flag;
-            private String alias;
-            private String msn;
-            private String qq;
-            private String office_phone;
-            private String home_phone;
-            private String mobile_phone;
-            private String is_validated;
-            private String credit_line;
-            private Object passwd_question;
-            private Object passwd_answer;
-            private String user_picture;
-            private String old_user_picture;
-            private String report_time;
-            private String drp_parent_id;
-            private String token;
-            private String time_out;
+            private String article_id;
+            private String title;
+            private String add_time;
 
-            public String getUser_id() {
-                return user_id;
+            public String getArticle_id() {
+                return article_id;
             }
 
-            public void setUser_id(String user_id) {
-                this.user_id = user_id;
+            public void setArticle_id(String article_id) {
+                this.article_id = article_id;
             }
 
-            public String getAite_id() {
-                return aite_id;
+            public String getTitle() {
+                return title;
             }
 
-            public void setAite_id(String aite_id) {
-                this.aite_id = aite_id;
+            public void setTitle(String title) {
+                this.title = title;
             }
 
-            public String getEmail() {
-                return email;
+            public String getAdd_time() {
+                return add_time;
             }
 
-            public void setEmail(String email) {
-                this.email = email;
+            public void setAdd_time(String add_time) {
+                this.add_time = add_time;
             }
+        }
 
-            public String getUser_name() {
-                return user_name;
-            }
-
-            public void setUser_name(String user_name) {
-                this.user_name = user_name;
-            }
-
-            public String getNick_name() {
-                return nick_name;
-            }
-
-            public void setNick_name(String nick_name) {
-                this.nick_name = nick_name;
-            }
-
-            public String getPassword() {
-                return password;
-            }
-
-            public void setPassword(String password) {
-                this.password = password;
-            }
-
-            public String getQuestion() {
-                return question;
-            }
-
-            public void setQuestion(String question) {
-                this.question = question;
-            }
-
-            public String getAnswer() {
-                return answer;
-            }
-
-            public void setAnswer(String answer) {
-                this.answer = answer;
-            }
-
-            public String getSex() {
-                return sex;
-            }
-
-            public void setSex(String sex) {
-                this.sex = sex;
-            }
-
-            public String getBirthday() {
-                return birthday;
-            }
-
-            public void setBirthday(String birthday) {
-                this.birthday = birthday;
-            }
-
-            public String getUser_money() {
-                return user_money;
-            }
-
-            public void setUser_money(String user_money) {
-                this.user_money = user_money;
-            }
-
-            public String getFrozen_money() {
-                return frozen_money;
-            }
-
-            public void setFrozen_money(String frozen_money) {
-                this.frozen_money = frozen_money;
-            }
+        public static class WeipaiBean {
+            /**
+             * goods_id : 911
+             * goods_name : 字画5
+             * goods_number : 2
+             * shop_price : 6000.00
+             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530959062805.jpg
+             * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1530959062471.jpg
+             * last_update : 1530959084
+             */
 
-            public String getPay_points() {
-                return pay_points;
-            }
-
-            public void setPay_points(String pay_points) {
-                this.pay_points = pay_points;
-            }
-
-            public String getRank_points() {
-                return rank_points;
-            }
-
-            public void setRank_points(String rank_points) {
-                this.rank_points = rank_points;
-            }
-
-            public String getAddress_id() {
-                return address_id;
-            }
-
-            public void setAddress_id(String address_id) {
-                this.address_id = address_id;
-            }
-
-            public String getReg_time() {
-                return reg_time;
-            }
-
-            public void setReg_time(String reg_time) {
-                this.reg_time = reg_time;
-            }
-
-            public String getLast_login() {
-                return last_login;
-            }
+            private String goods_id;
+            private String goods_name;
+            private String goods_number;
+            private String shop_price;
+            private String goods_thumb;
+            private String goods_img;
+            private String last_update;
 
-            public void setLast_login(String last_login) {
-                this.last_login = last_login;
+            public String getGoods_id() {
+                return goods_id;
             }
 
-            public String getLast_time() {
-                return last_time;
+            public void setGoods_id(String goods_id) {
+                this.goods_id = goods_id;
             }
 
-            public void setLast_time(String last_time) {
-                this.last_time = last_time;
+            public String getGoods_name() {
+                return goods_name;
             }
 
-            public String getLast_ip() {
-                return last_ip;
+            public void setGoods_name(String goods_name) {
+                this.goods_name = goods_name;
             }
 
-            public void setLast_ip(String last_ip) {
-                this.last_ip = last_ip;
+            public String getGoods_number() {
+                return goods_number;
             }
 
-            public String getVisit_count() {
-                return visit_count;
+            public void setGoods_number(String goods_number) {
+                this.goods_number = goods_number;
             }
 
-            public void setVisit_count(String visit_count) {
-                this.visit_count = visit_count;
+            public String getShop_price() {
+                return shop_price;
             }
 
-            public String getUser_rank() {
-                return user_rank;
+            public void setShop_price(String shop_price) {
+                this.shop_price = shop_price;
             }
 
-            public void setUser_rank(String user_rank) {
-                this.user_rank = user_rank;
+            public String getGoods_thumb() {
+                return goods_thumb;
             }
 
-            public String getIs_special() {
-                return is_special;
+            public void setGoods_thumb(String goods_thumb) {
+                this.goods_thumb = goods_thumb;
             }
 
-            public void setIs_special(String is_special) {
-                this.is_special = is_special;
+            public String getGoods_img() {
+                return goods_img;
             }
 
-            public String getEc_salt() {
-                return ec_salt;
+            public void setGoods_img(String goods_img) {
+                this.goods_img = goods_img;
             }
 
-            public void setEc_salt(String ec_salt) {
-                this.ec_salt = ec_salt;
+            public String getLast_update() {
+                return last_update;
             }
 
-            public String getSalt() {
-                return salt;
+            public void setLast_update(String last_update) {
+                this.last_update = last_update;
             }
+        }
 
-            public void setSalt(String salt) {
-                this.salt = salt;
-            }
-
-            public String getParent_id() {
-                return parent_id;
-            }
-
-            public void setParent_id(String parent_id) {
-                this.parent_id = parent_id;
-            }
-
-            public String getFlag() {
-                return flag;
-            }
-
-            public void setFlag(String flag) {
-                this.flag = flag;
-            }
+        public static class ZhuanchangBean {
+            /**
+             * goods_id : 913
+             * goods_name : 玉器3
+             * cat_id : 3
+             * shop_price : 40000.00
+             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531016358458.jpg
+             * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1531016358426.jpg
+             * last_update : 1531016363
+             */
 
-            public String getAlias() {
-                return alias;
-            }
-
-            public void setAlias(String alias) {
-                this.alias = alias;
-            }
-
-            public String getMsn() {
-                return msn;
-            }
-
-            public void setMsn(String msn) {
-                this.msn = msn;
-            }
+            private String goods_id;
+            private String goods_name;
+            private String cat_id;
+            private String shop_price;
+            private String goods_thumb;
+            private String goods_img;
+            private String last_update;
 
-            public String getQq() {
-                return qq;
+            public String getGoods_id() {
+                return goods_id;
             }
 
-            public void setQq(String qq) {
-                this.qq = qq;
+            public void setGoods_id(String goods_id) {
+                this.goods_id = goods_id;
             }
 
-            public String getOffice_phone() {
-                return office_phone;
+            public String getGoods_name() {
+                return goods_name;
             }
 
-            public void setOffice_phone(String office_phone) {
-                this.office_phone = office_phone;
+            public void setGoods_name(String goods_name) {
+                this.goods_name = goods_name;
             }
 
-            public String getHome_phone() {
-                return home_phone;
+            public String getCat_id() {
+                return cat_id;
             }
 
-            public void setHome_phone(String home_phone) {
-                this.home_phone = home_phone;
+            public void setCat_id(String cat_id) {
+                this.cat_id = cat_id;
             }
 
-            public String getMobile_phone() {
-                return mobile_phone;
+            public String getShop_price() {
+                return shop_price;
             }
 
-            public void setMobile_phone(String mobile_phone) {
-                this.mobile_phone = mobile_phone;
+            public void setShop_price(String shop_price) {
+                this.shop_price = shop_price;
             }
 
-            public String getIs_validated() {
-                return is_validated;
+            public String getGoods_thumb() {
+                return goods_thumb;
             }
 
-            public void setIs_validated(String is_validated) {
-                this.is_validated = is_validated;
+            public void setGoods_thumb(String goods_thumb) {
+                this.goods_thumb = goods_thumb;
             }
 
-            public String getCredit_line() {
-                return credit_line;
+            public String getGoods_img() {
+                return goods_img;
             }
 
-            public void setCredit_line(String credit_line) {
-                this.credit_line = credit_line;
+            public void setGoods_img(String goods_img) {
+                this.goods_img = goods_img;
             }
 
-            public Object getPasswd_question() {
-                return passwd_question;
+            public String getLast_update() {
+                return last_update;
             }
 
-            public void setPasswd_question(Object passwd_question) {
-                this.passwd_question = passwd_question;
+            public void setLast_update(String last_update) {
+                this.last_update = last_update;
             }
+        }
 
-            public Object getPasswd_answer() {
-                return passwd_answer;
-            }
+        public static class StoreBean {
+            /**
+             * ru_id : 81
+             * shop_logo :
+             * logo_thumb : http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531031144777138297.jpg
+             * street_thumb : http://47.100.103.123/data/store_street/street_thumb/1531030573826726960.jpg
+             * brand_thumb : http://47.100.103.123/data/store_street/brand_thumb/1531031144663448469.jpg
+             * sort_order : 3
+             */
 
-            public void setPasswd_answer(Object passwd_answer) {
-                this.passwd_answer = passwd_answer;
-            }
+            private String ru_id;
+            private String shop_logo;
+            private String logo_thumb;
+            private String street_thumb;
+            private String brand_thumb;
+            private String sort_order;
 
-            public String getUser_picture() {
-                return user_picture;
+            public String getRu_id() {
+                return ru_id;
             }
 
-            public void setUser_picture(String user_picture) {
-                this.user_picture = user_picture;
+            public void setRu_id(String ru_id) {
+                this.ru_id = ru_id;
             }
 
-            public String getOld_user_picture() {
-                return old_user_picture;
+            public String getShop_logo() {
+                return shop_logo;
             }
 
-            public void setOld_user_picture(String old_user_picture) {
-                this.old_user_picture = old_user_picture;
+            public void setShop_logo(String shop_logo) {
+                this.shop_logo = shop_logo;
             }
 
-            public String getReport_time() {
-                return report_time;
+            public String getLogo_thumb() {
+                return logo_thumb;
             }
 
-            public void setReport_time(String report_time) {
-                this.report_time = report_time;
+            public void setLogo_thumb(String logo_thumb) {
+                this.logo_thumb = logo_thumb;
             }
 
-            public String getDrp_parent_id() {
-                return drp_parent_id;
+            public String getStreet_thumb() {
+                return street_thumb;
             }
 
-            public void setDrp_parent_id(String drp_parent_id) {
-                this.drp_parent_id = drp_parent_id;
+            public void setStreet_thumb(String street_thumb) {
+                this.street_thumb = street_thumb;
             }
 
-            public String getToken() {
-                return token;
+            public String getBrand_thumb() {
+                return brand_thumb;
             }
 
-            public void setToken(String token) {
-                this.token = token;
+            public void setBrand_thumb(String brand_thumb) {
+                this.brand_thumb = brand_thumb;
             }
 
-            public String getTime_out() {
-                return time_out;
+            public String getSort_order() {
+                return sort_order;
             }
 
-            public void setTime_out(String time_out) {
-                this.time_out = time_out;
+            public void setSort_order(String sort_order) {
+                this.sort_order = sort_order;
             }
         }
     }

@@ -45,6 +45,7 @@ import com.youth.banner.listener.OnBannerClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.OnClick;
 import cn.iwgang.countdownview.CountdownView;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
@@ -55,11 +56,11 @@ import xiaoxing.com.salesclient.R2;
 
 public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements FragmentHomeContract.View {
 
-    public static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
-        add(new BannerItem("最后的骑士", R.mipmap.banner_001));
-        add(new BannerItem("三生三世十里桃花", R.mipmap.banner_001));
-        add(new BannerItem("豆福传", R.mipmap.banner_001));
-    }};
+    //    public static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
+////        add(new BannerItem("最后的骑士", R.mipmap.banner_001));
+////        add(new BannerItem("三生三世十里桃花", R.mipmap.banner_001));
+////        add(new BannerItem("豆福传", R.mipmap.banner_001));
+////    }};
     public static String JSON_MOVIES = "[" +
             "{\"actors\":\"丹尼斯·威缇可宁|Emma|Nikki|Jiayao|Wang|Maggie|Mao|Gang-yun|Sa\",\"filmName\":\"神灵寨\",\"grade\":\"5.0\",\"picaddr\":\"http://app.infunpw.com/commons/images/cinema/cinema_films/3823.jpg\",\"releasedate\":\"2017-07-31\",\"shortinfo\":\"父亲忽病危 新娘真够黑\",\"type\":\"剧情|喜剧\"}," +
             "{\"actors\":\"刘亦菲|杨洋|彭子苏|严屹宽|罗晋\",\"filmName\":\"三生三世十里桃花\",\"grade\":\"9.2\",\"picaddr\":\"http://app.infunpw.com/commons/images/cinema/cinema_films/3566.jpg\",\"releasedate\":\"2017-08-03\",\"shortinfo\":\"虐心姐弟恋 颜值要逆天\",\"type\":\"剧情|爱情|奇幻\"}," +
@@ -87,6 +88,10 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     private WeiPaiTuiGuangHomeAdapter mAdapter;
     private IndicatorDialog dialog;
 
+
+    @BindView(R2.id.convenientBanner)
+    Banner mBanner;
+
     public static FragmentHome newInstance(String content) {
 
         Bundle args = new Bundle();
@@ -111,19 +116,6 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
         View view = inflater.inflate(R.layout.sales_client_fragment_home, null);
 
-
-        Banner banner = view.findViewById(R.id.convenientBanner);
-
-        banner.setImageLoader(new GlideImageLoader());
-        banner.setImages(BANNER_ITEMS);
-        banner.start();
-
-        banner.setOnBannerClickListener(new OnBannerClickListener() {
-            @Override
-            public void OnBannerClick(int position) {
-                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
-            }
-        });
 
         final Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         EditText et_search = toolbar.findViewById(R.id.et_search);
@@ -334,6 +326,33 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     @Override
     public void getIndexDataSuccess(Index index) {
 
+        setBannerData(index);
+
+    }
+
+    /**
+     * @class describe 设置banner数据
+     * @author 小星 QQ:753940262
+     * @time 2018/7/10 0010 10:48
+     */
+    private void setBannerData(Index index) {
+        List<Index.DataBean.BannerBean> bannerBeanList = index.getData().getBanner();
+        List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>();
+        for (int i = 0; i < bannerBeanList.size(); i++) {
+            BannerItem bannerItem = new BannerItem(bannerBeanList.get(i).getGoods_name(), bannerBeanList.get(i).getGoods_img());
+            BANNER_ITEMS.add(bannerItem);
+        }
+
+        mBanner.setImageLoader(new GlideImageLoader());
+        mBanner.setImages(BANNER_ITEMS);
+        mBanner.start();
+
+        mBanner.setOnBannerClickListener(new OnBannerClickListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+            }
+        });
     }
 
     @Override

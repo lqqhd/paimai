@@ -17,7 +17,7 @@ public interface SalesService {
      * 妹纸列表
      */
 //    @GET("http://47.100.103.123/api.php?app_key=woaixuxiaoxing&method=dsc.user.login.get&user_name=fan&password=123456")
-    @GET("/api.php/index.php")
-    Observable<BaseResponse<Index>> getIndex();
+    @GET("/api/index.php")
+    Observable<Index> getIndex();
 
 }

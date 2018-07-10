@@ -1,6 +1,5 @@
 package com.xiaoxing.salesclient.mvp.contract;
 
-import com.jess.arms.base.BaseResponse;
 import com.jess.arms.mvp.IModel;
 import com.jess.arms.mvp.IView;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
@@ -16,6 +15,6 @@ public interface FragmentHomeContract {
 
     //Model层定义接口,外部只需关心Model返回的数据,无需关心内部细节,即是否使用缓存
     interface Model extends IModel {
-        Observable<BaseResponse<Index>> getIndex();
+        Observable<Index> getIndex();
     }
 }

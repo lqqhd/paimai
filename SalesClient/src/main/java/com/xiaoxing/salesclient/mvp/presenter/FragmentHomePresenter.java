@@ -49,11 +49,12 @@ public class FragmentHomePresenter extends BasePresenter<FragmentHomeContract.Mo
                 .doFinally(() -> {
                 })
                 .compose(RxLifecycleUtils.bindToLifecycle(mRootView))//使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
-                .subscribe(new ErrorHandleSubscriber<BaseResponse<Index>>(mErrorHandler) {
-
+                .subscribe(new ErrorHandleSubscriber<Index>(mErrorHandler) {
                     @Override
-                    public void onNext(BaseResponse<Index> loginBaseResponse) {
-                        ArmsUtils.snackbarText("登录Api请求测试成功");
+                    public void onNext(Index index) {
+                        ArmsUtils.snackbarText("首页Api请求测试成功");
+
+                        mRootView.getIndexDataSuccess(index);
                     }
                 });
     }
