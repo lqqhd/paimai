@@ -5,6 +5,7 @@ import android.app.Application;
 import com.google.gson.Gson;
 import com.jess.arms.base.BaseResponse;
 import com.jess.arms.di.scope.ActivityScope;
+import com.jess.arms.di.scope.FragmentScope;
 import com.jess.arms.integration.IRepositoryManager;
 import com.jess.arms.mvp.BaseModel;
 import com.xiaoxing.salesclient.mvp.contract.FragmentHomeContract;
@@ -16,7 +17,7 @@ import javax.inject.Inject;
 import io.reactivex.Observable;
 
 
-@ActivityScope
+@FragmentScope
 public class FragmentHomeModel extends BaseModel implements FragmentHomeContract.Model {
     @Inject
     Gson mGson;

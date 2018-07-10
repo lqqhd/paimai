@@ -1,10 +1,8 @@
 package com.xiaoxing.salesclient.di.module;
 
-import com.jess.arms.di.scope.ActivityScope;
+import com.jess.arms.di.scope.FragmentScope;
 import com.xiaoxing.salesclient.mvp.contract.FragmentHomeContract;
-import com.xiaoxing.salesclient.mvp.contract.HuoDongContract;
 import com.xiaoxing.salesclient.mvp.model.FragmentHomeModel;
-import com.xiaoxing.salesclient.mvp.model.HuoDongModel;
 
 import dagger.Module;
 import dagger.Provides;
@@ -23,13 +21,13 @@ public class FragmentHomeModule {
         this.view = view;
     }
 
-    @ActivityScope
+    @FragmentScope
     @Provides
     FragmentHomeContract.View provideHuoDongView() {
         return this.view;
     }
 
-    @ActivityScope
+    @FragmentScope
     @Provides
     FragmentHomeContract.Model provideHuoDongModel(FragmentHomeModel model) {
         return model;

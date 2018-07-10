@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.jess.arms.base.BaseResponse;
 import com.jess.arms.di.scope.ActivityScope;
+import com.jess.arms.di.scope.FragmentScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
@@ -20,7 +21,7 @@ import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 
 
-@ActivityScope
+@FragmentScope
 public class FragmentHomePresenter extends BasePresenter<FragmentHomeContract.Model, FragmentHomeContract.View> {
     @Inject
     RxErrorHandler mErrorHandler;
