@@ -40,6 +40,8 @@ import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.integration.AppManager;
 
 import java.security.MessageDigest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static com.jess.arms.integration.AppManager.APP_EXIT;
 import static com.jess.arms.integration.AppManager.KILL_ALL;
@@ -452,4 +454,16 @@ public class ArmsUtils {
         return ((App) context.getApplicationContext()).getAppComponent();
     }
 
+    /**
+     * 将时间戳转换为时间
+     */
+    public static String stampToDate(String s) {
+        String res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        long lt = new Long(s);
+        Date date = new Date(lt * 1000);
+        res = simpleDateFormat.format(date);
+
+        return res;
+    }
 }

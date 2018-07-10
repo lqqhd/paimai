@@ -7,13 +7,16 @@ import android.support.annotation.Nullable;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.xiaoxing.salesclient.di.component.DaggerHeadlinesComponent;
 import com.xiaoxing.salesclient.di.module.HeadlinesModule;
 import com.xiaoxing.salesclient.mvp.contract.HeadlinesContract;
+import com.xiaoxing.salesclient.mvp.model.entity.Article;
 import com.xiaoxing.salesclient.mvp.presenter.HeadlinesPresenter;
 
 import butterknife.BindView;
@@ -34,6 +37,9 @@ public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implemen
     @BindView(R2.id.webview)
     WebView webview;
 
+    @Autowired()
+    String article_id;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerHeadlinesComponent //如找不到该类,请编译一下项目
@@ -42,6 +48,8 @@ public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implemen
                 .headlinesModule(new HeadlinesModule(this))
                 .build()
                 .inject(this);
+
+        ARouter.getInstance().inject(this);
     }
 
     @Override
@@ -53,15 +61,12 @@ public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implemen
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.sales_client_head_lines));
 
-        WebviewUtil.loadData(webview, " 展品发布\n" +
-                "底部导航条点击“发布”，选择“展品发布”,有两种交易模式的展品。\n" +
-                "发布议价展品：\n" +
-                "（1）开启报价模式，您可设置一个“最低报价”（即低于此价格的报价无需经过您的确认，立即拒绝）发布成功后不会有最低价格的文字显示，仅发布者知晓。所有展品显示“议价”，限单件出售\n" +
-                "（2）修改条件：无待操作内容\n" +
-                "（3）拒绝/同意：进入我的“卖家中心”点击“报价管理”查看并操作同意或者拒绝，一旦确认同意某笔报价，立即生成订单，其余报价全部默认拒绝。\n" +
-                "\n" +
-                "发布普通展品：\n" +
-                "与报价不同的是，立即购买展品需要输入售价，市场价。选择库存。发布成功后，用户直接以您所设价格进行交易。");
+        getArticleData();
+
+    }
+
+    private void getArticleData() {
+        mPresenter.getArticle(article_id);
     }
 
     @Override
@@ -89,5 +94,15 @@ public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implemen
     @Override
     public void killMyself() {
         finish();
+    }
+
+    @Override
+    public void getArticleSuccess(Article article) {
+        Article.DataBean dataBean = article.getData().get(0);
+        tvTitle.setText(dataBean.getTitle());
+        tvTime.setText(ArmsUtils.stampToDate(dataBean.getAdd_time()));
+
+
+        WebviewUtil.loadData(this, webview, dataBean.getContent());
     }
 }

@@ -55,7 +55,7 @@ public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implemen
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.seller_client_mine_headlines));
 
-        WebviewUtil.loadData(webview, " 展品发布\n" +
+        WebviewUtil.loadData(this, webview, " 展品发布\n" +
                 "底部导航条点击“发布”，选择“展品发布”,有两种交易模式的展品。\n" +
                 "发布议价展品：\n" +
                 "（1）开启报价模式，您可设置一个“最低报价”（即低于此价格的报价无需经过您的确认，立即拒绝）发布成功后不会有最低价格的文字显示，仅发布者知晓。所有展品显示“议价”，限单件出售\n" +

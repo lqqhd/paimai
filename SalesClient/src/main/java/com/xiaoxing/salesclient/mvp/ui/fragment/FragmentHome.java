@@ -15,9 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -91,6 +93,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
     @BindView(R2.id.convenientBanner)
     Banner mBanner;
+    @BindView(R2.id.marquee_view)
+    ViewFlipper mViewFlipper;
 
     public static FragmentHome newInstance(String content) {
 
@@ -204,18 +208,11 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         final List<Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<Movie>>() {
         }.getType());
         mAdapter.replaceData(movies);
-        initTouTiao(view);
+
         initTuiGuangData(view);
         return view;
     }
 
-    private void initTouTiao(View view) {
-        // 为ViewFlipper添加广告条
-        ViewFlipper vf = (ViewFlipper) view.findViewById(R.id.marquee_view);
-        vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
-        vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
-        vf.addView(View.inflate(getActivity(), R.layout.noticelayout, null));
-    }
 
     private void initTuiGuangData(View view) {
         CountdownView mCvCountdownViewTest4 = (CountdownView) view.findViewById(R.id.cv_countdownView_zhuan_chang_tui_guang_001);
@@ -327,6 +324,29 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     public void getIndexDataSuccess(Index index) {
 
         setBannerData(index);
+
+        List<Index.DataBean.ArticleBean> articleBeanList = index.getData().getArticle();
+
+        for (int i = 0; i < articleBeanList.size(); i++) {
+
+            View viewItem = View.inflate(getActivity(), R.layout.noticelayout, null);
+
+            TextView tv_title = viewItem.findViewById(R.id.tv_title);
+            LinearLayout ll_item = viewItem.findViewById(R.id.ll_item);
+
+            tv_title.setText(articleBeanList.get(i).getTitle());
+
+            int finalI = i;
+            ll_item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ARouter.getInstance().build(RouterHub.SALES_CLIENT_HEAD_LINES_ACTIVITY).withString("article_id",articleBeanList.get(finalI).getArticle_id()).navigation(getActivity());
+                }
+            });
+
+            mViewFlipper.addView(viewItem);
+        }
+
 
     }
 

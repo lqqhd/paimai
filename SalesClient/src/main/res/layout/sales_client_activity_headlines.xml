@@ -14,7 +14,7 @@
         android:layout_marginLeft="@dimen/dp_10"
         android:layout_marginRight="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:text="《第十古博会展位招商》"
+        android:text=""
         android:textColor="@color/public_black"
         android:textSize="@dimen/public_font_16sp" />
 
@@ -25,7 +25,7 @@
         android:layout_marginLeft="@dimen/dp_10"
         android:layout_marginRight="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:text="2018-02-05 11:05"
+        android:text=""
         android:textColor="#999999"
         android:textSize="@dimen/public_font_14sp" />
 

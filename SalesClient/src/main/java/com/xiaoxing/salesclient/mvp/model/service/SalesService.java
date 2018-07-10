@@ -1,10 +1,12 @@
 package com.xiaoxing.salesclient.mvp.model.service;
 
 import com.jess.arms.base.BaseResponse;
+import com.xiaoxing.salesclient.mvp.model.entity.Article;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * @author 小星 QQ:753940262
@@ -14,10 +16,19 @@ import retrofit2.http.GET;
 public interface SalesService {
 
     /**
-     * 妹纸列表
+     * 获取首页数据
      */
 //    @GET("http://47.100.103.123/api.php?app_key=woaixuxiaoxing&method=dsc.user.login.get&user_name=fan&password=123456")
     @GET("/api/index.php")
     Observable<Index> getIndex();
+
+    /**
+     * 获取头条文章的数据
+     *
+     * @param article_id
+     * @return
+     */
+    @GET("/api/article.php")
+    Observable<Article> getArticle(@Query("article_id") String article_id);
 
 }
