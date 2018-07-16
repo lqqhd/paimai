@@ -20,11 +20,9 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.jess.arms.base.BaseFragment;
-import com.jess.arms.base.BaseLazyFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.jiang.android.indicatordialog.IndicatorBuilder;
 import com.jiang.android.indicatordialog.IndicatorDialog;
@@ -85,6 +83,20 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             "{\"actors\":null,\"filmName\":\"二十二\",\"grade\":\"10.0\",\"picaddr\":\"http://app.infunpw.com/commons/images/cinema/cinema_films/3811.jpg\",\"releasedate\":\"2017-08-14\",\"shortinfo\":\"二战女俘虏 讲述心中苦\",\"type\":\"纪录片\"}," +
             "{\"actors\":\"郭富城|王千源|刘涛|余皑磊|冯嘉怡\",\"filmName\":\"破·局\",\"grade\":\"5.0\",\"picaddr\":\"http://app.infunpw.com/commons/images/cinema/cinema_films/3812.jpg\",\"releasedate\":\"2017-08-18\",\"shortinfo\":\"影帝硬碰硬 迷局谁怕谁\",\"type\":\"动作|犯罪\"}" +
             "]";
+    @BindView(R2.id.img_1)
+    ImageView img1;
+    @BindView(R2.id.img_2)
+    ImageView img2;
+    @BindView(R2.id.img_3)
+    ImageView img3;
+    @BindView(R2.id.cv_countdownView_zhuan_chang_tui_guang_001)
+    CountdownView cv_countdownView_zhuan_chang_tui_guang_001;
+    @BindView(R2.id.cv_countdownView_zhuan_chang_tui_guang_002)
+    CountdownView cv_countdownView_zhuan_chang_tui_guang_002;
+    @BindView(R2.id.tv_name)
+    TextView tvName;
+    @BindView(R2.id.tv_title)
+    TextView tvTitle;
     private int mOffset = 0;
     private int mScrollY = 0;
     private WeiPaiTuiGuangHomeAdapter mAdapter;
@@ -95,6 +107,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     Banner mBanner;
     @BindView(R2.id.marquee_view)
     ViewFlipper mViewFlipper;
+
+    private RecyclerView recyclerView;
 
     public static FragmentHome newInstance(String content) {
 
@@ -196,21 +210,20 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 //        });
 //        buttonBar.setAlpha(0);
 //        toolbar.setBackgroundColor(0);
+//        initTuiGuangData(view);
 
+        initWeiPaiRecycler(view);
 
-        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        return view;
+    }
 
+    private void initWeiPaiRecycler(View view) {
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         mAdapter = new WeiPaiTuiGuangHomeAdapter(getActivity());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(mAdapter);
-        final List<Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<Movie>>() {
-        }.getType());
-        mAdapter.replaceData(movies);
-
-        initTuiGuangData(view);
-        return view;
     }
 
 
@@ -325,6 +338,50 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
         setBannerData(index);
 
+        setTouTiaoData(index);
+
+        setWeiPaiData(index);
+
+
+        List<Index.DataBean.ZhuanchangBean> zhuanchangBeans = index.getData().getZhuanchang();
+
+        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_thumb()).into(img1);
+        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_thumb()).into(img2);
+        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_thumb()).into(img3);
+        tvName.setText(zhuanchangBeans.get(0).getGoods_name());
+        tvTitle.setText(zhuanchangBeans.get(0).getGoods_name());
+
+        long time1 = Long.parseLong(zhuanchangBeans.get(0).getLast_update()) * 1000 - System.currentTimeMillis();
+        long time2 = Long.parseLong(zhuanchangBeans.get(0).getLast_update()) * 1000 - System.currentTimeMillis();
+
+        long time4 = (long) 150 * 24 * 60 * 60 * 1000;
+        cv_countdownView_zhuan_chang_tui_guang_001.start(time1);
+        cv_countdownView_zhuan_chang_tui_guang_002.start(time2);
+
+//        CountdownView cv_countdownView_zhuan_chang_tui_guang_002 = (CountdownView) view.findViewById(R.id.cv_countdownView_zhuan_chang_tui_guang_002);
+//        cv_countdownView_zhuan_chang_tui_guang_002.start(time4);
+
+    }
+
+    private void setWeiPaiData(Index index) {
+        List<Index.DataBean.WeipaiBean> weipaiBeanList = index.getData().getWeipai();
+
+
+//        final List<Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<Movie>>() {}.getType());
+        List<Movie> movies = new ArrayList<>();
+        for (int i = 0; i < weipaiBeanList.size(); i++) {
+            Movie movie = new Movie();
+
+            movie.filmName = weipaiBeanList.get(i).getGoods_name();
+            movie.picaddr = weipaiBeanList.get(i).getGoods_img();
+            movie.grade = weipaiBeanList.get(i).getLast_update();
+            movies.add(movie);
+        }
+
+        mAdapter.replaceData(movies);
+    }
+
+    private void setTouTiaoData(Index index) {
         List<Index.DataBean.ArticleBean> articleBeanList = index.getData().getArticle();
 
         for (int i = 0; i < articleBeanList.size(); i++) {
@@ -332,22 +389,22 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             View viewItem = View.inflate(getActivity(), R.layout.noticelayout, null);
 
             TextView tv_title = viewItem.findViewById(R.id.tv_title);
+            TextView tv_cat_name = viewItem.findViewById(R.id.tv_cat_name);
             LinearLayout ll_item = viewItem.findViewById(R.id.ll_item);
 
+            tv_cat_name.setText(articleBeanList.get(i).getCat_name());
             tv_title.setText(articleBeanList.get(i).getTitle());
 
             int finalI = i;
             ll_item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ARouter.getInstance().build(RouterHub.SALES_CLIENT_HEAD_LINES_ACTIVITY).withString("article_id",articleBeanList.get(finalI).getArticle_id()).navigation(getActivity());
+                    ARouter.getInstance().build(RouterHub.SALES_CLIENT_HEAD_LINES_ACTIVITY).withString("article_id", articleBeanList.get(finalI).getArticle_id()).navigation(getActivity());
                 }
             });
 
             mViewFlipper.addView(viewItem);
         }
-
-
     }
 
     /**
@@ -379,6 +436,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     public void showMessage(@NonNull String message) {
 
     }
+
 
 
     public static class Movie {

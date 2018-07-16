@@ -41,25 +41,32 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/img_1"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
                 android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
                 android:src="@mipmap/goods_001" />
 
             <ImageView
+                android:id="@+id/img_2"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
+
                 android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
                 android:src="@mipmap/goods_002" />
 
             <ImageView
+                android:id="@+id/img_3"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
                 android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
                 android:src="@mipmap/goods_003" />
@@ -176,18 +183,18 @@
 
             <ImageView
                 android:layout_width="0dp"
-
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
                 android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
                 android:src="@mipmap/goods_002" />
 
             <ImageView
                 android:layout_width="0dp"
-
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
                 android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
                 android:src="@mipmap/goods_003" />
@@ -196,6 +203,7 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
                 android:padding="@dimen/dp_5"
                 android:scaleType="fitXY"
                 android:src="@mipmap/goods_001" />

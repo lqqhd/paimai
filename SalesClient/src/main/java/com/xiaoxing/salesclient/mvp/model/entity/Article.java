@@ -1,7 +1,6 @@
 package com.xiaoxing.salesclient.mvp.model.entity;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * @author 小星 QQ:753940262
@@ -14,12 +13,12 @@ public class Article implements Serializable {
     /**
      * result : true
      * next : false
-     * data : [{"article_id":"66","title":"乐拍头条重要通知","content":"6L+Z5piv5pyA5paw55qE6YCa55+l","author":"小樊","add_time":"1531615549"}]
+     * data : {"article_id":"66","title":"乐拍头条重要通知","content":"这是最新的通知","author":"小樊","add_time":"1531615549"}
      */
 
     private String result;
     private String next;
-    private List<DataBean> data;
+    private DataBean data;
 
     public String getResult() {
         return result;
@@ -37,11 +36,11 @@ public class Article implements Serializable {
         this.next = next;
     }
 
-    public List<DataBean> getData() {
+    public DataBean getData() {
         return data;
     }
 
-    public void setData(List<DataBean> data) {
+    public void setData(DataBean data) {
         this.data = data;
     }
 
@@ -49,7 +48,7 @@ public class Article implements Serializable {
         /**
          * article_id : 66
          * title : 乐拍头条重要通知
-         * content : 6L+Z5piv5pyA5paw55qE6YCa55+l
+         * content : 这是最新的通知
          * author : 小樊
          * add_time : 1531615549
          */

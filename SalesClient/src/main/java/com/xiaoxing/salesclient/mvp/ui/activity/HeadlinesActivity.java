@@ -98,10 +98,9 @@ public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implemen
 
     @Override
     public void getArticleSuccess(Article article) {
-        Article.DataBean dataBean = article.getData().get(0);
+        Article.DataBean dataBean = article.getData();
         tvTitle.setText(dataBean.getTitle());
         tvTime.setText(ArmsUtils.stampToDate(dataBean.getAdd_time()));
-
 
         WebviewUtil.loadData(this, webview, dataBean.getContent());
     }

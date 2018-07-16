@@ -172,11 +172,21 @@ public class Index {
              * article_id : 66
              * title : 乐拍头条重要通知
              * add_time : 1531615549
+             * cat_name : 分类名称
              */
 
             private String article_id;
             private String title;
             private String add_time;
+            private String cat_name;
+
+            public String getCat_name() {
+                return cat_name;
+            }
+
+            public void setCat_name(String cat_name) {
+                this.cat_name = cat_name;
+            }
 
             public String getArticle_id() {
                 return article_id;

@@ -30,7 +30,8 @@ public class WeiPaiTuiGuangHomeAdapter extends BaseQuickAdapter<FragmentHome.Mov
         Glide.with(mContext).load(item.picaddr).into((ImageView) viewHolder.getView(R.id.lmi_avatar));
         RelativeLayout rl_wei_pai_item = viewHolder.getView(R.id.rl_wei_pai_item);
 
-        initCountdownView(viewHolder);
+        long time = Long.parseLong(item.grade) * 1000 - System.currentTimeMillis();
+        initCountdownView(viewHolder, time);
 
         rl_wei_pai_item.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,9 +42,9 @@ public class WeiPaiTuiGuangHomeAdapter extends BaseQuickAdapter<FragmentHome.Mov
         });
     }
 
-    private void initCountdownView(BaseViewHolder viewHolder) {
+    private void initCountdownView(BaseViewHolder viewHolder, long time) {
         CountdownView mCvCountdownViewTest4 = (CountdownView) viewHolder.getView(R.id.cv_countdownViewTest4);
-        long time4 = (long) 150 * 24 * 60 * 60 * 1000;
-        mCvCountdownViewTest4.start(time4);
+//        long time4 = (long) 150 * 24 * 60 * 60 * 1000;
+        mCvCountdownViewTest4.start(time);
     }
 }

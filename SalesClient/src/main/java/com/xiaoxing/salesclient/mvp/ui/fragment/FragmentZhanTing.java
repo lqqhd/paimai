@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.jess.arms.base.BaseFragment;
+import com.jess.arms.di.component.AppComponent;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
@@ -23,6 +25,15 @@ import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
+import com.xiaoxing.salesclient.di.component.DaggerFragmentHomeComponent;
+import com.xiaoxing.salesclient.di.component.DaggerFragmentZhanTingComponent;
+import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
+import com.xiaoxing.salesclient.di.module.FragmentZhanTingModule;
+import com.xiaoxing.salesclient.mvp.contract.FragmentHomeContract;
+import com.xiaoxing.salesclient.mvp.contract.FragmentZhanTingContract;
+import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
+import com.xiaoxing.salesclient.mvp.presenter.FragmentHomePresenter;
+import com.xiaoxing.salesclient.mvp.presenter.FragmentZhanTingPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.ZhanTingAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
@@ -39,10 +50,9 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
  * 使用示例-空布页面
  * A simple {@link Fragment} subclass.
  */
-public class FragmentZhanTing extends Fragment implements OnRefreshListener {
+public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> implements FragmentZhanTingContract.View, OnRefreshListener {
 
     private ZhanTingAdapter mAdapter;
-
 
     private View mEmptyLayout;
     private RecyclerView mRecyclerView;
@@ -51,15 +61,43 @@ public class FragmentZhanTing extends Fragment implements OnRefreshListener {
 
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.sales_client_fragment_all_zhuan_chang, container, false);
+    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+
+    }
+
+    /**
+     * 模拟数据
+     */
+    private List<AddressList> loadModels() {
+        List<AddressList> addressLists = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+
+            AddressList addressList = new AddressList();
+            addressList.setName("name" + i);
+            addressList.setAddress("address" + i);
+            addressList.setPhone("1580000000" + i);
+            addressLists.add(addressList);
+        }
+
+
+        return addressLists;
     }
 
     @Override
-    public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(root, savedInstanceState);
+    public void setupFragmentComponent(@NonNull AppComponent appComponent) {
+        DaggerFragmentZhanTingComponent //如找不到该类,请编译一下项目
+                .builder()
+                .appComponent(appComponent)
+                .fragmentZhanTingModule(new FragmentZhanTingModule(this))
+                .build()
+                .inject(this);
+    }
 
+    @Override
+    public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        View root = inflater.inflate(R.layout.sales_client_fragment_all_zhuan_chang, container, false);
         mRefreshLayout = root.findViewById(R.id.refreshLayout);
         mRefreshLayout.setRefreshHeader(new ClassicsHeader(getActivity()).setSpinnerStyle(SpinnerStyle.FixedBehind).setPrimaryColorId(R.color.public_colorPrimary).setAccentColorId(android.R.color.white));
         mRefreshLayout.setOnRefreshListener(this);
@@ -100,11 +138,22 @@ public class FragmentZhanTing extends Fragment implements OnRefreshListener {
                 mRefreshLayout.finishLoadMore();
             }
         });
+        return root;
+    }
+
+    @Override
+    public void initData(@Nullable Bundle savedInstanceState) {
+
+        mPresenter.getStoreShop("", "goods_number", "DESC", "0");
+    }
+
+    @Override
+    public void setData(@Nullable Object data) {
 
     }
 
     @Override
-    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+    public void getStoreShopDataSuccess(StoreShop storeShop) {
         mRefreshLayout.getLayout().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -131,26 +180,11 @@ public class FragmentZhanTing extends Fragment implements OnRefreshListener {
                 mRefreshLayout.finishRefresh();
                 mEmptyLayout.setVisibility(View.GONE);
             }
-        }, 2000);
+        }, 0);
     }
 
-    /**
-     * 模拟数据
-     */
-    private List<AddressList> loadModels() {
-        List<AddressList> addressLists = new ArrayList<>();
+    @Override
+    public void showMessage(@NonNull String message) {
 
-        for (int i = 0; i < 5; i++) {
-
-            AddressList addressList = new AddressList();
-            addressList.setName("name" + i);
-            addressList.setAddress("address" + i);
-            addressList.setPhone("1580000000" + i);
-            addressLists.add(addressList);
-        }
-
-
-        return addressLists;
     }
-
 }
