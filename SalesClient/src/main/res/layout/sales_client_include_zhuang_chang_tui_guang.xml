@@ -182,6 +182,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/img_4"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"
@@ -191,6 +192,8 @@
                 android:src="@mipmap/goods_002" />
 
             <ImageView
+                android:id="@+id/img_5"
+
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"
@@ -200,6 +203,8 @@
                 android:src="@mipmap/goods_003" />
 
             <ImageView
+                android:id="@+id/img_6"
+
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_100"
                 android:layout_weight="1"

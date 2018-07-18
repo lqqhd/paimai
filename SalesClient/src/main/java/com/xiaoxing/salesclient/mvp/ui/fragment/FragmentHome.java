@@ -46,7 +46,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import cn.iwgang.countdownview.CountdownView;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
@@ -89,6 +91,12 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     ImageView img2;
     @BindView(R2.id.img_3)
     ImageView img3;
+    @BindView(R2.id.img_4)
+    ImageView img4;
+    @BindView(R2.id.img_5)
+    ImageView img5;
+    @BindView(R2.id.img_6)
+    ImageView img6;
     @BindView(R2.id.cv_countdownView_zhuan_chang_tui_guang_001)
     CountdownView cv_countdownView_zhuan_chang_tui_guang_001;
     @BindView(R2.id.cv_countdownView_zhuan_chang_tui_guang_002)
@@ -97,6 +105,23 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     TextView tvName;
     @BindView(R2.id.tv_title)
     TextView tvTitle;
+    @BindView(R2.id.tv_name_1)
+    TextView tvName1;
+    @BindView(R2.id.tv_title_1)
+    TextView tvTitle1;
+    @BindView(R2.id.rl1_img1)
+    ImageView rl1Img1;
+    @BindView(R2.id.rl1_img2)
+    ImageView rl1Img2;
+    @BindView(R2.id.rl1_img3)
+    ImageView rl1Img3;
+    @BindView(R2.id.rl2_img1)
+    ImageView rl2Img1;
+    @BindView(R2.id.rl2_img2)
+    ImageView rl2Img2;
+    @BindView(R2.id.rl2_img3)
+    ImageView rl2Img3;
+    Unbinder unbinder;
     private int mOffset = 0;
     private int mScrollY = 0;
     private WeiPaiTuiGuangHomeAdapter mAdapter;
@@ -343,6 +368,20 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         setWeiPaiData(index);
 
 
+        setZhuanChang(index);
+
+        List<Index.DataBean.StoreBean> storeBeanList = index.getData().getStore();
+
+        Glide.with(getActivity()).load(storeBeanList.get(0).getStreet_thumb()).into(rl1Img1);
+        Glide.with(getActivity()).load(storeBeanList.get(0).getBrand_thumb()).into(rl1Img2);
+        Glide.with(getActivity()).load(storeBeanList.get(0).getBrand_thumb()).into(rl1Img3);
+        Glide.with(getActivity()).load(storeBeanList.get(1).getStreet_thumb()).into(rl2Img1);
+        Glide.with(getActivity()).load(storeBeanList.get(1).getBrand_thumb()).into(rl2Img2);
+        Glide.with(getActivity()).load(storeBeanList.get(1).getBrand_thumb()).into(rl2Img3);
+
+    }
+
+    private void setZhuanChang(Index index) {
         List<Index.DataBean.ZhuanchangBean> zhuanchangBeans = index.getData().getZhuanchang();
 
         Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_thumb()).into(img1);
@@ -352,7 +391,16 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         tvTitle.setText(zhuanchangBeans.get(0).getGoods_name());
 
         long time1 = Long.parseLong(zhuanchangBeans.get(0).getLast_update()) * 1000 - System.currentTimeMillis();
-        long time2 = Long.parseLong(zhuanchangBeans.get(0).getLast_update()) * 1000 - System.currentTimeMillis();
+
+
+        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_thumb()).into(img4);
+        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_thumb()).into(img5);
+        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_thumb()).into(img6);
+        tvName1.setText(zhuanchangBeans.get(1).getGoods_name());
+        tvTitle1.setText(zhuanchangBeans.get(1).getGoods_name());
+
+        long time2 = Long.parseLong(zhuanchangBeans.get(1).getLast_update()) * 1000 - System.currentTimeMillis();
+
 
         long time4 = (long) 150 * 24 * 60 * 60 * 1000;
         cv_countdownView_zhuan_chang_tui_guang_001.start(time1);
@@ -360,7 +408,6 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
 //        CountdownView cv_countdownView_zhuan_chang_tui_guang_002 = (CountdownView) view.findViewById(R.id.cv_countdownView_zhuan_chang_tui_guang_002);
 //        cv_countdownView_zhuan_chang_tui_guang_002.start(time4);
-
     }
 
     private void setWeiPaiData(Index index) {
@@ -437,6 +484,19 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 
 
     public static class Movie {

@@ -158,7 +158,9 @@ public class FragmentMine extends BaseFragment {
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.panel_lyt) {
-            Utils.navigation(getActivity(), RouterHub.XIAO_XING_SETTING_SETTING);
+
+            Utils.navigation(getActivity(), RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
+//            Utils.navigation(getActivity(), RouterHub.XIAO_XING_SETTING_SETTING);
         } else if (view.getId() == R.id.rl_all_orders) {
             Utils.navigation(getActivity(), RouterHub.XIAO_XING_ORDER_ORDER_ACTIVITY);
         } else if (view.getId() == R.id.ll_dai_fu_kuan) {
