@@ -52,7 +52,7 @@ public class FragmentHomePresenter extends BasePresenter<FragmentHomeContract.Mo
                 .subscribe(new ErrorHandleSubscriber<Index>(mErrorHandler) {
                     @Override
                     public void onNext(Index index) {
-                        ArmsUtils.snackbarText("首页Api请求测试成功");
+//                        ArmsUtils.snackbarText("首页Api请求测试成功");
 
                         mRootView.getIndexDataSuccess(index);
                     }

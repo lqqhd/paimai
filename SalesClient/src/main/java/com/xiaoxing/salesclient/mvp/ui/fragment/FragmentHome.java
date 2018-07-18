@@ -126,7 +126,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     private int mScrollY = 0;
     private WeiPaiTuiGuangHomeAdapter mAdapter;
     private IndicatorDialog dialog;
-
+    private RefreshLayout refreshLayout;
 
     @BindView(R2.id.convenientBanner)
     Banner mBanner;
@@ -183,8 +183,9 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         final View parallax = view.findViewById(R.id.parallax);
         final View buttonBar = view.findViewById(R.id.buttonBarLayout);
         final NestedScrollView scrollView = (NestedScrollView) view.findViewById(R.id.scrollView);
-        final RefreshLayout refreshLayout = (RefreshLayout) view.findViewById(R.id.refreshLayout);
+        refreshLayout = (RefreshLayout) view.findViewById(R.id.refreshLayout);
 
+        refreshLayout.autoRefresh();
 
         refreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
             @Override
@@ -196,7 +197,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                refreshLayout.finishRefresh(3000);
+                getIndexData();
             }
 
             @Override
@@ -347,7 +348,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        getIndexData();
+//        getIndexData();
     }
 
     private void getIndexData() {
@@ -360,6 +361,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
     @Override
     public void getIndexDataSuccess(Index index) {
+
+        refreshLayout.finishRefresh();
 
         setBannerData(index);
 
@@ -378,6 +381,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         Glide.with(getActivity()).load(storeBeanList.get(1).getStreet_thumb()).into(rl2Img1);
         Glide.with(getActivity()).load(storeBeanList.get(1).getBrand_thumb()).into(rl2Img2);
         Glide.with(getActivity()).load(storeBeanList.get(1).getBrand_thumb()).into(rl2Img3);
+
 
     }
 
@@ -460,6 +464,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
      * @time 2018/7/10 0010 10:48
      */
     private void setBannerData(Index index) {
+
         List<Index.DataBean.BannerBean> bannerBeanList = index.getData().getBanner();
         List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>();
         for (int i = 0; i < bannerBeanList.size(); i++) {
@@ -482,20 +487,6 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     @Override
     public void showMessage(@NonNull String message) {
 
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
     }
 
 
