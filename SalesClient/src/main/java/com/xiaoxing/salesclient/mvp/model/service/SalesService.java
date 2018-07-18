@@ -6,6 +6,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.AuctionBid;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
+import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -88,6 +89,17 @@ public interface SalesService {
             @Query("sort") String sort,
             @Query("order") String order,
             @Query("cat_left_id") String cat_left_id
+    );
+
+    /**
+     * 个人中心-我的关注列表
+     *
+     * @param access_token
+     * @return
+     */
+    @GET("/api/my_collection_store_list.php")
+    Observable<WoDeGuanZhu> getMyCollectionStoreList(
+            @Query("access_token") String access_token
     );
 
 }

@@ -30,6 +30,7 @@ import com.jess.arms.integration.cache.CacheType;
 import com.jess.arms.integration.lifecycle.FragmentLifecycleable;
 import com.jess.arms.mvp.IPresenter;
 import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.SharedPreferencesHelper;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import javax.inject.Inject;
@@ -51,6 +52,8 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     protected final String TAG = this.getClass().getSimpleName();
     private final BehaviorSubject<FragmentEvent> mLifecycleSubject = BehaviorSubject.create();
     private Cache<String, Object> mCache;
+    protected SharedPreferencesHelper mSharedPreferencesHelper;
+    protected String  mToken;
     @Inject
     @Nullable
     protected P mPresenter;//如果当前页面逻辑简单, Presenter 可以为 null
@@ -76,6 +79,7 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        mSharedPreferencesHelper = SharedPreferencesHelper.getInstance(getActivity());
         return initView(inflater, container, savedInstanceState);
     }
 

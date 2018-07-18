@@ -28,6 +28,7 @@ import com.xiaoxing.salesclient.mvp.ui.adapter.TagAdapter;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentAllZhuanChang;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentNavigationList;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentReMenPaiMai;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentWoDeGuanZhu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,7 +105,7 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
         ArrayList<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new FragmentAllZhuanChang());
         mFragments.add(new FragmentReMenPaiMai());
-        mFragments.add(new FragmentAllZhuanChang());
+        mFragments.add(new FragmentWoDeGuanZhu());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
 

@@ -12,17 +12,21 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.DataHelper;
 import com.xiaoxing.login.R;
 import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerLoginComponent;
 import com.xiaoxing.login.di.module.LoginModule;
 import com.xiaoxing.login.mvp.contract.LoginContract;
+import com.xiaoxing.login.mvp.model.entity.Login;
 import com.xiaoxing.login.mvp.presenter.LoginPresenter;
 import com.xw.repo.XEditText;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
+import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
+import me.jessyan.armscomponent.commonsdk.core.Constants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
@@ -137,6 +141,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    public void doLoginSuccess() {
+    public void doLoginSuccess(Login login) {
+
+        mSharedPreferencesHelper.putString(BaseConstants.TOKEN, login.getData().getToken());
     }
 }
