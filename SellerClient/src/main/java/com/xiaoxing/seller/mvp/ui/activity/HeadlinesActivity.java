@@ -11,6 +11,8 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.uuch.adlibrary.AnimDialogUtils;
+import com.xiaoxing.gifloadingview.LoadingDialogUtil;
 import com.xiaoxing.seller.R;
 import com.xiaoxing.seller.R2;
 import com.xiaoxing.seller.di.component.DaggerHeadlinesComponent;
@@ -68,11 +70,12 @@ public class HeadlinesActivity extends BaseActivity<HeadlinesPresenter> implemen
 
     @Override
     public void showLoading() {
-
+        LoadingDialogUtil.showGifdialog1(getSupportFragmentManager(), R.drawable.loading);
     }
 
     @Override
     public void hideLoading() {
+        LoadingDialogUtil.dismissDialog();
 
     }
 

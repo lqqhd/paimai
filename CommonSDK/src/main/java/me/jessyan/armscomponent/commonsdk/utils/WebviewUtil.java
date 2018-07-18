@@ -13,7 +13,10 @@ public class WebviewUtil {
     @SuppressLint("WrongConstant")
     public static void loadData(Activity activity, WebView webView, String htmlData) {
 
-//        WebSettings settings = webView.getSettings();
+        WebSettings settings = webView.getSettings();
+
+        settings.setTextSize(WebSettings.TextSize.SMALLER);
+
 //        settings.setJavaScriptEnabled(true);
 //
 //        settings.setNeedInitialFocus(false);

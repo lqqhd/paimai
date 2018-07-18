@@ -229,6 +229,15 @@ public class Index {
             private String current_count;
             private String end_time;
             private String goods_thumb;
+            private String goods_img;
+
+            public String getGoods_img() {
+                return goods_img;
+            }
+
+            public void setGoods_img(String goods_img) {
+                this.goods_img = goods_img;
+            }
 
             public String getAct_id() {
                 return act_id;
