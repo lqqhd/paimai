@@ -19,20 +19,13 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
-import com.xiaoxing.salesclient.di.component.DaggerFragmentHomeComponent;
 import com.xiaoxing.salesclient.di.component.DaggerFragmentZhanTingComponent;
-import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
 import com.xiaoxing.salesclient.di.module.FragmentZhanTingModule;
-import com.xiaoxing.salesclient.mvp.contract.FragmentHomeContract;
 import com.xiaoxing.salesclient.mvp.contract.FragmentZhanTingContract;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
-import com.xiaoxing.salesclient.mvp.presenter.FragmentHomePresenter;
 import com.xiaoxing.salesclient.mvp.presenter.FragmentZhanTingPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.ZhanTingAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
@@ -59,10 +52,12 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
 
+    private List<StoreShop.DataBean> mDataBeans = new ArrayList<>();
+
 
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-
+        getStoreShopData();
     }
 
     /**
@@ -115,27 +110,26 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
 
-        /*主动演示刷新*/
-        if (mIsNeedDemo) {
-            mRefreshLayout.getLayout().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    if (mIsNeedDemo) {
-                        mRefreshLayout.autoRefresh();
-                    }
-                }
-            }, 3000);
-            mRefreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
-                @Override
-                public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
-                    mIsNeedDemo = false;
-                }
-            });
-        }
-        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+        mRefreshLayout.autoRefresh();
+        mRefreshLayout.setEnableLoadMore(false);
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setAdapter(mAdapter = new ZhanTingAdapter(mDataBeans,getActivity() ));
+//                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
+//                    @Override
+//                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
+//                        holder.text(android.R.id.text1, model.name());
+////                        holder.text(android.R.id.text2, model.name);
+////                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
+//                    }
+//                });
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                mRefreshLayout.finishLoadMore();
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
+
             }
         });
         return root;
@@ -144,6 +138,9 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
 
+    }
+
+    private void getStoreShopData() {
         mPresenter.getStoreShop("", "goods_number", "DESC", "0");
     }
 
@@ -154,33 +151,13 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
 
     @Override
     public void getStoreShopDataSuccess(StoreShop storeShop) {
-        mRefreshLayout.getLayout().postDelayed(new Runnable() {
-            @Override
-            public void run() {
 
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
-                mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                mRecyclerView.setAdapter(mAdapter = new ZhanTingAdapter(loadModels()));
-//                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
-//                    @Override
-//                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
-//                        holder.text(android.R.id.text1, model.name());
-////                        holder.text(android.R.id.text2, model.name);
-////                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
-//                    }
-//                });
-                mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
+        mDataBeans.clear();
+        mDataBeans.addAll(storeShop.getData());
+        mAdapter.notifyDataSetChanged();
+        mRefreshLayout.finishRefresh();
+        mEmptyLayout.setVisibility(View.GONE);
 
-                    }
-                });
-                mRefreshLayout.finishRefresh();
-                mEmptyLayout.setVisibility(View.GONE);
-            }
-        }, 0);
     }
 
     @Override

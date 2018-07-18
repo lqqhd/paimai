@@ -35,6 +35,7 @@ public class SlidingTabLayoutUtil {
 //                Toast.makeText(activity, "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
             }
         });
+        vp.setOffscreenPageLimit(mTitles.length);
 //        tabLayout_2.showDot(4);
 //
 //        tabLayout_2.showMsg(3, 5);
@@ -63,6 +64,7 @@ public class SlidingTabLayoutUtil {
                 Toast.makeText(fragment.getActivity(), "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
             }
         });
+        vp.setOffscreenPageLimit(mTitles.length);
 //        tabLayout_2.showDot(4);
 //
 //        tabLayout_2.showMsg(3, 5);
