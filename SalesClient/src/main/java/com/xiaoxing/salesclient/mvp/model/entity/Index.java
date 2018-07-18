@@ -13,7 +13,7 @@ public class Index {
     /**
      * result : true
      * next : false
-     * data : {"banner":[{"goods_id":"910","goods_name":"古书","goods_number":"6","shop_price":"3000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958971037.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958971708.jpg","last_update":"1530958998"},{"goods_id":"909","goods_name":"字画1","goods_number":"5","shop_price":"0.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958877665.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958877783.jpg","last_update":"1530958996"},{"goods_id":"908","goods_name":"太师椅","goods_number":"4","shop_price":"3000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958811379.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958811442.jpg","last_update":"1530959000"}],"article":[{"article_id":"66","title":"乐拍头条重要通知","add_time":"1531615549"},{"article_id":"65","title":"7月8日晚专场","add_time":"1531615549"},{"article_id":"64","title":"卖家入住流程","add_time":"1531615549"},{"article_id":"62","title":"玉器的鉴别方法","add_time":"1490724253"},{"article_id":"61","title":"古董鉴别方法","add_time":"1490724217"}],"weipai":[{"goods_id":"911","goods_name":"字画5","goods_number":"2","shop_price":"6000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530959062805.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530959062471.jpg","last_update":"1530959084"},{"goods_id":"907","goods_name":"桌子","goods_number":"3","shop_price":"30000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958731867.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958731596.jpg","last_update":"1530959014"},{"goods_id":"906","goods_name":"花瓶","goods_number":"3","shop_price":"2000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530955495843.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530955495710.jpg","last_update":"1530957313"},{"goods_id":"905","goods_name":"椅子","goods_number":"994","shop_price":"0.01","goods_thumb":"http://47.100.103.123/data/gallery_album/2/thumb_img/1494985265759726303.jpg","goods_img":"http://47.100.103.123/data/gallery_album/2/images/1494985265262573638.jpg","last_update":"1530955689"},{"goods_id":"904","goods_name":"测试产品001","goods_number":"989","shop_price":"0.10","goods_thumb":"http://47.100.103.123/data/gallery_album/2/thumb_img/1494985268545005438.jpg","goods_img":"http://47.100.103.123/data/gallery_album/2/images/1494985268890006696.jpg","last_update":"1508738926"}],"zhuanchang":[{"goods_id":"913","goods_name":"玉器3","cat_id":"3","shop_price":"40000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531016358458.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531016358426.jpg","last_update":"1531016363"},{"goods_id":"912","goods_name":"玉器1","cat_id":"3","shop_price":"1444.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531015034851.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531015034582.jpg","last_update":"1531015144"}],"store":[{"ru_id":"81","shop_logo":"","logo_thumb":"http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531031144777138297.jpg","street_thumb":"http://47.100.103.123/data/store_street/street_thumb/1531030573826726960.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/1531031144663448469.jpg","sort_order":"3"}]}
+     * data : {"banner":[{"goods_id":"923","goods_name":"首页祖传玉镯子","goods_number":"4","shop_price":"1.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531627382532.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531627382990.jpg","last_update":"1531629547"},{"goods_id":"910","goods_name":"古书","goods_number":"6","shop_price":"3000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958971037.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958971708.jpg","last_update":"1530958998"},{"goods_id":"909","goods_name":"字画1","goods_number":"5","shop_price":"0.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958877665.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958877783.jpg","last_update":"1530958996"}],"article":[{"article_id":"66","title":"乐拍头条重要通知","add_time":"1531615549","cat_name":"公告"},{"article_id":"65","title":"7月8日晚专场","add_time":"1531615549","cat_name":"促销"},{"article_id":"64","title":"卖家入住流程","add_time":"1531615549","cat_name":"商家入驻流程说明"},{"article_id":"62","title":"玉器的鉴别方法","add_time":"1490724253","cat_name":"站内快讯"},{"article_id":"61","title":"古董鉴别方法","add_time":"1490724217","cat_name":"站内快讯"}],"weipai":[{"act_id":"54","act_name":"首页祖传玉镯子","current_price":4000,"current_count":"0","end_time":"1533009893","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531627382532.jpg"},{"act_id":"52","act_name":"立即购买测试","current_price":2,"current_count":"1","end_time":"1532336154","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531472081070.jpg"},{"act_id":"53","act_name":"书画购买测试","current_price":3,"current_count":"1","end_time":"1533014129","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531545296023.jpg"}],"zhuanchang":[{"goods_id":"913","goods_name":"玉器3","cat_id":"3","shop_price":"40000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531016358458.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531016358426.jpg","last_update":"1531016363"},{"goods_id":"912","goods_name":"玉器1","cat_id":"3","shop_price":"1444.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531015034851.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531015034582.jpg","last_update":"1531015144"}],"store":[{"ru_id":"83","shop_logo":"http://47.100.103.123/../seller_imgs/seller_logo/seller_logo83.jpg","logo_thumb":"http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531635913572779847.jpg","street_thumb":"http://47.100.103.123/data/store_street/street_thumb/1531635913164681547.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/1531635913595710558.jpg","sort_order":"100"},{"ru_id":"81","shop_logo":"","logo_thumb":"http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531031144777138297.jpg","street_thumb":"http://47.100.103.123/data/store_street/street_thumb/1531030573826726960.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/1531031144663448469.jpg","sort_order":"3"}]}
      */
 
     private String result;
@@ -93,13 +93,13 @@ public class Index {
 
         public static class BannerBean {
             /**
-             * goods_id : 910
-             * goods_name : 古书
-             * goods_number : 6
-             * shop_price : 3000.00
-             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958971037.jpg
-             * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1530958971708.jpg
-             * last_update : 1530958998
+             * goods_id : 923
+             * goods_name : 首页祖传玉镯子
+             * goods_number : 4
+             * shop_price : 1.00
+             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531627382532.jpg
+             * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1531627382990.jpg
+             * last_update : 1531629547
              */
 
             private String goods_id;
@@ -172,21 +172,13 @@ public class Index {
              * article_id : 66
              * title : 乐拍头条重要通知
              * add_time : 1531615549
-             * cat_name : 分类名称
+             * cat_name : 公告
              */
 
             private String article_id;
             private String title;
             private String add_time;
             private String cat_name;
-
-            public String getCat_name() {
-                return cat_name;
-            }
-
-            public void setCat_name(String cat_name) {
-                this.cat_name = cat_name;
-            }
 
             public String getArticle_id() {
                 return article_id;
@@ -211,57 +203,71 @@ public class Index {
             public void setAdd_time(String add_time) {
                 this.add_time = add_time;
             }
+
+            public String getCat_name() {
+                return cat_name;
+            }
+
+            public void setCat_name(String cat_name) {
+                this.cat_name = cat_name;
+            }
         }
 
         public static class WeipaiBean {
             /**
-             * goods_id : 911
-             * goods_name : 字画5
-             * goods_number : 2
-             * shop_price : 6000.00
-             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530959062805.jpg
-             * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1530959062471.jpg
-             * last_update : 1530959084
+             * act_id : 54
+             * act_name : 首页祖传玉镯子
+             * current_price : 4000
+             * current_count : 0
+             * end_time : 1533009893
+             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531627382532.jpg
              */
 
-            private String goods_id;
-            private String goods_name;
-            private String goods_number;
-            private String shop_price;
+            private String act_id;
+            private String act_name;
+            private int current_price;
+            private String current_count;
+            private String end_time;
             private String goods_thumb;
-            private String goods_img;
-            private String last_update;
 
-            public String getGoods_id() {
-                return goods_id;
+            public String getAct_id() {
+                return act_id;
             }
 
-            public void setGoods_id(String goods_id) {
-                this.goods_id = goods_id;
+            public void setAct_id(String act_id) {
+                this.act_id = act_id;
             }
 
-            public String getGoods_name() {
-                return goods_name;
+            public String getAct_name() {
+                return act_name;
             }
 
-            public void setGoods_name(String goods_name) {
-                this.goods_name = goods_name;
+            public void setAct_name(String act_name) {
+                this.act_name = act_name;
             }
 
-            public String getGoods_number() {
-                return goods_number;
+            public int getCurrent_price() {
+                return current_price;
             }
 
-            public void setGoods_number(String goods_number) {
-                this.goods_number = goods_number;
+            public void setCurrent_price(int current_price) {
+                this.current_price = current_price;
             }
 
-            public String getShop_price() {
-                return shop_price;
+            public String getCurrent_count() {
+                return current_count;
             }
 
-            public void setShop_price(String shop_price) {
-                this.shop_price = shop_price;
+            public void setCurrent_count(String current_count) {
+                this.current_count = current_count;
+            }
+
+            public String getEnd_time() {
+                return end_time;
+            }
+
+            public void setEnd_time(String end_time) {
+                this.end_time = end_time;
             }
 
             public String getGoods_thumb() {
@@ -270,22 +276,6 @@ public class Index {
 
             public void setGoods_thumb(String goods_thumb) {
                 this.goods_thumb = goods_thumb;
-            }
-
-            public String getGoods_img() {
-                return goods_img;
-            }
-
-            public void setGoods_img(String goods_img) {
-                this.goods_img = goods_img;
-            }
-
-            public String getLast_update() {
-                return last_update;
-            }
-
-            public void setLast_update(String last_update) {
-                this.last_update = last_update;
             }
         }
 
@@ -367,12 +357,12 @@ public class Index {
 
         public static class StoreBean {
             /**
-             * ru_id : 81
-             * shop_logo :
-             * logo_thumb : http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531031144777138297.jpg
-             * street_thumb : http://47.100.103.123/data/store_street/street_thumb/1531030573826726960.jpg
-             * brand_thumb : http://47.100.103.123/data/store_street/brand_thumb/1531031144663448469.jpg
-             * sort_order : 3
+             * ru_id : 83
+             * shop_logo : http://47.100.103.123/../seller_imgs/seller_logo/seller_logo83.jpg
+             * logo_thumb : http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531635913572779847.jpg
+             * street_thumb : http://47.100.103.123/data/store_street/street_thumb/1531635913164681547.jpg
+             * brand_thumb : http://47.100.103.123/data/store_street/brand_thumb/1531635913595710558.jpg
+             * sort_order : 100
              */
 
             private String ru_id;
