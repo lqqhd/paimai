@@ -1,7 +1,10 @@
 package com.xiaoxing.login.mvp.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -22,8 +25,13 @@ import com.xiaoxing.login.mvp.model.entity.Login;
 import com.xiaoxing.login.mvp.presenter.LoginPresenter;
 import com.xw.repo.XEditText;
 
+import java.util.HashMap;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import cn.smssdk.gui.RegisterPage;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
 import me.jessyan.armscomponent.commonsdk.core.Constants;
@@ -58,10 +66,14 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         return R.layout.xiaoxing_login_activity_login; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
 
+
+
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_login));
+
     }
+
 
     @Override
     public void showLoading() {
@@ -145,4 +157,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
         mSharedPreferencesHelper.putString(BaseConstants.TOKEN, login.getData().getToken());
     }
+
+
+
 }

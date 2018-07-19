@@ -12,6 +12,9 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.0.1'
         //这里不使用最新的 butterknife 插件, 是因为最新版插件会出现一些问题
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+
+        classpath 'com.mob.sdk:MobSDK:+'
+
     }
 }
 

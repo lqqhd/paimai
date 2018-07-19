@@ -5,6 +5,14 @@ if (isBuildModule.toBoolean()) {
 }
 apply plugin: 'com.jakewharton.butterknife'
 
+apply plugin: 'com.mob.sdk'
+// 在MobSDK的扩展中注册SMSSDK的相关信息
+MobSDK {
+    appKey "26edffa6b72b8"
+    appSecret "71ff7652b5fa317fa06d69eb1fe436b5"
+
+    SMSSDK {}
+}
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
 
