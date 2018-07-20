@@ -44,6 +44,7 @@
             android:layout_weight="1.5"
             android:background="@color/public_white"
             android:hint="请输入验证码"
+            android:inputType="number"
             android:paddingRight="@dimen/dp_10"
             android:textColor="#B8B8B8"
             android:textSize="@dimen/public_font_14sp"

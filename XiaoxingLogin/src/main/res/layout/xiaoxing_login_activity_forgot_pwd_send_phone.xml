@@ -10,6 +10,7 @@
 
 
     <com.xw.repo.XEditText
+        android:id="@+id/xet_phone"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginLeft="@dimen/dp_10"

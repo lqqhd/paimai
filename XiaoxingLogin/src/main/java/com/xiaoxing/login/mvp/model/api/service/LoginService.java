@@ -4,6 +4,7 @@ import com.xiaoxing.login.mvp.model.entity.Login;
 import com.xiaoxing.login.mvp.model.entity.SmsSend;
 import com.xiaoxing.login.mvp.model.entity.UserCheckphone;
 import com.xiaoxing.login.mvp.model.entity.UserRegister;
+import com.xiaoxing.login.mvp.model.entity.UserSetpassword;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -51,6 +52,16 @@ public interface LoginService {
      */
     @GET("/api/userRegister.php")
     Observable<UserRegister> userRegister(@Query("mobile_phone") String mobile_phone, @Query("password1") String password1);
+
+    /**
+     * 设置新密码
+     *
+     * @param phone
+     * @param new_password
+     * @return
+     */
+    @GET("/api/userSetpassword.php")
+    Observable<UserSetpassword> userSetpassword(@Query("phone") String phone, @Query("new_password") String new_password);
 
 
 }

@@ -130,14 +130,14 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             return;
         }
 
-        if (getUsername().equals("1234") && getPassword().equals("123456")) {
+//        if (getUsername().equals("1234") && getPassword().equals("123456")) {
             mPresenter.doLogin(this, getUsername(), getPassword());
 
 //            Utils.navigation(LoginActivity.this, RouterHub.SELLER_CLIENT_MINE_ACTIVITY);
 
-        } else {
-            SnackbarUtils.Short(btnLogin, "用户名或密码错误,测试账号为1234，密码123456").info().show();
-        }
+//        } else {
+//            SnackbarUtils.Short(btnLogin, "用户名或密码错误,测试账号为1234，密码123456").info().show();
+//        }
 
 
     }
