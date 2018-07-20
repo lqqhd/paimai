@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="XEditText"><attr format="string" name="x_separator"/><attr format="boolean" name="x_disableClear"/><attr format="reference" name="x_clearDrawable"/><attr format="reference" name="x_showPwdDrawable"/><attr format="reference" name="x_hidePwdDrawable"/><attr format="boolean" name="x_disableEmoji"/><attr format="boolean" name="x_togglePwdDrawableEnable"/><attr format="string" name="x_pattern"/></declare-styleable>
+    <string name="app_name">XEditText</string>
+</resources>
