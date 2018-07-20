@@ -14,6 +14,10 @@ import android.widget.LinearLayout;
 import com.innodroid.expandablerecycler.ExpandableRecyclerAdapter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
+import com.xiaoxing.salesclient.di.component.DaggerFragmentHomeComponent;
+import com.xiaoxing.salesclient.di.component.DaggerFragmentNavigationListComponent;
+import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
+import com.xiaoxing.salesclient.di.module.FragmentNavigationListModule;
 import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationListContract;
 import com.xiaoxing.salesclient.mvp.presenter.FragmentNavigationListPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationAdapter;
@@ -62,7 +66,12 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
     @Override
     public void setupFragmentComponent(@NonNull AppComponent appComponent) {
-
+        DaggerFragmentNavigationListComponent //如找不到该类,请编译一下项目
+                .builder()
+                .appComponent(appComponent)
+                .fragmentNavigationListModule(new FragmentNavigationListModule(this))
+                .build()
+                .inject(this);
     }
 
     @Override
