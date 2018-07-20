@@ -19,6 +19,7 @@ import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerRegisterSendPhoneComponent;
 import com.xiaoxing.login.di.module.RegisterSendPhoneModule;
 import com.xiaoxing.login.mvp.contract.RegisterSendPhoneContract;
+import com.xiaoxing.login.mvp.model.entity.UserCheckphone;
 import com.xiaoxing.login.mvp.presenter.RegisterSendPhonePresenter;
 import com.xw.repo.XEditText;
 
@@ -120,10 +121,10 @@ public class RegisterSendPhoneActivity extends BaseActivity<RegisterSendPhonePre
             SnackbarUtils.Short(btnNext, "请先阅读协议").info().show();
             return;
         }
-        Bundle bundle = new Bundle();
-        bundle.putString(PHONE, getPhone());
-        Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY, bundle);
-        killMyself();
+
+        mPresenter.userCheckphone(getPhone());
+
+
     }
 
     @NonNull
@@ -145,5 +146,20 @@ public class RegisterSendPhoneActivity extends BaseActivity<RegisterSendPhonePre
             return false;
         else
             return mobileNums.matches(telRegex);
+    }
+
+    @Override
+    public void userCheckphoneSuccess(UserCheckphone userCheckphone) {
+
+        if (userCheckphone.getCode() == 200) {
+
+            Bundle bundle = new Bundle();
+            bundle.putString(PHONE, getPhone());
+
+            Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY, bundle);
+            killMyself();
+        } else {
+            ArmsUtils.snackbarText(userCheckphone.getMsg());
+        }
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xedit="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/scrollView"
     android:background="@color/public_white"
     android:orientation="vertical">
 
@@ -52,9 +52,9 @@
                         android:layout_marginRight="@dimen/dp_10"
                         android:background="@null"
                         android:hint="请输入帐户名/手机号"
+                        android:text="1234"
                         android:textColor="#B8B8B8"
                         android:textSize="@dimen/public_font_14sp"
-                        android:text="1234"
                         xedit:x_clearDrawable="@mipmap/ic_clear"
                         xedit:x_disableClear="false"
                         xedit:x_hidePwdDrawable="@mipmap/ic_hide"
@@ -72,8 +72,8 @@
                         android:layout_marginRight="@dimen/dp_10"
                         android:background="@null"
                         android:hint="请输入密码"
-                        android:text="123456"
                         android:inputType="textPassword"
+                        android:text="123456"
                         android:textColor="#B8B8B8"
                         android:textSize="@dimen/public_font_14sp"
                         xedit:x_clearDrawable="@mipmap/ic_clear"
@@ -129,7 +129,8 @@
                     android:layout_height="@dimen/dp_40"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:layout_marginRight="@dimen/dp_10"
-                    android:layout_marginTop="@dimen/dp_10">
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="0dp"
@@ -165,7 +166,8 @@
                     android:layout_height="@dimen/dp_50"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/dp_10"
-                    android:src="@mipmap/weixin_icon" />
+                    android:src="@mipmap/weixin_icon"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -175,7 +177,8 @@
                     android:gravity="center"
                     android:text="微信免登"
                     android:textColor="@color/public_client_line_color"
-                    android:textSize="@dimen/public_font_14sp" />
+                    android:textSize="@dimen/public_font_14sp"
+                    android:visibility="gone" />
 
                 <include layout="@layout/public_line_horizontal" />
             </LinearLayout>

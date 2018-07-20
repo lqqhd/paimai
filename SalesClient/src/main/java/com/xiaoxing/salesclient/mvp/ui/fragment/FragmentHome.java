@@ -122,6 +122,11 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     @BindView(R2.id.rl2_img3)
     ImageView rl2Img3;
     Unbinder unbinder;
+    @BindView(R2.id.tv_ren_shu)
+    TextView tvRenShu;
+    @BindView(R2.id.tv_ren_shu_1)
+    TextView tvRenShu1;
+    Unbinder unbinder1;
     private int mOffset = 0;
     private int mScrollY = 0;
     private WeiPaiTuiGuangHomeAdapter mAdapter;
@@ -388,27 +393,28 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     private void setZhuanChang(Index index) {
         List<Index.DataBean.ZhuanchangBean> zhuanchangBeans = index.getData().getZhuanchang();
 
-        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_thumb()).into(img1);
-        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_thumb()).into(img2);
-        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_thumb()).into(img3);
-        tvName.setText(zhuanchangBeans.get(0).getGoods_name());
-        tvTitle.setText(zhuanchangBeans.get(0).getGoods_name());
+        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img1);
+        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img2);
+        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img3);
+        tvName.setText(zhuanchangBeans.get(0).getCat_name());
+        tvTitle.setText(zhuanchangBeans.get(0).getCat_desc());
 
-        long time1 = Long.parseLong(zhuanchangBeans.get(0).getLast_update()) * 1000 - System.currentTimeMillis();
+        tvRenShu.setText(zhuanchangBeans.get(0).getOnlookers_num());
+//        long time1 = Long.parseLong(zhuanchangBeans.get(0).getLast_update()) * 1000 - System.currentTimeMillis();
 
 
-        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_thumb()).into(img4);
-        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_thumb()).into(img5);
-        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_thumb()).into(img6);
-        tvName1.setText(zhuanchangBeans.get(1).getGoods_name());
-        tvTitle1.setText(zhuanchangBeans.get(1).getGoods_name());
-
-        long time2 = Long.parseLong(zhuanchangBeans.get(1).getLast_update()) * 1000 - System.currentTimeMillis();
+        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getTouch_icon()).into(img4);
+        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getTouch_icon()).into(img5);
+        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getTouch_icon()).into(img6);
+        tvName1.setText(zhuanchangBeans.get(1).getCat_name());
+        tvTitle1.setText(zhuanchangBeans.get(1).getCat_desc());
+        tvRenShu1.setText(zhuanchangBeans.get(1).getOnlookers_num());
+//        long time2 = Long.parseLong(zhuanchangBeans.get(1).getLast_update()) * 1000 - System.currentTimeMillis();
 
 
         long time4 = (long) 150 * 24 * 60 * 60 * 1000;
-        cv_countdownView_zhuan_chang_tui_guang_001.start(time1);
-        cv_countdownView_zhuan_chang_tui_guang_002.start(time2);
+        cv_countdownView_zhuan_chang_tui_guang_001.start(time4);
+        cv_countdownView_zhuan_chang_tui_guang_002.start(time4);
 
 //        CountdownView cv_countdownView_zhuan_chang_tui_guang_002 = (CountdownView) view.findViewById(R.id.cv_countdownView_zhuan_chang_tui_guang_002);
 //        cv_countdownView_zhuan_chang_tui_guang_002.start(time4);
@@ -487,6 +493,20 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     @Override
     public void showMessage(@NonNull String message) {
 
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder1 = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder1.unbind();
     }
 
 

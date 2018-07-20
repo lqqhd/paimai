@@ -11,6 +11,10 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.xiaoxing.login.mvp.contract.RegisterSendPhoneContract;
+import com.xiaoxing.login.mvp.model.api.service.LoginService;
+import com.xiaoxing.login.mvp.model.entity.UserCheckphone;
+
+import io.reactivex.Observable;
 
 
 @ActivityScope
@@ -30,5 +34,10 @@ public class RegisterSendPhoneModel extends BaseModel implements RegisterSendPho
         super.onDestroy();
         this.mGson = null;
         this.mApplication = null;
+    }
+
+    @Override
+    public Observable<UserCheckphone> userCheckphone(String phone) {
+        return mRepositoryManager.obtainRetrofitService(LoginService.class).userCheckphone(phone);
     }
 }
