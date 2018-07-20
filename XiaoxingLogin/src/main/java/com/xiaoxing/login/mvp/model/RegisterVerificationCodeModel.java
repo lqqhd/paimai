@@ -11,6 +11,10 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.xiaoxing.login.mvp.contract.RegisterVerificationCodeContract;
+import com.xiaoxing.login.mvp.model.api.service.LoginService;
+import com.xiaoxing.login.mvp.model.entity.SmsSend;
+
+import io.reactivex.Observable;
 
 
 @ActivityScope
@@ -30,5 +34,10 @@ public class RegisterVerificationCodeModel extends BaseModel implements Register
         super.onDestroy();
         this.mGson = null;
         this.mApplication = null;
+    }
+
+    @Override
+    public Observable<SmsSend> smsSend(String phone, String code) {
+        return mRepositoryManager.obtainRetrofitService(LoginService.class).smsSend(phone, code);
     }
 }

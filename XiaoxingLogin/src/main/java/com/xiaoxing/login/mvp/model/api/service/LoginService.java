@@ -1,6 +1,7 @@
 package com.xiaoxing.login.mvp.model.api.service;
 
 import com.xiaoxing.login.mvp.model.entity.Login;
+import com.xiaoxing.login.mvp.model.entity.SmsSend;
 import com.xiaoxing.login.mvp.model.entity.UserCheckphone;
 
 import io.reactivex.Observable;
@@ -15,16 +16,30 @@ import retrofit2.http.Query;
 public interface LoginService {
 
     /**
-     * 妹纸列表
+     * 登录
      */
 //    @GET("http://47.100.103.123/api.php?app_key=woaixuxiaoxing&method=dsc.user.login.get&user_name=fan&password=123456")
     @GET("/api/userLogin.php")
     Observable<Login> doLogin(@Query("user_name") String user_name, @Query("password") String password);
 
+    /**
+     * 验证手机号是否存在
+     *
+     * @param phone
+     * @return
+     */
     @GET("/api/userCheckphone.php")
     Observable<UserCheckphone> userCheckphone(@Query("phone") String phone);
-  @GET("/api/aliyun/sms/sms_send.php")
-    Observable<UserCheckphone> smsSend(@Query("phone") String phone);
+
+    /**
+     * 发送短信接口
+     *
+     * @param phone
+     * @param code
+     * @return
+     */
+    @GET("/api/aliyun/sms/sms_send.php")
+    Observable<SmsSend> smsSend(@Query("phone") String phone, @Query("code") String code);
 
 
 }

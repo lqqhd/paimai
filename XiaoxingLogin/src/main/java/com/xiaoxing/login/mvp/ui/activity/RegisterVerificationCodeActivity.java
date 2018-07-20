@@ -22,6 +22,7 @@ import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerRegisterVerificationCodeComponent;
 import com.xiaoxing.login.di.module.RegisterVerificationCodeModule;
 import com.xiaoxing.login.mvp.contract.RegisterVerificationCodeContract;
+import com.xiaoxing.login.mvp.model.entity.SmsSend;
 import com.xiaoxing.login.mvp.presenter.RegisterVerificationCodePresenter;
 import com.xiaoxing.login.mvp.ui.view.CountDownButton;
 import com.xw.repo.XEditText;
@@ -58,6 +59,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
 
     private EventHandler eh;
     private String mPhone = "";
+    private String mCode = "";
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -83,14 +85,30 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
         mPhone = bundle.getString(PHONE);
         tvPhone.setText(mPhone);
         startCountdown();
-        initRegisterEventHandler();
 
+        get4Code();
+
+        if (!TextUtils.isEmpty(mCode)) {
+            mPresenter.smsSend(mPhone, mCode);
+        }
+//        initMobSms();
+    }
+
+    private void initMobSms() {
+        initRegisterEventHandler();
         getVerificationCode(mPhone);
     }
 
+    private String get4Code() {
+        mCode = ArmsUtils.get4Random();
+        return mCode;
+    }
+
     private void startCountdown() {
+
+        get4Code();
         cdBtn.startCountdown();
-        getVerificationCode(mPhone);
+//        getVerificationCode(mPhone);
     }
 
     @Override
@@ -133,8 +151,15 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
             SnackbarUtils.Short(btnNext, "验证码不能为空").info().show();
             return;
         }
+        if (getCode().equals(mCode)) {
 
-        submitVerificationCode(mPhone, getCode());
+            Utils.navigation(RegisterVerificationCodeActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_SET_PWD_ACTIVITY);
+            killMyself();
+        } else {
+            SnackbarUtils.Short(btnNext, "验证码错误，请重新输入").info().show();
+        }
+
+//        submitVerificationCode(mPhone, getCode());
 
     }
 
@@ -226,5 +251,11 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
         super.onStop();
         //用完回调要注销掉，否则可能会出现内存泄露
         SMSSDK.unregisterEventHandler(eh);
+    }
+
+    @Override
+    public void smsSendSuccess(SmsSend smsSend) {
+
+        SnackbarUtils.Short(btnNext, smsSend.getMsg()).info().show();
     }
 }
