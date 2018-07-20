@@ -303,6 +303,24 @@ public class Index {
             private String cat_desc;
             private String touch_icon;
             private String onlookers_num;
+            private String goods_img;
+            private String end_time;
+
+            public String getGoods_img() {
+                return goods_img;
+            }
+
+            public void setGoods_img(String goods_img) {
+                this.goods_img = goods_img;
+            }
+
+            public String getEnd_time() {
+                return end_time;
+            }
+
+            public void setEnd_time(String end_time) {
+                this.end_time = end_time;
+            }
 
             public String getCat_id() {
                 return cat_id;

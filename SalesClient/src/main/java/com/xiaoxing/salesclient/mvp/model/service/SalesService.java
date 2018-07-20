@@ -130,7 +130,8 @@ public interface SalesService {
     Observable<SpecialcatDetail> getSpecialcatDetail(
             @Query("specialcat_id") String specialcat_id
     );
-   @GET("/api/auction_search.php")
+
+    @GET("/api/auction_search.php")
     Observable<AuctionSearch> getAuctionSearch(
             @Query("keywords") String keywords
     );

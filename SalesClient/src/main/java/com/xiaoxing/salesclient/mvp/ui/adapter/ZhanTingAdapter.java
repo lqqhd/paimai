@@ -31,8 +31,8 @@ public class ZhanTingAdapter extends BaseQuickAdapter<StoreShop.DataBean, BaseVi
 
         Glide.with(mContext).load(item.getShop_logo()).into((ImageView) helper.getView(R.id.img_logo));
         Glide.with(mContext).load(item.getShop_logo()).into((ImageView) helper.getView(R.id.rl1_img1));
-        Glide.with(mContext).load(item.getShop_logo()).into((ImageView) helper.getView(R.id.rl1_img2));
-        Glide.with(mContext).load(item.getShop_logo()).into((ImageView) helper.getView(R.id.rl1_img3));
+        Glide.with(mContext).load(item.getStreet_thumb()).into((ImageView) helper.getView(R.id.rl1_img2));
+        Glide.with(mContext).load(item.getBrand_thumb()).into((ImageView) helper.getView(R.id.rl1_img3));
 
         helper.setText(R.id.tv_name, item.getGrade_name());
         helper.setText(R.id.tv_shop_name, item.getShopName());

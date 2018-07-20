@@ -400,7 +400,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         tvTitle.setText(zhuanchangBeans.get(0).getCat_desc());
 
         tvRenShu.setText(zhuanchangBeans.get(0).getOnlookers_num());
-//        long time1 = Long.parseLong(zhuanchangBeans.get(0).getLast_update()) * 1000 - System.currentTimeMillis();
+        long time1 = Long.parseLong(zhuanchangBeans.get(0).getEnd_time()) * 1000 - System.currentTimeMillis();
 
 
         Glide.with(getActivity()).load(zhuanchangBeans.get(1).getTouch_icon()).into(img4);
@@ -409,12 +409,12 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         tvName1.setText(zhuanchangBeans.get(1).getCat_name());
         tvTitle1.setText(zhuanchangBeans.get(1).getCat_desc());
         tvRenShu1.setText(zhuanchangBeans.get(1).getOnlookers_num());
-//        long time2 = Long.parseLong(zhuanchangBeans.get(1).getLast_update()) * 1000 - System.currentTimeMillis();
+        long time2 = Long.parseLong(zhuanchangBeans.get(1).getEnd_time()) * 1000 - System.currentTimeMillis();
 
 
         long time4 = (long) 150 * 24 * 60 * 60 * 1000;
-        cv_countdownView_zhuan_chang_tui_guang_001.start(time4);
-        cv_countdownView_zhuan_chang_tui_guang_002.start(time4);
+        cv_countdownView_zhuan_chang_tui_guang_001.start(time1);
+        cv_countdownView_zhuan_chang_tui_guang_002.start(time2);
 
 //        CountdownView cv_countdownView_zhuan_chang_tui_guang_002 = (CountdownView) view.findViewById(R.id.cv_countdownView_zhuan_chang_tui_guang_002);
 //        cv_countdownView_zhuan_chang_tui_guang_002.start(time4);
