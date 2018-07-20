@@ -13,6 +13,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.xiaoxing.gifloadingview.LoadingDialogUtil;
 import com.xiaoxing.login.R;
 import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerSetNewPasswordComponent;
@@ -66,12 +67,12 @@ public class SetNewPasswordActivity extends BaseActivity<SetNewPasswordPresenter
 
     @Override
     public void showLoading() {
-
+        LoadingDialogUtil.showGifdialog1(getSupportFragmentManager(), R.drawable.loading);
     }
 
     @Override
     public void hideLoading() {
-
+        LoadingDialogUtil.dismissDialog();
     }
 
     @Override

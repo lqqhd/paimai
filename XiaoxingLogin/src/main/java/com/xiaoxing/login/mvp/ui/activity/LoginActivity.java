@@ -16,6 +16,7 @@ import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.DataHelper;
+import com.xiaoxing.gifloadingview.LoadingDialogUtil;
 import com.xiaoxing.login.R;
 import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerLoginComponent;
@@ -67,7 +68,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
 
-
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_login));
@@ -77,12 +77,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void showLoading() {
-
+        LoadingDialogUtil.showGifdialog1(getSupportFragmentManager(), R.drawable.loading);
     }
 
     @Override
     public void hideLoading() {
-
+        LoadingDialogUtil.dismissDialog();
     }
 
     @Override
@@ -131,7 +131,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         }
 
 //        if (getUsername().equals("1234") && getPassword().equals("123456")) {
-            mPresenter.doLogin(this, getUsername(), getPassword());
+        mPresenter.doLogin(this, getUsername(), getPassword());
 
 //            Utils.navigation(LoginActivity.this, RouterHub.SELLER_CLIENT_MINE_ACTIVITY);
 
@@ -157,7 +157,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
         mSharedPreferencesHelper.putString(BaseConstants.TOKEN, login.getData().getToken());
     }
-
 
 
 }
