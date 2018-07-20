@@ -29,6 +29,7 @@ import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.salesclient.di.component.DaggerZhanTingGoodsListComponent;
 import com.xiaoxing.salesclient.di.module.ZhanTingGoodsListModule;
 import com.xiaoxing.salesclient.mvp.contract.ZhanTingGoodsListContract;
+import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
 import com.xiaoxing.salesclient.mvp.presenter.ZhanTingGoodsListPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.ZhanTingGoodsListAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
@@ -55,7 +56,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
-    private List<AddressList> mAddressLists = new ArrayList<>();
+    private List<SpecialcatDetail.DataBean.GoodsBean> mDataBeans = new ArrayList<>();
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -85,7 +86,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(ZhanTingGoodsListActivity.this));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(ZhanTingGoodsListActivity.this, VERTICAL));
-        mAdapter = new ZhanTingGoodsListAdapter(mAddressLists);
+        mAdapter = new ZhanTingGoodsListAdapter(mDataBeans);
         LayoutInflater inflater = LayoutInflater.from(ZhanTingGoodsListActivity.this);
         View headView = inflater.inflate(R.layout.sales_client_activity_zhan_ting_goods_list_head, null, false);
 
@@ -114,43 +115,15 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         TextView empty = (TextView) findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
 
-        /*主动演示刷新*/
-        if (mIsNeedDemo) {
-            mRefreshLayout.getLayout().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    if (mIsNeedDemo) {
-                        mRefreshLayout.autoRefresh();
-                    }
-                }
-            }, 3000);
-            mRefreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
-                @Override
-                public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
-                    mIsNeedDemo = false;
-                }
-            });
-        }
-        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-            @Override
-            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                mRefreshLayout.finishLoadMore();
-            }
-        });
+        mRefreshLayout.autoRefresh();
+
+        mRefreshLayout.setEnableLoadMore(false);
 
     }
 
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-        mRefreshLayout.getLayout().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mAddressLists.addAll(loadModels());
-                mAdapter.notifyDataSetChanged();
-                mRefreshLayout.finishRefresh();
-                mEmptyLayout.setVisibility(View.GONE);
-            }
-        }, 2000);
+        mPresenter.getSpecialcatDetail("1489");
     }
 
     /**
@@ -204,5 +177,13 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     void toDianPu() {
         Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
 
+    }
+
+    @Override
+    public void specialcatDetailSuccess(SpecialcatDetail specialcatDetail) {
+        mDataBeans.addAll(specialcatDetail.getData().getGoods());
+        mAdapter.notifyDataSetChanged();
+        mRefreshLayout.finishRefresh();
+        mEmptyLayout.setVisibility(View.GONE);
     }
 }

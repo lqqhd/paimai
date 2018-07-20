@@ -35,8 +35,7 @@
             android:textSize="@dimen/public_font_14sp" />
 
         <TextView
-            android:id="@+id/tv_time"
-
+            android:id="@+id/tv_dang_qian_chu_jia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"
@@ -49,10 +48,10 @@
             android:textSize="@dimen/public_font_12sp" />
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_chu_jia_ci_shu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_time"
+            android:layout_below="@+id/tv_dang_qian_chu_jia"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_toRightOf="@+id/img"
@@ -65,7 +64,7 @@
             android:id="@+id/tv_wei_guan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_title"
+            android:layout_below="@+id/tv_chu_jia_ci_shu"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_toRightOf="@+id/img"
