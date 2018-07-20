@@ -9,21 +9,21 @@ public class Login {
 
 
     /**
-     * result : true
+     * code : 200
      * msg : 登录成功
-     * data : {"user_id":"81","aite_id":"","email":"","user_name":"fan","nick_name":"花瓣2","password":"3195e8f17d08374e57b5341d8a4d7022","question":"","answer":"","sex":"0","birthday":"0000-00-00","user_money":"998.00","frozen_money":"3003.00","pay_points":"0","rank_points":"0","address_id":"0","reg_time":"1530557605","last_login":"1531632043","last_time":"0000-00-00 00:00:00","last_ip":"127.0.0.1","visit_count":"9","user_rank":"6","is_special":"0","ec_salt":"7946","salt":"0","parent_id":"0","flag":"0","alias":"","msn":"","qq":"","office_phone":"","home_phone":"","mobile_phone":"13276380514","is_validated":"1","credit_line":"0.00","passwd_question":null,"passwd_answer":null,"user_picture":"","old_user_picture":"","report_time":"0","drp_parent_id":"0","token":"1ad4331a057b4dc2db7e05ec2061dd62","time_out":"1532471884"}
+     * data : {"user_id":"84","aite_id":"","email":"","user_name":"15965561796","nick_name":"15965561796","password":"e10adc3949ba59abbe56e057f20f883e","question":"","answer":"","sex":"0","birthday":"0000-00-00","user_money":"0.00","frozen_money":"0.00","pay_points":"0","rank_points":"0","address_id":"0","reg_time":"1532025109","last_login":"0","last_time":"0000-00-00 00:00:00","last_ip":"","visit_count":"0","user_rank":"0","is_special":"0","ec_salt":null,"salt":"0","parent_id":"0","flag":"0","alias":"","msn":"","qq":"","office_phone":"","home_phone":"","mobile_phone":"15965561796","is_validated":"0","credit_line":"0.00","passwd_question":null,"passwd_answer":null,"user_picture":"","old_user_picture":"","report_time":"0","drp_parent_id":"0","token":"fb44722e803a0464ab817eef16e11cc4","time_out":"1532632705"}
      */
 
-    private String result;
+    private int code;
     private String msg;
     private DataBean data;
 
-    public String getResult() {
-        return result;
+    public int getCode() {
+        return code;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public String getMsg() {
@@ -44,29 +44,29 @@ public class Login {
 
     public static class DataBean {
         /**
-         * user_id : 81
+         * user_id : 84
          * aite_id :
          * email :
-         * user_name : fan
-         * nick_name : 花瓣2
-         * password : 3195e8f17d08374e57b5341d8a4d7022
+         * user_name : 15965561796
+         * nick_name : 15965561796
+         * password : e10adc3949ba59abbe56e057f20f883e
          * question :
          * answer :
          * sex : 0
          * birthday : 0000-00-00
-         * user_money : 998.00
-         * frozen_money : 3003.00
+         * user_money : 0.00
+         * frozen_money : 0.00
          * pay_points : 0
          * rank_points : 0
          * address_id : 0
-         * reg_time : 1530557605
-         * last_login : 1531632043
+         * reg_time : 1532025109
+         * last_login : 0
          * last_time : 0000-00-00 00:00:00
-         * last_ip : 127.0.0.1
-         * visit_count : 9
-         * user_rank : 6
+         * last_ip :
+         * visit_count : 0
+         * user_rank : 0
          * is_special : 0
-         * ec_salt : 7946
+         * ec_salt : null
          * salt : 0
          * parent_id : 0
          * flag : 0
@@ -75,8 +75,8 @@ public class Login {
          * qq :
          * office_phone :
          * home_phone :
-         * mobile_phone : 13276380514
-         * is_validated : 1
+         * mobile_phone : 15965561796
+         * is_validated : 0
          * credit_line : 0.00
          * passwd_question : null
          * passwd_answer : null
@@ -84,8 +84,8 @@ public class Login {
          * old_user_picture :
          * report_time : 0
          * drp_parent_id : 0
-         * token : 1ad4331a057b4dc2db7e05ec2061dd62
-         * time_out : 1532471884
+         * token : fb44722e803a0464ab817eef16e11cc4
+         * time_out : 1532632705
          */
 
         private String user_id;
@@ -110,7 +110,7 @@ public class Login {
         private String visit_count;
         private String user_rank;
         private String is_special;
-        private String ec_salt;
+        private Object ec_salt;
         private String salt;
         private String parent_id;
         private String flag;
@@ -307,11 +307,11 @@ public class Login {
             this.is_special = is_special;
         }
 
-        public String getEc_salt() {
+        public Object getEc_salt() {
             return ec_salt;
         }
 
-        public void setEc_salt(String ec_salt) {
+        public void setEc_salt(Object ec_salt) {
             this.ec_salt = ec_salt;
         }
 

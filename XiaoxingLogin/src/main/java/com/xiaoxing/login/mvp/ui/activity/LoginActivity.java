@@ -154,8 +154,14 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void doLoginSuccess(Login login) {
+        SnackbarUtils.Short(btnLogin, login.getMsg()).info().show();
 
-        mSharedPreferencesHelper.putString(BaseConstants.TOKEN, login.getData().getToken());
+        if (login.getCode() == 200) {
+            mSharedPreferencesHelper.putString(BaseConstants.TOKEN, login.getData().getToken());
+            killMyself();
+        }
+
+
     }
 
 
