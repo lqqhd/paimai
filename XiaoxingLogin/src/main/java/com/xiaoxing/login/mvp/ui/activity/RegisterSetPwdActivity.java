@@ -7,7 +7,9 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.widget.Button;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -16,6 +18,7 @@ import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerRegisterSetPwdComponent;
 import com.xiaoxing.login.di.module.RegisterSetPwdModule;
 import com.xiaoxing.login.mvp.contract.RegisterSetPwdContract;
+import com.xiaoxing.login.mvp.model.entity.UserRegister;
 import com.xiaoxing.login.mvp.presenter.RegisterSetPwdPresenter;
 import com.xw.repo.XEditText;
 
@@ -38,6 +41,9 @@ public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter
     @BindView(R2.id.btn_ok)
     Button btnOk;
 
+    @Autowired
+    String mPhone;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerRegisterSetPwdComponent //如找不到该类,请编译一下项目
@@ -46,6 +52,8 @@ public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter
                 .registerSetPwdModule(new RegisterSetPwdModule(this))
                 .build()
                 .inject(this);
+        ARouter.getInstance().inject(this);
+
     }
 
     @Override
@@ -103,8 +111,8 @@ public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter
             SnackbarUtils.Short(btnOk, "两次密码输入的不一致，请重新输入").info().show();
             return;
         }
-        SnackbarUtils.Short(btnOk, "设置成功").info().show();
-        killMyself();
+
+        mPresenter.userRegister(mPhone, getNewPassword());
     }
 
     @NonNull
@@ -122,5 +130,14 @@ public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter
     public void onClick() {
         wanCheng();
 
+    }
+
+    @Override
+    public void userRegisterSuccess(UserRegister userRegister) {
+
+
+        SnackbarUtils.Short(btnOk, userRegister.getMsg()).info().show();
+        if (userRegister.getCode() == 200)
+            killMyself();
     }
 }

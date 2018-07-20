@@ -13,7 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -58,7 +60,8 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
 
 
     private EventHandler eh;
-    private String mPhone = "";
+    @Autowired
+    String mPhone;
     private String mCode = "";
 
     @Override
@@ -69,6 +72,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
                 .registerVerificationCodeModule(new RegisterVerificationCodeModule(this))
                 .build()
                 .inject(this);
+        ARouter.getInstance().inject(this);
     }
 
     @Override
@@ -81,17 +85,19 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_verification));
 
 
-        Bundle bundle = getIntent().getExtras();
-        mPhone = bundle.getString(PHONE);
         tvPhone.setText(mPhone);
         startCountdown();
 
         get4Code();
 
+        smsSend();
+//        initMobSms();
+    }
+
+    private void smsSend() {
         if (!TextUtils.isEmpty(mCode)) {
             mPresenter.smsSend(mPhone, mCode);
         }
-//        initMobSms();
     }
 
     private void initMobSms() {
@@ -108,6 +114,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
 
         get4Code();
         cdBtn.startCountdown();
+        smsSend();
 //        getVerificationCode(mPhone);
     }
 
@@ -153,7 +160,8 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
         }
         if (getCode().equals(mCode)) {
 
-            Utils.navigation(RegisterVerificationCodeActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_SET_PWD_ACTIVITY);
+            ARouter.getInstance().build(RouterHub.XIAO_XING_LOGIN_REGISTER_SET_PWD_ACTIVITY).withString("mPhone", mPhone).navigation(this);
+
             killMyself();
         } else {
             SnackbarUtils.Short(btnNext, "验证码错误，请重新输入").info().show();

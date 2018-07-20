@@ -3,6 +3,7 @@ package com.xiaoxing.login.mvp.model.api.service;
 import com.xiaoxing.login.mvp.model.entity.Login;
 import com.xiaoxing.login.mvp.model.entity.SmsSend;
 import com.xiaoxing.login.mvp.model.entity.UserCheckphone;
+import com.xiaoxing.login.mvp.model.entity.UserRegister;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -40,6 +41,16 @@ public interface LoginService {
      */
     @GET("/api/aliyun/sms/sms_send.php")
     Observable<SmsSend> smsSend(@Query("phone") String phone, @Query("code") String code);
+
+    /**
+     * 注册接口
+     *
+     * @param mobile_phone
+     * @param password1
+     * @return
+     */
+    @GET("/api/userRegister.php")
+    Observable<UserRegister> userRegister(@Query("mobile_phone") String mobile_phone, @Query("password1") String password1);
 
 
 }

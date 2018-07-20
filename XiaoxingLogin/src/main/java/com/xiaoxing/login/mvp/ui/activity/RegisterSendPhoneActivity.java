@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -54,6 +55,7 @@ public class RegisterSendPhoneActivity extends BaseActivity<RegisterSendPhonePre
                 .registerSendPhoneModule(new RegisterSendPhoneModule(this))
                 .build()
                 .inject(this);
+
     }
 
     @Override
@@ -142,10 +144,12 @@ public class RegisterSendPhoneActivity extends BaseActivity<RegisterSendPhonePre
             Bundle bundle = new Bundle();
             bundle.putString(PHONE, getPhone());
 
-            Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY, bundle);
+            ARouter.getInstance().build(RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY).withString("mPhone",getPhone()).navigation(this);
+
+//            Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY, bundle);
             killMyself();
         } else {
-            ArmsUtils.snackbarText(userCheckphone.getMsg());
+            SnackbarUtils.Short(btnNext, userCheckphone.getMsg()).info().show();
         }
     }
 }

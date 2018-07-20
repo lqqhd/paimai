@@ -11,6 +11,10 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.xiaoxing.login.mvp.contract.RegisterSetPwdContract;
+import com.xiaoxing.login.mvp.model.api.service.LoginService;
+import com.xiaoxing.login.mvp.model.entity.UserRegister;
+
+import io.reactivex.Observable;
 
 
 @ActivityScope
@@ -30,5 +34,10 @@ public class RegisterSetPwdModel extends BaseModel implements RegisterSetPwdCont
         super.onDestroy();
         this.mGson = null;
         this.mApplication = null;
+    }
+
+    @Override
+    public Observable<UserRegister> userRegister(String mobile_phone, String password1) {
+        return mRepositoryManager.obtainRetrofitService(LoginService.class).userRegister(mobile_phone, password1);
     }
 }
