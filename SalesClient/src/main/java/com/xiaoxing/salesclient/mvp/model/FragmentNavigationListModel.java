@@ -9,6 +9,10 @@ import com.jess.arms.mvp.BaseModel;
 import javax.inject.Inject;
 
 import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationListContract;
+import com.xiaoxing.salesclient.mvp.model.entity.Category;
+import com.xiaoxing.salesclient.mvp.model.service.SalesService;
+
+import io.reactivex.Observable;
 
 
 public class FragmentNavigationListModel extends BaseModel implements FragmentNavigationListContract.Model {
@@ -27,5 +31,10 @@ public class FragmentNavigationListModel extends BaseModel implements FragmentNa
         super.onDestroy();
         this.mGson = null;
         this.mApplication = null;
+    }
+
+    @Override
+    public Observable<Category> getCategory(String cat_id) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).category(cat_id);
     }
 }

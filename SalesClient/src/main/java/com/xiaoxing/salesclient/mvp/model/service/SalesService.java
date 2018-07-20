@@ -4,6 +4,7 @@ import com.jess.arms.base.BaseResponse;
 import com.xiaoxing.salesclient.mvp.model.entity.Article;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionBid;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
+import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
 import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
@@ -100,6 +101,11 @@ public interface SalesService {
     @GET("/api/my_collection_store_list.php")
     Observable<WoDeGuanZhu> getMyCollectionStoreList(
             @Query("access_token") String access_token
+    );
+
+    @GET("/api/category.php")
+    Observable<Category> category(
+            @Query("cat_id") String cat_id
     );
 
 }

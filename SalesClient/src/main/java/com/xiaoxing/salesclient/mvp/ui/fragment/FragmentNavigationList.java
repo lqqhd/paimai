@@ -19,6 +19,7 @@ import com.xiaoxing.salesclient.di.component.DaggerFragmentNavigationListCompone
 import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
 import com.xiaoxing.salesclient.di.module.FragmentNavigationListModule;
 import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationListContract;
+import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.presenter.FragmentNavigationListPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter;
@@ -84,6 +85,9 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+
+
+        mPresenter.getCategory("5");
 
         List<NavigationListData> navigationListData = new ArrayList<>();
 
@@ -265,6 +269,11 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
     @Override
     public void showMessage(@NonNull String message) {
+
+    }
+
+    @Override
+    public void categorySuccess(Category category) {
 
     }
 }

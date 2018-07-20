@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
+import com.xiaoxing.salesclient.di.component.DaggerFragmentNavigationListComponent;
+import com.xiaoxing.salesclient.di.module.FragmentNavigationListModule;
 
 import java.util.ArrayList;
 
@@ -67,6 +69,5 @@ public class FragmentNavigation extends BaseFragment {
     @OnClick(R2.id.et_search)
     void toSearch() {
         Utils.navigation(getActivity(), RouterHub.XIAO_XING_SEARCH_SearchActivity);
-
     }
 }
