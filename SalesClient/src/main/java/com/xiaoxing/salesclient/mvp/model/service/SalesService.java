@@ -1,6 +1,5 @@
 package com.xiaoxing.salesclient.mvp.model.service;
 
-import com.jess.arms.base.BaseResponse;
 import com.xiaoxing.salesclient.mvp.model.entity.Article;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionBid;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
@@ -118,13 +117,11 @@ public interface SalesService {
     /**
      * 专场列表
      *
-     * @param specialcat_id
      * @return
      */
 
     @GET("/api/specialcat.php")
     Observable<Specialcat> specialcat(
-            @Query("specialcat_id") String specialcat_id
     );
 
 }

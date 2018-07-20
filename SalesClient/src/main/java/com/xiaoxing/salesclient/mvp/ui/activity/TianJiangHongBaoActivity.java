@@ -28,6 +28,7 @@ import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.salesclient.di.component.DaggerTianJiangHongBaoComponent;
 import com.xiaoxing.salesclient.di.module.TianJiangHongBaoModule;
 import com.xiaoxing.salesclient.mvp.contract.TianJiangHongBaoContract;
+import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import com.xiaoxing.salesclient.mvp.presenter.TianJiangHongBaoPresenter;
 
 import com.xiaoxing.salesclient.mvp.ui.adapter.AllZhuanChangAdapter;
@@ -54,7 +55,7 @@ public class TianJiangHongBaoActivity extends BaseActivity<TianJiangHongBaoPrese
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
-
+    private List<Specialcat.DataBean> mDataBeans = new ArrayList<>();
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerTianJiangHongBaoComponent //如找不到该类,请编译一下项目
@@ -125,7 +126,7 @@ public class TianJiangHongBaoActivity extends BaseActivity<TianJiangHongBaoPrese
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(TianJiangHongBaoActivity.this));
                 mRecyclerView.addItemDecoration(new DividerItemDecoration(TianJiangHongBaoActivity.this, VERTICAL));
                 mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                mRecyclerView.setAdapter(mAdapter = new AllZhuanChangAdapter(loadModels()));
+                mRecyclerView.setAdapter(mAdapter = new AllZhuanChangAdapter(TianJiangHongBaoActivity.this, mDataBeans));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {

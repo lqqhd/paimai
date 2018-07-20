@@ -19,17 +19,14 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
-import com.jess.arms.utils.ArmsUtils;
-import com.jess.arms.utils.DataHelper;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.xiaoxing.salesclient.di.component.DaggerFragmentHomeComponent;
 import com.xiaoxing.salesclient.di.component.DaggerFragmentWoDeGuanZhuComponent;
-import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
 import com.xiaoxing.salesclient.di.module.FragmentWoDeGuanZhuModule;
 import com.xiaoxing.salesclient.mvp.contract.FragmentWoDeGuanZhuContract;
+import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
 import com.xiaoxing.salesclient.mvp.presenter.FragmentWoDeGuanZhuPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.AllZhuanChangAdapter;
@@ -39,7 +36,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
-import me.jessyan.armscomponent.commonsdk.core.Constants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
@@ -60,7 +56,7 @@ public class FragmentWoDeGuanZhu extends BaseFragment<FragmentWoDeGuanZhuPresent
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
 
-
+    private List<Specialcat.DataBean> mDataBeans = new ArrayList<>();
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
 
@@ -130,7 +126,7 @@ public class FragmentWoDeGuanZhu extends BaseFragment<FragmentWoDeGuanZhuPresent
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mAdapter = new AllZhuanChangAdapter(loadModels()));
+        mRecyclerView.setAdapter(mAdapter = new AllZhuanChangAdapter(getActivity(), mDataBeans));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
