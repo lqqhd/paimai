@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import com.innodroid.expandablerecycler.ExpandableRecyclerAdapter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
+import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationListContract;
+import com.xiaoxing.salesclient.mvp.presenter.FragmentNavigationListPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.FeedArticleData;
@@ -30,7 +32,7 @@ import q.rorbin.verticaltablayout.widget.TabView;
 import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
-public class FragmentNavigationList extends BaseFragment {
+public class FragmentNavigationList extends BaseFragment<FragmentNavigationListPresenter> implements FragmentNavigationListContract.View {
 
     public static String[] cates = {"陶瓷陶器", "玉器玉雕", "古币纸钱", "收藏杂项", "铜器铜雕", "中国书画", "古典家具", "邮票邮品", "齐化奇石", "金银珠宝", "专题收藏", "雕品工艺", "图书报刊", "西画雕塑"};
 
@@ -249,6 +251,11 @@ public class FragmentNavigationList extends BaseFragment {
 
     @Override
     public void setData(@Nullable Object data) {
+
+    }
+
+    @Override
+    public void showMessage(@NonNull String message) {
 
     }
 }
