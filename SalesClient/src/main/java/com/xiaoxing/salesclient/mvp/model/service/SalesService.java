@@ -3,6 +3,7 @@ package com.xiaoxing.salesclient.mvp.model.service;
 import com.xiaoxing.salesclient.mvp.model.entity.Article;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionBid;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
+import com.xiaoxing.salesclient.mvp.model.entity.AuctionSearch;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
 import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
@@ -128,6 +129,10 @@ public interface SalesService {
     @GET("/api/specialcat.php")
     Observable<SpecialcatDetail> getSpecialcatDetail(
             @Query("specialcat_id") String specialcat_id
+    );
+   @GET("/api/auction_search.php")
+    Observable<AuctionSearch> getAuctionSearch(
+            @Query("keywords") String keywords
     );
 
 }
