@@ -6,6 +6,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.AuctionBid;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
+import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
 import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
 
@@ -103,9 +104,27 @@ public interface SalesService {
             @Query("access_token") String access_token
     );
 
+    /**
+     * 分类接口
+     *
+     * @param cat_id
+     * @return
+     */
     @GET("/api/category.php")
     Observable<Category> category(
             @Query("cat_id") String cat_id
+    );
+
+    /**
+     * 专场列表
+     *
+     * @param specialcat_id
+     * @return
+     */
+
+    @GET("/api/specialcat.php")
+    Observable<Specialcat> specialcat(
+            @Query("specialcat_id") String specialcat_id
     );
 
 }
