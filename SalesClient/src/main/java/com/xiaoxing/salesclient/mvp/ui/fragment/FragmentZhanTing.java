@@ -51,8 +51,19 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
+    private String mSort;
 
     private List<StoreShop.DataBean> mDataBeans = new ArrayList<>();
+
+    public static FragmentZhanTing newInstance(String sort) {
+
+        Bundle args = new Bundle();
+        args.putString("sort", sort);
+        FragmentZhanTing fragment = new FragmentZhanTing();
+        fragment.setArguments(args);
+        return fragment;
+
+    }
 
 
     @Override
@@ -110,13 +121,15 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
 
+        mSort = getArguments().getString("sort");
+
         mRefreshLayout.autoRefresh();
         mRefreshLayout.setEnableLoadMore(false);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mAdapter = new ZhanTingAdapter(mDataBeans,getActivity() ));
+        mRecyclerView.setAdapter(mAdapter = new ZhanTingAdapter(mDataBeans, getActivity()));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
@@ -141,7 +154,8 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
     }
 
     private void getStoreShopData() {
-        mPresenter.getStoreShop("", "goods_number", "DESC", "0");
+
+        mPresenter.getStoreShop("", mSort, "DESC", "0");
     }
 
     @Override

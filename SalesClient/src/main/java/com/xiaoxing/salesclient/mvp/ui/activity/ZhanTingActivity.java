@@ -60,10 +60,10 @@ public class ZhanTingActivity extends BaseActivity<ZhanTingPresenter> implements
             }
         });
         ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(new FragmentZhanTing());
-        mFragments.add(new FragmentZhanTing());
-        mFragments.add(new FragmentZhanTing());
-        mFragments.add(new FragmentZhanTing());
+        mFragments.add(FragmentZhanTing.newInstance("sales_volume"));
+        mFragments.add(FragmentZhanTing.newInstance(""));
+        mFragments.add(FragmentZhanTing.newInstance("sales_volume"));
+        mFragments.add(FragmentZhanTing.newInstance("goods_number"));
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
 
