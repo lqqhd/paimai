@@ -34,7 +34,7 @@ public class FragmentNavigationListModel extends BaseModel implements FragmentNa
     }
 
     @Override
-    public Observable<Category> getCategory(String cat_id) {
-        return mRepositoryManager.obtainRetrofitService(SalesService.class).category(cat_id);
+    public Observable<Category> getCategory() {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).category();
     }
 }

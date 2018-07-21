@@ -6,86 +6,94 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.innodroid.expandablerecycler.ExpandableRecyclerAdapter;
+import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerClickListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
-//import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome.BANNER_ITEMS;
+import static com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiDetailActivity.BANNER_ITEMS;
 
 public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationListAdapter.NavigationListItem> {
-    public static final int TYPE_SHANG_JIA_NAME = 1000; //商家名称
-    public static final int TYPE_PRODUCTS = 1001; //商家订单多个商品
-    public static final int TYPE_FOOTER = 1002; //商家订单底部统计
+    public static final int TYPE_BANNER = 1000; //商家名称
+    public static final int TYPE_CATNAME = 1001; //商家订单多个商品
+    public static final int TYPE_GOODS = 1002; //商家订单底部统计
     private Context mContext;
 
-    public NavigationListAdapter(Context context) {
+    public NavigationListAdapter(Context context, Category category) {
         super(context);
         this.mContext = context;
-        setItems(getSampleItems());
+        setItems(getSampleItems(category));
     }
 
     public static class NavigationListItem extends ExpandableRecyclerAdapter.ListItem {
         public String Text;
 
+        public String mCatname;
+        public String mGoodsName;
+        public String mGoodsImg;
+        public List<Category.DataBean.SecondCategoryBean.GoodsBean> mGoodsBeanList;
+
         public NavigationListItem(String group) {
-            super(TYPE_SHANG_JIA_NAME);
+            super(TYPE_BANNER);
             Text = group;
         }
 
         public NavigationListItem(String first, String last) {
-            super(TYPE_PRODUCTS);
+            super(TYPE_CATNAME);
             Text = first + " " + last;
+
+            mCatname = first;
         }
 
-        public NavigationListItem(String first, String last, String footer) {
-            super(TYPE_FOOTER);
-            Text = first + " " + last + " " + footer;
+        public NavigationListItem(List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans, String last, String footer) {
+            super(TYPE_GOODS);
+            mGoodsBeanList = goodsBeans;
         }
     }
 
-    public class ShangJiaNameViewHolder extends ExpandableRecyclerAdapter.ViewHolder {
+    public class BannerViewHolder extends ExpandableRecyclerAdapter.ViewHolder {
 
-        public ShangJiaNameViewHolder(View view) {
+        public BannerViewHolder(View view) {
             super(view);
-//            Banner banner = view.findViewById(R.id.convenientBanner);
-//
-//            banner.setImageLoader(new GlideImageLoader());
-//            banner.setImages(BANNER_ITEMS);
-//            banner.start();
-//
-//            banner.setOnBannerClickListener(new OnBannerClickListener() {
-//                @Override
-//                public void OnBannerClick(int position) {
-//                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
-//                }
-//            });
+            Banner banner = view.findViewById(R.id.convenientBanner);
+
+            banner.setImageLoader(new GlideImageLoader());
+            banner.setImages(BANNER_ITEMS);
+            banner.start();
+
+            banner.setOnBannerClickListener(new OnBannerClickListener() {
+                @Override
+                public void OnBannerClick(int position) {
+                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
+                }
+            });
         }
 
         public void bind(int position) {
         }
     }
 
-    public class ProductsViewHolder extends ExpandableRecyclerAdapter.ViewHolder {
-        List<Map<String, Object>> data_list;
+    public class GoodsViewHolder extends ExpandableRecyclerAdapter.ViewHolder {
+        List<Category.DataBean.SecondCategoryBean.GoodsBean> data_list;
 
-        public ProductsViewHolder(View view) {
+        private NavigationGridGoodsAdapter simpleAdapter;
+        private List<Category.DataBean.SecondCategoryBean.GoodsBean> mList = new ArrayList<>();
+
+        public GoodsViewHolder(View view) {
             super(view);
             GridView gridView = (GridView) view.findViewById(R.id.gridview);
-            data_list = new ArrayList<Map<String, Object>>();
-            SimpleAdapter simpleAdapter = new SimpleAdapter(mContext, getData(), R.layout.sales_client_item_navigation_list_cat1_products, new String[]{"pic", "text"}, new int[]{R.id.img_product, R.id.item_navigation_tv});
+            data_list = new ArrayList();
+            simpleAdapter = new NavigationGridGoodsAdapter(mContext, mList);
             gridView.setAdapter(simpleAdapter);
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -96,26 +104,31 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
         }
 
         public void bind(int position) {
+
+            mList.addAll(visibleItems.get(position).mGoodsBeanList);
+            simpleAdapter.notifyDataSetChanged();
+
         }
 
-        private List<Map<String, Object>> getData() {
-            for (int i = 0; i < 9; i++) {
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put("pic", R.mipmap.goods_001);
-                map.put("text", "陶瓷");
-                data_list.add(map);
-            }
-            return data_list;
-        }
+//        private List<Map<String, Object>> getData() {
+//            for (int i = 0; i < visibleItems.get(position).mCatname; i++) {
+//                Map<String, Object> map = new HashMap<String, Object>();
+//                map.put("pic", R.mipmap.goods_001);
+//                map.put("text", "陶瓷");
+//                data_list.add(map);
+//            }
+//            return data_list;
+//        }
     }
 
-    public class FooterViewHolder extends ExpandableRecyclerAdapter.ViewHolder {
+    public class CatnameViewHolder extends ExpandableRecyclerAdapter.ViewHolder {
 
-        public FooterViewHolder(View view) {
+        private TextView item_navigation_tv_title;
+
+        public CatnameViewHolder(View view) {
             super(view);
             RelativeLayout rl_navigation_cat1 = view.findViewById(R.id.rl_navigation_cat1);
-            TextView item_navigation_tv_title = view.findViewById(R.id.item_navigation_tv_title);
-            item_navigation_tv_title.setText("陶瓷陶器");
+            item_navigation_tv_title = view.findViewById(R.id.item_navigation_tv_title);
             rl_navigation_cat1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -126,34 +139,35 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
         }
 
         public void bind(int position) {
+            item_navigation_tv_title.setText(visibleItems.get(position).mCatname);
         }
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
-            case TYPE_SHANG_JIA_NAME:
-                return new ShangJiaNameViewHolder(inflate(R.layout.sales_client_item_navigation_banner, parent));
-            case TYPE_FOOTER:
-                return new FooterViewHolder(inflate(R.layout.sales_client_item_navigation_list_cat1, parent));
-            case TYPE_PRODUCTS:
+            case TYPE_BANNER:
+                return new BannerViewHolder(inflate(R.layout.sales_client_item_navigation_banner, parent));
+            case TYPE_CATNAME:
+                return new CatnameViewHolder(inflate(R.layout.sales_client_item_navigation_list_cat1, parent));
+            case TYPE_GOODS:
             default:
-                return new ProductsViewHolder(inflate(R.layout.sales_client_item_navigation_list_gridview, parent));
+                return new GoodsViewHolder(inflate(R.layout.sales_client_item_navigation_list_gridview, parent));
         }
     }
 
     @Override
     public void onBindViewHolder(ExpandableRecyclerAdapter.ViewHolder holder, int position) {
         switch (getItemViewType(position)) {
-            case TYPE_SHANG_JIA_NAME:
-                ((ShangJiaNameViewHolder) holder).bind(position);
+            case TYPE_BANNER:
+                ((BannerViewHolder) holder).bind(position);
                 break;
-            case TYPE_FOOTER:
-                ((FooterViewHolder) holder).bind(position);
+            case TYPE_CATNAME:
+                ((CatnameViewHolder) holder).bind(position);
                 break;
-            case TYPE_PRODUCTS:
+            case TYPE_GOODS:
             default:
-                ((ProductsViewHolder) holder).bind(position);
+                ((GoodsViewHolder) holder).bind(position);
                 break;
         }
     }
@@ -161,22 +175,55 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
     private List<NavigationListItem> getSampleItems() {
         List<NavigationListItem> items = new ArrayList<>();
 
-        items.add(new NavigationListItem("Friends"));
-        items.add(new NavigationListItem("Pete", "Lake", "统计"));
-        items.add(new NavigationListItem("Frank", "Hall"));
-        items.add(new NavigationListItem("Sue", "West"));
-        items.add(new NavigationListItem("Drew", "Smith"));
-        items.add(new NavigationListItem("Alex", "Hall"));
-        items.add(new NavigationListItem("Pete", "Lake", "统计"));
-        items.add(new NavigationListItem("John", "Jones"));
-        items.add(new NavigationListItem("Ed", "Smith"));
-        items.add(new NavigationListItem("Jane", "Hall"));
-        items.add(new NavigationListItem("Tim", "Lake"));
-        items.add(new NavigationListItem("Pete", "Lake", "统计"));
-        items.add(new NavigationListItem("Carol", "Jones"));
-        items.add(new NavigationListItem("Alex", "Smith"));
-        items.add(new NavigationListItem("Kristin", "Hall"));
-        items.add(new NavigationListItem("Pete", "Lake"));
+//        items.add(new NavigationListItem("Friends"));
+//        items.add(new NavigationListItem("Pete", "Lake", "统计"));
+//        items.add(new NavigationListItem("Frank", "Hall"));
+//        items.add(new NavigationListItem("Sue", "West"));
+//        items.add(new NavigationListItem("Drew", "Smith"));
+//        items.add(new NavigationListItem("Alex", "Hall"));
+//        items.add(new NavigationListItem("Pete", "Lake", "统计"));
+//        items.add(new NavigationListItem("John", "Jones"));
+//        items.add(new NavigationListItem("Ed", "Smith"));
+//        items.add(new NavigationListItem("Jane", "Hall"));
+//        items.add(new NavigationListItem("Tim", "Lake"));
+//        items.add(new NavigationListItem("Pete", "Lake", "统计"));
+//        items.add(new NavigationListItem("Carol", "Jones"));
+//        items.add(new NavigationListItem("Alex", "Smith"));
+//        items.add(new NavigationListItem("Kristin", "Hall"));
+//        items.add(new NavigationListItem("Pete", "Lake"));
+
+        return items;
+    }
+
+    public List<NavigationListAdapter.NavigationListItem> getSampleItems(Category category) {
+        List<NavigationListAdapter.NavigationListItem> items = new ArrayList<>();
+
+        items.add(new NavigationListAdapter.NavigationListItem(""));
+        List<Category.DataBean.SecondCategoryBean> secondCategoryBeanList = category.getData().getSecond_category();
+        if (secondCategoryBeanList != null)
+            if (secondCategoryBeanList.size() > 0) {
+                for (int i = 0; i < secondCategoryBeanList.size(); i++) {
+
+                    items.add(new NavigationListAdapter.NavigationListItem(secondCategoryBeanList.get(i).getCat_name(), ""));
+
+                    List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsListBeanList = secondCategoryBeanList.get(i).getGoods();
+                    items.add(new NavigationListAdapter.NavigationListItem(goodsListBeanList, "", ""));
+
+//                    if (goodsListBeanList != null)
+//
+//                        if (goodsListBeanList.size() > 0) {
+//
+//                            for (int i1 = 0; i1 < goodsListBeanList.size(); i1++) {
+//
+//                                items.add(new NavigationListAdapter.NavigationListItem(goodsListBeanList.get(i1).getGoods_name(), goodsListBeanList.get(i1).getGoods_thumb(), ""));
+//                            }
+//
+//                        }
+
+
+                }
+            }
+
 
         return items;
     }

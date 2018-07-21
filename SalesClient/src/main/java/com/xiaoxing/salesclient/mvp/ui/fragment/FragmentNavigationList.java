@@ -3,7 +3,6 @@ package com.xiaoxing.salesclient.mvp.ui.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,14 +13,11 @@ import android.widget.LinearLayout;
 import com.innodroid.expandablerecycler.ExpandableRecyclerAdapter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
-import com.xiaoxing.salesclient.di.component.DaggerFragmentHomeComponent;
 import com.xiaoxing.salesclient.di.component.DaggerFragmentNavigationListComponent;
-import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
 import com.xiaoxing.salesclient.di.module.FragmentNavigationListModule;
 import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationListContract;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.presenter.FragmentNavigationListPresenter;
-import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.FeedArticleData;
 import com.xiaoxing.salesclient.mvp.ui.entity.NavigationListData;
@@ -87,79 +83,9 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
     public void initData(@Nullable Bundle savedInstanceState) {
 
 
-        mPresenter.getCategory("5");
+        mPresenter.getCategory();
 
-        List<NavigationListData> navigationListData = new ArrayList<>();
 
-        List<FeedArticleData> articles = new ArrayList<>();
-
-        FeedArticleData feedArticleData = new FeedArticleData();
-        feedArticleData.setChapterName("分类11");
-
-        articles.add(feedArticleData);
-        articles.add(feedArticleData);
-        articles.add(feedArticleData);
-
-        for (int i = 0; i < cates.length; i++) {
-
-            NavigationListData navigationListData1 = new NavigationListData();
-
-            navigationListData1.setName(cates[i]);
-            navigationListData1.setArticles(articles);
-
-            navigationListData.add(navigationListData1);
-
-        }
-
-        mTabLayout.setTabAdapter(new TabAdapter() {
-            @Override
-            public int getCount() {
-                return navigationListData == null ? 0 : navigationListData.size();
-            }
-
-            @Override
-            public ITabView.TabBadge getBadge(int i) {
-                return null;
-            }
-
-            @Override
-            public ITabView.TabIcon getIcon(int i) {
-                return null;
-            }
-
-            @Override
-            public ITabView.TabTitle getTitle(int i) {
-                return new TabView.TabTitle.Builder()
-                        .setContent(navigationListData.get(i).getName())
-                        .setTextSize(14)
-                        .setTextColor(getResources().getColor(R.color.sales_client_navigation_tv_selected), getResources().getColor(R.color.sales_client_navigation_tv_normal))
-                        .build();
-            }
-
-            @Override
-            public int getBackground(int i) {
-                return -1;
-            }
-        });
-
-//        if (mDataManager.getCurrentPage() == Constants.TYPE_NAVIGATION) {
-        mNavigationGroup.setVisibility(View.VISIBLE);
-        mTabLayout.setVisibility(View.VISIBLE);
-        mDivider.setVisibility(View.VISIBLE);
-//        } else {
-//            mNavigationGroup.setVisibility(View.INVISIBLE);
-//            mTabLayout.setVisibility(View.INVISIBLE);
-//            mDivider.setVisibility(View.INVISIBLE);
-//        }
-//        NavigationAdapter adapter = new NavigationAdapter(R.layout.sales_client_item_navigation, navigationListData);
-        NavigationListAdapter navigationListAdapter = new NavigationListAdapter(getActivity());
-        navigationListAdapter.setMode(ExpandableRecyclerAdapter.MODE_ACCORDION);
-        mRecyclerView.setAdapter(navigationListAdapter);
-        navigationListAdapter.expandAll();
-//        mManager = new GridLayoutManager(getActivity(), 3);
-        mManager = new LinearLayoutManager(getActivity());
-        mRecyclerView.setLayoutManager(mManager);
-        leftRightLinkage();
     }
 
     /**
@@ -275,5 +201,90 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
     @Override
     public void categorySuccess(Category category) {
 
+
+        List<NavigationListData> navigationListData = new ArrayList<>();
+
+        List<FeedArticleData> articles = new ArrayList<>();
+
+        FeedArticleData feedArticleData = new FeedArticleData();
+        feedArticleData.setTitle("分类11");
+        feedArticleData.setChapterName("分类11");
+
+        articles.add(feedArticleData);
+        articles.add(feedArticleData);
+        articles.add(feedArticleData);
+
+        List<Category.DataBean.SecondCategoryBean> secondCategoryBeanList = category.getData().getSecond_category();
+
+        for (int i = 0; i < secondCategoryBeanList.size(); i++) {
+
+            NavigationListData navigationListData1 = new NavigationListData();
+
+            navigationListData1.setName(secondCategoryBeanList.get(i).getCat_name());
+            navigationListData1.setArticles(articles);
+
+            navigationListData.add(navigationListData1);
+
+        }
+//        for (int i = 0; i < cates.length; i++) {
+//
+//            NavigationListData navigationListData1 = new NavigationListData();
+//
+//            navigationListData1.setName(cates[i]);
+//            navigationListData1.setArticles(articles);
+//
+//            navigationListData.add(navigationListData1);
+//
+//        }
+
+        mTabLayout.setTabAdapter(new TabAdapter() {
+            @Override
+            public int getCount() {
+                return navigationListData == null ? 0 : navigationListData.size();
+            }
+
+            @Override
+            public ITabView.TabBadge getBadge(int i) {
+                return null;
+            }
+
+            @Override
+            public ITabView.TabIcon getIcon(int i) {
+                return null;
+            }
+
+            @Override
+            public ITabView.TabTitle getTitle(int i) {
+                return new TabView.TabTitle.Builder()
+                        .setContent(navigationListData.get(i).getName())
+                        .setTextSize(14)
+                        .setTextColor(getResources().getColor(R.color.sales_client_navigation_tv_selected), getResources().getColor(R.color.sales_client_navigation_tv_normal))
+                        .build();
+            }
+
+            @Override
+            public int getBackground(int i) {
+                return -1;
+            }
+        });
+
+//        if (mDataManager.getCurrentPage() == Constants.TYPE_NAVIGATION) {
+        mNavigationGroup.setVisibility(View.VISIBLE);
+        mTabLayout.setVisibility(View.VISIBLE);
+        mDivider.setVisibility(View.VISIBLE);
+//        } else {
+//            mNavigationGroup.setVisibility(View.INVISIBLE);
+//            mTabLayout.setVisibility(View.INVISIBLE);
+//            mDivider.setVisibility(View.INVISIBLE);
+//        }
+//        NavigationAdapter adapter = new NavigationAdapter(R.layout.sales_client_item_navigation, navigationListData);
+        NavigationListAdapter navigationListAdapter = new NavigationListAdapter(getActivity(),category);
+        navigationListAdapter.setMode(ExpandableRecyclerAdapter.MODE_ACCORDION);
+        mRecyclerView.setAdapter(navigationListAdapter);
+        navigationListAdapter.expandAll();
+//        mManager = new GridLayoutManager(getActivity(), 3);
+        mManager = new LinearLayoutManager(getActivity());
+        mRecyclerView.setLayoutManager(mManager);
+        leftRightLinkage();
     }
 }

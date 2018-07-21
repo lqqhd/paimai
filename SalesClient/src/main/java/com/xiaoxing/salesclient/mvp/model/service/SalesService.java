@@ -108,12 +108,10 @@ public interface SalesService {
     /**
      * 分类接口
      *
-     * @param cat_id
      * @return
      */
-    @GET("/api/category.php")
+    @GET("/api/category_index.php")
     Observable<Category> category(
-            @Query("cat_id") String cat_id
     );
 
     /**
@@ -135,5 +133,6 @@ public interface SalesService {
     Observable<AuctionSearch> getAuctionSearch(
             @Query("keywords") String keywords
     );
+
 
 }

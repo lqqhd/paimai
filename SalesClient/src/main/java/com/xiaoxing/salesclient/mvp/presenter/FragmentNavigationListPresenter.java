@@ -16,7 +16,6 @@ import javax.inject.Inject;
 import com.jess.arms.utils.RxLifecycleUtils;
 import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationListContract;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
-import com.xiaoxing.salesclient.mvp.model.entity.Index;
 
 
 public class FragmentNavigationListPresenter extends BasePresenter<FragmentNavigationListContract.Model, FragmentNavigationListContract.View> {
@@ -34,9 +33,9 @@ public class FragmentNavigationListPresenter extends BasePresenter<FragmentNavig
         super(model, rootView);
     }
 
-    public void getCategory(String cat_id) {
+    public void getCategory() {
 
-        mModel.getCategory(cat_id).subscribeOn(Schedulers.io())
+        mModel.getCategory().subscribeOn(Schedulers.io())
                 //                .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
                 .doOnSubscribe(disposable -> {
                     mRootView.showLoading();
