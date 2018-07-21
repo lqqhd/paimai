@@ -60,6 +60,7 @@ public interface RouterHub {
     String WELCOME_WELCOMEGUIDEACTIVITY = WELCOME + "/WelcomeGuideActivity";
 
     String XIAO_XING_SEARCH_SearchActivity = XIAO_XING_SEARCH + "/SearchActivity";
+    String XIAO_XING_SEARCH_SearchProductsActivity = XIAO_XING_SEARCH + "/SearchProductsActivity";
 
     /**
      * 宿主 App 分组

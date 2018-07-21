@@ -74,12 +74,14 @@
                 android:paddingLeft="@dimen/dp_10"
                 android:text="热门搜索"
                 android:textColor="@color/public_black"
-                android:textSize="@dimen/public_font_14sp" />
+                android:textSize="@dimen/public_font_14sp"
+                android:visibility="gone" />
 
             <me.jessyan.armscomponent.commonres.view.TagGroup
                 android:id="@+id/tag_group_small"
                 style="@style/TagGroup.Small"
                 android:layout_margin="@dimen/dp_10"
+                android:visibility="gone"
                 app:atg_backgroundColor="#F4F5F5"
                 app:atg_borderColor="#F4F5F5"
                 app:atg_textColor="@color/public_black" />

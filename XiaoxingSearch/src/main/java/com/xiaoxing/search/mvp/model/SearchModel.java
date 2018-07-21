@@ -11,6 +11,10 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.xiaoxing.search.mvp.contract.SearchContract;
+import com.xiaoxing.search.mvp.model.entity.AuctionSearch;
+import com.xiaoxing.search.mvp.model.service.SearchService;
+
+import io.reactivex.Observable;
 
 
 @ActivityScope
@@ -30,5 +34,10 @@ public class SearchModel extends BaseModel implements SearchContract.Model {
         super.onDestroy();
         this.mGson = null;
         this.mApplication = null;
+    }
+
+    @Override
+    public Observable<AuctionSearch> getSearch(String keywords) {
+        return mRepositoryManager.obtainRetrofitService(SearchService.class).getAuctionSearch(keywords);
     }
 }

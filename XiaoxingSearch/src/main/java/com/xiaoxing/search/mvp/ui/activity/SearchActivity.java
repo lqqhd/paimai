@@ -22,19 +22,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.xiaoxing.gifloadingview.LoadingDialogUtil;
 import com.xiaoxing.search.R;
 import com.xiaoxing.search.di.component.DaggerSearchComponent;
 import com.xiaoxing.search.di.module.SearchModule;
 import com.xiaoxing.search.mvp.contract.SearchContract;
+import com.xiaoxing.search.mvp.model.entity.AuctionSearch;
 import com.xiaoxing.search.mvp.presenter.SearchPresenter;
 import com.xiaoxing.search.mvp.ui.helper.RecordSQLiteOpenHelper;
 import com.xiaoxing.search.mvp.ui.helper.TagsManager;
 import com.xiaoxing.search.mvp.ui.view.MyListView;
+
 import me.jessyan.armscomponent.commonres.view.TagGroup;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
@@ -44,6 +49,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 @Route(path = RouterHub.XIAO_XING_SEARCH_SearchActivity)
 public class SearchActivity extends BaseActivity<SearchPresenter> implements SearchContract.View {
+    public static final String SEARCH_PRODUCTS = "search_products";
     private EditText et_search;
     private TextView tv_tip;
     private MyListView listView;
@@ -76,7 +82,7 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
 
         et_search = toolbar.findViewById(R.id.et_search);
 
-        et_search.setText("");
+        et_search.setText("玉");
         et_search.setFocusableInTouchMode(true);
 
 
@@ -102,13 +108,15 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
                     ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(
                             getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                     // 按完搜索键后将当前查询的关键字保存起来,如果该关键字已经存在就不执行保存
-                    boolean hasData = hasData(et_search.getText().toString().trim());
+                    boolean hasData = hasData(getEditSearch());
                     if (!hasData) {
-                        insertData(et_search.getText().toString().trim());
+                        insertData(getEditSearch());
                         queryData("");
                     }
+
+                    getSearchData();
                     // TODO 根据输入的内容模糊查询商品，并跳转到另一个界面，由你自己去实现
-                    Toast.makeText(SearchActivity.this, "clicked!", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SearchActivity.this, "clicked!", Toast.LENGTH_SHORT).show();
 
                 }
                 return false;
@@ -147,15 +155,14 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
                 TextView textView = (TextView) view.findViewById(android.R.id.text1);
                 String name = textView.getText().toString();
                 et_search.setText(name);
-                Toast.makeText(SearchActivity.this, name, Toast.LENGTH_SHORT).show();
+                getSearchData();
+//                Toast.makeText(SearchActivity.this, name, Toast.LENGTH_SHORT).show();
                 // TODO 获取到item上面的文字，根据该关键字跳转到另一个页面查询，由你自己去实现
             }
         });
 
         // 插入数据，便于测试，否则第一次进入没有数据怎么测试呀？
-        Date date = new Date();
-        long time = date.getTime();
-        insertData("Leo" + time);
+//        initTestDataFirst();
 
         // 第一次进入查询所有的历史记录
         queryData("");
@@ -174,12 +181,40 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
 
     }
 
+    private void getSearchData() {
+        mPresenter.getSearch(getEditSearch());
+    }
+
+    @NonNull
+    private String getEditSearch() {
+        return et_search.getText().toString().trim();
+    }
+
+    /**
+     * 进入搜索页面加入一条测试数据
+     */
+    private void initTestDataFirst() {
+        Date date = new Date();
+        long time = date.getTime();
+        insertData("Leo" + time);
+    }
+
     private TagGroup.OnTagClickListener mTagClickListener = new TagGroup.OnTagClickListener() {
         @Override
         public void onTagClick(String tag) {
             Toast.makeText(SearchActivity.this, tag, Toast.LENGTH_SHORT).show();
         }
     };
+
+    @Override
+    public void getSearchSuccess(AuctionSearch auctionSearch) {
+
+        ARouter.getInstance().build(RouterHub.XIAO_XING_SEARCH_SearchProductsActivity)
+                .withSerializable(SEARCH_PRODUCTS, (Serializable) auctionSearch.getData())
+                .navigation();
+
+
+    }
 
     class MyTagGroupOnClickListener implements View.OnClickListener {
         @Override
@@ -244,12 +279,12 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
 
     @Override
     public void showLoading() {
-
+        LoadingDialogUtil.showGifdialog1(getSupportFragmentManager(), R.drawable.loading);
     }
 
     @Override
     public void hideLoading() {
-
+        LoadingDialogUtil.dismissDialog();
     }
 
     @Override
