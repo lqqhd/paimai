@@ -121,12 +121,12 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
 
     @Override
     public void showLoading() {
-        LoadingDialogUtil.showGifdialog1(getSupportFragmentManager(), R.drawable.loading);
+//        LoadingDialogUtil.showGifdialog1(getSupportFragmentManager(), R.drawable.loading);
     }
 
     @Override
     public void hideLoading() {
-        LoadingDialogUtil.dismissDialog();
+//        LoadingDialogUtil.dismissDialog();
     }
 
     @Override

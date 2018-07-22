@@ -79,9 +79,9 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
 
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(new FragmentZhanTing());
-        mFragments.add(new FragmentZhanTing());
-        mFragments.add(new FragmentZhanTing());
+        mFragments.add(FragmentZhanTing.newInstance(""));
+        mFragments.add(FragmentZhanTing.newInstance(""));
+        mFragments.add(FragmentZhanTing.newInstance(""));
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
 

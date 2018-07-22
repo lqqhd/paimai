@@ -136,7 +136,6 @@ public class FragmentAllZhuanChang extends BaseFragment<FragmentAllZhuanChangPre
             }
         });
 
-        mRefreshLayout.autoRefresh();
 
         mRefreshLayout.setEnableLoadMore(false);
         return root;
@@ -158,11 +157,20 @@ public class FragmentAllZhuanChang extends BaseFragment<FragmentAllZhuanChangPre
     }
 
     @Override
+    public void showLoading() {
+        mRefreshLayout.autoRefresh();
+    }
+
+    @Override
+    public void hideLoading() {
+        mRefreshLayout.finishRefresh();
+    }
+
+    @Override
     public void specialcatSuccess(Specialcat specialcat) {
         mDataBeans.clear();
         mDataBeans.addAll(specialcat.getData());
         mAdapter.notifyDataSetChanged();
-        mRefreshLayout.finishRefresh();
         mEmptyLayout.setVisibility(View.GONE);
     }
 }

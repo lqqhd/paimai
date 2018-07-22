@@ -82,11 +82,15 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         mRefreshLayout.setRefreshHeader(new ClassicsHeader(ZhanTingGoodsListActivity.this).setSpinnerStyle(SpinnerStyle.FixedBehind).setPrimaryColorId(R.color.public_colorPrimary).setAccentColorId(android.R.color.white));
         mRefreshLayout.setOnRefreshListener(this);
 
+        mRefreshLayout.autoRefresh();
+
+        mRefreshLayout.setEnableLoadMore(false);
+
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(ZhanTingGoodsListActivity.this));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(ZhanTingGoodsListActivity.this, VERTICAL));
-        mAdapter = new ZhanTingGoodsListAdapter(mDataBeans);
+        mAdapter = new ZhanTingGoodsListAdapter(this, mDataBeans);
         LayoutInflater inflater = LayoutInflater.from(ZhanTingGoodsListActivity.this);
         View headView = inflater.inflate(R.layout.sales_client_activity_zhan_ting_goods_list_head, null, false);
 
@@ -115,9 +119,6 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         TextView empty = (TextView) findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
 
-        mRefreshLayout.autoRefresh();
-
-        mRefreshLayout.setEnableLoadMore(false);
 
     }
 

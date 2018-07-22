@@ -61,6 +61,17 @@ public class FragmentWoDeGuanZhu extends BaseFragment<FragmentWoDeGuanZhuPresent
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
 
         getMyCollectionStoreListData();
+
+    }
+
+    @Override
+    public void showLoading() {
+        mRefreshLayout.autoRefresh();
+    }
+
+    @Override
+    public void hideLoading() {
+        mRefreshLayout.finishRefresh();
     }
 
     private void getMyCollectionStoreListData() {
@@ -120,7 +131,6 @@ public class FragmentWoDeGuanZhu extends BaseFragment<FragmentWoDeGuanZhuPresent
         empty.setText("暂无数据下拉刷新");
 
 
-        mRefreshLayout.autoRefresh();
         mRefreshLayout.setEnableLoadMore(false);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

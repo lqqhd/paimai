@@ -86,7 +86,7 @@ public class FragmentReMenPaiMai extends Fragment implements OnRefreshListener {
                         mRefreshLayout.autoRefresh();
                     }
                 }
-            }, 3000);
+            }, 0);
             mRefreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
                 @Override
                 public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
