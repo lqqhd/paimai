@@ -105,7 +105,7 @@ public class WelcomeActivity extends BaseActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 if (BuildConfig.IS_SALALS_CLIENT) {
-                    Utils.navigation(WelcomeActivity.this, RouterHub.SALES_CLIENT_PAI_MAI_MAIN_ACTIVITY);
+                    Utils.navigation(WelcomeActivity.this, RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
                 } else {
                     Utils.navigation(WelcomeActivity.this, RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
                 }

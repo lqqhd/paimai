@@ -158,6 +158,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
         if (login.getCode() == 200) {
             mSharedPreferencesHelper.putString(BaseConstants.TOKEN, login.getData().getToken());
+            Utils.navigation(LoginActivity.this, RouterHub.SALES_CLIENT_PAI_MAI_MAIN_ACTIVITY);
             killMyself();
         }
 

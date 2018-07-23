@@ -58,9 +58,9 @@ public class PaiMaiMainActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this);
-        initDisplayOpinion();
-        initAdData();
-        showDialog();
+//        initDisplayOpinion();
+//        initAdData();
+//        showDialog();
     }
 
     /**
@@ -112,7 +112,7 @@ public class PaiMaiMainActivity extends BaseActivity {
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         instance = this;
-        CheckVersionUtil.checkVersion(this);
+//        CheckVersionUtil.checkVersion(this);
         PageNavigationView tab = (PageNavigationView) findViewById(R.id.tab);
 
         NavigationController navigationController = tab.custom()
