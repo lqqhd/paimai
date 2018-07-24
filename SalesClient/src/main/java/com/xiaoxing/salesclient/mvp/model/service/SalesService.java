@@ -10,6 +10,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
 import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
+import com.xiaoxing.salesclient.mvp.ui.entity.AppUpdate;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -132,6 +133,9 @@ public interface SalesService {
     @GET("/api/auction_search.php")
     Observable<AuctionSearch> getAuctionSearch(
             @Query("keywords") String keywords
+    );
+    @GET("/api/update.php")
+    Observable<AppUpdate> checkAppUpdate(
     );
 
 

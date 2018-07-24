@@ -17,15 +17,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:src="@mipmap/home_zhuang_chang_ad1" />
+            android:src="@drawable/home_zhuang_chang_ad1" />
 
-        <ImageView
-            android:id="@+id/img_wei_pai"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@mipmap/home_zhuang_chang_ad2" />
+
     </LinearLayout>
 
 
@@ -34,6 +28,13 @@
         android:layout_height="@dimen/dp_100"
         android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/img_wei_pai"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/home_zhuang_chang_ad2" />
 
         <ImageView
             android:id="@+id/img_cang_pin"
@@ -41,7 +42,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:src="@mipmap/home_zhuang_chang_ad3" />
+            android:src="@drawable/home_zhuang_chang_ad3" />
 
         <ImageView
             android:id="@+id/img_zhan_ting"
@@ -49,7 +50,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:src="@mipmap/home_zhuang_chang_ad4" />
+            android:src="@drawable/home_zhuang_chang_ad4" />
 
         <ImageView
             android:id="@+id/img_gu_sou"
@@ -57,7 +58,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:src="@mipmap/home_zhuang_chang_ad5" />
+            android:src="@drawable/home_zhuang_chang_ad5" />
     </LinearLayout>
 
 </LinearLayout>

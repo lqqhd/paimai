@@ -24,12 +24,14 @@ import com.uuch.adlibrary.AdConstant;
 import com.uuch.adlibrary.AdManager;
 import com.uuch.adlibrary.bean.AdInfo;
 import com.uuch.adlibrary.utils.DisplayUtil;
+import com.xiaoxing.salesclient.mvp.contract.PaiMaiMainContract;
+import com.xiaoxing.salesclient.mvp.presenter.PaiMaiMainPresenter;
+import com.xiaoxing.salesclient.mvp.ui.entity.AppUpdate;
 import com.xiaoxing.salesclient.mvp.ui.viewpager.MyViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import me.jessyan.armscomponent.commonres.utils.CheckVersionUtil;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
@@ -43,7 +45,7 @@ import xiaoxing.com.salesclient.R;
 import static com.jess.arms.base.BaseApplication.APP_KEY;
 
 @Route(path = RouterHub.SALES_CLIENT_PAI_MAI_MAIN_ACTIVITY)
-public class PaiMaiMainActivity extends BaseActivity {
+public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implements PaiMaiMainContract.View {
     private int mCurrentDialogStyle = com.qmuiteam.qmui.R.style.QMUI_Dialog;
     private static PaiMaiMainActivity instance;
     private ViewPager viewPager;
@@ -116,11 +118,11 @@ public class PaiMaiMainActivity extends BaseActivity {
         PageNavigationView tab = (PageNavigationView) findViewById(R.id.tab);
 
         NavigationController navigationController = tab.custom()
-                .addItem(newItem(R.mipmap.home_icon, R.mipmap.home_active_icon, "首页"))
-                .addItem(newItem(R.mipmap.cate_icon, R.mipmap.cate_active_icon, "分类"))
-                .addItem(newRoundItem(R.mipmap.fb_active_icon, R.mipmap.fb_active_icon, "发布"))
-                .addItem(newItem(R.mipmap.sns_icon, R.mipmap.sns_active_icon, "消息"))
-                .addItem(newItem(R.mipmap.mem_icon, R.mipmap.mem_active_icon, "我的"))
+                .addItem(newItem(R.drawable.home_icon, R.drawable.home_icon, "首页"))
+                .addItem(newItem(R.drawable.cate_icon, R.drawable.cate_icon, "分类"))
+                .addItem(newRoundItem(R.drawable.fb_active_icon, R.drawable.fb_active_icon, "发布"))
+                .addItem(newItem(R.drawable.sns_icon, R.drawable.sns_icon, "消息"))
+                .addItem(newItem(R.drawable.mem_icon, R.drawable.mem_icon, "我的"))
                 .build();
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -221,6 +223,9 @@ public class PaiMaiMainActivity extends BaseActivity {
                 }
             }
         });
+
+
+        mPresenter.checkAppUpdate();
     }
 
     private void showChuangJianDialog() {
@@ -272,5 +277,15 @@ public class PaiMaiMainActivity extends BaseActivity {
 
     public void setCurrentItem(int postion) {
         viewPager.setCurrentItem(postion);
+    }
+
+    @Override
+    public void checkAppUpdate(AppUpdate appUpdate) {
+
+    }
+
+    @Override
+    public void showMessage(@NonNull String message) {
+
     }
 }

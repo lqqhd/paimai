@@ -1,7 +1,7 @@
 <resources>
-    <string name="public_app_name">拍卖</string>
-    <string name="public_app_seller_name">拍卖-卖家</string>
-    <string name="public_app_sales_name">拍卖-买家</string>
+    <string name="public_app_name">青岛记忆</string>
+    <string name="public_app_seller_name">青岛记忆-卖家</string>
+    <string name="public_app_sales_name">青岛记忆-买家</string>
     <string name="public_module_name">app</string>
     <string name="public_loading">加载中</string>
     <string name="public_name_zhihu">知乎日报</string>
