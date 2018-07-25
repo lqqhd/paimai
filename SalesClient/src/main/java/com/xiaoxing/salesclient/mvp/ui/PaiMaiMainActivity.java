@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jessyan.armscomponent.commonres.utils.CheckVersionUtil;
+import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
@@ -315,6 +316,11 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
         if (DeviceUtils.getVersionCode(this) == Integer.parseInt(versionCode)) {
 
         }
+    }
+
+    @Override
+    public void todayIsSignSuccess(TodayIsSign todayIsSign) {
+
     }
 
     @Override

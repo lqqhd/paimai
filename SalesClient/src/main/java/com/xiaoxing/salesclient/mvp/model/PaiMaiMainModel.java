@@ -13,6 +13,7 @@ import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
+import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 
 
 @ActivityScope
@@ -38,5 +39,10 @@ public class PaiMaiMainModel extends BaseModel implements PaiMaiMainContract.Mod
     @Override
     public Observable<AppUpdate> checkAppUpdate() {
         return mRepositoryManager.obtainRetrofitService(SalesService.class).checkAppUpdate();
+    }
+
+    @Override
+    public Observable<TodayIsSign> todayIsSign(String access_token) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).todayIsSign(access_token);
     }
 }

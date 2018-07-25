@@ -10,9 +10,11 @@ import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
 import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
+
 import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import io.reactivex.Observable;
+import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -134,8 +136,14 @@ public interface SalesService {
     Observable<AuctionSearch> getAuctionSearch(
             @Query("keywords") String keywords
     );
+
     @GET("/api/update.php")
     Observable<AppUpdate> checkAppUpdate(
+    );
+
+    @GET("/api/today_is_sign.php")
+    Observable<TodayIsSign> todayIsSign(
+            @Query("access_token") String access_token
     );
 
 

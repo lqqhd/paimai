@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.innodroid.expandablerecycler.ExpandableRecyclerAdapter;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
+import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
 import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerClickListener;
@@ -65,10 +66,18 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
 
         public BannerViewHolder(View view) {
             super(view);
+
+            //设置图片加载集合
+            List<BannerItem> imageArray = new ArrayList<>();
+
+            imageArray.add(new BannerItem("最后的骑士", "http://47.100.103.123/images/201807/goods_img/923_G_1532062567485.jpg"));
+            imageArray.add(new BannerItem("最后的骑士", "http://47.100.103.123/images/201807/goods_img/923_G_1532062567485.jpg"));
+
+
             Banner banner = view.findViewById(R.id.convenientBanner);
 
             banner.setImageLoader(new GlideImageLoader());
-            banner.setImages(BANNER_ITEMS);
+            banner.setImages(imageArray);
             banner.start();
 
             banner.setOnBannerClickListener(new OnBannerClickListener() {

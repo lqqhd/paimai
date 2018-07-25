@@ -92,34 +92,34 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
      * Left tabLayout and right recyclerView linkage
      */
     private void leftRightLinkage() {
-        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-                if (needScroll && (newState == RecyclerView.SCROLL_STATE_IDLE)) {
-                    needScroll = false;
-                    int indexDistance = index - mManager.findFirstVisibleItemPosition();
-                    if (indexDistance >= 0 && indexDistance < mRecyclerView.getChildCount()) {
-                        int top = mRecyclerView.getChildAt(indexDistance).getTop();
-                        mRecyclerView.smoothScrollBy(0, top);
-                    }
-                }
-                rightLinkageLeft(newState);
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                if (needScroll) {
-                    needScroll = false;
-                    int indexDistance = index - mManager.findFirstVisibleItemPosition();
-                    if (indexDistance >= 0 && indexDistance < mRecyclerView.getChildCount()) {
-                        int top = mRecyclerView.getChildAt(indexDistance).getTop();
-                        mRecyclerView.smoothScrollBy(0, top);
-                    }
-                }
-            }
-        });
+//        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//                if (needScroll && (newState == RecyclerView.SCROLL_STATE_IDLE)) {
+//                    needScroll = false;
+//                    int indexDistance = index - mManager.findFirstVisibleItemPosition();
+//                    if (indexDistance >= 0 && indexDistance < mRecyclerView.getChildCount()) {
+//                        int top = mRecyclerView.getChildAt(indexDistance).getTop();
+//                        mRecyclerView.smoothScrollBy(0, top);
+//                    }
+//                }
+//                rightLinkageLeft(newState);
+//            }
+//
+//            @Override
+//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//                if (needScroll) {
+//                    needScroll = false;
+//                    int indexDistance = index - mManager.findFirstVisibleItemPosition();
+//                    if (indexDistance >= 0 && indexDistance < mRecyclerView.getChildCount()) {
+//                        int top = mRecyclerView.getChildAt(indexDistance).getTop();
+//                        mRecyclerView.smoothScrollBy(0, top);
+//                    }
+//                }
+//            }
+//        });
 
         mTabLayout.addOnTabSelectedListener(new VerticalTabLayout.OnTabSelectedListener() {
             @Override
