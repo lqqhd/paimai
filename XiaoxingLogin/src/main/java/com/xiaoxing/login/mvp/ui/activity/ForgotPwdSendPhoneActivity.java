@@ -114,6 +114,7 @@ public class ForgotPwdSendPhoneActivity extends BaseActivity<ForgotPwdSendPhoneP
 
             ARouter.getInstance().build(RouterHub.XIAO_XING_LOGIN_FORGOT_PWD_VERIFICATION_CODE_ACTIVITY).withString("mPhone", getPhone()).navigation(this);
 
+            killMyself();
         }
 
     }

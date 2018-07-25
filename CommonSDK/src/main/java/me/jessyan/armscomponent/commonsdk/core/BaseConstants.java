@@ -31,5 +31,5 @@ public class BaseConstants {
     public static final String UID = "uid";
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
-    public static final boolean AUTO_LOGIN = true;
+    public static final boolean AUTO_LOGIN = false;
 }

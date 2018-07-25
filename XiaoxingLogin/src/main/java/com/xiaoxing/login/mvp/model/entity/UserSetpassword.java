@@ -11,12 +11,12 @@ public class UserSetpassword {
     /**
      * code : 200
      * msg : 您的新密码已设置成功！
-     * data : true
+     * data : {}
      */
 
     private int code;
     private String msg;
-    private boolean data;
+    private DataBean data;
 
     public int getCode() {
         return code;
@@ -34,11 +34,14 @@ public class UserSetpassword {
         this.msg = msg;
     }
 
-    public boolean isData() {
+    public DataBean getData() {
         return data;
     }
 
-    public void setData(boolean data) {
+    public void setData(DataBean data) {
         this.data = data;
+    }
+
+    public static class DataBean {
     }
 }
