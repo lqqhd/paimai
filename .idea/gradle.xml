@@ -32,6 +32,7 @@
             <option value="$PROJECT_DIR$/refresh-footer" />
             <option value="$PROJECT_DIR$/refresh-header" />
             <option value="$PROJECT_DIR$/refresh-layout" />
+            <option value="$PROJECT_DIR$/zwcalendar" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

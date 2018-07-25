@@ -3,10 +3,13 @@ package com.xiaoxing.salesclient.mvp.ui;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -29,7 +32,10 @@ import com.xiaoxing.salesclient.di.component.DaggerPaiMaiMainComponent;
 import com.xiaoxing.salesclient.di.module.PaiMaiMainModule;
 import com.xiaoxing.salesclient.mvp.contract.PaiMaiMainContract;
 import com.xiaoxing.salesclient.mvp.presenter.PaiMaiMainPresenter;
+
 import me.jessyan.armscomponent.commonres.utils.AppUpdate;
+
+import com.xiaoxing.salesclient.mvp.ui.popup.QianDaoPopup;
 import com.xiaoxing.salesclient.mvp.ui.viewpager.MyViewPagerAdapter;
 
 import java.util.ArrayList;
@@ -54,6 +60,17 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     private static PaiMaiMainActivity instance;
     private ViewPager viewPager;
     private List<AdInfo> advList = null;
+    private Handler popupHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 0:
+                    new QianDaoPopup(PaiMaiMainActivity.this).showPopupWindow();
+                    break;
+            }
+        }
+
+    };
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -72,7 +89,9 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 //        initDisplayOpinion();
 //        initAdData();
 //        showDialog();
+        popupHandler.sendEmptyMessageDelayed(0, 1000);
     }
+
 
     /**
      * 初始化数据
@@ -123,7 +142,8 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         instance = this;
-        CheckVersionUtil.checkVersion(this);
+//        CheckVersionUtil.checkVersion(this);
+
         PageNavigationView tab = (PageNavigationView) findViewById(R.id.tab);
 
         NavigationController navigationController = tab.custom()

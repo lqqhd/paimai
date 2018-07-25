@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:name=".app.PaiMaiApplication"
@@ -20,7 +21,7 @@
         android:theme="@style/public_AppTheme"
         tools:replace="label,icon,theme,allowBackup,supportsRtl,name">
         <activity
-            android:name="com.xiaoxing.welcome.mvp.ui.WelcomeActivity"
+            android:name="com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait">
             <!--android:theme="@style/SplashTheme"-->
@@ -60,10 +61,10 @@
             android:name="com.xiaoxing.welcome.mvp.ui.WelcomeGuideActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity"
-            android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait" />
+        <!--<activity-->
+        <!--android:name="com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity"-->
+        <!--android:configChanges="orientation|screenSize"-->
+        <!--android:screenOrientation="portrait" />-->
 
         <activity
             android:name="com.xiaoxing.setting.mvp.ui.activity.SettingActivity"

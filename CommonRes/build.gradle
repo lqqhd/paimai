@@ -57,6 +57,7 @@ dependencies {
     api project(":XiaoxingCountdownView")
     api project(":XiaoxingExpandableRecycler")
     api project(":XiaoxingAd")
+    api project(":zwcalendar")
 
     api "q.rorbin:VerticalTabLayout:1.2.5"
     api 'com.github.jiang111:IndicatorDialog:2.0.1'
