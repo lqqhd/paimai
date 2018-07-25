@@ -19,19 +19,23 @@ import com.alibaba.mobileim.channel.event.IWxCallback;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.utils.DeviceUtils;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.uuch.adlibrary.AdConstant;
 import com.uuch.adlibrary.AdManager;
 import com.uuch.adlibrary.bean.AdInfo;
 import com.uuch.adlibrary.utils.DisplayUtil;
+import com.xiaoxing.salesclient.di.component.DaggerPaiMaiMainComponent;
+import com.xiaoxing.salesclient.di.module.PaiMaiMainModule;
 import com.xiaoxing.salesclient.mvp.contract.PaiMaiMainContract;
 import com.xiaoxing.salesclient.mvp.presenter.PaiMaiMainPresenter;
-import com.xiaoxing.salesclient.mvp.ui.entity.AppUpdate;
+import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 import com.xiaoxing.salesclient.mvp.ui.viewpager.MyViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import me.jessyan.armscomponent.commonres.utils.CheckVersionUtil;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
@@ -53,7 +57,12 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
-
+        DaggerPaiMaiMainComponent //如找不到该类,请编译一下项目
+                .builder()
+                .appComponent(appComponent)
+                .paiMaiMainModule(new PaiMaiMainModule(this))
+                .build()
+                .inject(this);
     }
 
     @Override
@@ -114,7 +123,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         instance = this;
-//        CheckVersionUtil.checkVersion(this);
+        CheckVersionUtil.checkVersion(this);
         PageNavigationView tab = (PageNavigationView) findViewById(R.id.tab);
 
         NavigationController navigationController = tab.custom()
@@ -282,6 +291,10 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     @Override
     public void checkAppUpdate(AppUpdate appUpdate) {
 
+        String versionCode = appUpdate.getVersionCode();
+        if (DeviceUtils.getVersionCode(this) == Integer.parseInt(versionCode)) {
+
+        }
     }
 
     @Override

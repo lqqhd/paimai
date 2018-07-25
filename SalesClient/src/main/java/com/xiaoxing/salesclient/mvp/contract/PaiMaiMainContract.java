@@ -2,7 +2,7 @@ package com.xiaoxing.salesclient.mvp.contract;
 
 import com.jess.arms.mvp.IModel;
 import com.jess.arms.mvp.IView;
-import com.xiaoxing.salesclient.mvp.ui.entity.AppUpdate;
+import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import io.reactivex.Observable;
 

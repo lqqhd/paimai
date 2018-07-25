@@ -71,13 +71,9 @@ public class ForgotPwdVerificationCodeActivity extends BaseActivity<ForgotPwdVer
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_verification));
-
         tvPhone.setText(mPhone);
         startCountdown();
 
-        get4Code();
-
-        smsSend();
     }
 
     private void smsSend() {

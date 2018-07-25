@@ -71,7 +71,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_login));
-
+        autoLogin();
     }
 
 
@@ -158,6 +158,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
         if (login.getCode() == 200) {
             mSharedPreferencesHelper.putString(BaseConstants.TOKEN, login.getData().getToken());
+            mSharedPreferencesHelper.putString(BaseConstants.UID, login.getData().getUser_id());
+            mSharedPreferencesHelper.putString(BaseConstants.USERNAME, login.getData().getUser_name());
+            mSharedPreferencesHelper.putString(BaseConstants.PASSWORD, getPassword());
+            mSharedPreferencesHelper.putBoolean(BaseConstants.IS_LOGIN, true);
             Utils.navigation(LoginActivity.this, RouterHub.SALES_CLIENT_PAI_MAI_MAIN_ACTIVITY);
             killMyself();
         }
@@ -165,5 +169,23 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     }
 
+    /**
+     * 自动登陆
+     */
+    public void autoLogin() {
+        String username = mSharedPreferencesHelper.getString(BaseConstants.USERNAME);
+        String pwd = mSharedPreferencesHelper.getString(BaseConstants.PASSWORD);
+        if (username != null && pwd != null) {
+
+            if (BaseConstants.AUTO_LOGIN) {
+                xetUsername.setText(username);
+                xetPassword.setText(pwd);
+                login();
+            } else {
+                xetUsername.setText(mSharedPreferencesHelper.getString(BaseConstants.USERNAME));
+
+            }
+        }
+    }
 
 }

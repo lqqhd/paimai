@@ -10,6 +10,8 @@ import com.allenliu.versionchecklib.v2.builder.DownloadBuilder;
 import com.allenliu.versionchecklib.v2.builder.UIData;
 import com.allenliu.versionchecklib.v2.callback.CustomVersionDialogListener;
 import com.allenliu.versionchecklib.v2.callback.RequestVersionListener;
+import com.google.gson.Gson;
+import com.jess.arms.utils.DeviceUtils;
 
 import me.jessyan.armscomponent.commonres.R;
 import me.jessyan.armscomponent.commonres.dialog.BaseDialog;
@@ -21,13 +23,24 @@ public class CheckVersionUtil {
         DownloadBuilder builder = AllenVersionChecker
                 .getInstance()
                 .requestVersion()
-                .setRequestUrl("https://www.baidu.com")
+                .setRequestUrl("http://47.100.103.123/api/update.php")
                 .request(new RequestVersionListener() {
                     @Nullable
                     @Override
                     public UIData onRequestVersionSuccess(String result) {
 //                        Toast.makeText(context, "request successful", Toast.LENGTH_SHORT).show();
-                        return crateUIData(context);
+
+                        // 使用new方法
+                        Gson gson = new Gson();
+
+                        // fromJson 将json字符串转为bean对象
+                        AppUpdate appUpdate = gson.fromJson(result, AppUpdate.class);
+
+                        if (DeviceUtils.getVersionCode(context) == Integer.parseInt(appUpdate.getVersionCode())) {
+                            return crateUIData(context, appUpdate);
+                        }
+
+                        return null;
                     }
 
                     @Override
@@ -47,11 +60,11 @@ public class CheckVersionUtil {
      * 这里可以构造UI需要显示的数据
      * UIData 内部是一个Bundle
      */
-    private static UIData crateUIData(Context context) {
+    private static UIData crateUIData(Context context, AppUpdate appUpdate) {
         UIData uiData = UIData.create();
-        uiData.setTitle(context.getString(R.string.update_title));
-        uiData.setDownloadUrl("http://test-1251233192.coscd.myqcloud.com/1_1.apk");
-        uiData.setContent(context.getString(R.string.updatecontent));
+        uiData.setTitle(appUpdate.getMsg());
+        uiData.setDownloadUrl(appUpdate.getDownloadUrl());
+        uiData.setContent(appUpdate.getModifyContent());
         return uiData;
     }
 

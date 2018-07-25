@@ -3,19 +3,19 @@ package com.xiaoxing.salesclient.mvp.model;
 import android.app.Application;
 
 import com.google.gson.Gson;
-import com.jess.arms.di.scope.FragmentScope;
+import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.integration.IRepositoryManager;
 import com.jess.arms.mvp.BaseModel;
 import com.xiaoxing.salesclient.mvp.contract.PaiMaiMainContract;
 import com.xiaoxing.salesclient.mvp.model.service.SalesService;
-import com.xiaoxing.salesclient.mvp.ui.entity.AppUpdate;
+import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
 
 
-@FragmentScope
+@ActivityScope
 public class PaiMaiMainModel extends BaseModel implements PaiMaiMainContract.Model {
     @Inject
     Gson mGson;

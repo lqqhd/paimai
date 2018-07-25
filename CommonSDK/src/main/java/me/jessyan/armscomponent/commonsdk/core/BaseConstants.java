@@ -27,4 +27,9 @@ package me.jessyan.armscomponent.commonsdk.core;
 public class BaseConstants {
     //电话号码正则
     public static final String TOKEN = "token";
+    public static final String IS_LOGIN = "is_login"; //是否已经登录
+    public static final String UID = "uid";
+    public static final String USERNAME = "username";
+    public static final String PASSWORD = "password";
+    public static final boolean AUTO_LOGIN = true;
 }

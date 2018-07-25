@@ -89,10 +89,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
         tvPhone.setText(mPhone);
         startCountdown();
 
-        get4Code();
-
-        smsSend();
-//        initMobSms();
+        //initMobSms();
     }
 
     private void smsSend() {

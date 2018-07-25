@@ -10,7 +10,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
 import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
-import com.xiaoxing.salesclient.mvp.ui.entity.AppUpdate;
+import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

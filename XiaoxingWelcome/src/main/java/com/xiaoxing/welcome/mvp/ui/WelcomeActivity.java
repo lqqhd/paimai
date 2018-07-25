@@ -39,12 +39,7 @@ public class WelcomeActivity extends BaseActivity {
     private static final int ANIM_TIME = 2000;
     private static final float SCALE_END = 1.15F;
     private static final int[] Imgs = {
-            R.mipmap.welcomimg1, R.mipmap.welcomimg2,
-            R.mipmap.welcomimg3, R.mipmap.welcomimg4,
-            R.mipmap.welcomimg5, R.mipmap.welcomimg6,
-            R.mipmap.welcomimg7, R.mipmap.welcomimg8,
-            R.mipmap.welcomimg9, R.mipmap.welcomimg10,
-            R.mipmap.welcomimg11, R.mipmap.welcomimg12};
+            R.drawable.welcomimg};
     ImageView mIVEntry;
 
 

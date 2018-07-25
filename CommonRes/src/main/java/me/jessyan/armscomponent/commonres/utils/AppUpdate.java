@@ -1,4 +1,4 @@
-package com.xiaoxing.salesclient.mvp.ui.entity;
+package me.jessyan.armscomponent.commonres.utils;
 
 public class AppUpdate {
 

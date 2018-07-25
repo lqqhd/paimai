@@ -8,7 +8,7 @@ import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.utils.RxLifecycleUtils;
 import com.xiaoxing.salesclient.mvp.contract.PaiMaiMainContract;
-import com.xiaoxing.salesclient.mvp.ui.entity.AppUpdate;
+import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import javax.inject.Inject;
 
