@@ -473,10 +473,12 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
         List<Index.DataBean.BannerBean> bannerBeanList = index.getData().getBanner();
         List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>();
-        for (int i = 0; i < bannerBeanList.size(); i++) {
-            BannerItem bannerItem = new BannerItem(bannerBeanList.get(i).getGoods_name(), bannerBeanList.get(i).getGoods_img());
-            BANNER_ITEMS.add(bannerItem);
-        }
+//        for (int i = 0; i < bannerBeanList.size(); i++) {
+//            BannerItem bannerItem = new BannerItem(bannerBeanList.get(i).getGoods_name(), bannerBeanList.get(i).getGoods_img());
+//            BANNER_ITEMS.add(bannerItem);
+//        }
+        BANNER_ITEMS.add(new BannerItem("最后的骑士", R.mipmap.banner_001));
+        BANNER_ITEMS.add(new BannerItem("最后的骑士", R.mipmap.banner_002));
 
         mBanner.setImageLoader(new GlideImageLoader());
         mBanner.setImages(BANNER_ITEMS);

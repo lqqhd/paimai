@@ -70,8 +70,8 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
             //设置图片加载集合
             List<BannerItem> imageArray = new ArrayList<>();
 
-            imageArray.add(new BannerItem("最后的骑士", "http://47.100.103.123/images/201807/goods_img/923_G_1532062567485.jpg"));
-            imageArray.add(new BannerItem("最后的骑士", "http://47.100.103.123/images/201807/goods_img/923_G_1532062567485.jpg"));
+            imageArray.add(new BannerItem("最后的骑士", R.mipmap.banner_001));
+            imageArray.add(new BannerItem("最后的骑士", R.mipmap.banner_002));
 
 
             Banner banner = view.findViewById(R.id.convenientBanner);
