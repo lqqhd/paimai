@@ -22,6 +22,7 @@ import com.alibaba.mobileim.channel.event.IWxCallback;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.DeviceUtils;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.uuch.adlibrary.AdConstant;
@@ -42,7 +43,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jessyan.armscomponent.commonres.utils.CheckVersionUtil;
+import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
+import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
@@ -90,7 +93,6 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 //        initDisplayOpinion();
 //        initAdData();
 //        showDialog();
-        popupHandler.sendEmptyMessageDelayed(0, 1000);
     }
 
 
@@ -256,6 +258,8 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
 
         mPresenter.checkAppUpdate();
+        mPresenter.todayIsSign(mSharedPreferencesHelper.getString(BaseConstants.TOKEN));
+        mPresenter.mySgninCouponsList(mSharedPreferencesHelper.getString(BaseConstants.TOKEN),"2018-07");
     }
 
     private void showChuangJianDialog() {
@@ -320,6 +324,20 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
     @Override
     public void todayIsSignSuccess(TodayIsSign todayIsSign) {
+
+        if (todayIsSign.getCode() == 200) {
+
+            popupHandler.sendEmptyMessageDelayed(0, 1000);
+
+        } else {
+
+            ArmsUtils.snackbarText(todayIsSign.getMsg());
+
+        }
+    }
+
+    @Override
+    public void mySgninCouponsListSuccess(MySgninCouponsList mySgninCouponsList) {
 
     }
 

@@ -8,11 +8,13 @@ import com.jess.arms.integration.IRepositoryManager;
 import com.jess.arms.mvp.BaseModel;
 import com.xiaoxing.salesclient.mvp.contract.PaiMaiMainContract;
 import com.xiaoxing.salesclient.mvp.model.service.SalesService;
+
 import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
+import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 
 
@@ -44,5 +46,10 @@ public class PaiMaiMainModel extends BaseModel implements PaiMaiMainContract.Mod
     @Override
     public Observable<TodayIsSign> todayIsSign(String access_token) {
         return mRepositoryManager.obtainRetrofitService(SalesService.class).todayIsSign(access_token);
+    }
+
+    @Override
+    public Observable<MySgninCouponsList> mySgninCouponsList(String access_token, String year_month) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).mySgninCouponsList(access_token, year_month);
     }
 }
