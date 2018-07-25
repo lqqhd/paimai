@@ -278,11 +278,11 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         mLists.clear();
         mICons.clear();
         mLists.add("首页");
-        mICons.add(R.mipmap.home_icon_left);
+        mICons.add(R.drawable.home_icon);
         mLists.add("分类");
-        mICons.add(R.mipmap.cate_icon_left);
+        mICons.add(R.drawable.cate_icon);
         mLists.add("会员");
-        mICons.add(R.mipmap.mem_icon_left);
+        mICons.add(R.drawable.mem_icon);
 
         Resources resources = getResources();
         DisplayMetrics dm = resources.getDisplayMetrics();
