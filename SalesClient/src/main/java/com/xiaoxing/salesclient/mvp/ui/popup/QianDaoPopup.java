@@ -27,6 +27,12 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
     private Activity mActivity;
     private ZWCalendarView calendarView;
     private TextView show;
+    private QianDao mQianDao;
+
+    public interface QianDao {
+        void qianDao(String date);
+    }
+
 
     public QianDaoPopup(Activity context) {
         super(context);
@@ -96,6 +102,8 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
                     Toast.makeText(mActivity,
                             String.format("%s 年 %s 月 %s日，周%s", year, month, day, week),
                             Toast.LENGTH_SHORT).show();
+
+                    mQianDao.qianDao(year + "-" + month);
                 }
             });
 

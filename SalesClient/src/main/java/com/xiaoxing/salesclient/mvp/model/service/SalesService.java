@@ -14,6 +14,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
 import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import io.reactivex.Observable;
+import me.jessyan.armscomponent.commonres.utils.CouponsReceive;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 import retrofit2.http.GET;
@@ -151,6 +152,12 @@ public interface SalesService {
     Observable<MySgninCouponsList> mySgninCouponsList(
             @Query("access_token") String access_token,
             @Query("year_month") String year_month
+    );
+
+    @GET("/api/coupons_receive.php")
+    Observable<CouponsReceive> couponsReceive(
+            @Query("access_token") String access_token,
+            @Query("cou_id") String cou_id
     );
 
 

@@ -15,6 +15,7 @@ import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import me.jessyan.armscomponent.commonres.utils.CouponsReceive;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
@@ -93,6 +94,26 @@ public class PaiMaiMainPresenter extends BasePresenter<PaiMaiMainContract.Model,
                     @Override
                     public void onNext(MySgninCouponsList mySgninCouponsList) {
                         mRootView.mySgninCouponsListSuccess(mySgninCouponsList);
+                    }
+                });
+    }
+
+    public void couponsReceive(String access_token, String cou_id) {
+
+        mModel.couponsReceive(access_token, cou_id).subscribeOn(Schedulers.io())
+                //                .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .doOnSubscribe(disposable -> {
+                    mRootView.showLoading();
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+                    mRootView.hideLoading();
+                })
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))//使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .subscribe(new ErrorHandleSubscriber<CouponsReceive>(mErrorHandler) {
+                    @Override
+                    public void onNext(CouponsReceive couponsReceive) {
+                        mRootView.couponsReceiveSuccess(couponsReceive);
                     }
                 });
     }

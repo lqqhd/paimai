@@ -14,6 +14,7 @@ import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
+import me.jessyan.armscomponent.commonres.utils.CouponsReceive;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 
@@ -51,5 +52,11 @@ public class PaiMaiMainModel extends BaseModel implements PaiMaiMainContract.Mod
     @Override
     public Observable<MySgninCouponsList> mySgninCouponsList(String access_token, String year_month) {
         return mRepositoryManager.obtainRetrofitService(SalesService.class).mySgninCouponsList(access_token, year_month);
+    }
+
+
+    @Override
+    public Observable<CouponsReceive> couponsReceive(String access_token, String cou_id) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).couponsReceive(access_token, cou_id);
     }
 }

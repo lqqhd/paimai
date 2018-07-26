@@ -6,6 +6,7 @@ import com.jess.arms.mvp.IView;
 import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import io.reactivex.Observable;
+import me.jessyan.armscomponent.commonres.utils.CouponsReceive;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 
@@ -17,6 +18,8 @@ public interface PaiMaiMainContract {
         void todayIsSignSuccess(TodayIsSign todayIsSign);
 
         void mySgninCouponsListSuccess(MySgninCouponsList mySgninCouponsList);
+
+        void couponsReceiveSuccess(CouponsReceive couponsReceive);
     }
 
     //Model层定义接口,外部只需关心Model返回的数据,无需关心内部细节,即是否使用缓存
@@ -27,5 +30,7 @@ public interface PaiMaiMainContract {
         Observable<TodayIsSign> todayIsSign(String access_token);
 
         Observable<MySgninCouponsList> mySgninCouponsList(String access_token, String year_month);
+
+        Observable<CouponsReceive> couponsReceive(String access_token, String cou_id);
     }
 }

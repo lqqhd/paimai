@@ -43,6 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jessyan.armscomponent.commonres.utils.CheckVersionUtil;
+import me.jessyan.armscomponent.commonres.utils.CouponsReceive;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
@@ -59,7 +60,7 @@ import xiaoxing.com.salesclient.R;
 import static com.jess.arms.base.BaseApplication.APP_KEY;
 
 @Route(path = RouterHub.SALES_CLIENT_PAI_MAI_MAIN_ACTIVITY)
-public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implements PaiMaiMainContract.View {
+public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implements PaiMaiMainContract.View, QianDaoPopup.QianDao {
     private int mCurrentDialogStyle = com.qmuiteam.qmui.R.style.QMUI_Dialog;
     private static PaiMaiMainActivity instance;
     private ViewPager viewPager;
@@ -259,7 +260,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
         mPresenter.checkAppUpdate();
         mPresenter.todayIsSign(mSharedPreferencesHelper.getString(BaseConstants.TOKEN));
-        mPresenter.mySgninCouponsList(mSharedPreferencesHelper.getString(BaseConstants.TOKEN),"2018-07");
+        mPresenter.mySgninCouponsList(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), "2018-07");
     }
 
     private void showChuangJianDialog() {
@@ -342,7 +343,18 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     }
 
     @Override
+    public void couponsReceiveSuccess(CouponsReceive couponsReceive) {
+
+        ArmsUtils.snackbarText(couponsReceive.getMsg());
+    }
+
+    @Override
     public void showMessage(@NonNull String message) {
 
+    }
+
+    @Override
+    public void qianDao(String date) {
+        mPresenter.couponsReceive(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), date);
     }
 }
