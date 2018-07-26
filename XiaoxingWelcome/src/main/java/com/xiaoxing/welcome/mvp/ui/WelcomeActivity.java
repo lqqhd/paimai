@@ -76,12 +76,18 @@ public class WelcomeActivity extends BaseActivity {
         mIVEntry.setImageResource(Imgs[random.nextInt(Imgs.length)]);
 
 
-        Observable.timer(1000, TimeUnit.MILLISECONDS)
+        Observable.timer(2000, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {
-                        startAnim();
+//                        startAnim();
+                        if (BuildConfig.IS_SALALS_CLIENT) {
+                            Utils.navigation(WelcomeActivity.this, RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
+                        } else {
+                            Utils.navigation(WelcomeActivity.this, RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
+                        }
+                        finish();
                     }
                 });
     }

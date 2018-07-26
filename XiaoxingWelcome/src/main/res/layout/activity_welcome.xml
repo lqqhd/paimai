@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/welcomimg">
 
     <ImageView
         android:id="@+id/iv_entry"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="entry"
-        android:scaleType="fitXY"
-        android:src="@drawable/welcomimg" />
+        android:src="@drawable/welcomimg"
+        android:visibility="gone" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/welcomimg_bg" />
+        android:background="@drawable/welcomimg_bg"
+        android:visibility="gone" />
 
 
     <TextView
@@ -25,7 +27,8 @@
         android:gravity="center"
         android:text="@string/public_app_name"
         android:textColor="@android:color/white"
-        android:textSize="23sp" />
+        android:textSize="23sp"
+        android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"

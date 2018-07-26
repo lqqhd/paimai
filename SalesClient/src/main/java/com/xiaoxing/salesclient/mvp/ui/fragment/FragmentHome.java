@@ -185,7 +185,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         StatusBarUtil.immersive(getActivity());
         StatusBarUtil.setPaddingSmart(getActivity(), toolbar);
 
-        final View parallax = view.findViewById(R.id.parallax);
+//        final View parallax = view.findViewById(R.id.parallax);
         final View buttonBar = view.findViewById(R.id.buttonBarLayout);
         final NestedScrollView scrollView = (NestedScrollView) view.findViewById(R.id.scrollView);
         refreshLayout = (RefreshLayout) view.findViewById(R.id.refreshLayout);
@@ -195,9 +195,9 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         refreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
             @Override
             public void onHeaderMoving(RefreshHeader header, boolean isDragging, float percent, int offset, int headerHeight, int maxDragHeight) {
-                mOffset = offset / 2;
-                parallax.setTranslationY(mOffset - mScrollY);
-                toolbar.setAlpha(1 - Math.min(percent, 1));
+//                mOffset = offset / 2;
+////                parallax.setTranslationY(mOffset - mScrollY);
+//                toolbar.setAlpha(1 - Math.min(percent, 1));
             }
 
             @Override
