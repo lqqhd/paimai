@@ -143,17 +143,32 @@ public interface SalesService {
     Observable<AppUpdate> checkAppUpdate(
     );
 
+    /**
+     * 今天是否签到
+     * @param access_token
+     * @return
+     */
     @GET("/api/today_is_sign.php")
     Observable<TodayIsSign> todayIsSign(
             @Query("access_token") String access_token
     );
-
+    /**
+     * 获取签到历史信息
+     * @param access_token
+     * @param year_month
+     * @return
+     */
     @GET("/api/my_signin_coupons_list.php")
     Observable<MySgninCouponsList> mySgninCouponsList(
             @Query("access_token") String access_token,
             @Query("year_month") String year_month
     );
-
+    /**
+     * 签到
+     * @param access_token
+     * @param cou_id
+     * @return
+     */
     @GET("/api/coupons_receive.php")
     Observable<CouponsReceive> couponsReceive(
             @Query("access_token") String access_token,

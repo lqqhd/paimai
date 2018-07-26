@@ -40,6 +40,7 @@ import com.xiaoxing.salesclient.mvp.ui.popup.QianDaoPopup;
 import com.xiaoxing.salesclient.mvp.ui.viewpager.MyViewPagerAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import me.jessyan.armscomponent.commonres.utils.CheckVersionUtil;
@@ -65,17 +66,22 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     private static PaiMaiMainActivity instance;
     private ViewPager viewPager;
     private List<AdInfo> advList = null;
+
+    private HashMap<String, Boolean> sign = new HashMap<>();
+
     private Handler popupHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 0:
-                    new QianDaoPopup(PaiMaiMainActivity.this).showPopupWindow();
+                    new QianDaoPopup(PaiMaiMainActivity.this, PaiMaiMainActivity.this, sign).showPopupWindow();
+
                     break;
             }
         }
 
     };
+
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -94,6 +100,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 //        initDisplayOpinion();
 //        initAdData();
 //        showDialog();
+
     }
 
 
@@ -259,8 +266,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
 
         mPresenter.checkAppUpdate();
-        mPresenter.todayIsSign(mSharedPreferencesHelper.getString(BaseConstants.TOKEN));
-        mPresenter.mySgninCouponsList(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), "2018-07");
+//        mPresenter.todayIsSign(mSharedPreferencesHelper.getString(BaseConstants.TOKEN));
     }
 
     private void showChuangJianDialog() {
@@ -328,7 +334,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
         if (todayIsSign.getCode() == 200) {
 
-            popupHandler.sendEmptyMessageDelayed(0, 1000);
+            mPresenter.mySgninCouponsList(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), ArmsUtils.getDataTime("yyyy-MM"));
 
         } else {
 
@@ -339,6 +345,15 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
     @Override
     public void mySgninCouponsListSuccess(MySgninCouponsList mySgninCouponsList) {
+
+        List<MySgninCouponsList.DataBean> dataBeanList = mySgninCouponsList.getData();
+        for (int i = 0; i < dataBeanList.size(); i++) {
+            if (ArmsUtils.getTimeCompareSize(ArmsUtils.getDataTime("yyyy-MM-dd"), dataBeanList.get(i).getDate()) == 1) {
+                sign.put(dataBeanList.get(i).getDate(), dataBeanList.get(i).isIs_sign());
+            }
+        }
+
+        popupHandler.sendEmptyMessageDelayed(0, 1000);
 
     }
 
@@ -355,6 +370,6 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
     @Override
     public void qianDao(String date) {
-        mPresenter.couponsReceive(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), date);
+//        mPresenter.couponsReceive(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), "11");
     }
 }

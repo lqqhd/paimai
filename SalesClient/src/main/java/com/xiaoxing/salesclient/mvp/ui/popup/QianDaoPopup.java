@@ -28,15 +28,18 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
     private ZWCalendarView calendarView;
     private TextView show;
     private QianDao mQianDao;
+    private HashMap<String, Boolean> mSign;
 
     public interface QianDao {
         void qianDao(String date);
     }
 
 
-    public QianDaoPopup(Activity context) {
+    public QianDaoPopup(Activity context, QianDao qianDao, HashMap<String, Boolean> sign) {
         super(context);
         this.mActivity = context;
+        this.mQianDao = qianDao;
+        this.mSign = sign;
         /**全屏popup*/
         setPopupWindowFullScreen(true);
         bindEvent();
@@ -139,23 +142,23 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
                 }
             });
 
-            HashMap<String, Boolean> sign = new HashMap<>();
-            sign.put("2018-07-12", true);
-            sign.put("2018-07-23", true);
-            sign.put("2018-07-24", false);
-            sign.put("2018-07-25", true);
-            sign.put("2018-08-12", false);
-            sign.put("2018-08-13", true);
-            sign.put("2018-08-14", true);
-            sign.put("2018-08-15", false);
-            sign.put("2018-08-18", false);
-            sign.put("2018-08-31", true);
-            sign.put("2018-09-05", true);
-            sign.put("2018-09-07", false);
-            sign.put("2018-09-08", false);
-            sign.put("2018-09-09", true);
-            sign.put("2018-10-09", true);
-            calendarView.setSignRecords(sign);
+//            HashMap<String, Boolean> sign = new HashMap<>();
+//            sign.put("2018-07-12", true);
+//            sign.put("2018-07-23", true);
+//            sign.put("2018-07-24", false);
+//            sign.put("2018-07-25", true);
+//            sign.put("2018-08-12", false);
+//            sign.put("2018-08-13", true);
+//            sign.put("2018-08-14", true);
+//            sign.put("2018-08-15", false);
+//            sign.put("2018-08-18", false);
+//            sign.put("2018-08-31", true);
+//            sign.put("2018-09-05", true);
+//            sign.put("2018-09-07", false);
+//            sign.put("2018-09-08", false);
+//            sign.put("2018-09-09", true);
+//            sign.put("2018-10-09", true);
+            calendarView.setSignRecords(mSign);
 
 
         }
