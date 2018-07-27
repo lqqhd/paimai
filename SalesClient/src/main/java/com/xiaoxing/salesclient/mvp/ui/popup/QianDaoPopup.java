@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hzw.zwcalendar.ZWCalendarView;
+import com.jess.arms.utils.ArmsUtils;
 
 import java.util.HashMap;
 
@@ -98,6 +99,8 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
                 @Override
                 public void change(int year, int month) {
 //                    show.setText(String.format("%s 年 %s 月", year, month));
+
+//                    ArmsUtils.snackbarText("change");
                 }
 
                 @Override
@@ -105,18 +108,23 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
 //                    Toast.makeText(mActivity,
 //                            String.format("%s 年 %s 月 %s日，周%s", year, month, day, week),
 //                            Toast.LENGTH_SHORT).show();
-                    mQianDao.qianDao(year + "-" + month + "-" + day);
-
+                    if (ArmsUtils.getTimeCompareSize(ArmsUtils.getDataTime("yyyy-MM-dd"), year + "-" + month + "-" + day) == 3) {
+                        ArmsUtils.snackbarText("时间还未到");
+                        return;
+                    } else {
+                        mQianDao.qianDao(year + "-" + month + "-" + day);
+                        dismiss();
+                    }
                 }
             });
 
             //代码选中一个日期
-            show.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    calendarView.selectDate(2018, 9, 3);
-                }
-            });
+//            show.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    calendarView.selectDate(2018, 9, 3);
+//                }
+//            });
 
             //前一月
             popupView.findViewById(R.id.calendar_previous).setOnClickListener(new View.OnClickListener() {
@@ -159,7 +167,6 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
 //            sign.put("2018-09-09", true);
 //            sign.put("2018-10-09", true);
             calendarView.setSignRecords(mSign);
-
 
         }
     }

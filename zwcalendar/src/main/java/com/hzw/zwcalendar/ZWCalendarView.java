@@ -226,9 +226,9 @@ public class ZWCalendarView extends FrameLayout {
 
     public void setSelectListener(SelectListener listener) {
         this.listener = listener;
-        listener.change(selectYear, selectMonth + 1);
-        selectWeek = selectWeek == 0 ? 7 : selectWeek;
-        listener.select(selectYear, selectMonth + 1, selectDay, selectWeek);
+//        listener.change(selectYear, selectMonth + 1);
+//        selectWeek = selectWeek == 0 ? 7 : selectWeek;
+//        listener.select(selectYear, selectMonth + 1, selectDay, selectWeek);
     }
 
 
