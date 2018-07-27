@@ -111,6 +111,9 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
                     if (ArmsUtils.getTimeCompareSize(ArmsUtils.getDataTime("yyyy-MM-dd"), year + "-" + month + "-" + day) == 3) {
                         ArmsUtils.snackbarText("时间还未到");
                         return;
+                    } else if (ArmsUtils.getTimeCompareSize(ArmsUtils.getDataTime("yyyy-MM-dd"), year + "-" + month + "-" + day) == 1) {
+                        ArmsUtils.snackbarText("时间已过");
+                        return;
                     } else {
                         mQianDao.qianDao(year + "-" + month + "-" + day);
                         dismiss();

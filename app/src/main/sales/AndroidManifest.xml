@@ -24,7 +24,8 @@
             android:name="com.xiaoxing.welcome.mvp.ui.WelcomeActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait">
-            <!--android:theme="@style/SplashTheme"-->
+
+            <!-- android:theme="@style/SplashTheme" -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,12 +66,10 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.PaiMaiMainActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.setting.mvp.ui.activity.SettingActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.login.mvp.ui.activity.LoginActivity"
             android:configChanges="orientation|screenSize"
@@ -99,7 +98,6 @@
             android:name="com.xiaoxing.login.mvp.ui.activity.RegisterSetPwdActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.login.mvp.ui.activity.SetNewPasswordActivity"
             android:configChanges="orientation|screenSize"
@@ -108,17 +106,14 @@
             android:name="com.xiaoxing.address.mvp.ui.activity.AddressListActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.address.mvp.ui.activity.AddressAddActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.order.mvp.ui.activity.OrderActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhuanChangActivity"
             android:configChanges="orientation|screenSize"
@@ -127,12 +122,10 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.HeadlinesActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.CangPinActivity"
             android:configChanges="orientation|screenSize"
@@ -149,7 +142,6 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhanTingDetailActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.search.mvp.ui.activity.SearchActivity"
             android:configChanges="orientation|screenSize"
@@ -162,27 +154,22 @@
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceDetailsActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceRechargeActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceRechargePaymentActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceWithDrawLoginActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceWithDrawActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceXiaoBaoJinActivity"
             android:configChanges="orientation|screenSize"
@@ -195,7 +182,6 @@
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalanceVerifiedActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.seller.mvp.ui.activity.BalancePaymentSecurityActivity"
             android:configChanges="orientation|screenSize"
@@ -232,7 +218,6 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.ChuangJianZhuanChangActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.ZhanTingGoodsListActivity"
             android:configChanges="orientation|screenSize"
@@ -245,7 +230,6 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.HuoDongActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.ScreenshotCreateActivity"
             android:configChanges="orientation|screenSize"
@@ -254,13 +238,14 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.ScreenshotShowActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.xiaoxing.search.mvp.ui.activity.SearchProductsActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-
-
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.SignHistoryActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -68,6 +68,28 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_qian_dao_ji_lu"
+        style="@style/public_MineItemRelativeLayout"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/img_qian_dao_ji_lu"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon3" />
+
+        <include layout="@layout/public_include_next_img" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_qian_dao_ji_lu"
+            android:text="签到记录" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/public_line_horizontal" />
+
+    <RelativeLayout
         android:id="@+id/rl_wo_de_jing_pai"
         style="@style/public_MineItemRelativeLayout"
         android:layout_marginTop="@dimen/dp_10">
@@ -89,7 +111,9 @@
 
     <include layout="@layout/public_line_horizontal" />
 
-    <RelativeLayout android:id="@+id/rl_wo_de_jian_ding" style="@style/public_MineItemRelativeLayout">
+    <RelativeLayout
+        android:id="@+id/rl_wo_de_jian_ding"
+        style="@style/public_MineItemRelativeLayout">
 
         <ImageView
             android:id="@+id/img_wo_de_jian_ding"

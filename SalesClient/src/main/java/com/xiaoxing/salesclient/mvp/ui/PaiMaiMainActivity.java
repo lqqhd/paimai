@@ -153,7 +153,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         instance = this;
-//        CheckVersionUtil.checkVersion(this);
+        CheckVersionUtil.checkVersion(this);
 
         PageNavigationView tab = (PageNavigationView) findViewById(R.id.tab);
 
@@ -324,7 +324,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     public void checkAppUpdate(AppUpdate appUpdate) {
 
         String versionCode = appUpdate.getVersionCode();
-        if (DeviceUtils.getVersionCode(this) == Integer.parseInt(versionCode)) {
+        if (DeviceUtils.getVersionCode(this) < Integer.parseInt(versionCode)) {
 
         }
     }

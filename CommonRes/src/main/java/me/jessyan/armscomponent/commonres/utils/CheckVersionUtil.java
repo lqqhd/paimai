@@ -36,7 +36,7 @@ public class CheckVersionUtil {
                         // fromJson 将json字符串转为bean对象
                         AppUpdate appUpdate = gson.fromJson(result, AppUpdate.class);
 
-                        if (DeviceUtils.getVersionCode(context) == Integer.parseInt(appUpdate.getVersionCode())) {
+                        if (DeviceUtils.getVersionCode(context) <= Integer.parseInt(appUpdate.getVersionCode())) {
                             return crateUIData(context, appUpdate);
                         }
 
@@ -73,7 +73,9 @@ public class CheckVersionUtil {
         return (context, versionBundle) -> {
             BaseDialog baseDialog = new BaseDialog(context, R.style.BaseDialog, R.layout.custom_dialog_two_layout);
             TextView textView = baseDialog.findViewById(R.id.tv_msg);
+            TextView tv_title = baseDialog.findViewById(R.id.tv_title);
             textView.setText(versionBundle.getContent());
+            tv_title.setText(versionBundle.getTitle());
             baseDialog.setCanceledOnTouchOutside(true);
             return baseDialog;
         };

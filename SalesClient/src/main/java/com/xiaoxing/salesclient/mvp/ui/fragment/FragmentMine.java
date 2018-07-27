@@ -154,7 +154,7 @@ public class FragmentMine extends BaseFragment {
             R2.id.ll_shou_hou, R2.id.rl_tou_tiao, R2.id.rl_balance,
             R2.id.tv_chong_zhi, R2.id.rl_mine_quotation, R2.id.rl_wo_de_jing_pai,
             R2.id.rl_shou_cang, R2.id.rl_tian_jiang_hong_bao, R2.id.rl_wo_de_jian_ding
-            , R2.id.right_button})
+            , R2.id.right_button, R2.id.rl_qian_dao_ji_lu})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.panel_lyt) {
@@ -199,6 +199,8 @@ public class FragmentMine extends BaseFragment {
                 ScreenShotUtil.screenShotCreate(scrollView);
                 mBtnRight.setText("查看名片");
             }
+        }else if (view.getId() == R.id.rl_qian_dao_ji_lu) {
+            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_SIGN_HISTORY_ACTIVITY);
         }
     }
 
