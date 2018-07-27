@@ -97,16 +97,16 @@ public class QianDaoPopup extends BasePopupWindow implements View.OnClickListene
             calendarView.setSelectListener(new ZWCalendarView.SelectListener() {
                 @Override
                 public void change(int year, int month) {
-                    show.setText(String.format("%s 年 %s 月", year, month));
+//                    show.setText(String.format("%s 年 %s 月", year, month));
                 }
 
                 @Override
                 public void select(int year, int month, int day, int week) {
-                    Toast.makeText(mActivity,
-                            String.format("%s 年 %s 月 %s日，周%s", year, month, day, week),
-                            Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(mActivity,
+//                            String.format("%s 年 %s 月 %s日，周%s", year, month, day, week),
+//                            Toast.LENGTH_SHORT).show();
+                    mQianDao.qianDao(year + "-" + month + "-" + day);
 
-                    mQianDao.qianDao(year + "-" + month);
                 }
             });
 

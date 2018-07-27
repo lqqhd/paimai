@@ -266,7 +266,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
 
         mPresenter.checkAppUpdate();
-//        mPresenter.todayIsSign(mSharedPreferencesHelper.getString(BaseConstants.TOKEN));
+        mPresenter.todayIsSign(mSharedPreferencesHelper.getString(BaseConstants.TOKEN));
     }
 
     private void showChuangJianDialog() {
@@ -370,6 +370,6 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
     @Override
     public void qianDao(String date) {
-//        mPresenter.couponsReceive(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), "11");
+        mPresenter.couponsReceive(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), "11");
     }
 }
