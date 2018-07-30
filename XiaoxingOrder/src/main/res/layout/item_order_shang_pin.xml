@@ -33,7 +33,7 @@
         android:layout_marginRight="@dimen/dp_10"
         android:background="@drawable/public_ripple_bg"
         android:drawablePadding="@dimen/dp_10"
-        android:drawableRight="@mipmap/icon_next"
+        android:drawableRight="@drawable/icon_next"
         android:text="共计1件"
         android:textColor="#666666"
         android:textSize="@dimen/public_font_14sp" />

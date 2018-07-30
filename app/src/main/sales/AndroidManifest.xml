@@ -246,6 +246,10 @@
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.SignHistoryActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.GuanYuWoMenActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

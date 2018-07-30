@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/public_white"
+        android:orientation="vertical">
+
+        <include layout="@layout/public_toolbar" />
+
+
+        <ImageView
+            android:id="@+id/home_item_product_img"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_150"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/salas_client_app_name"
+            android:scaleType="fitXY"
+            android:src="@mipmap/arms_log"
+            tools:background="#fff0f0f0" />
+
+        <include layout="@layout/public_line_horizontal" />
+
+        <LinearLayout
+            android:id="@+id/ll_jian_cha_geng_xin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_below="@+id/tv_miao_shu"
+            android:background="@color/public_white"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="检查更新"
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_14sp" />
+
+            <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableRight="@drawable/icon_next"
+                android:gravity="center|right"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:textColor="#B8B8B8"
+                android:textSize="@dimen/public_font_12sp" />
+
+        </LinearLayout>
+
+        <include layout="@layout/public_line_horizontal_margin_10" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_fu_wu_tiao_kuan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_below="@+id/tv_miao_shu"
+            android:background="@color/public_white"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="服务条款"
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableRight="@drawable/icon_next"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:textColor="#B8B8B8"
+                android:textSize="@dimen/public_font_12sp" />
+
+        </LinearLayout>
+
+        <include layout="@layout/public_line_horizontal_margin_10" />
+
+        <LinearLayout
+            android:id="@+id/ll_yin_si_zheng_ce"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_below="@+id/tv_miao_shu"
+            android:background="@color/public_white"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="隐私政策"
+                android:textColor="#3D3D3D"
+                android:textSize="@dimen/public_font_14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableRight="@drawable/icon_next"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:textColor="#B8B8B8"
+                android:textSize="@dimen/public_font_12sp" />
+
+        </LinearLayout>
+
+        <include layout="@layout/public_line_horizontal_margin_10" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="@dimen/dp_5"
+        android:text="青岛记忆 版权所有\n Copyright\@2013-2018 .All Rights Reserved"
+        android:textColor="@color/public_black"
+        android:textSize="@dimen/public_font_12sp" />
+
+</RelativeLayout>

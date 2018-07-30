@@ -172,6 +172,27 @@
 
     </RelativeLayout>
 
+    <include layout="@layout/public_line_horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/rl_guan_yu_wo_men"
+        style="@style/public_MineItemRelativeLayout">
+
+        <ImageView
+            android:id="@+id/img_guan_yu_wo_men"
+            style="@style/public_MineItemImage"
+            android:src="@mipmap/mem_icon7" />
+
+        <include layout="@layout/public_include_next_img" />
+
+        <TextView
+            style="@style/public_MineItemText"
+            android:layout_toRightOf="@+id/img_guan_yu_wo_men"
+            android:text="关于我们" />
+
+
+    </RelativeLayout>
+
 
     <RelativeLayout
         style="@style/public_MineItemRelativeLayout"

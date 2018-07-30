@@ -10,7 +10,7 @@
     android:layout_centerVertical="true"
     android:layout_marginRight="@dimen/dp_10"
     android:drawablePadding="@dimen/dp_10"
-    android:drawableRight="@mipmap/icon_next"
+    android:drawableRight="@drawable/icon_next"
     android:padding="@dimen/dp_5"
     android:text="更多"
     android:textColor="#7f7f7f"

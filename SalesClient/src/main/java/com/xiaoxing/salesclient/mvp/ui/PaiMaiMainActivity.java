@@ -160,7 +160,7 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
         NavigationController navigationController = tab.custom()
                 .addItem(newItem(R.drawable.home_icon, R.drawable.home_icon, "首页"))
                 .addItem(newItem(R.drawable.cate_icon, R.drawable.cate_icon, "分类"))
-                .addItem(newRoundItem(R.drawable.fb_active_icon, R.drawable.fb_active_icon, "发布"))
+                .addItem(newRoundItem(R.drawable.fb_active_icon, R.drawable.fb_active_icon, ""))
                 .addItem(newItem(R.drawable.sns_icon, R.drawable.sns_icon, "消息"))
                 .addItem(newItem(R.drawable.mem_icon, R.drawable.mem_icon, "我的"))
                 .build();
@@ -212,7 +212,10 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
                         }
                     });
                 } else if (index == 2) {
-                    showChuangJianDialog();
+//                    showChuangJianDialog();
+
+                    Utils.navigation(PaiMaiMainActivity.this, RouterHub.SALES_CLIENT_WEI_PAI_ACTIVITY);
+
                 } else {
                     setCurrentItem(index);
                 }

@@ -42,7 +42,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dp_10"
-            android:src="@mipmap/icon_next" />
+            android:src="@drawable/icon_next" />
 
     </RelativeLayout>
 
@@ -83,7 +83,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dp_10"
-            android:src="@mipmap/icon_next" />
+            android:src="@drawable/icon_next" />
 
     </RelativeLayout>
 
@@ -135,7 +135,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dp_10"
-            android:src="@mipmap/icon_next" />
+            android:src="@drawable/icon_next" />
 
     </RelativeLayout>
 

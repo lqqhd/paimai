@@ -13,7 +13,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/dp_10"
         android:drawablePadding="@dimen/dp_10"
-        android:drawableRight="@mipmap/icon_next"
+        android:drawableRight="@drawable/icon_next"
         android:text="古玩斋多品类"
         android:textColor="#5E5E5E"
         android:textSize="@dimen/public_font_14sp" />
