@@ -51,11 +51,10 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
     private int index;
     private boolean isClickTab;
 
-    public static FragmentNavigationList getInstance(String param1, String param2) {
+    public static FragmentNavigationList getInstance(String type) {
         FragmentNavigationList fragment = new FragmentNavigationList();
         Bundle args = new Bundle();
-        args.putString("param1", param1);
-        args.putString("param2", param2);
+        args.putString("type", type);
         fragment.setArguments(args);
         return fragment;
     }

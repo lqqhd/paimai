@@ -16,17 +16,22 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.xiaoxing.salesclient.di.component.DaggerCangPinComponent;
 import com.xiaoxing.salesclient.di.module.CangPinModule;
 import com.xiaoxing.salesclient.mvp.contract.CangPinContract;
+import com.xiaoxing.salesclient.mvp.model.entity.AuctionSearch;
+import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.presenter.CangPinPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.TagAdapter;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentCangPin;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentNavigationList;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentWoDeGuanZhu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +48,7 @@ import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
+import static com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter.PRODUCTS_LIST;
 
 @Route(path = RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY)
 public class CangPinActivity extends BaseActivity<CangPinPresenter> implements CangPinContract.View {
@@ -61,6 +67,8 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
     private FlowTagLayout mMobileFlowTagLayout;
     private TagAdapter mMobileTagAdapter;
 
+    private List<Category.DataBean.SecondCategoryBean.GoodsBean> mGoodsBeanList;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerCangPinComponent //如找不到该类,请编译一下项目
@@ -69,6 +77,8 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
                 .cangPinModule(new CangPinModule(this))
                 .build()
                 .inject(this);
+
+        ARouter.getInstance().inject(this);
     }
 
     @Override
@@ -95,9 +105,11 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
                 Utils.navigation(CangPinActivity.this, RouterHub.XIAO_XING_SEARCH_SearchActivity);
             }
         });
+
+        mGoodsBeanList = (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getIntent().getSerializableExtra(PRODUCTS_LIST);
         ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(new FragmentCangPin());
-        mFragments.add(new FragmentCangPin());
+        mFragments.add(FragmentCangPin.getInstance(mGoodsBeanList));
+        mFragments.add(new FragmentWoDeGuanZhu());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
         initTag();

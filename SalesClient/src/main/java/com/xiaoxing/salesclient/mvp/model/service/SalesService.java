@@ -15,6 +15,7 @@ import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import io.reactivex.Observable;
 import me.jessyan.armscomponent.commonres.utils.CouponsReceive;
+import me.jessyan.armscomponent.commonres.utils.MyCouponsList;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 import retrofit2.http.GET;
@@ -145,6 +146,7 @@ public interface SalesService {
 
     /**
      * 今天是否签到
+     *
      * @param access_token
      * @return
      */
@@ -152,8 +154,10 @@ public interface SalesService {
     Observable<TodayIsSign> todayIsSign(
             @Query("access_token") String access_token
     );
+
     /**
      * 获取签到历史信息
+     *
      * @param access_token
      * @param year_month
      * @return
@@ -163,8 +167,10 @@ public interface SalesService {
             @Query("access_token") String access_token,
             @Query("year_month") String year_month
     );
+
     /**
      * 签到
+     *
      * @param access_token
      * @param cou_id
      * @return
@@ -173,6 +179,11 @@ public interface SalesService {
     Observable<CouponsReceive> couponsReceive(
             @Query("access_token") String access_token,
             @Query("cou_id") String cou_id
+    );
+
+    @GET("/api/my_coupons_list.php")
+    Observable<MyCouponsList> myCouponsList(
+            @Query("access_token") String access_token
     );
 
 

@@ -45,7 +45,7 @@ public class Category implements Serializable {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         private List<FirstCategoryBean> first_category;
         private List<SecondCategoryBean> second_category;
 
@@ -65,7 +65,7 @@ public class Category implements Serializable {
             this.second_category = second_category;
         }
 
-        public static class FirstCategoryBean {
+        public static class FirstCategoryBean implements Serializable {
             /**
              * cat_id : 5
              * cat_name : 古玩古董
@@ -101,7 +101,7 @@ public class Category implements Serializable {
             }
         }
 
-        public static class SecondCategoryBean {
+        public static class SecondCategoryBean implements Serializable {
             /**
              * cat_id : 1477
              * cat_name : 陶瓷陶器
@@ -146,7 +146,7 @@ public class Category implements Serializable {
                 this.goods = goods;
             }
 
-            public static class GoodsBean {
+            public static class GoodsBean implements Serializable {
                 /**
                  * goods_id : 924
                  * goods_name : 开店的人的商品

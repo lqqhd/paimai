@@ -49,8 +49,8 @@ public class FragmentNavigation extends BaseFragment {
         ToolbarUtils.initToolbarTitleNoBack(view, this, getString(R.string.sales_client_navigation));
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(new FragmentNavigationList());
-        mFragments.add(new FragmentNavigationList());
+        mFragments.add(FragmentNavigationList.getInstance("1"));
+        mFragments.add(FragmentNavigationList.getInstance("2"));
 
         SlidingTabLayoutUtil.init(view, this, mTitles, mFragments);
         return view;

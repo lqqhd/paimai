@@ -23,9 +23,11 @@ import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
+import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.ui.adapter.CangPinAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +36,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
+import static com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter.PRODUCTS_LIST;
 
 /**
  * 使用示例-空布页面
@@ -48,6 +51,14 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
+
+    public static FragmentCangPin getInstance(List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans) {
+        FragmentCangPin fragment = new FragmentCangPin();
+        Bundle args = new Bundle();
+        args.putSerializable(PRODUCTS_LIST, (Serializable) goodsBeans);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
 
     @Override
@@ -77,42 +88,12 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
 
-        /*主动演示刷新*/
-        if (mIsNeedDemo) {
-            mRefreshLayout.getLayout().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    if (mIsNeedDemo) {
-                        mRefreshLayout.autoRefresh();
-                    }
-                }
-            }, 3000);
-            mRefreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
-                @Override
-                public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
-                    mIsNeedDemo = false;
-                }
-            });
-        }
-        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-            @Override
-            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                mRefreshLayout.finishLoadMore();
-            }
-        });
+        List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans= (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
 
-    }
-
-    @Override
-    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-        mRefreshLayout.getLayout().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
-                mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
-                mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                mRecyclerView.setAdapter(mAdapter = new CangPinAdapter(loadModels()));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setAdapter(mAdapter = new CangPinAdapter(goodsBeans));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
@@ -121,17 +102,23 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
 ////                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
 //                    }
 //                });
-                mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                        Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
 
-                    }
-                });
-                mRefreshLayout.finishRefresh();
-                mEmptyLayout.setVisibility(View.GONE);
             }
-        }, 2000);
+        });
+
+        mRefreshLayout.autoRefresh();
+        mRefreshLayout.setEnableLoadMore(false);
+
+    }
+
+    @Override
+    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+        mRefreshLayout.finishRefresh();
+        mEmptyLayout.setVisibility(View.GONE);
     }
 
     /**

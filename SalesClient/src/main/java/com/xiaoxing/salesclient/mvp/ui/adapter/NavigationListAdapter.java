@@ -8,6 +8,7 @@ import android.widget.GridView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.innodroid.expandablerecycler.ExpandableRecyclerAdapter;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
@@ -15,9 +16,11 @@ import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerClickListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.jessyan.armscomponent.commonres.view.CustomGridView;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
@@ -28,6 +31,7 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
     public static final int TYPE_BANNER = 1000; //商家名称
     public static final int TYPE_CATNAME = 1001; //商家订单多个商品
     public static final int TYPE_GOODS = 1002; //商家订单底部统计
+    public static final String PRODUCTS_LIST = "products_list";
     private Context mContext;
 
     public NavigationListAdapter(Context context, Category category) {
@@ -40,6 +44,7 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
         public String Text;
 
         public String mCatname;
+        public String mCatnameId;
         public String mGoodsName;
         public String mGoodsImg;
         public List<Category.DataBean.SecondCategoryBean.GoodsBean> mGoodsBeanList;
@@ -54,6 +59,7 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
             Text = first + " " + last;
 
             mCatname = first;
+            mCatnameId = last;
         }
 
         public NavigationListItem(List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans, String last, String footer) {
@@ -100,14 +106,16 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
 
         public GoodsViewHolder(View view) {
             super(view);
-            GridView gridView = (GridView) view.findViewById(R.id.gridview);
+            CustomGridView gridView = (CustomGridView) view.findViewById(R.id.gridview);
             data_list = new ArrayList();
             simpleAdapter = new NavigationGridGoodsAdapter(mContext, mList);
             gridView.setAdapter(simpleAdapter);
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY);
+//                    Utils.navigation(mContext, RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY);
+
+                    ARouter.getInstance().build(RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY).withSerializable(PRODUCTS_LIST, (Serializable) mList).navigation();
                 }
             });
         }
@@ -213,7 +221,7 @@ public class NavigationListAdapter extends ExpandableRecyclerAdapter<NavigationL
             if (secondCategoryBeanList.size() > 0) {
                 for (int i = 0; i < secondCategoryBeanList.size(); i++) {
 
-                    items.add(new NavigationListAdapter.NavigationListItem(secondCategoryBeanList.get(i).getCat_name(), ""));
+                    items.add(new NavigationListAdapter.NavigationListItem(secondCategoryBeanList.get(i).getCat_name(), secondCategoryBeanList.get(i).getCat_id()));
 
                     List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsListBeanList = secondCategoryBeanList.get(i).getGoods();
                     items.add(new NavigationListAdapter.NavigationListItem(goodsListBeanList, "", ""));

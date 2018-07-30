@@ -12,7 +12,7 @@
         android:layout_width="@dimen/dp_70"
         android:layout_height="@dimen/dp_70"
         android:layout_centerHorizontal="true"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
         android:src="@mipmap/goods_003" />
 
     <TextView
@@ -22,8 +22,8 @@
         android:layout_below="@+id/img_product"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dp_10"
-        android:lines="1"
         android:ellipsize="end"
+        android:lines="1"
         android:textColor="@color/public_black"
         android:textSize="@dimen/public_font_10sp"
         tools:text="分类标题" />
