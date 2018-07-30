@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
@@ -25,7 +24,6 @@ import com.jess.arms.utils.ArmsUtils;
 import com.xiaoxing.salesclient.di.component.DaggerCangPinComponent;
 import com.xiaoxing.salesclient.di.module.CangPinModule;
 import com.xiaoxing.salesclient.mvp.contract.CangPinContract;
-import com.xiaoxing.salesclient.mvp.model.entity.AuctionSearch;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.presenter.CangPinPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.TagAdapter;
@@ -48,7 +46,7 @@ import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
-import static com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter.PRODUCTS_LIST;
+import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentCangPin.PRODUCTS_LIST;
 
 @Route(path = RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY)
 public class CangPinActivity extends BaseActivity<CangPinPresenter> implements CangPinContract.View {

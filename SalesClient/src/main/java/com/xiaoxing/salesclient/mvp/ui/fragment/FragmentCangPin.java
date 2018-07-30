@@ -17,12 +17,9 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.ui.adapter.CangPinAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
@@ -36,7 +33,6 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
-import static com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter.PRODUCTS_LIST;
 
 /**
  * 使用示例-空布页面
@@ -44,6 +40,7 @@ import static com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListAdapter.PROD
  */
 public class FragmentCangPin extends Fragment implements OnRefreshListener {
 
+    public static final String PRODUCTS_LIST = "products_list";
     private CangPinAdapter mAdapter;
 
 
@@ -88,7 +85,7 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
 
-        List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans= (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
+        List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans = (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
 
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
