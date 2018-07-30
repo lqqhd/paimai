@@ -36,7 +36,7 @@ public class CheckVersionUtil {
                         // fromJson 将json字符串转为bean对象
                         AppUpdate appUpdate = gson.fromJson(result, AppUpdate.class);
 
-                        if (DeviceUtils.getVersionCode(context) <= Integer.parseInt(appUpdate.getVersionCode())) {
+                        if (DeviceUtils.getVersionCode(context) < Integer.parseInt(appUpdate.getVersionCode())) {
                             return crateUIData(context, appUpdate);
                         }
 
