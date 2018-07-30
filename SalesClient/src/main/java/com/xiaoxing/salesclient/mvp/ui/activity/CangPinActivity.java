@@ -65,7 +65,7 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
     private FlowTagLayout mMobileFlowTagLayout;
     private TagAdapter mMobileTagAdapter;
 
-    private List<Category.DataBean.SecondCategoryBean.GoodsBean> mGoodsBeanList;
+//    private List<Category.DataBean.SecondCategoryBean.GoodsBean> mGoodsBeanList;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -104,9 +104,9 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
             }
         });
 
-        mGoodsBeanList = (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getIntent().getSerializableExtra(PRODUCTS_LIST);
+//        mGoodsBeanList = (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getIntent().getSerializableExtra(PRODUCTS_LIST);
         ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(FragmentCangPin.getInstance(mGoodsBeanList));
+        mFragments.add(FragmentCangPin.getInstance(null));
         mFragments.add(new FragmentWoDeGuanZhu());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);

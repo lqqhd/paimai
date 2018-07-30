@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,10 +18,13 @@ import com.xiaoxing.salesclient.di.component.DaggerSignHistoryComponent;
 import com.xiaoxing.salesclient.di.module.SignHistoryModule;
 import com.xiaoxing.salesclient.mvp.contract.SignHistoryContract;
 import com.xiaoxing.salesclient.mvp.presenter.SignHistoryPresenter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListLeftAdapter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.SignYouHuiQuanListAdapter;
 
 import java.util.HashMap;
 import java.util.List;
 
+import me.jessyan.armscomponent.commonres.utils.MyCouponsList;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
@@ -34,6 +39,8 @@ import static me.jessyan.armscomponent.commonsdk.core.BaseConstants.TOKEN;
 public class SignHistoryActivity extends BaseActivity<SignHistoryPresenter> implements SignHistoryContract.View, View.OnClickListener {
 
     private ZWCalendarView calendarView;
+    private RecyclerView mRecyclerView;
+    private SignYouHuiQuanListAdapter mSignYouHuiQuanListAdapter;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -134,7 +141,15 @@ public class SignHistoryActivity extends BaseActivity<SignHistoryPresenter> impl
 //            sign.put("2018-10-09", true);
 
 
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mSignYouHuiQuanListAdapter = new SignYouHuiQuanListAdapter(null);
+        mRecyclerView.setAdapter(mSignYouHuiQuanListAdapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+
+
         mPresenter.mySgninCouponsList(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), ArmsUtils.getDataTime("yyyy-MM"));
+        mPresenter.myCouponsList(mSharedPreferencesHelper.getString(BaseConstants.TOKEN));
     }
 
     @Override
@@ -174,6 +189,11 @@ public class SignHistoryActivity extends BaseActivity<SignHistoryPresenter> impl
             }
         }
         calendarView.setSignRecords(mSign);
+
+    }
+
+    @Override
+    public void myCouponsListSuccess(MyCouponsList myCouponsList) {
 
     }
 

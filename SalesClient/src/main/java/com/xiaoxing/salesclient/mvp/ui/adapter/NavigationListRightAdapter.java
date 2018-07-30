@@ -34,16 +34,16 @@ import xiaoxing.com.salesclient.R;
 
 import static com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiDetailActivity.BANNER_ITEMS;
 
-public class NavigationListRightAdapter extends BaseQuickAdapter<Category.DataBean.SecondCategoryBean.GoodsBean, BaseViewHolder> {
+public class NavigationListRightAdapter extends BaseQuickAdapter<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean, BaseViewHolder> {
     private Context mContext;
 
-    public NavigationListRightAdapter(Context context, @Nullable List<Category.DataBean.SecondCategoryBean.GoodsBean> data) {
+    public NavigationListRightAdapter(Context context, @Nullable List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> data) {
         super(R.layout.sales_client_item_navigation_list_cat1_products, data);
         this.mContext = context;
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, Category.DataBean.SecondCategoryBean.GoodsBean item) {
+    protected void convert(BaseViewHolder helper, Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean item) {
 
         Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.img_product));
         helper.setText(R.id.item_navigation_tv, item.getGoods_name());

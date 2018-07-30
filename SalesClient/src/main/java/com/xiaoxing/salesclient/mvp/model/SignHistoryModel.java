@@ -14,6 +14,7 @@ import com.xiaoxing.salesclient.mvp.contract.SignHistoryContract;
 import com.xiaoxing.salesclient.mvp.model.service.SalesService;
 
 import io.reactivex.Observable;
+import me.jessyan.armscomponent.commonres.utils.MyCouponsList;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 
 
@@ -39,5 +40,10 @@ public class SignHistoryModel extends BaseModel implements SignHistoryContract.M
     @Override
     public Observable<MySgninCouponsList> mySgninCouponsList(String access_token, String year_month) {
         return mRepositoryManager.obtainRetrofitService(SalesService.class).mySgninCouponsList(access_token, year_month);
+    }
+
+    @Override
+    public Observable<MyCouponsList> myCouponsList(String access_token) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).myCouponsList(access_token);
     }
 }

@@ -16,13 +16,13 @@ import xiaoxing.com.salesclient.R;
  * Created by tad on 2017/11/16.
  */
 
-public class CangPinAdapter extends BaseQuickAdapter<Category.DataBean.SecondCategoryBean.GoodsBean, BaseViewHolder> {
-    public CangPinAdapter(@Nullable List<Category.DataBean.SecondCategoryBean.GoodsBean> data) {
+public class CangPinAdapter extends BaseQuickAdapter<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean, BaseViewHolder> {
+    public CangPinAdapter(@Nullable List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> data) {
         super(R.layout.sales_client_listitem_cang_pin, data);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, Category.DataBean.SecondCategoryBean.GoodsBean item) {
+    protected void convert(BaseViewHolder helper, Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean item) {
 
 
     }

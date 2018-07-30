@@ -11,10 +11,10 @@ import java.util.List;
 
 import xiaoxing.com.salesclient.R;
 
-public class NavigationListLeftAdapter extends BaseQuickAdapter<Category.DataBean.FirstCategoryBean.SecondCategoryBean, BaseViewHolder> {
+public class SignYouHuiQuanListAdapter extends BaseQuickAdapter<Category.DataBean.FirstCategoryBean.SecondCategoryBean, BaseViewHolder> {
     private int selectPos = 0;
 
-    public NavigationListLeftAdapter(@Nullable List<Category.DataBean.FirstCategoryBean.SecondCategoryBean> data) {
+    public SignYouHuiQuanListAdapter(@Nullable List<Category.DataBean.FirstCategoryBean.SecondCategoryBean> data) {
         super(R.layout.sales_client_item_navigation_list_left, data);
     }
 

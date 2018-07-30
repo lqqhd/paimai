@@ -10,10 +10,16 @@ import android.view.ViewGroup;
 
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
+import com.xiaoxing.salesclient.di.component.DaggerFragmentNavigationComponent;
 import com.xiaoxing.salesclient.di.component.DaggerFragmentNavigationListComponent;
 import com.xiaoxing.salesclient.di.module.FragmentNavigationListModule;
+import com.xiaoxing.salesclient.di.module.FragmentNavigationModule;
+import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationContract;
+import com.xiaoxing.salesclient.mvp.model.entity.Category;
+import com.xiaoxing.salesclient.mvp.presenter.FragmentNavigationPresenter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
@@ -23,10 +29,10 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
-public class FragmentNavigation extends BaseFragment {
+public class FragmentNavigation extends BaseFragment<FragmentNavigationPresenter> implements FragmentNavigationContract.View {
 
     private final String[] mTitles = {"古董古玩", "现代艺术"};
-
+    private View view;
 
     public static FragmentNavigation newInstance(String content) {
         Bundle args = new Bundle();
@@ -38,27 +44,28 @@ public class FragmentNavigation extends BaseFragment {
 
     @Override
     public void setupFragmentComponent(@NonNull AppComponent appComponent) {
-
+        DaggerFragmentNavigationComponent //如找不到该类,请编译一下项目
+                .builder()
+                .appComponent(appComponent)
+                .fragmentNavigationModule(new FragmentNavigationModule(this))
+                .build()
+                .inject(this);
     }
 
     @Override
     public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.sales_client_fragment_navigation, null);
+        view = inflater.inflate(R.layout.sales_client_fragment_navigation, null);
 
         ToolbarUtils.initToolbarTitleNoBack(view, this, getString(R.string.sales_client_navigation));
 
-        ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(FragmentNavigationList.getInstance("1"));
-        mFragments.add(FragmentNavigationList.getInstance("2"));
 
-        SlidingTabLayoutUtil.init(view, this, mTitles, mFragments);
         return view;
     }
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-
+        mPresenter.getCategory();
     }
 
     @Override
@@ -69,5 +76,31 @@ public class FragmentNavigation extends BaseFragment {
     @OnClick(R2.id.et_search)
     void toSearch() {
         Utils.navigation(getActivity(), RouterHub.XIAO_XING_SEARCH_SearchActivity);
+    }
+
+    @Override
+    public void categorySuccess(Category category) {
+
+        List<Category.DataBean.FirstCategoryBean> firstCategoryBeanList = category.getData().getFirst_category();
+
+        ArrayList<Fragment> mFragments = new ArrayList<>();
+//        String[] titles = new String[firstCategoryBeanList.size()];
+        String[] titles = new String[4];
+        for (int i = 0; i < firstCategoryBeanList.size(); i++) {
+            if (firstCategoryBeanList.get(i).getSecond_category() != null)
+                if (firstCategoryBeanList.size() > 0) {
+                    mFragments.add(FragmentNavigationList.getInstance("1"));
+                    titles[i] = firstCategoryBeanList.get(i).getCat_name();
+                }
+
+        }
+
+
+        SlidingTabLayoutUtil.init(view, this, titles, mFragments);
+    }
+
+    @Override
+    public void showMessage(@NonNull String message) {
+
     }
 }

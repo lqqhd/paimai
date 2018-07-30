@@ -49,7 +49,7 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
 
-    public static FragmentCangPin getInstance(List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans) {
+    public static FragmentCangPin getInstance(List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> goodsBeans) {
         FragmentCangPin fragment = new FragmentCangPin();
         Bundle args = new Bundle();
         args.putSerializable(PRODUCTS_LIST, (Serializable) goodsBeans);
@@ -85,12 +85,12 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
 
-        List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans = (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
+//        List<Category.DataBean.SecondCategoryBean.GoodsBean> goodsBeans = (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
 
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mAdapter = new CangPinAdapter(goodsBeans));
+        mRecyclerView.setAdapter(mAdapter = new CangPinAdapter(null));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {

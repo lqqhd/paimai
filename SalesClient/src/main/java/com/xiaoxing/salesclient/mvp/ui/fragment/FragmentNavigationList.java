@@ -46,8 +46,8 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
     private NavigationListRightAdapter rightAdapter;
     private TextView item_navigation_tv_title;
 
-    private List<Category.DataBean.SecondCategoryBean.GoodsBean> mGoodsBeanList = new ArrayList<>();
-    private List<Category.DataBean.SecondCategoryBean> mSecondCategoryBeans = new ArrayList<>();
+    private List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> mGoodsBeanList = new ArrayList<>();
+    private List<Category.DataBean.FirstCategoryBean.SecondCategoryBean> mSecondCategoryBeans = new ArrayList<>();
     private Category mCategory;
 
     public static FragmentNavigationList getInstance(String type) {
@@ -100,13 +100,13 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
 
                 mGoodsBeanList.clear();
-                mGoodsBeanList.addAll(mCategory.getData().getSecond_category().get(i).getGoods());
+                mGoodsBeanList.addAll(mCategory.getData().getFirst_category().get(0).getSecond_category().get(i).getGoods());
 
                 leftAdapter.setSelectPos(i);
                 leftAdapter.notifyDataSetChanged();
                 rightAdapter.notifyDataSetChanged();
 
-                item_navigation_tv_title.setText(mCategory.getData().getSecond_category().get(i).getCat_name());
+                item_navigation_tv_title.setText(mCategory.getData().getFirst_category().get(0).getSecond_category().get(i).getCat_name());
             }
 
             @Override
@@ -125,7 +125,7 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
             }
         });
 
-        mPresenter.getCategory();
+//        mPresenter.getCategory();
 
 
     }
@@ -148,15 +148,15 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
 
         mSecondCategoryBeans.clear();
-        mSecondCategoryBeans.addAll(category.getData().getSecond_category());
+        mSecondCategoryBeans.addAll(category.getData().getFirst_category().get(0).getSecond_category());
         leftAdapter.notifyDataSetChanged();
 
 
         mGoodsBeanList.clear();
-        mGoodsBeanList.addAll(category.getData().getSecond_category().get(0).getGoods());
+        mGoodsBeanList.addAll(category.getData().getFirst_category().get(0).getSecond_category().get(0).getGoods());
         rightAdapter.notifyDataSetChanged();
 
-        item_navigation_tv_title.setText(category.getData().getSecond_category().get(0).getCat_name());
+        item_navigation_tv_title.setText(category.getData().getFirst_category().get(0).getSecond_category().get(0).getCat_name());
 
     }
 }
