@@ -21,6 +21,7 @@ import com.xiaoxing.salesclient.mvp.presenter.SignHistoryPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListLeftAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.SignYouHuiQuanListAdapter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class SignHistoryActivity extends BaseActivity<SignHistoryPresenter> impl
     private ZWCalendarView calendarView;
     private RecyclerView mRecyclerView;
     private SignYouHuiQuanListAdapter mSignYouHuiQuanListAdapter;
+    private List<MyCouponsList.DataBean.NoUseBean> mNoUseBeans = new ArrayList<>();
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -142,7 +144,7 @@ public class SignHistoryActivity extends BaseActivity<SignHistoryPresenter> impl
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        mSignYouHuiQuanListAdapter = new SignYouHuiQuanListAdapter(null);
+        mSignYouHuiQuanListAdapter = new SignYouHuiQuanListAdapter(mNoUseBeans);
         mRecyclerView.setAdapter(mSignYouHuiQuanListAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
@@ -195,6 +197,9 @@ public class SignHistoryActivity extends BaseActivity<SignHistoryPresenter> impl
     @Override
     public void myCouponsListSuccess(MyCouponsList myCouponsList) {
 
+        mNoUseBeans.clear();
+        mNoUseBeans.addAll(myCouponsList.getData().getNo_use());
+        mSignYouHuiQuanListAdapter.notifyDataSetChanged();
     }
 
 

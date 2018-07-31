@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_wei_pai_item"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:padding="@dimen/dp_5">
+
+    <ImageView
+        android:id="@+id/lmi_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/salas_client_app_name"
+        android:scaleType="fitXY"
+        android:src="@mipmap/wei_pai_tui_guang_goods"
+        tools:background="#fff0f0f0" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_25"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="标题"
+        android:textColor="@color/public_white"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <TextView
+        android:id="@+id/tv_you_xiao_ri_qi"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_25"
+        android:layout_alignParentBottom="true"
+        android:background="#8083847E"
+        android:gravity="center|right"
+        android:paddingRight="@dimen/dp_10"
+        android:text="2020-12-12"
+        android:textColor="@color/public_white"
+        android:textSize="@dimen/public_font_14sp" />
+
+</RelativeLayout>
+
