@@ -86,7 +86,7 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
     public void initData(@Nullable Bundle savedInstanceState) {
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithSearch(this);
         mTvChuangJianName.setText("创建专场");
-        mRlChuangJian.setVisibility(View.VISIBLE);
+        mRlChuangJian.setVisibility(View.GONE);
         mRlChuangJian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

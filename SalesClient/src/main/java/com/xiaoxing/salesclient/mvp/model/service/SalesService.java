@@ -2,9 +2,12 @@ package com.xiaoxing.salesclient.mvp.model.service;
 
 import com.xiaoxing.salesclient.mvp.model.entity.Article;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionBid;
+import com.xiaoxing.salesclient.mvp.model.entity.AuctionBuy;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionSearch;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
+import com.xiaoxing.salesclient.mvp.model.entity.GoodsReport;
+import com.xiaoxing.salesclient.mvp.model.entity.GoodsReportSubmit;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
 import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
@@ -14,6 +17,9 @@ import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
 import me.jessyan.armscomponent.commonres.utils.AppUpdate;
 
 import io.reactivex.Observable;
+
+import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetail;
+
 import me.jessyan.armscomponent.commonres.utils.CouponsReceive;
 import me.jessyan.armscomponent.commonres.utils.MyCouponsList;
 import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
@@ -184,6 +190,81 @@ public interface SalesService {
     @GET("/api/my_coupons_list.php")
     Observable<MyCouponsList> myCouponsList(
             @Query("access_token") String access_token
+    );
+
+    /**
+     * 获得拍品详细信息
+     *
+     * @param act_id
+     * @return
+     */
+    @GET("/api/auction.php")
+    Observable<AuctionDetail> auctionDetail(
+            @Query("act_id") String act_id
+    );
+
+    /**
+     * 举报
+     *
+     * @param access_token
+     * @param goods_id
+     * @return
+     */
+    @GET("/api/goods_report.php")
+    Observable<GoodsReport> goodsReport(
+            @Query("access_token") String access_token,
+            @Query("goods_id") String goods_id
+    );
+
+    /**
+     * 提交举报
+     *
+     * @param access_token
+     * @param goods_id
+     * @param goods_name
+     * @param goods_image
+     * @param title_id
+     * @param type_id
+     * @param inform_content
+     * @return
+     */
+    @GET("/api/goods_report_submit.php")
+    Observable<GoodsReportSubmit> goodsReportSubmit(
+            @Query("access_token") String access_token,
+            @Query("goods_id") String goods_id,
+            @Query("goods_name") String goods_name,
+            @Query("goods_image") String goods_image,
+            @Query("title_id") String title_id,
+            @Query("type_id") String type_id,
+            @Query("inform_content") String inform_content
+    );
+
+    /**
+     * 出价
+     *
+     * @param access_token
+     * @param auction_id
+     * @param bid_price
+     * @return
+     */
+    @GET("/api/auction_bid.php")
+    Observable<AuctionBid> auctionBid(
+            @Query("access_token") String access_token,
+            @Query("auction_id") String auction_id,
+            @Query("bid_price") String bid_price
+    );
+
+    /**
+     * 立即购买接口
+     *
+     * @param access_token
+     * @param auction_id
+     * @return
+     */
+    @GET("/api/auction_buy.php")
+    Observable<AuctionBuy> auctionBuy(
+            @Query("access_token") String access_token,
+            @Query("auction_id") String auction_id
     );
 
 

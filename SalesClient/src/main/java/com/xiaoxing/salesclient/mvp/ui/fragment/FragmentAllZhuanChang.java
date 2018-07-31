@@ -136,7 +136,7 @@ public class FragmentAllZhuanChang extends BaseFragment<FragmentAllZhuanChangPre
             }
         });
 
-
+        mRefreshLayout.autoRefresh();
         mRefreshLayout.setEnableLoadMore(false);
         return root;
     }
