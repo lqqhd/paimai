@@ -56,12 +56,12 @@ public class SlidingTabLayoutUtil {
         tabLayout_2.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
-                Toast.makeText(fragment.getActivity(), "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(fragment.getActivity(), "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onTabReselect(int position) {
-                Toast.makeText(fragment.getActivity(), "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(fragment.getActivity(), "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
             }
         });
         vp.setOffscreenPageLimit(mTitles.length);

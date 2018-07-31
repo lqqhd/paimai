@@ -11,8 +11,6 @@ import android.view.ViewGroup;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.xiaoxing.salesclient.di.component.DaggerFragmentNavigationComponent;
-import com.xiaoxing.salesclient.di.component.DaggerFragmentNavigationListComponent;
-import com.xiaoxing.salesclient.di.module.FragmentNavigationListModule;
 import com.xiaoxing.salesclient.di.module.FragmentNavigationModule;
 import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationContract;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
@@ -84,15 +82,14 @@ public class FragmentNavigation extends BaseFragment<FragmentNavigationPresenter
         List<Category.DataBean.FirstCategoryBean> firstCategoryBeanList = category.getData().getFirst_category();
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
-//        String[] titles = new String[firstCategoryBeanList.size()];
-        String[] titles = new String[4];
+        String[] titles = new String[firstCategoryBeanList.size()];
+//        String[] titles = new String[2];
         for (int i = 0; i < firstCategoryBeanList.size(); i++) {
-            if (firstCategoryBeanList.get(i).getSecond_category() != null)
-                if (firstCategoryBeanList.size() > 0) {
-                    mFragments.add(FragmentNavigationList.getInstance("1"));
-                    titles[i] = firstCategoryBeanList.get(i).getCat_name();
-                }
+            if (firstCategoryBeanList.get(i).getSecond_category() != null) {
+                mFragments.add(FragmentNavigationList.getInstance(i, category));
+                titles[i] = firstCategoryBeanList.get(i).getCat_name();
 
+            }
         }
 
 

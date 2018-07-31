@@ -39,8 +39,7 @@ public class GuanYuWoMenActivity extends BaseActivity<GuanYuWoMenPresenter> impl
 
     @BindView(R2.id.tv_version)
     TextView tvVersion;
-    @BindView(R2.id.ll_jian_cha_geng_xin)
-    LinearLayout llJianChaGengXin;
+
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -94,11 +93,11 @@ public class GuanYuWoMenActivity extends BaseActivity<GuanYuWoMenPresenter> impl
     }
 
     @OnClick({
-            R2.id.ll_jian_cha_geng_xin
+            R2.id.btn_jian_cha_ban_ben
     })
     public void onViewClicked(View view) {
 
-        if (view.getId() == R.id.ll_jian_cha_geng_xin) {
+        if (view.getId() == R.id.btn_jian_cha_ban_ben) {
             CheckVersionUtil.checkVersion(this);
         }
     }

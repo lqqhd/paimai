@@ -22,17 +22,11 @@ import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.presenter.FragmentNavigationListPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListRightAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListLeftAdapter;
-import com.xiaoxing.salesclient.mvp.ui.entity.DrugBean;
-import com.xiaoxing.salesclient.mvp.ui.entity.FeedArticleData;
-import com.xiaoxing.salesclient.mvp.ui.entity.NavigationListData;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import q.rorbin.verticaltablayout.VerticalTabLayout;
-import q.rorbin.verticaltablayout.adapter.TabAdapter;
-import q.rorbin.verticaltablayout.widget.ITabView;
-import q.rorbin.verticaltablayout.widget.TabView;
 import xiaoxing.com.salesclient.R;
 
 public class FragmentNavigationList extends BaseFragment<FragmentNavigationListPresenter> implements FragmentNavigationListContract.View {
@@ -49,11 +43,13 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
     private List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> mGoodsBeanList = new ArrayList<>();
     private List<Category.DataBean.FirstCategoryBean.SecondCategoryBean> mSecondCategoryBeans = new ArrayList<>();
     private Category mCategory;
+    private int mIndex;
 
-    public static FragmentNavigationList getInstance(String type) {
+    public static FragmentNavigationList getInstance(int index, Category category) {
         FragmentNavigationList fragment = new FragmentNavigationList();
         Bundle args = new Bundle();
-        args.putString("type", type);
+        args.putInt("index", index);
+        args.putSerializable("category", (Serializable) category);
         fragment.setArguments(args);
         return fragment;
     }
@@ -83,6 +79,10 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
     public void initData(@Nullable Bundle savedInstanceState) {
 
 
+        mCategory = (Category) getArguments().getSerializable("category");
+        mIndex = getArguments().getInt("index");
+
+
         leftAdapter = new NavigationListLeftAdapter(mSecondCategoryBeans);
         mLeftRvRecyclerView.setAdapter(leftAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
@@ -100,13 +100,13 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
 
                 mGoodsBeanList.clear();
-                mGoodsBeanList.addAll(mCategory.getData().getFirst_category().get(0).getSecond_category().get(i).getGoods());
+                mGoodsBeanList.addAll(mCategory.getData().getFirst_category().get(mIndex).getSecond_category().get(i).getGoods());
 
                 leftAdapter.setSelectPos(i);
                 leftAdapter.notifyDataSetChanged();
                 rightAdapter.notifyDataSetChanged();
 
-                item_navigation_tv_title.setText(mCategory.getData().getFirst_category().get(0).getSecond_category().get(i).getCat_name());
+                item_navigation_tv_title.setText(mCategory.getData().getFirst_category().get(mIndex).getSecond_category().get(i).getCat_name());
             }
 
             @Override
@@ -124,6 +124,19 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
             }
         });
+
+
+        mSecondCategoryBeans.clear();
+        mSecondCategoryBeans.addAll(mCategory.getData().getFirst_category().get(mIndex).getSecond_category());
+        leftAdapter.notifyDataSetChanged();
+
+
+        mGoodsBeanList.clear();
+        mGoodsBeanList.addAll(mCategory.getData().getFirst_category().get(mIndex).getSecond_category().get(0).getGoods());
+        rightAdapter.notifyDataSetChanged();
+
+        item_navigation_tv_title.setText(mCategory.getData().getFirst_category().get(mIndex).getSecond_category().get(0).getCat_name());
+
 
 //        mPresenter.getCategory();
 
