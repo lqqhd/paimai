@@ -65,7 +65,7 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
     private FlowTagLayout mMobileFlowTagLayout;
     private TagAdapter mMobileTagAdapter;
 
-//    private List<Category.DataBean.SecondCategoryBean.GoodsBean> mGoodsBeanList;
+    private List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> mGoodsBeanList;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -88,7 +88,7 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
     public void initData(@Nullable Bundle savedInstanceState) {
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithSearch(this);
         mTvChuangJianName.setText("展品发布");
-        mRlChuangJian.setVisibility(View.VISIBLE);
+        mRlChuangJian.setVisibility(View.GONE);
         mRlChuangJian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,9 +104,9 @@ public class CangPinActivity extends BaseActivity<CangPinPresenter> implements C
             }
         });
 
-//        mGoodsBeanList = (List<Category.DataBean.SecondCategoryBean.GoodsBean>) getIntent().getSerializableExtra(PRODUCTS_LIST);
+        mGoodsBeanList = (List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean>) getIntent().getSerializableExtra(PRODUCTS_LIST);
         ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(FragmentCangPin.getInstance(null));
+        mFragments.add(FragmentCangPin.getInstance(mGoodsBeanList));
         mFragments.add(new FragmentWoDeGuanZhu());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);

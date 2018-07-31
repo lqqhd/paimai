@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
 import com.jess.arms.base.BaseFragment;
@@ -20,18 +21,28 @@ import com.xiaoxing.salesclient.di.module.FragmentNavigationListModule;
 import com.xiaoxing.salesclient.mvp.contract.FragmentNavigationListContract;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.presenter.FragmentNavigationListPresenter;
-import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListRightAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListLeftAdapter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.NavigationListRightAdapter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
+import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R2;
+
+import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentCangPin.PRODUCTS_LIST;
 
 public class FragmentNavigationList extends BaseFragment<FragmentNavigationListPresenter> implements FragmentNavigationListContract.View {
 
+    public static final String INDEX = "index";
+    public static final String CATEGORY = "category";
     public static String[] cates = {"陶瓷陶器", "玉器玉雕", "古币纸钱", "收藏杂项", "铜器铜雕", "中国书画", "古典家具", "邮票邮品", "齐化奇石", "金银珠宝", "专题收藏", "雕品工艺", "图书报刊", "西画雕塑"};
+    Unbinder unbinder;
 
 
     private RecyclerView mLeftRvRecyclerView;
@@ -48,8 +59,8 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
     public static FragmentNavigationList getInstance(int index, Category category) {
         FragmentNavigationList fragment = new FragmentNavigationList();
         Bundle args = new Bundle();
-        args.putInt("index", index);
-        args.putSerializable("category", (Serializable) category);
+        args.putInt(INDEX, index);
+        args.putSerializable(CATEGORY, (Serializable) category);
         fragment.setArguments(args);
         return fragment;
     }
@@ -79,8 +90,8 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
     public void initData(@Nullable Bundle savedInstanceState) {
 
 
-        mCategory = (Category) getArguments().getSerializable("category");
-        mIndex = getArguments().getInt("index");
+        mCategory = (Category) getArguments().getSerializable(CATEGORY);
+        mIndex = getArguments().getInt(INDEX);
 
 
         leftAdapter = new NavigationListLeftAdapter(mSecondCategoryBeans);
@@ -170,6 +181,14 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
         rightAdapter.notifyDataSetChanged();
 
         item_navigation_tv_title.setText(category.getData().getFirst_category().get(0).getSecond_category().get(0).getCat_name());
+
+    }
+
+
+    @OnClick(R2.id.rl_navigation_cat1)
+    public void onClick() {
+
+        ARouter.getInstance().build(RouterHub.SALES_CLIENT_CANG_PIN_ACTIVITY).withSerializable(PRODUCTS_LIST, (Serializable) mGoodsBeanList).navigation();
 
     }
 }

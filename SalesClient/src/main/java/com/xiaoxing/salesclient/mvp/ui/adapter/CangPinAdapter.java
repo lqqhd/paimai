@@ -1,11 +1,13 @@
 package com.xiaoxing.salesclient.mvp.ui.adapter;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
-import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
 import java.util.List;
 
@@ -17,13 +19,19 @@ import xiaoxing.com.salesclient.R;
  */
 
 public class CangPinAdapter extends BaseQuickAdapter<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean, BaseViewHolder> {
-    public CangPinAdapter(@Nullable List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> data) {
+    private Context mContext;
+
+    public CangPinAdapter(Context context, @Nullable List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> data) {
         super(R.layout.sales_client_listitem_cang_pin, data);
+        this.mContext = context;
     }
 
     @Override
     protected void convert(BaseViewHolder helper, Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean item) {
 
+        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.img));
+        helper.setText(R.id.tv_name, item.getGoods_name());
+        helper.setText(R.id.tv_xin_yu_zhi, "￥" + item.getGoods_number());
 
     }
 }
