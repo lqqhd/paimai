@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
@@ -41,6 +42,7 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
     public static final String INDEX = "index";
     public static final String CATEGORY = "category";
+    public static final String PRODUCT_ID = "product_id";
     public static String[] cates = {"陶瓷陶器", "玉器玉雕", "古币纸钱", "收藏杂项", "铜器铜雕", "中国书画", "古典家具", "邮票邮品", "齐化奇石", "金银珠宝", "专题收藏", "雕品工艺", "图书报刊", "西画雕塑"};
     Unbinder unbinder;
 
@@ -135,7 +137,28 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
 
             }
         });
+        mRightRvRecyclerView.addOnItemTouchListener(new SimpleClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(PRODUCT_ID, mGoodsBeanList.get(position).getGoods_id()).navigation();
 
+            }
+
+            @Override
+            public void onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+
+            @Override
+            public void onItemChildLongClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+        });
 
         mSecondCategoryBeans.clear();
         mSecondCategoryBeans.addAll(mCategory.getData().getFirst_category().get(mIndex).getSecond_category());

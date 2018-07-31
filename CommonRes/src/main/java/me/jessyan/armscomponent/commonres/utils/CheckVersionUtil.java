@@ -11,6 +11,7 @@ import com.allenliu.versionchecklib.v2.builder.UIData;
 import com.allenliu.versionchecklib.v2.callback.CustomVersionDialogListener;
 import com.allenliu.versionchecklib.v2.callback.RequestVersionListener;
 import com.google.gson.Gson;
+import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.DeviceUtils;
 
 import me.jessyan.armscomponent.commonres.R;
@@ -38,6 +39,8 @@ public class CheckVersionUtil {
 
                         if (DeviceUtils.getVersionCode(context) < Integer.parseInt(appUpdate.getVersionCode())) {
                             return crateUIData(context, appUpdate);
+                        } else {
+                            ArmsUtils.snackbarText("已是最新版本");
                         }
 
                         return null;

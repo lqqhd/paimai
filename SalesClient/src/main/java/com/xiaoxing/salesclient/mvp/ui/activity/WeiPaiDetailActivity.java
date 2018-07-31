@@ -6,7 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -43,6 +45,9 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
 
     private final String[] mTitles = {"拍品详情", "帮助及保障", "其他拍品"};
 
+    @Autowired
+    String product_id;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerWeiPaiDetailComponent //如找不到该类,请编译一下项目
@@ -51,6 +56,8 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
                 .weiPaiDetailModule(new WeiPaiDetailModule(this))
                 .build()
                 .inject(this);
+
+        ARouter.getInstance().inject(this);
     }
 
     @Override

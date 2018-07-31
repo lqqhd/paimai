@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
@@ -33,6 +34,7 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
+import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentNavigationList.PRODUCT_ID;
 
 /**
  * 使用示例-空布页面
@@ -103,7 +105,8 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
+//                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
+                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(PRODUCT_ID, goodsBeans.get(position).getGoods_id()).navigation();
 
             }
         });

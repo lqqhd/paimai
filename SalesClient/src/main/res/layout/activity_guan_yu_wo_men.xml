@@ -37,16 +37,18 @@
             android:layout_height="@dimen/dp_40"
             android:gravity="center"
             android:text="Version 2"
-            android:textColor="#B8B8B8"
-            android:textSize="@dimen/public_font_12sp" />
+            android:textColor="@color/public_black"
+            android:textSize="@dimen/public_font_14sp" />
 
         <Button
             android:id="@+id/btn_jian_cha_ban_ben"
             style="@style/public_Button"
-            android:layout_width="@dimen/dp_150"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_35"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp_20"
-            android:text="检查更新" />
+            android:text="检查更新"
+            android:textSize="@dimen/public_font_14sp" />
 
 
     </LinearLayout>
@@ -57,7 +59,7 @@
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:padding="@dimen/dp_5"
-        android:text="青岛记忆 版权所有\n Copyright\@2013-2018 .All Rights Reserved"
+        android:text="青岛记忆 版权所有\n\n Copyright\@2018-2018 .All Rights Reserved"
         android:textColor="@color/public_black"
         android:textSize="@dimen/public_font_12sp" />
 
