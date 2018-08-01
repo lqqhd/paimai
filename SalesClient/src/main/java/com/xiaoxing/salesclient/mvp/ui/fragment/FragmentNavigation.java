@@ -81,6 +81,8 @@ public class FragmentNavigation extends BaseFragment<FragmentNavigationPresenter
 
         List<Category.DataBean.FirstCategoryBean> firstCategoryBeanList = category.getData().getFirst_category();
 
+        if (firstCategoryBeanList==null)
+            return;
         ArrayList<Fragment> mFragments = new ArrayList<>();
         String[] titles = new String[firstCategoryBeanList.size()];
 //        String[] titles = new String[2];

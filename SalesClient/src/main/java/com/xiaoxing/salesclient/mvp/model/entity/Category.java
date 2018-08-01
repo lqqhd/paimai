@@ -166,6 +166,15 @@ public class Category implements Serializable {
                     private String goods_thumb;
                     private String goods_img;
                     private String last_update;
+                    private String shop_price;
+
+                    public String getShop_price() {
+                        return shop_price;
+                    }
+
+                    public void setShop_price(String shop_price) {
+                        this.shop_price = shop_price;
+                    }
 
                     public String getGoods_id() {
                         return goods_id;

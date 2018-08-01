@@ -1,10 +1,7 @@
 package com.xiaoxing.login.mvp.ui.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -15,7 +12,6 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
-import com.jess.arms.utils.DataHelper;
 import com.xiaoxing.gifloadingview.LoadingDialogUtil;
 import com.xiaoxing.login.R;
 import com.xiaoxing.login.R2;
@@ -26,16 +22,10 @@ import com.xiaoxing.login.mvp.model.entity.Login;
 import com.xiaoxing.login.mvp.presenter.LoginPresenter;
 import com.xw.repo.XEditText;
 
-import java.util.HashMap;
-
 import butterknife.BindView;
 import butterknife.OnClick;
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
-import cn.smssdk.gui.RegisterPage;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
-import me.jessyan.armscomponent.commonsdk.core.Constants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;

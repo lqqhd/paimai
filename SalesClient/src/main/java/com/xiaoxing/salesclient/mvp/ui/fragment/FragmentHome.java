@@ -379,7 +379,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         setZhuanChang(index);
 
         List<Index.DataBean.StoreBean> storeBeanList = index.getData().getStore();
-
+        if (storeBeanList == null)
+            return;
         Glide.with(getActivity()).load(storeBeanList.get(0).getStreet_thumb()).into(rl1Img1);
         Glide.with(getActivity()).load(storeBeanList.get(0).getBrand_thumb()).into(rl1Img2);
         Glide.with(getActivity()).load(storeBeanList.get(0).getBrand_thumb()).into(rl1Img3);
@@ -392,7 +393,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
     private void setZhuanChang(Index index) {
         List<Index.DataBean.ZhuanchangBean> zhuanchangBeans = index.getData().getZhuanchang();
-
+        if (zhuanchangBeans == null)
+            return;
         Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img1);
         Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img2);
         Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img3);
@@ -423,6 +425,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     private void setWeiPaiData(Index index) {
         List<Index.DataBean.WeipaiBean> weipaiBeanList = index.getData().getWeipai();
 
+        if (weipaiBeanList == null)
+            return;
 
 //        final List<Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<Movie>>() {}.getType());
         List<Movie> movies = new ArrayList<>();
@@ -440,7 +444,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
     private void setTouTiaoData(Index index) {
         List<Index.DataBean.ArticleBean> articleBeanList = index.getData().getArticle();
-
+        if (articleBeanList == null)
+            return;
         for (int i = 0; i < articleBeanList.size(); i++) {
 
             View viewItem = View.inflate(getActivity(), R.layout.noticelayout, null);
