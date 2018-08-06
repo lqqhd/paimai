@@ -64,6 +64,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_login));
         autoLogin();
+
     }
 
 
@@ -110,7 +111,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     private void login() {
-        if (NetworkUtil.checkNetworkAvailable(this)) {
+//        if (NetworkUtil.checkNetworkAvailable(this)) {
 
             if (TextUtils.isEmpty(getUsername())) {
                 ArmsUtils.snackbarText("帐户名/手机号不能为空");
@@ -122,7 +123,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             }
 
             mPresenter.doLogin(this, getUsername(), getPassword());
-        }
+//        }
     }
 
     @NonNull

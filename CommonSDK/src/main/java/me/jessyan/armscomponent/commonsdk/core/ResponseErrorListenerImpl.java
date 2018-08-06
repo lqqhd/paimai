@@ -24,6 +24,7 @@ import com.jess.arms.utils.ArmsUtils;
 
 import org.json.JSONException;
 
+import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 
@@ -52,6 +53,8 @@ public class ResponseErrorListenerImpl implements ResponseErrorListener {
             msg = "网络不可用";
         } else if (t instanceof SocketTimeoutException) {
             msg = "请求网络超时";
+        }else if (t instanceof ConnectException) {
+            msg = "当前网络不可用，请检查网络后，稍后再试！";
         } else if (t instanceof HttpException) {
             HttpException httpException = (HttpException) t;
             msg = convertStatusCode(httpException);

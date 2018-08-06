@@ -24,11 +24,9 @@ import com.xiaoxing.login.mvp.presenter.RegisterSetPwdPresenter;
 import com.xw.repo.XEditText;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
@@ -99,17 +97,17 @@ public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter
 
         if (TextUtils.isEmpty(getNewPassword())) {
 
-            SnackbarUtils.Short(btnOk, "新密码不能为空").info().show();
+            ArmsUtils.snackbarText("新密码不能为空");
             return;
         }
         if (TextUtils.isEmpty(getNewPasswordAgain())) {
 
-            SnackbarUtils.Short(btnOk, "确认密码不能为空").info().show();
+            ArmsUtils.snackbarText("确认密码不能为空");
             return;
         }
 
         if (!getNewPassword().equals(getNewPasswordAgain())) {
-            SnackbarUtils.Short(btnOk, "两次密码输入的不一致，请重新输入").info().show();
+            ArmsUtils.snackbarText("两次密码输入的不一致，请重新输入");
             return;
         }
 
@@ -137,7 +135,7 @@ public class RegisterSetPwdActivity extends BaseActivity<RegisterSetPwdPresenter
     public void userRegisterSuccess(UserRegister userRegister) {
 
 
-        SnackbarUtils.Short(btnOk, userRegister.getMsg()).info().show();
+        ArmsUtils.snackbarText(userRegister.getMsg());
         if (userRegister.getCode() == 200)
             killMyself();
     }

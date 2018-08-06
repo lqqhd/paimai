@@ -16,7 +16,7 @@ public class NetworkUtil {
         if (ArmsUtils.isNetworkAvailable(context))
             return true;
 
-        ArmsUtils.snackbarText("当前网络不可用,请检查网络稍后再试！");
+        ArmsUtils.snackbarText("当前网络不可用，请检查网络后，稍后再试！");
         return false;
     }
 }

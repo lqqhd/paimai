@@ -23,12 +23,9 @@ import com.xiaoxing.login.mvp.presenter.ForgotPwdSendPhonePresenter;
 import com.xw.repo.XEditText;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
-import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
@@ -102,12 +99,12 @@ public class ForgotPwdSendPhoneActivity extends BaseActivity<ForgotPwdSendPhoneP
 
             if (TextUtils.isEmpty(getPhone())) {
 
-                SnackbarUtils.Short(btnNext, "手机号不能为空").info().show();
+                ArmsUtils.snackbarText("手机号不能为空");
                 return;
             } else {
 
                 if (!ArmsUtils.isMobileNO(getPhone())) {
-                    SnackbarUtils.Short(btnNext, "手机号格式不正确").info().show();
+                    ArmsUtils.snackbarText("手机号格式不正确");
                     return;
                 }
             }

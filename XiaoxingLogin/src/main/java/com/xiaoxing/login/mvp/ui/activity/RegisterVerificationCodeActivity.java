@@ -19,7 +19,6 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
-import com.xiaoxing.gifloadingview.LoadingDialogUtil;
 import com.xiaoxing.login.R;
 import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerRegisterVerificationCodeComponent;
@@ -33,19 +32,15 @@ import com.xw.repo.XEditText;
 import java.util.HashMap;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.smssdk.EventHandler;
-import cn.smssdk.OnSendMessageHandler;
 import cn.smssdk.SMSSDK;
 import cn.smssdk.gui.RegisterPage;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
-import static com.xiaoxing.login.mvp.ui.activity.RegisterSendPhoneActivity.PHONE;
 
 @Route(path = RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY)
 public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerificationCodePresenter> implements RegisterVerificationCodeContract.View {
@@ -153,7 +148,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
     private void next() {
 
         if (TextUtils.isEmpty(getCode())) {
-            SnackbarUtils.Short(btnNext, "验证码不能为空").info().show();
+            ArmsUtils.snackbarText("验证码不能为空");
             return;
         }
         if (getCode().equals(mCode)) {
@@ -162,7 +157,7 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
 
             killMyself();
         } else {
-            SnackbarUtils.Short(btnNext, "验证码错误，请重新输入").info().show();
+            ArmsUtils.snackbarText("验证码错误，请重新输入");
         }
 
 //        submitVerificationCode(mPhone, getCode());
@@ -262,6 +257,6 @@ public class RegisterVerificationCodeActivity extends BaseActivity<RegisterVerif
     @Override
     public void smsSendSuccess(SmsSend smsSend) {
 
-        SnackbarUtils.Short(btnNext, smsSend.getMsg()).info().show();
+        ArmsUtils.snackbarText(smsSend.getMsg());
     }
 }

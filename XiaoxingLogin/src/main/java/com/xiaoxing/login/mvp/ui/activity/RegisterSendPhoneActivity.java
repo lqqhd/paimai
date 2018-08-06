@@ -29,7 +29,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -110,18 +109,18 @@ public class RegisterSendPhoneActivity extends BaseActivity<RegisterSendPhonePre
 
         if (TextUtils.isEmpty(getPhone())) {
 
-            SnackbarUtils.Short(btnNext, "手机号不能为空").info().show();
+            ArmsUtils.snackbarText("手机号不能为空");
             return;
         } else {
 
             if (!ArmsUtils.isMobileNO(getPhone())) {
-                SnackbarUtils.Short(btnNext, "手机号格式不正确").info().show();
+                ArmsUtils.snackbarText("手机号格式不正确");
                 return;
             }
         }
 
         if (cb.isChecked() == false) {
-            SnackbarUtils.Short(btnNext, "请先阅读协议").info().show();
+            ArmsUtils.snackbarText("请先阅读协议");
             return;
         }
 
@@ -149,7 +148,7 @@ public class RegisterSendPhoneActivity extends BaseActivity<RegisterSendPhonePre
 //            Utils.navigation(RegisterSendPhoneActivity.this, RouterHub.XIAO_XING_LOGIN_REGISTER_VERIFICATION_CODEA_CTIVITY, bundle);
             killMyself();
         } else {
-            SnackbarUtils.Short(btnNext, userCheckphone.getMsg()).info().show();
+            ArmsUtils.snackbarText(userCheckphone.getMsg());
         }
     }
 }

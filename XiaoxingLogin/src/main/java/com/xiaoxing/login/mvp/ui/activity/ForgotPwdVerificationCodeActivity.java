@@ -134,7 +134,7 @@ public class ForgotPwdVerificationCodeActivity extends BaseActivity<ForgotPwdVer
     private void next() {
 
         if (TextUtils.isEmpty(getCode())) {
-            SnackbarUtils.Short(btnNext, "验证码不能为空").info().show();
+            ArmsUtils.snackbarText("验证码不能为空");
             return;
         }
         if (getCode().equals(mCode)) {
@@ -143,7 +143,7 @@ public class ForgotPwdVerificationCodeActivity extends BaseActivity<ForgotPwdVer
 
             killMyself();
         } else {
-            SnackbarUtils.Short(btnNext, "验证码错误，请重新输入").info().show();
+            ArmsUtils.snackbarText("验证码错误，请重新输入");
         }
 
 //        submitVerificationCode(mPhone, getCode());
@@ -163,8 +163,7 @@ public class ForgotPwdVerificationCodeActivity extends BaseActivity<ForgotPwdVer
 
     @Override
     public void smsSendSuccess(SmsSend smsSend) {
-
-        SnackbarUtils.Short(btnNext, smsSend.getMsg()).info().show();
+        ArmsUtils.snackbarText(smsSend.getMsg());
     }
 
 }

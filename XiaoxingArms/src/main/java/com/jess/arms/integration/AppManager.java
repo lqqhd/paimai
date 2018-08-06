@@ -23,7 +23,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Message;
 import android.support.design.widget.Snackbar;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import com.jess.arms.base.delegate.AppLifecycles;
 

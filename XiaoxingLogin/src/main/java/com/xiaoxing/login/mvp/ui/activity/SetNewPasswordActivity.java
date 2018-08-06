@@ -19,7 +19,6 @@ import com.xiaoxing.login.R2;
 import com.xiaoxing.login.di.component.DaggerSetNewPasswordComponent;
 import com.xiaoxing.login.di.module.SetNewPasswordModule;
 import com.xiaoxing.login.mvp.contract.SetNewPasswordContract;
-import com.xiaoxing.login.mvp.model.entity.UserRegister;
 import com.xiaoxing.login.mvp.model.entity.UserSetpassword;
 import com.xiaoxing.login.mvp.presenter.SetNewPasswordPresenter;
 import com.xw.repo.XEditText;
@@ -28,7 +27,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
@@ -96,17 +94,17 @@ public class SetNewPasswordActivity extends BaseActivity<SetNewPasswordPresenter
 
         if (TextUtils.isEmpty(getNewPassword())) {
 
-            SnackbarUtils.Short(btnOk, "新密码不能为空").info().show();
+            ArmsUtils.snackbarText("新密码不能为空");
             return;
         }
         if (TextUtils.isEmpty(getNewPasswordAgain())) {
 
-            SnackbarUtils.Short(btnOk, "确认密码不能为空").info().show();
+            ArmsUtils.snackbarText("确认密码不能为空");
             return;
         }
 
         if (!getNewPassword().equals(getNewPasswordAgain())) {
-            SnackbarUtils.Short(btnOk, "两次密码输入的不一致，请重新输入").info().show();
+            ArmsUtils.snackbarText("两次密码输入的不一致，请重新输入");
             return;
         }
 
@@ -133,7 +131,7 @@ public class SetNewPasswordActivity extends BaseActivity<SetNewPasswordPresenter
 
     @Override
     public void userSetpasswordSuccess(UserSetpassword userSetpassword) {
-        SnackbarUtils.Short(btnOk, userSetpassword.getMsg()).info().show();
+        ArmsUtils.snackbarText(userSetpassword.getMsg());
         if (userSetpassword.getCode() == 200)
             killMyself();
     }
