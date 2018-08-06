@@ -73,6 +73,7 @@
         <activity
             android:name="com.xiaoxing.login.mvp.ui.activity.LoginActivity"
             android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.xiaoxing.login.mvp.ui.activity.RegisterSendPhoneActivity"

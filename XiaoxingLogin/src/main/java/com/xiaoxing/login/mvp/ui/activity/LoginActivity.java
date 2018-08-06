@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.NestedScrollView;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.DeviceUtils;
 import com.xiaoxing.gifloadingview.LoadingDialogUtil;
 import com.xiaoxing.login.R;
 import com.xiaoxing.login.R2;
@@ -24,6 +27,7 @@ import com.xiaoxing.login.mvp.presenter.LoginPresenter;
 import com.xw.repo.XEditText;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
@@ -33,6 +37,7 @@ import me.jessyan.armscomponent.commonsdk.utils.NetworkUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
+import static me.jessyan.armscomponent.commonres.utils.ControlKeyboardLayoutUtil.controlKeyboardLayout;
 
 @Route(path = RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY)
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
@@ -43,6 +48,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     XEditText xetPassword;
     @BindView(R2.id.btn_login)
     Button btnLogin;
+//    @BindView(R2.id.ll_root)
+//    LinearLayout mLLRoot;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -63,6 +70,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         ToolbarUtils.initToolbarTitleBack(this, getString(R.string.xiaoxing_login_login));
+//        controlKeyboardLayout(mLLRoot, btnLogin);
         autoLogin();
 
     }
@@ -103,6 +111,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         } else if (view.getId() == R.id.tv_forgot_pwd) {
             Utils.navigation(LoginActivity.this, RouterHub.XIAO_XING_LOGIN_FORGOT_PWD_SEND_PHONE_ACTIVITY);
         } else if (view.getId() == R.id.btn_login) {
+            DeviceUtils.hideSoftKeyboard(this, btnLogin);
             login();
         } else if (view.getId() == R.id.img_wechat) {
             ArmsUtils.snackbarText("正在开发中...");
@@ -113,16 +122,16 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     private void login() {
 //        if (NetworkUtil.checkNetworkAvailable(this)) {
 
-            if (TextUtils.isEmpty(getUsername())) {
-                ArmsUtils.snackbarText("帐户名/手机号不能为空");
-                return;
-            }
-            if (TextUtils.isEmpty(getPassword())) {
-                ArmsUtils.snackbarText("密码不能为空");
-                return;
-            }
+        if (TextUtils.isEmpty(getUsername())) {
+            ArmsUtils.snackbarText("帐户名/手机号不能为空");
+            return;
+        }
+        if (TextUtils.isEmpty(getPassword())) {
+            ArmsUtils.snackbarText("密码不能为空");
+            return;
+        }
 
-            mPresenter.doLogin(this, getUsername(), getPassword());
+        mPresenter.doLogin(this, getUsername(), getPassword());
 //        }
     }
 

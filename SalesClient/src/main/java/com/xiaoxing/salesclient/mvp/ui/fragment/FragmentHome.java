@@ -46,7 +46,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import cn.iwgang.countdownview.CountdownView;
@@ -159,6 +158,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
                 .inject(this);
     }
 
+
     @Override
     public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -203,6 +203,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 getIndexData();
+                refreshLayout.finishRefresh();
             }
 
             @Override
@@ -367,7 +368,6 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     @Override
     public void getIndexDataSuccess(Index index) {
 
-        refreshLayout.finishRefresh();
 
         setBannerData(index);
 
@@ -500,20 +500,6 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     @Override
     public void showMessage(@NonNull String message) {
 
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder1 = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder1.unbind();
     }
 
 
