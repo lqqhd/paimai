@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -27,7 +28,8 @@ import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.SnackbarUtils;
+import me.jessyan.armscomponent.commonsdk.utils.ExitUtil;
+import me.jessyan.armscomponent.commonsdk.utils.NetworkUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
@@ -102,34 +104,25 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         } else if (view.getId() == R.id.btn_login) {
             login();
         } else if (view.getId() == R.id.img_wechat) {
-            SnackbarUtils.Short(view, "正在开发中...").info().show();
+            ArmsUtils.snackbarText("正在开发中...");
         }
 
     }
 
     private void login() {
+        if (NetworkUtil.checkNetworkAvailable(this)) {
 
-        if (TextUtils.isEmpty(getUsername())) {
+            if (TextUtils.isEmpty(getUsername())) {
+                ArmsUtils.snackbarText("帐户名/手机号不能为空");
+                return;
+            }
+            if (TextUtils.isEmpty(getPassword())) {
+                ArmsUtils.snackbarText("密码不能为空");
+                return;
+            }
 
-            SnackbarUtils.Short(btnLogin, "帐户名/手机号不能为空").info().show();
-            return;
+            mPresenter.doLogin(this, getUsername(), getPassword());
         }
-        if (TextUtils.isEmpty(getPassword())) {
-
-            SnackbarUtils.Short(btnLogin, "密码不能为空").info().show();
-            return;
-        }
-
-//        if (getUsername().equals("1234") && getPassword().equals("123456")) {
-        mPresenter.doLogin(this, getUsername(), getPassword());
-
-//            Utils.navigation(LoginActivity.this, RouterHub.SELLER_CLIENT_MINE_ACTIVITY);
-
-//        } else {
-//            SnackbarUtils.Short(btnLogin, "用户名或密码错误,测试账号为1234，密码123456").info().show();
-//        }
-
-
     }
 
     @NonNull
@@ -144,8 +137,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void doLoginSuccess(Login login) {
-        SnackbarUtils.Short(btnLogin, login.getMsg()).info().show();
-
+        ArmsUtils.snackbarText(login.getMsg());
         if (login.getCode() == 200) {
             mSharedPreferencesHelper.putString(BaseConstants.TOKEN, login.getData().getToken());
             mSharedPreferencesHelper.putString(BaseConstants.UID, login.getData().getUser_id());
@@ -163,19 +155,31 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
      * 自动登陆
      */
     public void autoLogin() {
-        String username = mSharedPreferencesHelper.getString(BaseConstants.USERNAME);
-        String pwd = mSharedPreferencesHelper.getString(BaseConstants.PASSWORD);
-        if (username != null && pwd != null) {
+        if (NetworkUtil.checkNetworkAvailable(this)) {
 
-            if (BaseConstants.AUTO_LOGIN) {
-                xetUsername.setText(username);
-                xetPassword.setText(pwd);
-                login();
-            } else {
-                xetUsername.setText(mSharedPreferencesHelper.getString(BaseConstants.USERNAME));
+            String username = mSharedPreferencesHelper.getString(BaseConstants.USERNAME);
+            String pwd = mSharedPreferencesHelper.getString(BaseConstants.PASSWORD);
+            if (username != null && pwd != null) {
 
+                if (BaseConstants.AUTO_LOGIN) {
+                    xetUsername.setText(username);
+                    xetPassword.setText(pwd);
+                    login();
+                } else {
+                    xetUsername.setText(mSharedPreferencesHelper.getString(BaseConstants.USERNAME));
+
+                }
             }
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            ExitUtil.exit(this);
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }

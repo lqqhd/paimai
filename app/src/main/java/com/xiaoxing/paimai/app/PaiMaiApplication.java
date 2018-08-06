@@ -1,5 +1,7 @@
 package com.xiaoxing.paimai.app;
 
+import android.content.Context;
+
 import com.jess.arms.base.BaseApplication;
 import com.mob.MobSDK;
 
@@ -10,11 +12,17 @@ import com.mob.MobSDK;
  */
 public class PaiMaiApplication extends BaseApplication {
 
+    private static Context mContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = getApplicationContext();
         MobSDK.init(this);
     }
 
+    public static Context getContext() {
 
+        return mContext;
+    }
 }

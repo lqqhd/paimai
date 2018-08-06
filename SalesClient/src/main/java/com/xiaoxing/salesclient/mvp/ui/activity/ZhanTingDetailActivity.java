@@ -87,8 +87,8 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
         });
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(new FragmentCangPin());
-        mFragments.add(new FragmentCangPin());
+        mFragments.add(FragmentCangPin.getInstance(null));
+        mFragments.add(FragmentCangPin.getInstance(null));
         mFragments.add(new FragmentAllZhuanChang());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);

@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ import me.jessyan.armscomponent.commonres.utils.MySgninCouponsList;
 import me.jessyan.armscomponent.commonres.utils.TodayIsSign;
 import me.jessyan.armscomponent.commonsdk.core.BaseConstants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.ExitUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
 import me.majiajie.pagerbottomtabstrip.PageNavigationView;
@@ -375,4 +377,14 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
     public void qianDao(String date) {
         mPresenter.couponsReceive(mSharedPreferencesHelper.getString(BaseConstants.TOKEN), "11");
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            ExitUtil.exit(this);
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

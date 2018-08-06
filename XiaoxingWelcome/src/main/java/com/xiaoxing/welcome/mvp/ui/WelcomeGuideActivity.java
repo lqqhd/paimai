@@ -2,14 +2,20 @@ package com.xiaoxing.welcome.mvp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -23,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.ExitUtil;
 
 import static com.xiaoxing.welcome.mvp.ui.AppConstants.FIRST_OPEN;
 
@@ -76,6 +83,9 @@ public class WelcomeGuideActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         return R.layout.activity_guide;
 
     }
@@ -190,4 +200,16 @@ public class WelcomeGuideActivity extends BaseActivity implements View.OnClickLi
         }
 
     }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            ExitUtil.exit(this);
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
 }
