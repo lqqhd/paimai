@@ -15,6 +15,8 @@ import com.jess.arms.utils.ArmsUtils;
 import com.xiaoxing.salesclient.di.component.DaggerWeiPaiDetailComponent;
 import com.xiaoxing.salesclient.di.module.WeiPaiDetailModule;
 import com.xiaoxing.salesclient.mvp.contract.WeiPaiDetailContract;
+import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetail;
+import com.xiaoxing.salesclient.mvp.model.entity.Index;
 import com.xiaoxing.salesclient.mvp.presenter.WeiPaiDetailPresenter;
 import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentZhanTing;
@@ -25,17 +27,22 @@ import com.youth.banner.listener.OnBannerClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import cn.iwgang.countdownview.CountdownView;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
+import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
+import xiaoxing.com.salesclient.R2;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 @Route(path = RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY)
 public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> implements WeiPaiDetailContract.View {
 
+    @BindView(R2.id.convenientBanner)
+    Banner mBanner;
 
     public static List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>() {{
         add(new BannerItem("最后的骑士", R.mipmap.banner_001));
@@ -94,11 +101,13 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
 
         initCountdownView();
     }
+
     private void initCountdownView() {
         CountdownView mCvCountdownViewTest4 = (CountdownView) findViewById(R.id.cv_countdownViewTest4);
         long time4 = (long) 150 * 24 * 60 * 60 * 1000;
         mCvCountdownViewTest4.start(time4);
     }
+
     @Override
     public void showLoading() {
 
@@ -124,5 +133,22 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
     @Override
     public void killMyself() {
         finish();
+    }
+
+    @Override
+    public void auctionDetailSuccess(AuctionDetail auctionDetail) {
+
+        AuctionDetail.DataBean dataBean = auctionDetail.getData().get(0);
+
+
+        List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>();
+
+        BANNER_ITEMS.add(new BannerItem("最后的骑士", dataBean.getGoods_img()));
+
+        mBanner.setImageLoader(new GlideImageLoader());
+        mBanner.setImages(BANNER_ITEMS);
+        mBanner.start();
+
+
     }
 }

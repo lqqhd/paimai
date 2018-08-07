@@ -15,41 +15,47 @@
         android:layout_height="match_parent"
         app:srlEnablePreviewInEditMode="false">
 
-        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srlAccentColor="@color/public_black" />
+            android:layout_height="match_parent">
 
-        <android.support.v4.widget.NestedScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#f6f6f6"
-            android:fillViewport="true"
-            android:overScrollMode="never"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <include
+                android:id="@+id/empty"
+                layout="@layout/_loading_layout_empty" />
 
-            <LinearLayout
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/scrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:background="#f6f6f6"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-                <include layout="@layout/public_banner" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <include layout="@layout/sales_client_include_tou_tiao" />
+                    <include layout="@layout/public_banner" />
 
-                <include layout="@layout/sales_client_include_zhuan_chang" />
+                    <include layout="@layout/sales_client_include_tou_tiao" />
 
-                <include layout="@layout/sales_client_include_tui_guang" />
+                    <include layout="@layout/sales_client_include_zhuan_chang" />
 
-                <include layout="@layout/sales_client_include_zhuang_chang_tui_guang" />
+                    <include layout="@layout/sales_client_include_tui_guang" />
 
-                <include layout="@layout/sales_client_include_zhan_ting" />
-            </LinearLayout>
+                    <include layout="@layout/sales_client_include_zhuang_chang_tui_guang" />
+
+                    <include layout="@layout/sales_client_include_zhan_ting" />
+                </LinearLayout>
 
 
-        </android.support.v4.widget.NestedScrollView>
+            </android.support.v4.widget.NestedScrollView>
 
+        </FrameLayout>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 

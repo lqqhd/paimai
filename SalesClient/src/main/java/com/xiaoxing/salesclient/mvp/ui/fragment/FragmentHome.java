@@ -138,6 +138,11 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     ViewFlipper mViewFlipper;
 
 
+    @BindView(R2.id.empty)
+    View mEmptyLayout;
+
+    private NestedScrollView scrollView;
+
     private RecyclerView recyclerView;
 
     public static FragmentHome newInstance(String content) {
@@ -165,6 +170,9 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
         View view = inflater.inflate(R.layout.sales_client_fragment_home, null);
 
+        TextView empty = (TextView) view.findViewById(R.id.empty_text);
+        empty.setText("暂无数据下拉刷新");
+
         final Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
 
         EditText et_search = toolbar.findViewById(R.id.et_search);
@@ -188,7 +196,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
 //        final View parallax = view.findViewById(R.id.parallax);
         final View buttonBar = view.findViewById(R.id.buttonBarLayout);
-        final NestedScrollView scrollView = (NestedScrollView) view.findViewById(R.id.scrollView);
+        scrollView = (NestedScrollView) view.findViewById(R.id.scrollView);
         refreshLayout = (RefreshLayout) view.findViewById(R.id.refreshLayout);
 
         refreshLayout.autoRefresh();
@@ -368,7 +376,10 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
     @Override
     public void getIndexDataSuccess(Index index) {
-
+        if (index.getData() != null) {
+            mEmptyLayout.setVisibility(View.GONE);
+            scrollView.setVisibility(View.VISIBLE);
+        }
 
         setBannerData(index);
 

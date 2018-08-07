@@ -11,6 +11,10 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.xiaoxing.salesclient.mvp.contract.WeiPaiDetailContract;
+import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetail;
+import com.xiaoxing.salesclient.mvp.model.service.SalesService;
+
+import io.reactivex.Observable;
 
 
 @ActivityScope
@@ -30,5 +34,10 @@ public class WeiPaiDetailModel extends BaseModel implements WeiPaiDetailContract
         super.onDestroy();
         this.mGson = null;
         this.mApplication = null;
+    }
+
+    @Override
+    public Observable<AuctionDetail> getAuctionDetail(String act_id) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).auctionDetail(act_id);
     }
 }
