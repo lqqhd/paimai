@@ -271,6 +271,10 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
 
 
         mPresenter.checkAppUpdate();
+//        todayIsSign();
+    }
+
+    public void todayIsSign() {
         mPresenter.todayIsSign(mSharedPreferencesHelper.getString(BaseConstants.TOKEN));
     }
 

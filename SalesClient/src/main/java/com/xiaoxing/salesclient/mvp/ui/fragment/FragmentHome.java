@@ -137,6 +137,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
     @BindView(R2.id.marquee_view)
     ViewFlipper mViewFlipper;
 
+
     private RecyclerView recyclerView;
 
     public static FragmentHome newInstance(String content) {
@@ -164,8 +165,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
         View view = inflater.inflate(R.layout.sales_client_fragment_home, null);
 
-
         final Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+
         EditText et_search = toolbar.findViewById(R.id.et_search);
         et_search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -381,11 +382,12 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         List<Index.DataBean.StoreBean> storeBeanList = index.getData().getStore();
         if (storeBeanList == null)
             return;
-        Glide.with(getActivity()).load(storeBeanList.get(0).getStreet_thumb()).into(rl1Img1);
-        Glide.with(getActivity()).load(storeBeanList.get(0).getBrand_thumb()).into(rl1Img2);
+        Glide.with(getActivity()).load(storeBeanList.get(0).getShop_logo()).into(rl1Img1);
+        Glide.with(getActivity()).load(storeBeanList.get(0).getStreet_thumb()).into(rl1Img2);
         Glide.with(getActivity()).load(storeBeanList.get(0).getBrand_thumb()).into(rl1Img3);
-        Glide.with(getActivity()).load(storeBeanList.get(1).getStreet_thumb()).into(rl2Img1);
-        Glide.with(getActivity()).load(storeBeanList.get(1).getBrand_thumb()).into(rl2Img2);
+
+        Glide.with(getActivity()).load(storeBeanList.get(1).getShop_logo()).into(rl2Img1);
+        Glide.with(getActivity()).load(storeBeanList.get(1).getStreet_thumb()).into(rl2Img2);
         Glide.with(getActivity()).load(storeBeanList.get(1).getBrand_thumb()).into(rl2Img3);
 
 
@@ -517,7 +519,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             R2.id.rl_tou_tiao, R2.id.img_zhuan_chang, R2.id.img_wei_pai,
             R2.id.img_cang_pin, R2.id.img_zhan_ting, R2.id.img_gu_sou,
             R2.id.rl_wei_pai_tui_guang, R2.id.rl_zhuan_chang_tui_guang, R2.id.rl_zhan_ting_tui_guang,
-            R2.id.rl_zhan_ting_detail, R2.id.rl_zhuan_chang_tui_guang_detail, R2.id.rl_zhuan_chang_tui_guang_detail_1})
+            R2.id.rl_zhan_ting_detail, R2.id.rl_zhuan_chang_tui_guang_detail, R2.id.rl_zhuan_chang_tui_guang_detail_1, R2.id.btnRight})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.rl_tou_tiao) {
@@ -544,6 +546,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail_1) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
+        } else if (view.getId() == R.id.btnRight) {
+            PaiMaiMainActivity.getInstance().todayIsSign();
         }
     }
 

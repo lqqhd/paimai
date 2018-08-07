@@ -7,7 +7,7 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/public_toolbar_search" />
+    <include layout="@layout/public_toolbar_search_right" />
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
