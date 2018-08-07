@@ -86,7 +86,6 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
 
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
-        mEmptyLayout.setVisibility(View.GONE);
 
         List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> goodsBeans = (List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
 
@@ -111,7 +110,7 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
             }
         });
 
-        mRefreshLayout.setEnableRefresh(false);
+        mRefreshLayout.autoRefresh();
         mRefreshLayout.setEnableLoadMore(false);
 
     }
@@ -119,7 +118,6 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         mRefreshLayout.finishRefresh();
-        mEmptyLayout.setVisibility(View.GONE);
     }
 
     /**

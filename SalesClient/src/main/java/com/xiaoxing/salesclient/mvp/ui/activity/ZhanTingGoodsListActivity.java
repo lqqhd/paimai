@@ -125,6 +125,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         mPresenter.getSpecialcatDetail("1489");
+        mRefreshLayout.finishRefresh();
     }
 
     /**
@@ -184,7 +185,6 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     public void specialcatDetailSuccess(SpecialcatDetail specialcatDetail) {
         mDataBeans.addAll(specialcatDetail.getData().getGoods());
         mAdapter.notifyDataSetChanged();
-        mRefreshLayout.finishRefresh();
         mEmptyLayout.setVisibility(View.GONE);
     }
 }

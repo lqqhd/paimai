@@ -65,6 +65,7 @@ public class FragmentWeiPai extends BaseFragment<FragmentWeiPaiPresenter> implem
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
 
         getAuctionListData();
+        mRefreshLayout.finishRefresh();
     }
 
     private void getAuctionListData() {
@@ -162,7 +163,6 @@ public class FragmentWeiPai extends BaseFragment<FragmentWeiPaiPresenter> implem
         mDataBeans.clear();
 //        mDataBeans.addAll(auctionList.getData());
         mAdapter.notifyDataSetChanged();
-        mRefreshLayout.finishRefresh();
         mEmptyLayout.setVisibility(View.GONE);
     }
 

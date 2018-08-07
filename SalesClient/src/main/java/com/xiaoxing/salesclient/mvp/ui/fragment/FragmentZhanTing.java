@@ -69,6 +69,7 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         getStoreShopData();
+        mRefreshLayout.finishRefresh();
     }
 
     /**
@@ -169,7 +170,6 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
         mDataBeans.clear();
         mDataBeans.addAll(storeShop.getData());
         mAdapter.notifyDataSetChanged();
-        mRefreshLayout.finishRefresh();
         mEmptyLayout.setVisibility(View.GONE);
 
     }
