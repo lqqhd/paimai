@@ -28,6 +28,8 @@ import com.jiang.android.indicatordialog.IndicatorBuilder;
 import com.jiang.android.indicatordialog.IndicatorDialog;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.salesclient.di.component.DaggerFragmentHomeComponent;
 import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
@@ -198,6 +200,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         final View buttonBar = view.findViewById(R.id.buttonBarLayout);
         scrollView = (NestedScrollView) view.findViewById(R.id.scrollView);
         refreshLayout = (RefreshLayout) view.findViewById(R.id.refreshLayout);
+        refreshLayout.setRefreshHeader(new ClassicsHeader(getActivity()).setSpinnerStyle(SpinnerStyle.FixedBehind).setPrimaryColorId(R.color.public_colorPrimary).setAccentColorId(android.R.color.white));
+
 
         refreshLayout.autoRefresh();
 

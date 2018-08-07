@@ -57,6 +57,8 @@ public class FragmentAllZhuanChang extends BaseFragment<FragmentAllZhuanChangPre
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         getSpecialcat();
+        mRefreshLayout.finishRefresh();
+
     }
 
     private void getSpecialcat() {
@@ -156,15 +158,6 @@ public class FragmentAllZhuanChang extends BaseFragment<FragmentAllZhuanChangPre
 
     }
 
-    @Override
-    public void showLoading() {
-        mRefreshLayout.autoRefresh();
-    }
-
-    @Override
-    public void hideLoading() {
-        mRefreshLayout.finishRefresh();
-    }
 
     @Override
     public void specialcatSuccess(Specialcat specialcat) {

@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
         android:background="#EEEFF1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
 
         <RadioButton
@@ -22,8 +23,8 @@
             android:button="@null"
             android:gravity="center"
             android:text="大行"
-            android:textSize="@dimen/public_font_12sp"
-            android:textColor="@color/public_black" />
+            android:textColor="@color/public_black"
+            android:textSize="@dimen/public_font_12sp" />
 
         <RadioButton
             android:layout_width="0dp"
@@ -34,9 +35,9 @@
             android:button="@null"
             android:gravity="center"
             android:text="行家"
-            android:textSize="@dimen/public_font_12sp"
+            android:textColor="@color/public_black"
 
-            android:textColor="@color/public_black" />
+            android:textSize="@dimen/public_font_12sp" />
 
         <RadioButton
             android:layout_width="0dp"
@@ -47,8 +48,8 @@
             android:button="@null"
             android:gravity="center"
             android:text="自由"
-            android:textSize="@dimen/public_font_12sp"
-            android:textColor="@color/public_black" />
+            android:textColor="@color/public_black"
+            android:textSize="@dimen/public_font_12sp" />
     </RadioGroup>
 
     <LinearLayout
@@ -71,8 +72,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/white"
-                    android:overScrollMode="never"
                     android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
                     tools:listitem="@android:layout/simple_list_item_2" />
 
                 <include
