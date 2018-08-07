@@ -5,10 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -16,23 +19,23 @@ import com.xiaoxing.salesclient.di.component.DaggerWeiPaiDetailComponent;
 import com.xiaoxing.salesclient.di.module.WeiPaiDetailModule;
 import com.xiaoxing.salesclient.mvp.contract.WeiPaiDetailContract;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetail;
-import com.xiaoxing.salesclient.mvp.model.entity.Index;
 import com.xiaoxing.salesclient.mvp.presenter.WeiPaiDetailPresenter;
 import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentQiTaPaiPin;
+import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentWeiPaiDetail;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentZhanTing;
 import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
-import com.youth.banner.listener.OnBannerClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import cn.iwgang.countdownview.CountdownView;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 import xiaoxing.com.salesclient.R2;
 
@@ -54,6 +57,30 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
 
     @Autowired
     String product_id;
+    @BindView(R2.id.cv_countdownViewTest4)
+    CountdownView cvCountdownViewTest4;
+    @BindView(R2.id.tv_title)
+    TextView tvTitle;
+    @BindView(R2.id.tv_dang_qian_jia)
+    TextView tvDangQianJia;
+    @BindView(R2.id.tv_wei_guan_chu_jia)
+    TextView tvWeiGuanChuJia;
+    @BindView(R2.id.tv_qi_pai_jia)
+    TextView tvQiPaiJia;
+    @BindView(R2.id.tv_bao_zheng_jin)
+    TextView tvBaoZhengJin;
+    @BindView(R2.id.tv_mai_jia_yong_jin)
+    TextView tvMaiJiaYongJin;
+    @BindView(R2.id.tv_yi_kou_jia)
+    TextView tvYiKouJia;
+    @BindView(R2.id.tv_jia_jia_fu_du)
+    TextView tvJiaJiaFuDu;
+    @BindView(R2.id.tv_shop_name)
+    TextView tvShopName;
+    @BindView(R2.id.tv_dian_pu_bao_zheng_jin_value)
+    TextView tvDianPuBaoZhengJinValue;
+    @BindView(R2.id.img_shop)
+    ImageView img_shop;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -92,14 +119,9 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
 //        });
 
 
-        ArrayList<Fragment> mFragments = new ArrayList<>();
-        mFragments.add(FragmentZhanTing.newInstance(""));
-        mFragments.add(FragmentZhanTing.newInstance(""));
-        mFragments.add(FragmentZhanTing.newInstance(""));
+//        initCountdownView();
 
-        SlidingTabLayoutUtil.init(this, mTitles, mFragments);
-
-        initCountdownView();
+        mPresenter.getAuctionDetail("51");
     }
 
     private void initCountdownView() {
@@ -138,17 +160,61 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
     @Override
     public void auctionDetailSuccess(AuctionDetail auctionDetail) {
 
-        AuctionDetail.DataBean dataBean = auctionDetail.getData().get(0);
+        AuctionDetail.DataBean dataBean = auctionDetail.getData();
+        if (dataBean == null)
+            return;
+
+        setBannerData(dataBean);
 
 
-        List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>();
+        long time2 = Long.parseLong(dataBean.getEnd_time()) * 1000 - System.currentTimeMillis();
+        cvCountdownViewTest4.start(time2);
 
-        BANNER_ITEMS.add(new BannerItem("最后的骑士", dataBean.getGoods_img()));
+        tvTitle.setText(dataBean.getGoods_name());
+        tvDangQianJia.setText("￥" + dataBean.getCurrent_price());
 
-        mBanner.setImageLoader(new GlideImageLoader());
-        mBanner.setImages(BANNER_ITEMS);
-        mBanner.start();
+        tvWeiGuanChuJia.setText("围观" + dataBean.getOnlookers_num() + "次" + " 出价" + dataBean.getBid_user_count() + "次");
 
+        tvQiPaiJia.setText("￥" + dataBean.getStart_price());
+        tvYiKouJia.setText("￥" + dataBean.getEnd_price());
+        tvBaoZhengJin.setText("￥" + dataBean.getDeposit());
+        tvJiaJiaFuDu.setText("￥" + dataBean.getAmplitude());
+
+
+        Glide.with(this).load(dataBean.getShopinfo().getShop_logo()).into(img_shop);
+        tvShopName.setText(dataBean.getShopinfo().getShop_name());
+        tvDianPuBaoZhengJinValue.setText("￥" + dataBean.getDeposit());
+
+
+        ArrayList<Fragment> mFragments = new ArrayList<>();
+        mFragments.add(FragmentWeiPaiDetail.newInstance(dataBean.getDesc_mobile()));
+        mFragments.add(FragmentWeiPaiDetail.newInstance(dataBean.getAct_promise()));
+
+        if (dataBean.getOther_goods() != null) {
+            mFragments.add(FragmentQiTaPaiPin.getInstance(dataBean.getOther_goods()));
+        } else {
+            mFragments.add(FragmentQiTaPaiPin.getInstance(null));
+        }
+
+        SlidingTabLayoutUtil.init(this, mTitles, mFragments);
 
     }
+
+    private void setBannerData(AuctionDetail.DataBean dataBean) {
+        List<AuctionDetail.DataBean.PicturesBean> picturesBeanList = dataBean.getPictures();
+
+        if (picturesBeanList != null) {
+            List<BannerItem> BANNER_ITEMS = new ArrayList<BannerItem>();
+
+            for (int i = 0; i < picturesBeanList.size(); i++) {
+                BANNER_ITEMS.add(new BannerItem("最后的骑士", picturesBeanList.get(i).getImg_url()));
+            }
+
+            mBanner.setImageLoader(new GlideImageLoader());
+            mBanner.setImages(BANNER_ITEMS);
+            mBanner.start();
+        }
+    }
+
+
 }

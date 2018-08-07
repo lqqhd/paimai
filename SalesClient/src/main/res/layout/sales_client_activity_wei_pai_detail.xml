@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:countdownView="http://schemas.android.com/apk/res-auto"
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -26,7 +27,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_250">
 
-                <include layout="@layout/public_banner" />
+                <com.youth.banner.Banner
+                    android:id="@+id/convenientBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:is_auto_play="true" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -82,6 +87,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:ellipsize="end"
+                    android:lines="1"
                     android:text="红山文化时期玉蝉"
                     android:textColor="@color/public_mine_item_text"
                     android:textSize="@dimen/public_font_16sp" />
@@ -206,6 +213,7 @@
 
 
                 <TextView
+                    android:id="@+id/tv_wei_guan_chu_jia"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center|left"
@@ -225,7 +233,8 @@
                     android:paddingRight="@dimen/dp_10"
                     android:text="鉴定"
                     android:textColor="#BE6394"
-                    android:textSize="@dimen/public_font_14sp" />
+                    android:textSize="@dimen/public_font_14sp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/tv_fen_xiang"
@@ -238,7 +247,8 @@
                     android:paddingRight="@dimen/dp_10"
                     android:text="分享"
                     android:textColor="#BE6394"
-                    android:textSize="@dimen/public_font_14sp" />
+                    android:textSize="@dimen/public_font_14sp"
+                    android:visibility="gone" />
 
             </RelativeLayout>
 
@@ -266,6 +276,7 @@
                             android:textColor="#A5A5C2" />
 
                         <TextView
+                            android:id="@+id/tv_qi_pai_jia"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -290,6 +301,7 @@
                             android:textColor="#A5A5C2" />
 
                         <TextView
+                            android:id="@+id/tv_bao_zheng_jin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -315,6 +327,7 @@
                             android:textColor="#A5A5C2" />
 
                         <TextView
+                            android:id="@+id/tv_mai_jia_yong_jin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -370,6 +383,7 @@
                             android:textColor="#A5A5C2" />
 
                         <TextView
+                            android:id="@+id/tv_yi_kou_jia"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -393,6 +407,7 @@
                             android:textColor="#A5A5C2" />
 
                         <TextView
+                            android:id="@+id/tv_jia_jia_fu_du"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -460,7 +475,7 @@
 
 
                 <ImageView
-                    android:id="@+id/img"
+                    android:id="@+id/img_shop"
                     android:layout_width="@dimen/dp_80"
                     android:layout_height="@dimen/dp_80"
                     android:layout_marginTop="@dimen/dp_5"
@@ -475,9 +490,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:layout_marginTop="@dimen/dp_5"
-                    android:layout_toRightOf="@+id/img"
+                    android:layout_toRightOf="@+id/img_shop"
                     android:gravity="center|left"
-                    android:padding="@dimen/dp_5"
                     android:text="xx的店铺"
                     android:textColor="@color/public_black"
                     android:textSize="@dimen/public_font_14sp" />
@@ -489,14 +503,14 @@
                     android:layout_below="@+id/tv_shop_name"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:layout_marginTop="@dimen/dp_5"
-                    android:layout_toRightOf="@+id/img"
+                    android:layout_toRightOf="@+id/img_shop"
                     android:gravity="center|left"
                     android:text="店铺保证金"
                     android:textColor="#B8B8B8"
                     android:textSize="@dimen/public_font_12sp" />
 
                 <TextView
-                    android:id="@+id/tv_hao_ping"
+                    android:id="@+id/tv_dian_pu_bao_zheng_jin_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_shop_name"

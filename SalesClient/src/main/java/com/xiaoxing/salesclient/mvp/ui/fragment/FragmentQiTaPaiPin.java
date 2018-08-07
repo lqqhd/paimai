@@ -21,8 +21,10 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetail;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
 import com.xiaoxing.salesclient.mvp.ui.adapter.CangPinAdapter;
+import com.xiaoxing.salesclient.mvp.ui.adapter.QiTaPaiPinAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
 import java.io.Serializable;
@@ -30,7 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
@@ -40,10 +41,10 @@ import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentNavigationList.PR
  * 使用示例-空布页面
  * A simple {@link Fragment} subclass.
  */
-public class FragmentCangPin extends Fragment implements OnRefreshListener {
+public class FragmentQiTaPaiPin extends Fragment implements OnRefreshListener {
 
     public static final String PRODUCTS_LIST = "products_list";
-    private CangPinAdapter mAdapter;
+    private QiTaPaiPinAdapter mAdapter;
 
 
     private View mEmptyLayout;
@@ -51,10 +52,10 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
 
-    public static FragmentCangPin getInstance(List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> goodsBeans) {
-        FragmentCangPin fragment = new FragmentCangPin();
+    public static FragmentQiTaPaiPin getInstance(List<AuctionDetail.DataBean.OtherGoodsBean> otherGoodsBeans) {
+        FragmentQiTaPaiPin fragment = new FragmentQiTaPaiPin();
         Bundle args = new Bundle();
-        args.putSerializable(PRODUCTS_LIST, (Serializable) goodsBeans);
+        args.putSerializable(PRODUCTS_LIST, (Serializable) otherGoodsBeans);
         fragment.setArguments(args);
         return fragment;
     }
@@ -85,14 +86,20 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
         image.setImageResource(R.drawable.ic_empty);
 
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
-        empty.setText("暂无数据下拉刷新");
+        empty.setText("暂无数据");
         mEmptyLayout.setVisibility(View.GONE);
-        List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> goodsBeans = (List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
 
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mAdapter = new CangPinAdapter(getActivity(), goodsBeans));
+        mRefreshLayout.setEnableRefresh(false);
+        mRefreshLayout.setEnableLoadMore(false);
+
+        List<AuctionDetail.DataBean.OtherGoodsBean> goodsBeans = (List<AuctionDetail.DataBean.OtherGoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
+
+        if (goodsBeans != null) {
+
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+            mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+            mRecyclerView.setAdapter(mAdapter = new QiTaPaiPinAdapter(getActivity(), goodsBeans));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
@@ -101,17 +108,19 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
 ////                        holder.textColorId(android.R.id.text2, R.color.colorTextAssistant);
 //                    }
 //                });
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+            mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 //                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
-                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(PRODUCT_ID, goodsBeans.get(position).getGoods_id()).navigation();
+                    ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(PRODUCT_ID, goodsBeans.get(position).getGoods_id()).navigation();
 
-            }
-        });
+                }
+            });
 
-        mRefreshLayout.autoRefresh();
-        mRefreshLayout.setEnableLoadMore(false);
+
+        } else {
+            mEmptyLayout.setVisibility(View.VISIBLE);
+        }
 
     }
 

@@ -8,12 +8,12 @@ public class AuctionDetail {
     /**
      * result : true
      * msg : 获取数据成功
-     * data : [{"goods_id":"920","goods_name":"收藏杂项测试1","goods_number":"2","shop_price":"0.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531383722150.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531383722754.jpg","last_update":"1531383754","desc_mobile":"PGRpdiBjbGFzcz0ic2VjdGlvbiBzLWltZyI+PGRpdiBjbGFzcz0iaW1nIj48aW1nIHNyYz0iaHR0cDovL3MuanVmZW5nc2MuY29tL2RhdGEvZ2FsbGVyeV9hbGJ1bS8yL29yaWdpbmFsX2ltZy8xNTMxMzgzNzQwMjg4MjI4MzU0LmpwZyI+PC9kaXY+PGRpdiBjbGFzcz0idG9vbHMiPjxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIGNsYXNzPSJtb3ZlLXVwIGljb24tYXJyb3ctdXAgZGlzYWJsZWQiPjwvYT48YSBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBjbGFzcz0ibW92ZS1kb3duIGljb24tYXJyb3ctZG93biBkaXNhYmxlZCI+PC9hPjxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIGNsYXNzPSJtb3ZlLXJlbW92ZSI+PGkgY2xhc3M9Imljb24gaWNvbi1yZW1vdmUiPjwvaT7liKDpmaQ8L2E+PGRpdiBjbGFzcz0iY292ZXIiPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9InNlY3Rpb24gcy10eHQiPjxkaXYgY2xhc3M9InR4dCI+IOaUtuiXj+adgumhuea1i+ivlTE8L2Rpdj48ZGl2IGNsYXNzPSJ0b29scyI+PGEgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgY2xhc3M9Im1vdmUtdXAgaWNvbi1hcnJvdy11cCI+PC9hPjxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIGNsYXNzPSJtb3ZlLWRvd24gaWNvbi1hcnJvdy1kb3duIGRpc2FibGVkIj48L2E+PGEgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgY2xhc3M9Im1vdmUtZWRpdCIgZWN0eXBlPSJtb3ZlX2VkaXRfdG91Y2giPjxpIGNsYXNzPSJpY29uIGljb24tZWRpdCI+PC9pPue8lui+kTwvYT48YSBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBjbGFzcz0ibW92ZS1yZW1vdmUiPjxpIGNsYXNzPSJpY29uIGljb24tcmVtb3ZlIj48L2k+5Yig6ZmkPC9hPjxkaXYgY2xhc3M9ImNvdmVyIj48L2Rpdj48L2Rpdj48L2Rpdj4=","onlookers_num":"2","act_promise":"","start_time":"1531383774","end_time":"1532593359","act_id":"51","deposit":20000,"start_price":3000,"end_price":20000,"amplitude":3000,"no_top":0,"is_hot":0,"formated_start_price":"¥<\/em>3000.00","formated_end_price":"¥<\/em>20000.00","formated_deposit":"¥<\/em>20000.00","current_price":3000,"bid_user_count":"0","is_finished":"0","last_bid":null}]
+     * data : {"goods_id":"920","user_id":"0","goods_name":"收藏杂项测试1","goods_number":"2","shop_price":"0.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531383722150.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531383722754.jpg","last_update":"1531383754","desc_mobile":" <\/div> <\/a><\/a><\/i>删除<\/a> <\/div><\/div><\/div> 收藏杂项测试1<\/div> <\/a><\/a><\/i>编辑<\/a><\/i>删除<\/a> <\/div><\/div><\/div>","onlookers_num":"9","act_promise":"","start_time":"1531383774","end_time":"1532593359","act_id":"51","pictures":[{"img_id":"1031","img_url":"http://47.100.103.123/images/201807/goods_img/0_P_1531383722311.jpg","thumb_url":"http://47.100.103.123/images/201807/thumb_img/0_thumb_P_1531383722898.jpg","img_desc":"9","external_url":""}],"deposit":20000,"start_price":3000,"end_price":20000,"amplitude":3000,"no_top":0,"is_hot":0,"formated_start_price":"¥<\/em>3000.00","formated_end_price":"¥<\/em>20000.00","formated_deposit":"¥<\/em>20000.00","current_price":3000,"bid_user_count":"0","is_finished":"0","last_bid":null,"shop_info":false,"grade_name":"平台方","rz_shopName":"乐拍","shopinfo":{"shop_name":"乐拍","check_sellername":"0","shopname_audit":"1","shop_logo":"","brand_thumb":"","self_run":null},"other_goods":[{"goods_id":"923","goods_name":"首页祖传玉镯子","goods_number":"4","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/923_thumb_G_1532062567819.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/923_G_1532062567485.jpg","last_update":"1532062624","shop_price":"1.00"},{"goods_id":"922","goods_name":"书画购买测试","goods_number":"2","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/922_thumb_G_1532063003749.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/922_G_1532063003901.jpg","last_update":"1532063011","shop_price":"0.00"},{"goods_id":"921","goods_name":"铜器铜雕ceshi","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/921_thumb_G_1532062978516.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/921_G_1532062978855.jpg","last_update":"1532062982","shop_price":"0.00"},{"goods_id":"920","goods_name":"收藏杂项测试1","goods_number":"2","keywords":"","goods_brief":" 收藏杂项测试1","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531383722150.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531383722754.jpg","last_update":"1531383754","shop_price":"0.00"},{"goods_id":"919","goods_name":"古钱币测试1","goods_number":"2","keywords":"","goods_brief":"古钱币测试1","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531383528851.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531383528734.jpg","last_update":"1533577490","shop_price":"1999.00"},{"goods_id":"918","goods_name":"玉器玉雕测试商品1","goods_number":"1000","keywords":"","goods_brief":"玉器玉雕测试商品1","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531382865134.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531382865153.jpg","last_update":"1531383147","shop_price":"0.00"},{"goods_id":"917","goods_name":"陶瓷陶器1测试商品1","goods_number":"1000","keywords":"","goods_brief":"陶瓷陶器1测试商品1","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531382589160.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531382589563.jpg","last_update":"1531382686","shop_price":"0.00"},{"goods_id":"916","goods_name":"清朝铜钱","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531297383728.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531297383816.jpg","last_update":"1533577684","shop_price":"123444.00"},{"goods_id":"915","goods_name":"罗汉床","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201808/thumb_img/915_thumb_G_1533578010579.jpg","goods_img":"http://47.100.103.123/images/201808/goods_img/915_G_1533578010290.jpg","last_update":"1533578011","shop_price":"35600.00"},{"goods_id":"914","goods_name":"榆木床头柜","goods_number":"2","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531041001562.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531041001037.jpg","last_update":"1531041035","shop_price":"45000.00"},{"goods_id":"913","goods_name":"玉器3","goods_number":"1","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531016358458.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531016358426.jpg","last_update":"1531016363","shop_price":"40000.00"},{"goods_id":"912","goods_name":"玉器1","goods_number":"1","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531015034851.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531015034582.jpg","last_update":"1531015144","shop_price":"1444.00"},{"goods_id":"911","goods_name":"字画5","goods_number":"2","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530959062805.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530959062471.jpg","last_update":"1530959084","shop_price":"6000.00"},{"goods_id":"910","goods_name":"古书","goods_number":"6","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958971037.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958971708.jpg","last_update":"1532971159","shop_price":"3000.00"},{"goods_id":"909","goods_name":"字画1","goods_number":"5","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958877665.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958877783.jpg","last_update":"1530958996","shop_price":"0.00"},{"goods_id":"908","goods_name":"太师椅","goods_number":"4","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958811379.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958811442.jpg","last_update":"1530959000","shop_price":"3000.00"},{"goods_id":"907","goods_name":"桌子","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958731867.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958731596.jpg","last_update":"1530959014","shop_price":"30000.00"},{"goods_id":"906","goods_name":"花瓶-微拍推广","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530955495843.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530955495710.jpg","last_update":"1531383452","shop_price":"2000.00"},{"goods_id":"905","goods_name":"椅子","goods_number":"994","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/data/gallery_album/2/thumb_img/1494985265759726303.jpg","goods_img":"http://47.100.103.123/data/gallery_album/2/images/1494985265262573638.jpg","last_update":"1530955689","shop_price":"0.01"},{"goods_id":"904","goods_name":"测试产品001","goods_number":"989","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/data/gallery_album/2/thumb_img/1494985268545005438.jpg","goods_img":"http://47.100.103.123/data/gallery_album/2/images/1494985268890006696.jpg","last_update":"1508738926","shop_price":"0.10"}]}
      */
 
     private String result;
     private String msg;
-    private List<DataBean> data;
+    private DataBean data;
 
     public String getResult() {
         return result;
@@ -31,29 +31,31 @@ public class AuctionDetail {
         this.msg = msg;
     }
 
-    public List<DataBean> getData() {
+    public DataBean getData() {
         return data;
     }
 
-    public void setData(List<DataBean> data) {
+    public void setData(DataBean data) {
         this.data = data;
     }
 
     public static class DataBean {
         /**
          * goods_id : 920
+         * user_id : 0
          * goods_name : 收藏杂项测试1
          * goods_number : 2
          * shop_price : 0.00
          * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531383722150.jpg
          * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1531383722754.jpg
          * last_update : 1531383754
-         * desc_mobile : PGRpdiBjbGFzcz0ic2VjdGlvbiBzLWltZyI+PGRpdiBjbGFzcz0iaW1nIj48aW1nIHNyYz0iaHR0cDovL3MuanVmZW5nc2MuY29tL2RhdGEvZ2FsbGVyeV9hbGJ1bS8yL29yaWdpbmFsX2ltZy8xNTMxMzgzNzQwMjg4MjI4MzU0LmpwZyI+PC9kaXY+PGRpdiBjbGFzcz0idG9vbHMiPjxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIGNsYXNzPSJtb3ZlLXVwIGljb24tYXJyb3ctdXAgZGlzYWJsZWQiPjwvYT48YSBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBjbGFzcz0ibW92ZS1kb3duIGljb24tYXJyb3ctZG93biBkaXNhYmxlZCI+PC9hPjxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIGNsYXNzPSJtb3ZlLXJlbW92ZSI+PGkgY2xhc3M9Imljb24gaWNvbi1yZW1vdmUiPjwvaT7liKDpmaQ8L2E+PGRpdiBjbGFzcz0iY292ZXIiPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9InNlY3Rpb24gcy10eHQiPjxkaXYgY2xhc3M9InR4dCI+IOaUtuiXj+adgumhuea1i+ivlTE8L2Rpdj48ZGl2IGNsYXNzPSJ0b29scyI+PGEgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgY2xhc3M9Im1vdmUtdXAgaWNvbi1hcnJvdy11cCI+PC9hPjxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIGNsYXNzPSJtb3ZlLWRvd24gaWNvbi1hcnJvdy1kb3duIGRpc2FibGVkIj48L2E+PGEgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgY2xhc3M9Im1vdmUtZWRpdCIgZWN0eXBlPSJtb3ZlX2VkaXRfdG91Y2giPjxpIGNsYXNzPSJpY29uIGljb24tZWRpdCI+PC9pPue8lui+kTwvYT48YSBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBjbGFzcz0ibW92ZS1yZW1vdmUiPjxpIGNsYXNzPSJpY29uIGljb24tcmVtb3ZlIj48L2k+5Yig6ZmkPC9hPjxkaXYgY2xhc3M9ImNvdmVyIj48L2Rpdj48L2Rpdj48L2Rpdj4=
-         * onlookers_num : 2
+         * desc_mobile :  </div> </a></a></i>删除</a> </div></div></div> 收藏杂项测试1</div> </a></a></i>编辑</a></i>删除</a> </div></div></div>
+         * onlookers_num : 9
          * act_promise :
          * start_time : 1531383774
          * end_time : 1532593359
          * act_id : 51
+         * pictures : [{"img_id":"1031","img_url":"http://47.100.103.123/images/201807/goods_img/0_P_1531383722311.jpg","thumb_url":"http://47.100.103.123/images/201807/thumb_img/0_thumb_P_1531383722898.jpg","img_desc":"9","external_url":""}]
          * deposit : 20000
          * start_price : 3000
          * end_price : 20000
@@ -67,9 +69,15 @@ public class AuctionDetail {
          * bid_user_count : 0
          * is_finished : 0
          * last_bid : null
+         * shop_info : false
+         * grade_name : 平台方
+         * rz_shopName : 乐拍
+         * shopinfo : {"shop_name":"乐拍","check_sellername":"0","shopname_audit":"1","shop_logo":"","brand_thumb":"","self_run":null}
+         * other_goods : [{"goods_id":"923","goods_name":"首页祖传玉镯子","goods_number":"4","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/923_thumb_G_1532062567819.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/923_G_1532062567485.jpg","last_update":"1532062624","shop_price":"1.00"},{"goods_id":"922","goods_name":"书画购买测试","goods_number":"2","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/922_thumb_G_1532063003749.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/922_G_1532063003901.jpg","last_update":"1532063011","shop_price":"0.00"},{"goods_id":"921","goods_name":"铜器铜雕ceshi","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/921_thumb_G_1532062978516.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/921_G_1532062978855.jpg","last_update":"1532062982","shop_price":"0.00"},{"goods_id":"920","goods_name":"收藏杂项测试1","goods_number":"2","keywords":"","goods_brief":" 收藏杂项测试1","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531383722150.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531383722754.jpg","last_update":"1531383754","shop_price":"0.00"},{"goods_id":"919","goods_name":"古钱币测试1","goods_number":"2","keywords":"","goods_brief":"古钱币测试1","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531383528851.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531383528734.jpg","last_update":"1533577490","shop_price":"1999.00"},{"goods_id":"918","goods_name":"玉器玉雕测试商品1","goods_number":"1000","keywords":"","goods_brief":"玉器玉雕测试商品1","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531382865134.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531382865153.jpg","last_update":"1531383147","shop_price":"0.00"},{"goods_id":"917","goods_name":"陶瓷陶器1测试商品1","goods_number":"1000","keywords":"","goods_brief":"陶瓷陶器1测试商品1","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531382589160.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531382589563.jpg","last_update":"1531382686","shop_price":"0.00"},{"goods_id":"916","goods_name":"清朝铜钱","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531297383728.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531297383816.jpg","last_update":"1533577684","shop_price":"123444.00"},{"goods_id":"915","goods_name":"罗汉床","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201808/thumb_img/915_thumb_G_1533578010579.jpg","goods_img":"http://47.100.103.123/images/201808/goods_img/915_G_1533578010290.jpg","last_update":"1533578011","shop_price":"35600.00"},{"goods_id":"914","goods_name":"榆木床头柜","goods_number":"2","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531041001562.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531041001037.jpg","last_update":"1531041035","shop_price":"45000.00"},{"goods_id":"913","goods_name":"玉器3","goods_number":"1","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531016358458.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531016358426.jpg","last_update":"1531016363","shop_price":"40000.00"},{"goods_id":"912","goods_name":"玉器1","goods_number":"1","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531015034851.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531015034582.jpg","last_update":"1531015144","shop_price":"1444.00"},{"goods_id":"911","goods_name":"字画5","goods_number":"2","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530959062805.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530959062471.jpg","last_update":"1530959084","shop_price":"6000.00"},{"goods_id":"910","goods_name":"古书","goods_number":"6","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958971037.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958971708.jpg","last_update":"1532971159","shop_price":"3000.00"},{"goods_id":"909","goods_name":"字画1","goods_number":"5","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958877665.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958877783.jpg","last_update":"1530958996","shop_price":"0.00"},{"goods_id":"908","goods_name":"太师椅","goods_number":"4","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958811379.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958811442.jpg","last_update":"1530959000","shop_price":"3000.00"},{"goods_id":"907","goods_name":"桌子","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958731867.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958731596.jpg","last_update":"1530959014","shop_price":"30000.00"},{"goods_id":"906","goods_name":"花瓶-微拍推广","goods_number":"3","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530955495843.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530955495710.jpg","last_update":"1531383452","shop_price":"2000.00"},{"goods_id":"905","goods_name":"椅子","goods_number":"994","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/data/gallery_album/2/thumb_img/1494985265759726303.jpg","goods_img":"http://47.100.103.123/data/gallery_album/2/images/1494985265262573638.jpg","last_update":"1530955689","shop_price":"0.01"},{"goods_id":"904","goods_name":"测试产品001","goods_number":"989","keywords":"","goods_brief":"","goods_thumb":"http://47.100.103.123/data/gallery_album/2/thumb_img/1494985268545005438.jpg","goods_img":"http://47.100.103.123/data/gallery_album/2/images/1494985268890006696.jpg","last_update":"1508738926","shop_price":"0.10"}]
          */
 
         private String goods_id;
+        private String user_id;
         private String goods_name;
         private String goods_number;
         private String shop_price;
@@ -95,6 +103,12 @@ public class AuctionDetail {
         private String bid_user_count;
         private String is_finished;
         private Object last_bid;
+        private boolean shop_info;
+        private String grade_name;
+        private String rz_shopName;
+        private ShopinfoBean shopinfo;
+        private List<PicturesBean> pictures;
+        private List<OtherGoodsBean> other_goods;
 
         public String getGoods_id() {
             return goods_id;
@@ -102,6 +116,14 @@ public class AuctionDetail {
 
         public void setGoods_id(String goods_id) {
             this.goods_id = goods_id;
+        }
+
+        public String getUser_id() {
+            return user_id;
+        }
+
+        public void setUser_id(String user_id) {
+            this.user_id = user_id;
         }
 
         public String getGoods_name() {
@@ -302,6 +324,272 @@ public class AuctionDetail {
 
         public void setLast_bid(Object last_bid) {
             this.last_bid = last_bid;
+        }
+
+        public boolean isShop_info() {
+            return shop_info;
+        }
+
+        public void setShop_info(boolean shop_info) {
+            this.shop_info = shop_info;
+        }
+
+        public String getGrade_name() {
+            return grade_name;
+        }
+
+        public void setGrade_name(String grade_name) {
+            this.grade_name = grade_name;
+        }
+
+        public String getRz_shopName() {
+            return rz_shopName;
+        }
+
+        public void setRz_shopName(String rz_shopName) {
+            this.rz_shopName = rz_shopName;
+        }
+
+        public ShopinfoBean getShopinfo() {
+            return shopinfo;
+        }
+
+        public void setShopinfo(ShopinfoBean shopinfo) {
+            this.shopinfo = shopinfo;
+        }
+
+        public List<PicturesBean> getPictures() {
+            return pictures;
+        }
+
+        public void setPictures(List<PicturesBean> pictures) {
+            this.pictures = pictures;
+        }
+
+        public List<OtherGoodsBean> getOther_goods() {
+            return other_goods;
+        }
+
+        public void setOther_goods(List<OtherGoodsBean> other_goods) {
+            this.other_goods = other_goods;
+        }
+
+        public static class ShopinfoBean {
+            /**
+             * shop_name : 乐拍
+             * check_sellername : 0
+             * shopname_audit : 1
+             * shop_logo :
+             * brand_thumb :
+             * self_run : null
+             */
+
+            private String shop_name;
+            private String check_sellername;
+            private String shopname_audit;
+            private String shop_logo;
+            private String brand_thumb;
+            private Object self_run;
+
+            public String getShop_name() {
+                return shop_name;
+            }
+
+            public void setShop_name(String shop_name) {
+                this.shop_name = shop_name;
+            }
+
+            public String getCheck_sellername() {
+                return check_sellername;
+            }
+
+            public void setCheck_sellername(String check_sellername) {
+                this.check_sellername = check_sellername;
+            }
+
+            public String getShopname_audit() {
+                return shopname_audit;
+            }
+
+            public void setShopname_audit(String shopname_audit) {
+                this.shopname_audit = shopname_audit;
+            }
+
+            public String getShop_logo() {
+                return shop_logo;
+            }
+
+            public void setShop_logo(String shop_logo) {
+                this.shop_logo = shop_logo;
+            }
+
+            public String getBrand_thumb() {
+                return brand_thumb;
+            }
+
+            public void setBrand_thumb(String brand_thumb) {
+                this.brand_thumb = brand_thumb;
+            }
+
+            public Object getSelf_run() {
+                return self_run;
+            }
+
+            public void setSelf_run(Object self_run) {
+                this.self_run = self_run;
+            }
+        }
+
+        public static class PicturesBean {
+            /**
+             * img_id : 1031
+             * img_url : http://47.100.103.123/images/201807/goods_img/0_P_1531383722311.jpg
+             * thumb_url : http://47.100.103.123/images/201807/thumb_img/0_thumb_P_1531383722898.jpg
+             * img_desc : 9
+             * external_url :
+             */
+
+            private String img_id;
+            private String img_url;
+            private String thumb_url;
+            private String img_desc;
+            private String external_url;
+
+            public String getImg_id() {
+                return img_id;
+            }
+
+            public void setImg_id(String img_id) {
+                this.img_id = img_id;
+            }
+
+            public String getImg_url() {
+                return img_url;
+            }
+
+            public void setImg_url(String img_url) {
+                this.img_url = img_url;
+            }
+
+            public String getThumb_url() {
+                return thumb_url;
+            }
+
+            public void setThumb_url(String thumb_url) {
+                this.thumb_url = thumb_url;
+            }
+
+            public String getImg_desc() {
+                return img_desc;
+            }
+
+            public void setImg_desc(String img_desc) {
+                this.img_desc = img_desc;
+            }
+
+            public String getExternal_url() {
+                return external_url;
+            }
+
+            public void setExternal_url(String external_url) {
+                this.external_url = external_url;
+            }
+        }
+
+        public static class OtherGoodsBean {
+            /**
+             * goods_id : 923
+             * goods_name : 首页祖传玉镯子
+             * goods_number : 4
+             * keywords :
+             * goods_brief :
+             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/923_thumb_G_1532062567819.jpg
+             * goods_img : http://47.100.103.123/images/201807/goods_img/923_G_1532062567485.jpg
+             * last_update : 1532062624
+             * shop_price : 1.00
+             */
+
+            private String goods_id;
+            private String goods_name;
+            private String goods_number;
+            private String keywords;
+            private String goods_brief;
+            private String goods_thumb;
+            private String goods_img;
+            private String last_update;
+            private String shop_price;
+
+            public String getGoods_id() {
+                return goods_id;
+            }
+
+            public void setGoods_id(String goods_id) {
+                this.goods_id = goods_id;
+            }
+
+            public String getGoods_name() {
+                return goods_name;
+            }
+
+            public void setGoods_name(String goods_name) {
+                this.goods_name = goods_name;
+            }
+
+            public String getGoods_number() {
+                return goods_number;
+            }
+
+            public void setGoods_number(String goods_number) {
+                this.goods_number = goods_number;
+            }
+
+            public String getKeywords() {
+                return keywords;
+            }
+
+            public void setKeywords(String keywords) {
+                this.keywords = keywords;
+            }
+
+            public String getGoods_brief() {
+                return goods_brief;
+            }
+
+            public void setGoods_brief(String goods_brief) {
+                this.goods_brief = goods_brief;
+            }
+
+            public String getGoods_thumb() {
+                return goods_thumb;
+            }
+
+            public void setGoods_thumb(String goods_thumb) {
+                this.goods_thumb = goods_thumb;
+            }
+
+            public String getGoods_img() {
+                return goods_img;
+            }
+
+            public void setGoods_img(String goods_img) {
+                this.goods_img = goods_img;
+            }
+
+            public String getLast_update() {
+                return last_update;
+            }
+
+            public void setLast_update(String last_update) {
+                this.last_update = last_update;
+            }
+
+            public String getShop_price() {
+                return shop_price;
+            }
+
+            public void setShop_price(String shop_price) {
+                this.shop_price = shop_price;
+            }
         }
     }
 }
