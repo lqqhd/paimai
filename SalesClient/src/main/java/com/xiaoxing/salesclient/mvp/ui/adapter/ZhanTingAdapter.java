@@ -36,9 +36,9 @@ public class ZhanTingAdapter extends BaseQuickAdapter<StoreShop.DataBean, BaseVi
 
         helper.setText(R.id.tv_name, item.getGrade_name());
         helper.setText(R.id.tv_shop_name, item.getShop_name().getShop_name());
-        helper.setText(R.id.tv_xin_yu_zhi, "信誉值" + item.getSales_volume());
+        helper.setText(R.id.tv_dang_qian_jia, "信誉值" + item.getSales_volume());
         helper.setText(R.id.tv_xiao_shou_e, "销售额" + item.getSales_volume());
-        helper.setText(R.id.tv_hao_ping, "好评" + item.getSales_volume() + "%");
+        helper.setText(R.id.tv_chu_jia, "好评" + item.getSales_volume() + "%");
         helper.setText(R.id.tv_fang_wen_liang, "访问量" + item.getSales_volume() + "次");
 
     }

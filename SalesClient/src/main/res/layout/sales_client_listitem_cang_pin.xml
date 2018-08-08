@@ -34,7 +34,7 @@
             android:textSize="@dimen/public_font_14sp" />
 
         <TextView
-            android:id="@+id/tv_xin_yu_zhi"
+            android:id="@+id/tv_dang_qian_jia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"

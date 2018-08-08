@@ -35,9 +35,9 @@ public class WeiPaiDetailPresenter extends BasePresenter<WeiPaiDetailContract.Mo
         super(model, rootView);
     }
 
-    public void getAuctionDetail(String act_id) {
+    public void getAuctionDetail(String act_id, String goods_id) {
 
-        mModel.getAuctionDetail(act_id).subscribeOn(Schedulers.io())
+        mModel.getAuctionDetail(act_id, goods_id).subscribeOn(Schedulers.io())
                 //                .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
                 .doOnSubscribe(disposable -> {
                     mRootView.showLoading();

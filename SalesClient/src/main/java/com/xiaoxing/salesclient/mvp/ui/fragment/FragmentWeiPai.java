@@ -15,19 +15,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
-import com.xiaoxing.salesclient.di.component.DaggerFragmentHomeComponent;
 import com.xiaoxing.salesclient.di.component.DaggerFragmentWeiPaiComponent;
-import com.xiaoxing.salesclient.di.module.FragmentHomeModule;
 import com.xiaoxing.salesclient.di.module.FragmentWeiPaiModule;
 import com.xiaoxing.salesclient.mvp.contract.FragmentWeiPaiContract;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
@@ -43,6 +39,8 @@ import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
+import static me.jessyan.armscomponent.commonsdk.core.Constants.ACT_ID;
+import static me.jessyan.armscomponent.commonsdk.core.Constants.PRODUCT_ID;
 
 /**
  * 使用示例-空布页面
@@ -121,10 +119,8 @@ public class FragmentWeiPai extends BaseFragment<FragmentWeiPaiPresenter> implem
 
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
         empty.setText("暂无数据下拉刷新");
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mAdapter = new WeiPaiAdapter(mDataBeans));
+
+        mRecyclerView.setAdapter(mAdapter = new WeiPaiAdapter(getActivity(), mDataBeans));
 //                mRecyclerView.setAdapter(new BaseRecyclerAdapter<Item>(Arrays.asList(Item.values()), simple_list_item_2, FragmentOrderList.this) {
 //                    @Override
 //                    protected void onBindViewHolder(SmartViewHolder holder, Item model, int position) {
@@ -136,7 +132,8 @@ public class FragmentWeiPai extends BaseFragment<FragmentWeiPaiPresenter> implem
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
+//                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
+                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(ACT_ID, mDataBeans.get(position).getAct_id()).navigation();
 
             }
         });
@@ -161,7 +158,7 @@ public class FragmentWeiPai extends BaseFragment<FragmentWeiPaiPresenter> implem
     @Override
     public void auctionListSuccess(AuctionList auctionList) {
         mDataBeans.clear();
-//        mDataBeans.addAll(auctionList.getData());
+        mDataBeans.addAll(auctionList.getData());
         mAdapter.notifyDataSetChanged();
         mEmptyLayout.setVisibility(View.GONE);
     }

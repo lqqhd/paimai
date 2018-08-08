@@ -200,6 +200,7 @@ public interface SalesService {
      */
     @GET("/api/auction.php")
     Observable<AuctionDetail> auctionDetail(
+            @Query("act_id") String act_id,
             @Query("goods_id") String goods_id
     );
 

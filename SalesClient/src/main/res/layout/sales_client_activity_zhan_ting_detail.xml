@@ -84,7 +84,7 @@
                         android:textSize="@dimen/public_font_12sp" />
 
                     <TextView
-                        android:id="@+id/tv_hao_ping"
+                        android:id="@+id/tv_chu_jia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_fen_si"

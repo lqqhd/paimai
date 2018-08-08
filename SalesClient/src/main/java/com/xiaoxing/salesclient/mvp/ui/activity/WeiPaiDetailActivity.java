@@ -56,6 +56,8 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
     private final String[] mTitles = {"拍品详情", "帮助及保障", "其他拍品"};
 
     @Autowired
+    String act_id;
+    @Autowired
     String product_id;
     @BindView(R2.id.cv_countdownViewTest4)
     CountdownView cvCountdownViewTest4;
@@ -122,7 +124,7 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
 
 //        initCountdownView();
 
-        mPresenter.getAuctionDetail(product_id);
+        mPresenter.getAuctionDetail(act_id, product_id);
     }
 
     private void initCountdownView() {

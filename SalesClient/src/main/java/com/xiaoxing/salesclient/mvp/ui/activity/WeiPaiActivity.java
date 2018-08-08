@@ -80,7 +80,7 @@ public class WeiPaiActivity extends BaseActivity<WeiPaiPresenter> implements Wei
     public void initData(@Nullable Bundle savedInstanceState) {
         Toolbar toolbar = ToolbarUtils.initToolbarTitleBackWithSearch(this);
         mTvChuangJianName.setText("微拍发布");
-        mRlChuangJian.setVisibility(View.VISIBLE);
+        mRlChuangJian.setVisibility(View.GONE);
         mRlChuangJian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

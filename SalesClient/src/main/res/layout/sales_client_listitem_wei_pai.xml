@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -34,7 +35,7 @@
             android:textSize="@dimen/public_font_14sp" />
 
         <TextView
-            android:id="@+id/tv_xin_yu_zhi"
+            android:id="@+id/tv_dang_qian_jia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"
@@ -46,10 +47,10 @@
             android:textSize="@dimen/public_font_12sp" />
 
         <TextView
-            android:id="@+id/tv_hao_ping"
+            android:id="@+id/tv_chu_jia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_xin_yu_zhi"
+            android:layout_below="@+id/tv_dang_qian_jia"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_5"
             android:gravity="center|left"
@@ -57,17 +58,32 @@
             android:textColor="#3D3D3D"
             android:textSize="@dimen/public_font_12sp" />
 
-        <TextView
-            android:id="@+id/tv_time"
+
+        <cn.iwgang.countdownview.CountdownView
+            android:id="@+id/cv_countdownViewTest4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_hao_ping"
+            android:layout_height="@dimen/dp_25"
+            android:layout_below="@+id/tv_chu_jia"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_5"
-            android:gravity="center|left"
-            android:text="1时 58分 28秒"
-            android:textColor="#893E3D"
-            android:textSize="@dimen/public_font_12sp" />
+            android:background="@null"
+            android:gravity="center"
+            app:isShowDay="true"
+            app:isShowHour="true"
+            app:isShowMillisecond="false"
+            app:isShowMinute="true"
+            app:isShowSecond="true"
+            app:isTimeTextBold="true"
+            app:suffixDay="天"
+            app:suffixGravity="bottom"
+            app:suffixHour="时"
+            app:suffixMillisecond="毫秒"
+            app:suffixMinute="钟"
+            app:suffixSecond="秒"
+            app:suffixTextColor="#893E3D"
+            app:suffixTextSize="@dimen/public_font_10sp"
+            app:timeTextColor="#893E3D"
+            app:timeTextSize="@dimen/public_font_10sp" />
 
 
         <TextView
@@ -75,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/tv_hao_ping"
+            android:layout_below="@+id/tv_chu_jia"
             android:layout_marginRight="@dimen/dp_10"
             android:gravity="center"
             android:padding="@dimen/dp_5"

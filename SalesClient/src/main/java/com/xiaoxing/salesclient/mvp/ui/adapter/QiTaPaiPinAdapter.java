@@ -8,7 +8,6 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetail;
-import com.xiaoxing.salesclient.mvp.model.entity.Category;
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class QiTaPaiPinAdapter extends BaseQuickAdapter<AuctionDetail.DataBean.O
 
         Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.img));
         helper.setText(R.id.tv_name, item.getGoods_name());
-        helper.setText(R.id.tv_xin_yu_zhi, "￥" + item.getShop_price());
+        helper.setText(R.id.tv_dang_qian_jia, "￥" + item.getShop_price());
 
     }
 }

@@ -37,7 +37,7 @@ public class WeiPaiDetailModel extends BaseModel implements WeiPaiDetailContract
     }
 
     @Override
-    public Observable<AuctionDetail> getAuctionDetail(String act_id) {
-        return mRepositoryManager.obtainRetrofitService(SalesService.class).auctionDetail(act_id);
+    public Observable<AuctionDetail> getAuctionDetail(String act_id, String goods_id) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).auctionDetail(act_id, goods_id);
     }
 }
