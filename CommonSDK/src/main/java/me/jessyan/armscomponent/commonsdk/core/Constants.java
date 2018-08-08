@@ -29,4 +29,5 @@ public interface Constants {
     String PHONE_REGULAR = "^1[3-9]\\d{9}$";
     String PRODUCT_ID = "product_id";
     String ACT_ID = "act_id";
+    String STORE_ID = "store_id";
 }

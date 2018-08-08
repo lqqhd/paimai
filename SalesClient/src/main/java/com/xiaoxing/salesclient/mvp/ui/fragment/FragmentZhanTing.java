@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
@@ -33,11 +34,13 @@ import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.jessyan.armscomponent.commonsdk.core.Constants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
+import static me.jessyan.armscomponent.commonsdk.core.Constants.PRODUCT_ID;
 
 /**
  * 使用示例-空布页面
@@ -142,7 +145,9 @@ public class FragmentZhanTing extends BaseFragment<FragmentZhanTingPresenter> im
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
+//                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
+
+                ARouter.getInstance().build(RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY).withString(Constants.STORE_ID, mDataBeans.get(position).getShop_id()).navigation();
 
             }
         });

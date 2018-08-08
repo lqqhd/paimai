@@ -29,7 +29,7 @@ public class QiTaPaiPinAdapter extends BaseQuickAdapter<AuctionDetail.DataBean.O
     @Override
     protected void convert(BaseViewHolder helper, AuctionDetail.DataBean.OtherGoodsBean item) {
 
-        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.img));
+        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.shop_logo));
         helper.setText(R.id.tv_name, item.getGoods_name());
         helper.setText(R.id.tv_dang_qian_jia, "￥" + item.getShop_price());
 

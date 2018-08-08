@@ -11,6 +11,10 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.xiaoxing.salesclient.mvp.contract.ZhanTingDetailContract;
+import com.xiaoxing.salesclient.mvp.model.entity.StoreInfo;
+import com.xiaoxing.salesclient.mvp.model.service.SalesService;
+
+import io.reactivex.Observable;
 
 
 @ActivityScope
@@ -30,5 +34,10 @@ public class ZhanTingDetailModel extends BaseModel implements ZhanTingDetailCont
         super.onDestroy();
         this.mGson = null;
         this.mApplication = null;
+    }
+
+    @Override
+    public Observable<StoreInfo> getStoreInfo(String store_id, String ru_id) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).storeInfo(store_id, ru_id);
     }
 }

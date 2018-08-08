@@ -29,7 +29,7 @@ public class CangPinAdapter extends BaseQuickAdapter<Category.DataBean.FirstCate
     @Override
     protected void convert(BaseViewHolder helper, Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean item) {
 
-        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.img));
+        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.shop_logo));
         helper.setText(R.id.tv_name, item.getGoods_name());
         helper.setText(R.id.tv_dang_qian_jia, "￥" + item.getShop_price());
 

@@ -317,7 +317,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
                     @Override
                     public void onBindView(BaseViewHolder holder, int position) {
                         TextView tv = holder.getView(R.id.item_add);
-                        ImageView img = holder.getView(R.id.img);
+                        ImageView img = holder.getView(R.id.shop_logo);
                         tv.setText(mLists.get(position));
                         img.setImageDrawable(getResources().getDrawable(mICons.get(position)));
 //                        if (position == mLists.size() - 1) {

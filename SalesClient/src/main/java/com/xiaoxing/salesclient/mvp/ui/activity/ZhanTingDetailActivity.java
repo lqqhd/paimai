@@ -8,9 +8,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -20,6 +24,7 @@ import com.jess.arms.utils.ArmsUtils;
 import com.xiaoxing.salesclient.di.component.DaggerZhanTingDetailComponent;
 import com.xiaoxing.salesclient.di.module.ZhanTingDetailModule;
 import com.xiaoxing.salesclient.mvp.contract.ZhanTingDetailContract;
+import com.xiaoxing.salesclient.mvp.model.entity.StoreInfo;
 import com.xiaoxing.salesclient.mvp.presenter.ZhanTingDetailPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.ZhanTingTuiGuangDetailAdapter;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentAllZhuanChang;
@@ -30,6 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
@@ -46,7 +52,27 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
 
     @BindView(R2.id.tv_guan_zhu)
     TextView mTvGuanZhu;
+    @BindView(R2.id.shop_logo)
+    ImageView shopLogo;
+    @BindView(R2.id.tv_name)
+    TextView tvName;
+    @BindView(R2.id.tv_shop_name)
+    TextView tvShopName;
+    @BindView(R2.id.tv_fen_si)
+    TextView tvFenSi;
+    @BindView(R2.id.tv_chu_jia)
+    TextView tvChuJia;
+    @BindView(R2.id.tv_bao_zheng_jin)
+    TextView tvBaoZhengJin;
+    @BindView(R2.id.tv_xiao_shou_e)
+    TextView tvXiaoShouE;
+
     private ZhanTingTuiGuangDetailAdapter mAdapter;
+
+    @Autowired
+    String store_id;
+    @Autowired
+    String ru_id;
 
     private final String[] mTitles = {"展厅商品", "微拍商品", "专场"};
 
@@ -58,6 +84,8 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
                 .zhanTingDetailModule(new ZhanTingDetailModule(this))
                 .build()
                 .inject(this);
+
+        ARouter.getInstance().inject(this);
     }
 
     @Override
@@ -92,6 +120,9 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
         mFragments.add(new FragmentAllZhuanChang());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
+
+
+        mPresenter.getStoreInfo(store_id, ru_id);
     }
 
     @Override
@@ -127,4 +158,26 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
         Utils.navigation(ZhanTingDetailActivity.this, RouterHub.XIAO_XING_LOGIN_LOGIN_ACTIVITY);
 
     }
+
+    @Override
+    public void getStoreInfoSuccess(StoreInfo storeInfo) {
+
+        StoreInfo.DataBean dataBean = storeInfo.getData();
+
+        if (dataBean == null)
+            return;
+
+
+        Glide.with(this).load(dataBean.getStreet_thumb()).into(shopLogo);
+
+        tvShopName.setText(dataBean.getRz_shopName());
+        tvName.setText(dataBean.getShopNameSuffix());
+        tvFenSi.setText("粉丝: "+dataBean.getCollect_store());
+        tvChuJia.setText("排行: "+dataBean.getAllReview());
+        tvBaoZhengJin.setText("保证金 ¥: "+dataBean.getAllReview());
+        tvXiaoShouE.setText("销售额 ¥: "+dataBean.getAllReview());
+
+    }
+
+
 }

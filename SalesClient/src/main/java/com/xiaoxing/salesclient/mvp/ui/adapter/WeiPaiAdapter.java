@@ -31,7 +31,7 @@ public class WeiPaiAdapter extends BaseQuickAdapter<AuctionList.DataBean, BaseVi
     protected void convert(BaseViewHolder helper, AuctionList.DataBean item) {
 
 
-        Glide.with(mContext).load(item.getGoods_thumb()).into((ImageView) helper.getView(R.id.img));
+        Glide.with(mContext).load(item.getGoods_thumb()).into((ImageView) helper.getView(R.id.shop_logo));
 
         helper.setText(R.id.tv_name, item.getAct_name());
         helper.setText(R.id.tv_dang_qian_jia, "当前￥" + item.getCurrent_price());

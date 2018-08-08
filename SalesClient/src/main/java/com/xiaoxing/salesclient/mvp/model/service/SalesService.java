@@ -11,6 +11,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.GoodsReportSubmit;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
 import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
+import com.xiaoxing.salesclient.mvp.model.entity.StoreInfo;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
 import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
 
@@ -266,6 +267,19 @@ public interface SalesService {
     Observable<AuctionBuy> auctionBuy(
             @Query("access_token") String access_token,
             @Query("auction_id") String auction_id
+    );
+
+    /**
+     * 店铺-获得店铺详情
+     *
+     * @param store_id 店铺id
+     * @param ru_id    店铺拥有者id
+     * @return
+     */
+    @GET("/api/store_info.php")
+    Observable<StoreInfo> storeInfo(
+            @Query("store_id") String store_id,
+            @Query("ru_id") String ru_id
     );
 
 

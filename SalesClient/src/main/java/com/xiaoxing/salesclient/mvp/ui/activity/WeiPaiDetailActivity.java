@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,7 +24,6 @@ import com.xiaoxing.salesclient.mvp.presenter.WeiPaiDetailPresenter;
 import com.xiaoxing.salesclient.mvp.ui.entity.BannerItem;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentQiTaPaiPin;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentWeiPaiDetail;
-import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentZhanTing;
 import com.xiaoxing.salesclient.mvp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 
@@ -32,6 +32,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.iwgang.countdownview.CountdownView;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
@@ -226,4 +227,22 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
     }
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+
+    @OnClick({R2.id.btn_ju_bao, R2.id.btn_tui_da_hang, R2.id.btn_tui_hang_jia, R2.id.ll_zi_xun, R2.id.tv_chu_jia})
+    public void onClick(View view) {
+        int i = view.getId();
+        if (i == R.id.btn_ju_bao) {
+        } else if (i == R.id.btn_tui_da_hang) {
+        } else if (i == R.id.btn_tui_hang_jia) {
+        } else if (i == R.id.ll_zi_xun) {
+        } else if (i == R.id.tv_chu_jia) {
+        }
+        ArmsUtils.snackbarText("功能正在开发中...");
+    }
 }

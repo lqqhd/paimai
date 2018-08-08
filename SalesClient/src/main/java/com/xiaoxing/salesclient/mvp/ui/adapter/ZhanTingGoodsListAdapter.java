@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
-import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class ZhanTingGoodsListAdapter extends BaseQuickAdapter<SpecialcatDetail.
     protected void convert(BaseViewHolder helper, SpecialcatDetail.DataBean.GoodsBean item) {
 
 
-        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.img));
+        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.shop_logo));
 
         helper.setText(R.id.tv_name, item.getGoods_name());
         helper.setText(R.id.tv_dang_qian_chu_jia, "当前￥" + item.getGoods_number());
