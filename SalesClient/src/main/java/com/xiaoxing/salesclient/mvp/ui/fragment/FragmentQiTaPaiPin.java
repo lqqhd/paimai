@@ -22,8 +22,6 @@ import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetail;
-import com.xiaoxing.salesclient.mvp.model.entity.Category;
-import com.xiaoxing.salesclient.mvp.ui.adapter.CangPinAdapter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.QiTaPaiPinAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
 
@@ -35,7 +33,7 @@ import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
-import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentNavigationList.PRODUCT_ID;
+import static me.jessyan.armscomponent.commonsdk.core.Constants.PRODUCT_ID;
 
 /**
  * 使用示例-空布页面
@@ -113,7 +111,6 @@ public class FragmentQiTaPaiPin extends Fragment implements OnRefreshListener {
                 public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 //                Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
                     ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(PRODUCT_ID, goodsBeans.get(position).getGoods_id()).navigation();
-
                 }
             });
 

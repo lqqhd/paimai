@@ -195,12 +195,12 @@ public interface SalesService {
     /**
      * 获得拍品详细信息
      *
-     * @param act_id
+     * @param goods_id
      * @return
      */
     @GET("/api/auction.php")
     Observable<AuctionDetail> auctionDetail(
-            @Query("act_id") String act_id
+            @Query("goods_id") String goods_id
     );
 
     /**

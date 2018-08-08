@@ -27,4 +27,5 @@ package me.jessyan.armscomponent.commonsdk.core;
 public interface Constants {
     //电话号码正则
     String PHONE_REGULAR = "^1[3-9]\\d{9}$";
+    String PRODUCT_ID = "product_id";
 }

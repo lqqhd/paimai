@@ -1,8 +1,9 @@
 package com.xiaoxing.salesclient.mvp.model.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AuctionDetail {
+public class AuctionDetail implements Serializable{
 
 
     /**
@@ -39,7 +40,7 @@ public class AuctionDetail {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * goods_id : 920
          * user_id : 0
@@ -374,7 +375,7 @@ public class AuctionDetail {
             this.other_goods = other_goods;
         }
 
-        public static class ShopinfoBean {
+        public static class ShopinfoBean implements Serializable{
             /**
              * shop_name : 乐拍
              * check_sellername : 0
@@ -440,7 +441,7 @@ public class AuctionDetail {
             }
         }
 
-        public static class PicturesBean {
+        public static class PicturesBean implements Serializable{
             /**
              * img_id : 1031
              * img_url : http://47.100.103.123/images/201807/goods_img/0_P_1531383722311.jpg
@@ -496,7 +497,7 @@ public class AuctionDetail {
             }
         }
 
-        public static class OtherGoodsBean {
+        public static class OtherGoodsBean implements Serializable{
             /**
              * goods_id : 923
              * goods_name : 首页祖传玉镯子

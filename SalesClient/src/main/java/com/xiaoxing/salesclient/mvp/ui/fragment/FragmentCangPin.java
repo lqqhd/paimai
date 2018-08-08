@@ -30,11 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
-import static com.xiaoxing.salesclient.mvp.ui.fragment.FragmentNavigationList.PRODUCT_ID;
+import static me.jessyan.armscomponent.commonsdk.core.Constants.PRODUCT_ID;
 
 /**
  * 使用示例-空布页面

@@ -82,6 +82,7 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
     @BindView(R2.id.img_shop)
     ImageView img_shop;
 
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerWeiPaiDetailComponent //如找不到该类,请编译一下项目
@@ -121,7 +122,7 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
 
 //        initCountdownView();
 
-        mPresenter.getAuctionDetail("51");
+        mPresenter.getAuctionDetail(product_id);
     }
 
     private void initCountdownView() {
@@ -167,8 +168,10 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
         setBannerData(dataBean);
 
 
-        long time2 = Long.parseLong(dataBean.getEnd_time()) * 1000 - System.currentTimeMillis();
-        cvCountdownViewTest4.start(time2);
+        if (dataBean.getEnd_time() != null && Integer.parseInt(dataBean.getEnd_time()) > 0) {
+            long time2 = Long.parseLong(dataBean.getEnd_time()) * 1000 - System.currentTimeMillis();
+            cvCountdownViewTest4.start(time2);
+        }
 
         tvTitle.setText(dataBean.getGoods_name());
         tvDangQianJia.setText("￥" + dataBean.getCurrent_price());
@@ -181,8 +184,12 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
         tvJiaJiaFuDu.setText("￥" + dataBean.getAmplitude());
 
 
-        Glide.with(this).load(dataBean.getShopinfo().getShop_logo()).into(img_shop);
-        tvShopName.setText(dataBean.getShopinfo().getShop_name());
+        if (dataBean.getShopinfo() != null) {
+
+            Glide.with(this).load(dataBean.getShopinfo().getShop_logo()).into(img_shop);
+            tvShopName.setText(dataBean.getShopinfo().getShop_name());
+        }
+
         tvDianPuBaoZhengJinValue.setText("￥" + dataBean.getDeposit());
 
 

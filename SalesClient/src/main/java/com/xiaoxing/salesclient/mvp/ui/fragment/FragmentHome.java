@@ -450,6 +450,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         for (int i = 0; i < weipaiBeanList.size(); i++) {
             Movie movie = new Movie();
 
+            movie.product_id = weipaiBeanList.get(i).getGoods_id();
             movie.filmName = weipaiBeanList.get(i).getAct_name();
             movie.picaddr = weipaiBeanList.get(i).getGoods_img();
             movie.grade = weipaiBeanList.get(i).getEnd_time();
@@ -521,6 +522,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
 
     public static class Movie {
+        public String product_id;
         public String actors;
         public String filmName;
         public String grade;
