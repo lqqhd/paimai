@@ -47,7 +47,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|left"
+        android:paddingBottom="@dimen/dp_10"
         android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
         android:text="古钱币，祖传的，联系电话13705606217"
         android:textColor="#3D3D3D"
         android:textSize="@dimen/public_font_12sp" />

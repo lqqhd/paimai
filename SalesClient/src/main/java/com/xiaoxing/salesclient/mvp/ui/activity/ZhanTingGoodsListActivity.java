@@ -61,6 +61,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     @Autowired
     String specialcat_id;
     SpecialcatList mSpecialcatList;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerZhanTingGoodsListComponent //如找不到该类,请编译一下项目
@@ -120,10 +121,10 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 //                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
-                if (mSpecialcatList ==null)
+                if (mSpecialcatList == null)
                     return;
 
-                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(PRODUCT_ID, mSpecialcatList.getData().getGoods().get(position).getGoods_id()).navigation();
+                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ZHENG_CHANG_ACTIVITY).withString(PRODUCT_ID, mSpecialcatList.getData().getGoods().get(position).getGoods_id()).navigation();
 
             }
         });

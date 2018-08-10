@@ -569,7 +569,6 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail) {
 //            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
-
             ARouter.getInstance().build(RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY).withString("specialcat_id", mIndex.getData().getZhuanchang().get(0).getCat_id()).navigation();
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail_1) {
 //            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
