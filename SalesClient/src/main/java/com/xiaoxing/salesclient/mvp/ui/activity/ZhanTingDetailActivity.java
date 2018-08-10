@@ -75,6 +75,7 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
     String ru_id;
 
     private final String[] mTitles = {"展厅商品", "微拍商品", "专场"};
+    private List<StoreInfo.DataBean.GoodsListBean> mGoodsListBeans = new ArrayList<>();
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -98,14 +99,14 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         ToolbarUtils.initToolbarTitleBack(this, "展厅推广详情");
 
-        mAdapter = new ZhanTingTuiGuangDetailAdapter(this);
+        mAdapter = new ZhanTingTuiGuangDetailAdapter(this, mGoodsListBeans);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(mAdapter);
         final List<FragmentHome.Movie> movies = new Gson().fromJson(JSON_MOVIES, new TypeToken<ArrayList<FragmentHome.Movie>>() {
         }.getType());
-        mAdapter.replaceData(movies);
+//        mAdapter.replaceData(movies);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -172,10 +173,20 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
 
         tvShopName.setText(dataBean.getRz_shopName());
         tvName.setText(dataBean.getShopNameSuffix());
-        tvFenSi.setText("粉丝: "+dataBean.getCollect_store());
-        tvChuJia.setText("排行: "+dataBean.getAllReview());
-        tvBaoZhengJin.setText("保证金 ¥: "+dataBean.getAllReview());
-        tvXiaoShouE.setText("销售额 ¥: "+dataBean.getAllReview());
+        tvFenSi.setText("粉丝: " + dataBean.getCollect_store());
+        tvChuJia.setText("排行: " + dataBean.getAllReview());
+        tvBaoZhengJin.setText("保证金 ¥: " + dataBean.getAllReview());
+        tvXiaoShouE.setText("销售额 ¥: " + dataBean.getAllReview());
+
+
+        List<StoreInfo.DataBean.GoodsListBean> goodsListBeanList = storeInfo.getData().getGoods_list();
+
+        if (goodsListBeanList != null) {
+
+            mGoodsListBeans.clear();
+            mGoodsListBeans.addAll(goodsListBeanList);
+            mAdapter.notifyDataSetChanged();
+        }
 
     }
 
