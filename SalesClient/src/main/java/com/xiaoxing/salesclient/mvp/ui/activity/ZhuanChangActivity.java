@@ -51,7 +51,8 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
 
 
     //    private final String[] mTitles = {"所有专场", "热门拍品", "我的关注", "筛选"};
-    private final String[] mTitles = {"所有专场", "热门拍品", "我的关注"};
+//    private final String[] mTitles = {"所有专场", "热门拍品", "我的关注"};
+    private final String[] mTitles = {"所有专场", "我的关注"};
 
     @BindView(R2.id.tv_shai_xuan)
     TextView mTvShaiXuan;
@@ -105,7 +106,7 @@ public class ZhuanChangActivity extends BaseActivity<ZhuanChangPresenter> implem
 
         ArrayList<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new FragmentAllZhuanChang());
-        mFragments.add(new FragmentReMenPaiMai());
+//        mFragments.add(new FragmentReMenPaiMai());
         mFragments.add(new FragmentWoDeGuanZhu());
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);

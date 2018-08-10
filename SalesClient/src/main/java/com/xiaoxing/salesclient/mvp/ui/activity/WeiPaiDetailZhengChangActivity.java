@@ -199,7 +199,7 @@ public class WeiPaiDetailZhengChangActivity extends BaseActivity<WeiPaiDetailZhe
 //        }
 
         tvTitle.setText(dataBean.getGoods_name());
-        tvDangQianJia.setText("￥" + dataBean.getCurrent_price());
+        tvDangQianJia.setText("￥" + dataBean.getShop_price());
 
         tvWeiGuanChuJia.setText("围观" + dataBean.getOnlookers_num() + "次" + " 出价" + dataBean.getBid_user_count() + "次");
 
