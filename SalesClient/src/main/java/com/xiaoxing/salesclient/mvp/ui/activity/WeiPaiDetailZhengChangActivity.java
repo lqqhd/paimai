@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
@@ -62,7 +64,7 @@ public class WeiPaiDetailZhengChangActivity extends BaseActivity<WeiPaiDetailZhe
         add(new BannerItem("豆福传", R.mipmap.banner_001));
     }};
 
-    private final String[] mTitles = {"拍品详情", "帮助及保障", "其他拍品"};
+    private final String[] mTitles = {"商品详情", "帮助及保障", "其他拍品"};
 
     @Autowired
     String act_id;
@@ -92,6 +94,14 @@ public class WeiPaiDetailZhengChangActivity extends BaseActivity<WeiPaiDetailZhe
     TextView tvDianPuBaoZhengJinValue;
     @BindView(R2.id.img_shop)
     ImageView img_shop;
+    @BindView(R2.id.rl_wei_guan)
+    RelativeLayout rl_wei_guan;
+    @BindView(R2.id.ll_yi_kou_jia)
+    LinearLayout ll_yi_kou_jia;
+    @BindView(R2.id.ll_dao_ji_shi)
+    LinearLayout ll_dao_ji_shi;
+    @BindView(R2.id.tv_chu_jia)
+    TextView tv_chu_jia;
 
 
     @Override
@@ -115,6 +125,11 @@ public class WeiPaiDetailZhengChangActivity extends BaseActivity<WeiPaiDetailZhe
 
         ToolbarUtils.initToolbarTitleBack(this, "微拍推广详情");
 
+
+        ll_dao_ji_shi.setVisibility(View.GONE);
+        rl_wei_guan.setVisibility(View.GONE);
+        ll_yi_kou_jia.setVisibility(View.GONE);
+        tv_chu_jia.setText("立即购买");
 
 //        Banner banner = findViewById(R.id.convenientBanner);
 //
@@ -178,20 +193,20 @@ public class WeiPaiDetailZhengChangActivity extends BaseActivity<WeiPaiDetailZhe
         setBannerData(dataBean);
 
 
-        if (dataBean.getEnd_time() != null && Integer.parseInt(dataBean.getEnd_time()) > 0) {
-            long time2 = Long.parseLong(dataBean.getEnd_time()) * 1000 - System.currentTimeMillis();
-            cvCountdownViewTest4.start(time2);
-        }
+//        if (dataBean.getEnd_time() != null && Integer.parseInt(dataBean.getEnd_time()) > 0) {
+//            long time2 = Long.parseLong(dataBean.getEnd_time()) * 1000 - System.currentTimeMillis();
+//            cvCountdownViewTest4.start(time2);
+//        }
 
         tvTitle.setText(dataBean.getGoods_name());
         tvDangQianJia.setText("￥" + dataBean.getCurrent_price());
 
         tvWeiGuanChuJia.setText("围观" + dataBean.getOnlookers_num() + "次" + " 出价" + dataBean.getBid_user_count() + "次");
 
-        tvQiPaiJia.setText("￥" + dataBean.getStart_price());
-        tvYiKouJia.setText("￥" + dataBean.getEnd_price());
-        tvBaoZhengJin.setText("￥" + dataBean.getDeposit());
-        tvJiaJiaFuDu.setText("￥" + dataBean.getAmplitude());
+//        tvQiPaiJia.setText("￥" + dataBean.getStart_price());
+//        tvYiKouJia.setText("￥" + dataBean.getEnd_price());
+//        tvBaoZhengJin.setText("￥" + dataBean.getDeposit());
+//        tvJiaJiaFuDu.setText("￥" + dataBean.getAmplitude());
 
 
         if (dataBean.getShopinfo() != null) {
@@ -200,7 +215,7 @@ public class WeiPaiDetailZhengChangActivity extends BaseActivity<WeiPaiDetailZhe
             tvShopName.setText(dataBean.getShopinfo().getShop_name());
         }
 
-        tvDianPuBaoZhengJinValue.setText("￥" + dataBean.getDeposit());
+//        tvDianPuBaoZhengJinValue.setText("￥" + dataBean.getDeposit());
 
 
         ArrayList<Fragment> mFragments = new ArrayList<>();

@@ -34,6 +34,7 @@
                     app:is_auto_play="true" />
 
                 <LinearLayout
+                    android:id="@+id/ll_dao_ji_shi"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_40"
                     android:layout_alignParentBottom="true"
@@ -204,6 +205,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/rl_wei_guan"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_40"
                 android:layout_below="@+id/tv_miao_shu"
@@ -253,6 +255,7 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/ll_yi_kou_jia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_10"

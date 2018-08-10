@@ -140,7 +140,7 @@ public class FragmentNavigationList extends BaseFragment<FragmentNavigationListP
         mRightRvRecyclerView.addOnItemTouchListener(new SimpleClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(PRODUCT_ID, mGoodsBeanList.get(position).getGoods_id()).navigation();
+                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ZHENG_CHANG_ACTIVITY).withString(PRODUCT_ID, mGoodsBeanList.get(position).getGoods_id()).navigation();
 
             }
 
