@@ -11,29 +11,29 @@ public class Index {
 
 
     /**
-     * result : true
-     * next : false
-     * data : {"banner":[{"goods_id":"923","goods_name":"首页祖传玉镯子","goods_number":"4","shop_price":"1.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531627382532.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531627382990.jpg","last_update":"1531629547"},{"goods_id":"910","goods_name":"古书","goods_number":"6","shop_price":"3000.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958971037.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958971708.jpg","last_update":"1530958998"},{"goods_id":"909","goods_name":"字画1","goods_number":"5","shop_price":"0.00","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1530958877665.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1530958877783.jpg","last_update":"1530958996"}],"article":[{"article_id":"66","title":"乐拍头条重要通知","add_time":"1531615549","cat_name":"公告"},{"article_id":"65","title":"7月8日晚专场","add_time":"1531615549","cat_name":"促销"},{"article_id":"64","title":"卖家入住流程","add_time":"1531615549","cat_name":"商家入驻流程说明"},{"article_id":"62","title":"玉器的鉴别方法","add_time":"1490724253","cat_name":"站内快讯"},{"article_id":"61","title":"古董鉴别方法","add_time":"1490724217","cat_name":"站内快讯"}],"weipai":[{"act_id":"54","act_name":"首页祖传玉镯子","current_price":4000,"current_count":"0","end_time":"1533009893","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531627382532.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531627382990.jpg"},{"act_id":"52","act_name":"立即购买测试","current_price":2,"current_count":"1","end_time":"1532336154","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531472081070.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531472081978.jpg"},{"act_id":"53","act_name":"书画购买测试","current_price":3,"current_count":"1","end_time":"1533014129","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531545296023.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531545296656.jpg"}],"zhuanchang":[{"cat_id":"1489","cat_name":"古钱币","cat_desc":"古钱币指古代货币。货币是商品交换的产物。中国是世界上最早使用铸币的国家。距今3000年前殷商晚期墓葬出土了不少\u201c无文铜贝\u201d，为最原始的金属货币。至西周晚期除贝币外还流通一些无一定形状的散铜块、铜锭等金属称量货币，这在考古发掘中...","touch_icon":"http://47.100.103.123/data/touch_icon/15313232766835.jpg","onlookers_num":"72"},{"cat_id":"1490","cat_name":"陶器","cat_desc":"关于本次陶器专场的描述","touch_icon":"http://47.100.103.123/data/touch_icon/15313234944920.jpg","onlookers_num":"2"},{"cat_id":"1491","cat_name":"玉镯","cat_desc":"很美的玉镯子","touch_icon":"http://47.100.103.123/data/touch_icon/15313235292709.jpg","onlookers_num":"0"},{"cat_id":"1492","cat_name":"古青铜器","cat_desc":"今晚七点开始本次专场","touch_icon":"http://47.100.103.123/data/touch_icon/15313235594957.jpg","onlookers_num":"0"}],"store":[{"ru_id":"83","shop_logo":"http://47.100.103.123/../seller_imgs/seller_logo/seller_logo83.jpg","logo_thumb":"http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531635913572779847.jpg","street_thumb":"http://47.100.103.123/data/store_street/street_thumb/1531635913164681547.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/1531635913595710558.jpg","sort_order":"100"},{"ru_id":"81","shop_logo":"","logo_thumb":"http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531031144777138297.jpg","street_thumb":"http://47.100.103.123/data/store_street/street_thumb/1531030573826726960.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/1531031144663448469.jpg","sort_order":"3"}]}
+     * code : 200
+     * msg :
+     * data : {"banner":[{"ad_id":"715","ad_name":"首页的banner2","ad_code":"http://47.100.103.123/data/afficheimg/1532594366212741626.png"},{"ad_id":"714","ad_name":"首页的banner1","ad_code":"http://47.100.103.123/data/afficheimg/1532594313103564408.png"}],"article":[{"article_id":"66","title":"乐拍头条重要通知","add_time":"1531615549","cat_name":"公告"},{"article_id":"65","title":"7月8日晚专场","add_time":"1531615549","cat_name":"促销"},{"article_id":"64","title":"卖家入住流程","add_time":"1531615549","cat_name":"商家入驻流程说明"},{"article_id":"62","title":"玉器的鉴别方法","add_time":"1490724253","cat_name":"站内快讯"},{"article_id":"61","title":"古董鉴别方法","add_time":"1490724217","cat_name":"站内快讯"}],"weipai":[{"act_id":"56","goods_id":"915","act_name":"罗汉床","current_price":2000,"current_count":"0","end_time":"1535650233","goods_thumb":"http://47.100.103.123/images/201808/thumb_img/915_thumb_G_1533578010579.jpg","goods_img":"http://47.100.103.123/images/201808/goods_img/915_G_1533578010290.jpg"},{"act_id":"59","goods_id":"923","act_name":"镯子","current_price":2000,"current_count":"0","end_time":"1535650762","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/923_thumb_G_1532062567819.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/923_G_1532062567485.jpg"},{"act_id":"60","goods_id":"916","act_name":"钱币","current_price":3000,"current_count":"0","end_time":"1535651026","goods_thumb":"http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531297383728.jpg","goods_img":"http://47.100.103.123/images/201807/goods_img/0_G_1531297383816.jpg"}],"zhuanchang":[{"cat_id":"1489","cat_name":"古钱币","cat_desc":"古钱币指古代货币。货币是商品交换的产物。中国是世界上最早使用铸币的国家。距今3000年前殷商晚期墓葬出土了不少\u201c无文铜贝\u201d，为最原始的金属货币。至西周晚期除贝币外还流通一些无一定形状的散铜块、铜锭等金属称量货币，这在考古发掘中...","touch_icon":"http://47.100.103.123/data/touch_icon/15313232766835.jpg","onlookers_num":"130","goods_img":[{"img_id":"1027","img_url":"http://47.100.103.123/images/201807/goods_img/0_P_1531297383891.jpg","thumb_url":"http://47.100.103.123/images/201807/thumb_img/0_thumb_P_1531297383224.jpg","img_desc":"9","external_url":""}],"end_time":"1533099831"},{"cat_id":"1490","cat_name":"陶器","cat_desc":"关于本次陶器专场的描述","touch_icon":"http://47.100.103.123/data/touch_icon/15313234944920.jpg","onlookers_num":"2","goods_img":[{"img_id":"17","img_url":"http://47.100.103.123/images/201703/goods_img/0_P_1490146636287.png","thumb_url":"http://47.100.103.123/images/201703/thumb_img/0_thumb_P_1490146636003.jpg","img_desc":"3","external_url":""},{"img_id":"7","img_url":"","thumb_url":"","img_desc":"7","external_url":""},{"img_id":"8","img_url":"http://47.100.103.123/images/201703/goods_img/0_P_1490146087741.jpg","thumb_url":"http://47.100.103.123/images/201703/thumb_img/0_thumb_P_1490146087597.jpg","img_desc":"8","external_url":""},{"img_id":"1111","img_url":"http://47.100.103.123/images/201808/goods_img/0_P_1533604748890.jpg","thumb_url":"http://47.100.103.123/images/201808/thumb_img/0_thumb_P_1533604748575.jpg","img_desc":"9","external_url":""}],"end_time":"1533099831"},{"cat_id":"1491","cat_name":"玉镯","cat_desc":"很美的玉镯子","touch_icon":"http://47.100.103.123/data/touch_icon/15313235292709.jpg","onlookers_num":"0","goods_img":[{"img_id":"17","img_url":"http://47.100.103.123/images/201703/goods_img/0_P_1490146636287.png","thumb_url":"http://47.100.103.123/images/201703/thumb_img/0_thumb_P_1490146636003.jpg","img_desc":"3","external_url":""},{"img_id":"7","img_url":"","thumb_url":"","img_desc":"7","external_url":""},{"img_id":"8","img_url":"http://47.100.103.123/images/201703/goods_img/0_P_1490146087741.jpg","thumb_url":"http://47.100.103.123/images/201703/thumb_img/0_thumb_P_1490146087597.jpg","img_desc":"8","external_url":""},{"img_id":"1111","img_url":"http://47.100.103.123/images/201808/goods_img/0_P_1533604748890.jpg","thumb_url":"http://47.100.103.123/images/201808/thumb_img/0_thumb_P_1533604748575.jpg","img_desc":"9","external_url":""}],"end_time":"1533099831"},{"cat_id":"1492","cat_name":"古青铜器","cat_desc":"今晚七点开始本次专场","touch_icon":"http://47.100.103.123/data/touch_icon/15313235594957.jpg","onlookers_num":"0","goods_img":[{"img_id":"17","img_url":"http://47.100.103.123/images/201703/goods_img/0_P_1490146636287.png","thumb_url":"http://47.100.103.123/images/201703/thumb_img/0_thumb_P_1490146636003.jpg","img_desc":"3","external_url":""},{"img_id":"7","img_url":"","thumb_url":"","img_desc":"7","external_url":""},{"img_id":"8","img_url":"http://47.100.103.123/images/201703/goods_img/0_P_1490146087741.jpg","thumb_url":"http://47.100.103.123/images/201703/thumb_img/0_thumb_P_1490146087597.jpg","img_desc":"8","external_url":""},{"img_id":"1111","img_url":"http://47.100.103.123/images/201808/goods_img/0_P_1533604748890.jpg","thumb_url":"http://47.100.103.123/images/201808/thumb_img/0_thumb_P_1533604748575.jpg","img_desc":"9","external_url":""}],"end_time":"1533099831"}],"store":[{"ru_id":"104","shop_logo":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","logo_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","street_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","sort_order":"100"},{"ru_id":"103","shop_logo":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","logo_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","street_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","sort_order":"100"},{"ru_id":"102","shop_logo":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","logo_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","street_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","brand_thumb":"http://47.100.103.123/data/store_street/brand_thumb/0.jpg","sort_order":"100"}]}
      */
 
-    private String result;
-    private String next;
+    private int code;
+    private String msg;
     private DataBean data;
 
-    public String getResult() {
-        return result;
+    public int getCode() {
+        return code;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public String getNext() {
-        return next;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setNext(String next) {
-        this.next = next;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public DataBean getData() {
@@ -93,77 +93,37 @@ public class Index {
 
         public static class BannerBean {
             /**
-             * goods_id : 923
-             * goods_name : 首页祖传玉镯子
-             * goods_number : 4
-             * shop_price : 1.00
-             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531627382532.jpg
-             * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1531627382990.jpg
-             * last_update : 1531629547
+             * ad_id : 715
+             * ad_name : 首页的banner2
+             * ad_code : http://47.100.103.123/data/afficheimg/1532594366212741626.png
              */
 
-            private String goods_id;
-            private String goods_name;
-            private String goods_number;
-            private String shop_price;
-            private String goods_thumb;
-            private String goods_img;
-            private String last_update;
+            private String ad_id;
+            private String ad_name;
+            private String ad_code;
 
-            public String getGoods_id() {
-                return goods_id;
+            public String getAd_id() {
+                return ad_id;
             }
 
-            public void setGoods_id(String goods_id) {
-                this.goods_id = goods_id;
+            public void setAd_id(String ad_id) {
+                this.ad_id = ad_id;
             }
 
-            public String getGoods_name() {
-                return goods_name;
+            public String getAd_name() {
+                return ad_name;
             }
 
-            public void setGoods_name(String goods_name) {
-                this.goods_name = goods_name;
+            public void setAd_name(String ad_name) {
+                this.ad_name = ad_name;
             }
 
-            public String getGoods_number() {
-                return goods_number;
+            public String getAd_code() {
+                return ad_code;
             }
 
-            public void setGoods_number(String goods_number) {
-                this.goods_number = goods_number;
-            }
-
-            public String getShop_price() {
-                return shop_price;
-            }
-
-            public void setShop_price(String shop_price) {
-                this.shop_price = shop_price;
-            }
-
-            public String getGoods_thumb() {
-                return goods_thumb;
-            }
-
-            public void setGoods_thumb(String goods_thumb) {
-                this.goods_thumb = goods_thumb;
-            }
-
-            public String getGoods_img() {
-                return goods_img;
-            }
-
-            public void setGoods_img(String goods_img) {
-                this.goods_img = goods_img;
-            }
-
-            public String getLast_update() {
-                return last_update;
-            }
-
-            public void setLast_update(String last_update) {
-                this.last_update = last_update;
+            public void setAd_code(String ad_code) {
+                this.ad_code = ad_code;
             }
         }
 
@@ -215,31 +175,24 @@ public class Index {
 
         public static class WeipaiBean {
             /**
-             * act_id : 54
-             * act_name : 首页祖传玉镯子
-             * current_price : 4000
+             * act_id : 56
+             * goods_id : 915
+             * act_name : 罗汉床
+             * current_price : 2000
              * current_count : 0
-             * end_time : 1533009893
-             * goods_thumb : http://47.100.103.123/images/201807/thumb_img/0_thumb_G_1531627382532.jpg
-             * goods_img : http://47.100.103.123/images/201807/goods_img/0_G_1531627382990.jpg
+             * end_time : 1535650233
+             * goods_thumb : http://47.100.103.123/images/201808/thumb_img/915_thumb_G_1533578010579.jpg
+             * goods_img : http://47.100.103.123/images/201808/goods_img/915_G_1533578010290.jpg
              */
 
             private String act_id;
+            private String goods_id;
             private String act_name;
             private int current_price;
             private String current_count;
             private String end_time;
             private String goods_thumb;
             private String goods_img;
-            private String goods_id;
-
-            public String getGoods_id() {
-                return goods_id;
-            }
-
-            public void setGoods_id(String goods_id) {
-                this.goods_id = goods_id;
-            }
 
             public String getAct_id() {
                 return act_id;
@@ -247,6 +200,14 @@ public class Index {
 
             public void setAct_id(String act_id) {
                 this.act_id = act_id;
+            }
+
+            public String getGoods_id() {
+                return goods_id;
+            }
+
+            public void setGoods_id(String goods_id) {
+                this.goods_id = goods_id;
             }
 
             public String getAct_name() {
@@ -304,7 +265,9 @@ public class Index {
              * cat_name : 古钱币
              * cat_desc : 古钱币指古代货币。货币是商品交换的产物。中国是世界上最早使用铸币的国家。距今3000年前殷商晚期墓葬出土了不少“无文铜贝”，为最原始的金属货币。至西周晚期除贝币外还流通一些无一定形状的散铜块、铜锭等金属称量货币，这在考古发掘中...
              * touch_icon : http://47.100.103.123/data/touch_icon/15313232766835.jpg
-             * onlookers_num : 72
+             * onlookers_num : 130
+             * goods_img : [{"img_id":"1027","img_url":"http://47.100.103.123/images/201807/goods_img/0_P_1531297383891.jpg","thumb_url":"http://47.100.103.123/images/201807/thumb_img/0_thumb_P_1531297383224.jpg","img_desc":"9","external_url":""}]
+             * end_time : 1533099831
              */
 
             private String cat_id;
@@ -312,24 +275,8 @@ public class Index {
             private String cat_desc;
             private String touch_icon;
             private String onlookers_num;
-            private String goods_img;
             private String end_time;
-
-            public String getGoods_img() {
-                return goods_img;
-            }
-
-            public void setGoods_img(String goods_img) {
-                this.goods_img = goods_img;
-            }
-
-            public String getEnd_time() {
-                return end_time;
-            }
-
-            public void setEnd_time(String end_time) {
-                this.end_time = end_time;
-            }
+            private List<GoodsImgBean> goods_img;
 
             public String getCat_id() {
                 return cat_id;
@@ -370,15 +317,87 @@ public class Index {
             public void setOnlookers_num(String onlookers_num) {
                 this.onlookers_num = onlookers_num;
             }
+
+            public String getEnd_time() {
+                return end_time;
+            }
+
+            public void setEnd_time(String end_time) {
+                this.end_time = end_time;
+            }
+
+            public List<GoodsImgBean> getGoods_img() {
+                return goods_img;
+            }
+
+            public void setGoods_img(List<GoodsImgBean> goods_img) {
+                this.goods_img = goods_img;
+            }
+
+            public static class GoodsImgBean {
+                /**
+                 * img_id : 1027
+                 * img_url : http://47.100.103.123/images/201807/goods_img/0_P_1531297383891.jpg
+                 * thumb_url : http://47.100.103.123/images/201807/thumb_img/0_thumb_P_1531297383224.jpg
+                 * img_desc : 9
+                 * external_url :
+                 */
+
+                private String img_id;
+                private String img_url;
+                private String thumb_url;
+                private String img_desc;
+                private String external_url;
+
+                public String getImg_id() {
+                    return img_id;
+                }
+
+                public void setImg_id(String img_id) {
+                    this.img_id = img_id;
+                }
+
+                public String getImg_url() {
+                    return img_url;
+                }
+
+                public void setImg_url(String img_url) {
+                    this.img_url = img_url;
+                }
+
+                public String getThumb_url() {
+                    return thumb_url;
+                }
+
+                public void setThumb_url(String thumb_url) {
+                    this.thumb_url = thumb_url;
+                }
+
+                public String getImg_desc() {
+                    return img_desc;
+                }
+
+                public void setImg_desc(String img_desc) {
+                    this.img_desc = img_desc;
+                }
+
+                public String getExternal_url() {
+                    return external_url;
+                }
+
+                public void setExternal_url(String external_url) {
+                    this.external_url = external_url;
+                }
+            }
         }
 
         public static class StoreBean {
             /**
-             * ru_id : 83
-             * shop_logo : http://47.100.103.123/../seller_imgs/seller_logo/seller_logo83.jpg
-             * logo_thumb : http://47.100.103.123/../seller_imgs/seller_logo/logo_thumb/1531635913572779847.jpg
-             * street_thumb : http://47.100.103.123/data/store_street/street_thumb/1531635913164681547.jpg
-             * brand_thumb : http://47.100.103.123/data/store_street/brand_thumb/1531635913595710558.jpg
+             * ru_id : 104
+             * shop_logo : http://47.100.103.123/data/store_street/brand_thumb/0.jpg
+             * logo_thumb : http://47.100.103.123/data/store_street/brand_thumb/0.jpg
+             * street_thumb : http://47.100.103.123/data/store_street/brand_thumb/0.jpg
+             * brand_thumb : http://47.100.103.123/data/store_street/brand_thumb/0.jpg
              * sort_order : 100
              */
 

@@ -15,7 +15,8 @@
         android:gravity="center"
         android:text="06月20日19:35开始"
         android:textColor="@color/public_white"
-        android:textSize="@dimen/public_font_14sp" />
+        android:textSize="@dimen/public_font_14sp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -35,7 +36,8 @@
         android:paddingLeft="@dimen/dp_10"
         android:text="拍品6件 围观87次 出价0次"
         android:textColor="#3D3D3D"
-        android:textSize="@dimen/public_font_12sp" />
+        android:textSize="@dimen/public_font_12sp"
+        android:visibility="gone" />
 
 
     <include layout="@layout/public_line_horizontal" />
@@ -43,7 +45,7 @@
     <TextView
         android:id="@+id/tv_desc"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40"
+        android:layout_height="wrap_content"
         android:gravity="center|left"
         android:paddingLeft="@dimen/dp_10"
         android:text="古钱币，祖传的，联系电话13705606217"
@@ -95,7 +97,8 @@
             android:gravity="center|left"
             android:text="店铺保证金"
             android:textColor="#B8B8B8"
-            android:textSize="@dimen/public_font_12sp" />
+            android:textSize="@dimen/public_font_12sp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_chu_jia"
@@ -108,7 +111,8 @@
             android:gravity="center|left"
             android:text="0"
             android:textColor="#B8B8B8"
-            android:textSize="@dimen/public_font_12sp" />
+            android:textSize="@dimen/public_font_12sp"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="wrap_content"

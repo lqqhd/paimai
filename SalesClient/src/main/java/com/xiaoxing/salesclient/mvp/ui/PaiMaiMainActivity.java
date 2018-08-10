@@ -261,7 +261,8 @@ public class PaiMaiMainActivity extends BaseActivity<PaiMaiMainPresenter> implem
                         }
                     });
                 } else if (index == 2) {
-                    showChuangJianDialog();
+//                    showChuangJianDialog();
+                    Utils.navigation(PaiMaiMainActivity.this, RouterHub.SALES_CLIENT_WEI_PAI_ACTIVITY);
                 }
             }
         });

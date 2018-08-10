@@ -73,8 +73,8 @@
         <activity
             android:name="com.xiaoxing.login.mvp.ui.activity.LoginActivity"
             android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="adjustResize"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.xiaoxing.login.mvp.ui.activity.RegisterSendPhoneActivity"
             android:configChanges="orientation|screenSize"
@@ -249,6 +249,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.xiaoxing.salesclient.mvp.ui.activity.GuanYuWoMenActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xiaoxing.salesclient.mvp.ui.activity.WeiPaiDetailZhengChangActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
     </application>

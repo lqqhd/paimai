@@ -3,6 +3,7 @@ package com.xiaoxing.salesclient.mvp.model.service;
 import com.xiaoxing.salesclient.mvp.model.entity.Article;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionBid;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionBuy;
+import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetailZhengChang;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
 import com.xiaoxing.salesclient.mvp.model.entity.AuctionSearch;
 import com.xiaoxing.salesclient.mvp.model.entity.Category;
@@ -10,7 +11,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.GoodsReport;
 import com.xiaoxing.salesclient.mvp.model.entity.GoodsReportSubmit;
 import com.xiaoxing.salesclient.mvp.model.entity.Index;
 import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
-import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
+import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatList;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreInfo;
 import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
 import com.xiaoxing.salesclient.mvp.model.entity.WoDeGuanZhu;
@@ -138,7 +139,7 @@ public interface SalesService {
     );
 
     @GET("/api/specialcat.php")
-    Observable<SpecialcatDetail> getSpecialcatDetail(
+    Observable<SpecialcatList> getSpecialcatDetail(
             @Query("specialcat_id") String specialcat_id
     );
 
@@ -201,6 +202,11 @@ public interface SalesService {
      */
     @GET("/api/auction.php")
     Observable<AuctionDetail> auctionDetail(
+            @Query("act_id") String act_id,
+            @Query("goods_id") String goods_id
+    );
+    @GET("/api/auction.php")
+    Observable<AuctionDetailZhengChang> auctionDetailZhengChang(
             @Query("act_id") String act_id,
             @Query("goods_id") String goods_id
     );
@@ -280,6 +286,19 @@ public interface SalesService {
     Observable<StoreInfo> storeInfo(
             @Query("store_id") String store_id,
             @Query("ru_id") String ru_id
+    );
+
+    /**
+     * 专场-获得专场详情-含店铺专场
+     *
+     * @param specialcat_id
+     * @param user_id
+     * @return
+     */
+    @GET("/api/specialcat_list.php")
+    Observable<SpecialcatList> getSpecialcatList(
+            @Query("specialcat_id") String specialcat_id,
+            @Query("user_id") String user_id
     );
 
 

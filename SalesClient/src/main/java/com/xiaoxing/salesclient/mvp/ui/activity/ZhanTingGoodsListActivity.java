@@ -14,22 +14,22 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.xiaoxing.salesclient.di.component.DaggerZhanTingGoodsListComponent;
 import com.xiaoxing.salesclient.di.module.ZhanTingGoodsListModule;
 import com.xiaoxing.salesclient.mvp.contract.ZhanTingGoodsListContract;
-import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
+import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatList;
 import com.xiaoxing.salesclient.mvp.presenter.ZhanTingGoodsListPresenter;
 import com.xiaoxing.salesclient.mvp.ui.adapter.ZhanTingGoodsListAdapter;
 import com.xiaoxing.salesclient.mvp.ui.entity.AddressList;
@@ -46,6 +46,7 @@ import xiaoxing.com.salesclient.R2;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
+import static me.jessyan.armscomponent.commonsdk.core.Constants.PRODUCT_ID;
 
 @Route(path = RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY)
 public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPresenter> implements ZhanTingGoodsListContract.View, OnRefreshListener {
@@ -56,8 +57,10 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     private RecyclerView mRecyclerView;
     private RefreshLayout mRefreshLayout;
     private static boolean mIsNeedDemo = true;
-    private List<SpecialcatDetail.DataBean.GoodsBean> mDataBeans = new ArrayList<>();
-
+    private List<SpecialcatList.DataBean.GoodsBean> mDataBeans = new ArrayList<>();
+    @Autowired
+    String specialcat_id;
+    SpecialcatList mSpecialcatList;
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerZhanTingGoodsListComponent //如找不到该类,请编译一下项目
@@ -66,12 +69,16 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
                 .zhanTingGoodsListModule(new ZhanTingGoodsListModule(this))
                 .build()
                 .inject(this);
+        ARouter.getInstance().inject(this);
     }
 
     @Override
     public int initView(@Nullable Bundle savedInstanceState) {
         return R.layout.sales_client_activity_zhan_ting_goods_list; //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
     }
+
+    TextView tv_title, tv_desc, tv_shop_name, tv_chu_jia;
+    ImageView shop_logo;
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
@@ -94,6 +101,13 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         LayoutInflater inflater = LayoutInflater.from(ZhanTingGoodsListActivity.this);
         View headView = inflater.inflate(R.layout.sales_client_activity_zhan_ting_goods_list_head, null, false);
 
+        tv_title = headView.findViewById(R.id.tv_title);
+        tv_desc = headView.findViewById(R.id.tv_desc);
+        tv_shop_name = headView.findViewById(R.id.tv_shop_name);
+        tv_chu_jia = headView.findViewById(R.id.tv_chu_jia);
+        shop_logo = headView.findViewById(R.id.shop_logo);
+
+
         RelativeLayout rl_dian_pu = headView.findViewById(R.id.rl_dian_pu);
         rl_dian_pu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +119,11 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
+//                Utils.navigation(ZhanTingGoodsListActivity.this, RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY);
+                if (mSpecialcatList ==null)
+                    return;
+
+                ARouter.getInstance().build(RouterHub.SALES_CLIENT_WEI_PAI_DETAIL_ACTIVITY).withString(PRODUCT_ID, mSpecialcatList.getData().getGoods().get(position).getGoods_id()).navigation();
 
             }
         });
@@ -124,7 +142,7 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
 
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-        mPresenter.getSpecialcatDetail("1489");
+        mPresenter.getSpecialcatDetail(specialcat_id, "0");
         mRefreshLayout.finishRefresh();
     }
 
@@ -182,8 +200,19 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
     }
 
     @Override
-    public void specialcatDetailSuccess(SpecialcatDetail specialcatDetail) {
-        mDataBeans.addAll(specialcatDetail.getData().getGoods());
+    public void specialcatListSuccess(SpecialcatList specialcatList) {
+
+        if (specialcatList == null)
+            return;
+        mSpecialcatList = specialcatList;
+        tv_title.setText(specialcatList.getData().getCat_name());
+        tv_desc.setText(specialcatList.getData().getCat_desc());
+        tv_shop_name.setText(specialcatList.getData().getShop_info().getRz_shopName());
+
+        Glide.with(this).load(specialcatList.getData().getShop_info().getShopinfo().getShop_logo()).into(shop_logo);
+
+
+        mDataBeans.addAll(specialcatList.getData().getGoods());
         mAdapter.notifyDataSetChanged();
         mEmptyLayout.setVisibility(View.GONE);
     }

@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
+import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatList;
 
 import java.util.List;
 
@@ -20,20 +20,20 @@ import xiaoxing.com.salesclient.R;
  * Created by tad on 2017/11/16.
  */
 
-public class ZhanTingGoodsListAdapter extends BaseQuickAdapter<SpecialcatDetail.DataBean.GoodsBean, BaseViewHolder> {
+public class ZhanTingGoodsListAdapter extends BaseQuickAdapter<SpecialcatList.DataBean.GoodsBean, BaseViewHolder> {
     private Context mContext;
 
-    public ZhanTingGoodsListAdapter(@Nullable List<SpecialcatDetail.DataBean.GoodsBean> data) {
+    public ZhanTingGoodsListAdapter(@Nullable List<SpecialcatList.DataBean.GoodsBean> data) {
         super(R.layout.sales_client_listitem_zhan_ting_goods_list, data);
     }
 
-    public ZhanTingGoodsListAdapter(Context context, @Nullable List<SpecialcatDetail.DataBean.GoodsBean> data) {
+    public ZhanTingGoodsListAdapter(Context context, @Nullable List<SpecialcatList.DataBean.GoodsBean> data) {
         super(R.layout.sales_client_listitem_zhan_ting_goods_list, data);
         this.mContext = context;
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, SpecialcatDetail.DataBean.GoodsBean item) {
+    protected void convert(BaseViewHolder helper, SpecialcatList.DataBean.GoodsBean item) {
 
 
         Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.shop_logo));

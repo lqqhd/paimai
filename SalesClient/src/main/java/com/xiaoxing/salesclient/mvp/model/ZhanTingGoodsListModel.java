@@ -11,8 +11,7 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.xiaoxing.salesclient.mvp.contract.ZhanTingGoodsListContract;
-import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
-import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
+import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatList;
 import com.xiaoxing.salesclient.mvp.model.service.SalesService;
 
 import io.reactivex.Observable;
@@ -38,7 +37,7 @@ public class ZhanTingGoodsListModel extends BaseModel implements ZhanTingGoodsLi
     }
 
     @Override
-    public Observable<SpecialcatDetail> getSpecialcatDetail(String specialcat_id) {
-        return mRepositoryManager.obtainRetrofitService(SalesService.class).getSpecialcatDetail(specialcat_id);
+    public Observable<SpecialcatList> getSpecialcatList(String specialcat_id, String user_id) {
+        return mRepositoryManager.obtainRetrofitService(SalesService.class).getSpecialcatList(specialcat_id, user_id);
     }
 }

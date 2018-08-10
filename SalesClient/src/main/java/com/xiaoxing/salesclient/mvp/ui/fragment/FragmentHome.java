@@ -147,6 +147,8 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
 
     private RecyclerView recyclerView;
 
+    private Index mIndex;
+
     public static FragmentHome newInstance(String content) {
 
         Bundle args = new Bundle();
@@ -384,6 +386,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             mEmptyLayout.setVisibility(View.GONE);
             scrollView.setVisibility(View.VISIBLE);
         }
+        mIndex = index;
 
         setBannerData(index);
 
@@ -412,19 +415,24 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         List<Index.DataBean.ZhuanchangBean> zhuanchangBeans = index.getData().getZhuanchang();
         if (zhuanchangBeans == null)
             return;
-        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img1);
-        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img2);
-        Glide.with(getActivity()).load(zhuanchangBeans.get(0).getTouch_icon()).into(img3);
+        if (zhuanchangBeans.get(0).getGoods_img().size() > 0)
+            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(0).getImg_url()).into(img1);
+        if (zhuanchangBeans.get(0).getGoods_img().size() > 1)
+            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(1).getImg_url()).into(img2);
+        if (zhuanchangBeans.get(0).getGoods_img().size() > 2)
+            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(2).getImg_url()).into(img3);
         tvName.setText(zhuanchangBeans.get(0).getCat_name());
         tvTitle.setText(zhuanchangBeans.get(0).getCat_desc());
 
         tvRenShu.setText(zhuanchangBeans.get(0).getOnlookers_num());
         long time1 = Long.parseLong(zhuanchangBeans.get(0).getEnd_time()) * 1000 - System.currentTimeMillis();
 
-
-        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getTouch_icon()).into(img4);
-        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getTouch_icon()).into(img5);
-        Glide.with(getActivity()).load(zhuanchangBeans.get(1).getTouch_icon()).into(img6);
+        if (zhuanchangBeans.get(1).getGoods_img().size() > 0)
+            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(0).getImg_url()).into(img4);
+        if (zhuanchangBeans.get(1).getGoods_img().size() > 1)
+            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(1).getImg_url()).into(img5);
+        if (zhuanchangBeans.get(1).getGoods_img().size() > 2)
+            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(2).getImg_url()).into(img6);
         tvName1.setText(zhuanchangBeans.get(1).getCat_name());
         tvTitle1.setText(zhuanchangBeans.get(1).getCat_desc());
         tvRenShu1.setText(zhuanchangBeans.get(1).getOnlookers_num());
@@ -560,9 +568,12 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         } else if (view.getId() == R.id.rl_zhan_ting_detail) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
+//            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
+
+            ARouter.getInstance().build(RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY).withString("specialcat_id", mIndex.getData().getZhuanchang().get(0).getCat_id()).navigation();
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail_1) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
+//            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
+            ARouter.getInstance().build(RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY).withString("specialcat_id", mIndex.getData().getZhuanchang().get(1).getCat_id()).navigation();
         } else if (view.getId() == R.id.btnRight) {
             PaiMaiMainActivity.getInstance().todayIsSign();
         }

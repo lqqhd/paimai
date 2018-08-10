@@ -16,7 +16,7 @@ import javax.inject.Inject;
 
 import com.jess.arms.utils.RxLifecycleUtils;
 import com.xiaoxing.salesclient.mvp.contract.ZhanTingGoodsListContract;
-import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatDetail;
+import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatList;
 
 
 @ActivityScope
@@ -34,9 +34,10 @@ public class ZhanTingGoodsListPresenter extends BasePresenter<ZhanTingGoodsListC
     public ZhanTingGoodsListPresenter(ZhanTingGoodsListContract.Model model, ZhanTingGoodsListContract.View rootView) {
         super(model, rootView);
     }
-    public void getSpecialcatDetail(String specialcat_id) {
 
-        mModel.getSpecialcatDetail(specialcat_id).subscribeOn(Schedulers.io())
+    public void getSpecialcatDetail(String specialcat_id, String user_id) {
+
+        mModel.getSpecialcatList(specialcat_id, user_id).subscribeOn(Schedulers.io())
                 //                .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
                 .doOnSubscribe(disposable -> {
                 }).subscribeOn(AndroidSchedulers.mainThread())
@@ -44,13 +45,14 @@ public class ZhanTingGoodsListPresenter extends BasePresenter<ZhanTingGoodsListC
                 .doFinally(() -> {
                 })
                 .compose(RxLifecycleUtils.bindToLifecycle(mRootView))//使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
-                .subscribe(new ErrorHandleSubscriber<SpecialcatDetail>(mErrorHandler) {
+                .subscribe(new ErrorHandleSubscriber<SpecialcatList>(mErrorHandler) {
                     @Override
-                    public void onNext(SpecialcatDetail specialcatDetail) {
-                        mRootView.specialcatDetailSuccess(specialcatDetail);
+                    public void onNext(SpecialcatList specialcatList) {
+                        mRootView.specialcatListSuccess(specialcatList);
                     }
                 });
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
