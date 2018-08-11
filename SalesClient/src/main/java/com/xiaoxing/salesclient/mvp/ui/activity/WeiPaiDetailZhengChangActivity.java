@@ -189,7 +189,7 @@ public class WeiPaiDetailZhengChangActivity extends BaseActivity<WeiPaiDetailZhe
         AuctionDetailZhengChang.DataBean dataBean = auctionDetail.getData();
         if (dataBean == null)
             return;
-
+        tvTitle.setText(dataBean.getGoods_name());
         setBannerData(dataBean);
 
 

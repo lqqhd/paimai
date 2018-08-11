@@ -33,6 +33,7 @@ public class ZhanTingTuiGuangDetailAdapter extends BaseQuickAdapter<StoreInfo.Da
     @Override
     protected void convert(BaseViewHolder viewHolder, StoreInfo.DataBean.GoodsListBean item) {
         Glide.with(mContext).load(item.getGoods_url()).into((ImageView) viewHolder.getView(R.id.lmi_avatar));
+        viewHolder.setText(R.id.textview1, item.getGoods_name());
         RelativeLayout rl_wei_pai_item = viewHolder.getView(R.id.rl_wei_pai_item);
         rl_wei_pai_item.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -205,7 +205,8 @@ public interface SalesService {
             @Query("act_id") String act_id,
             @Query("goods_id") String goods_id
     );
-    @GET("/api/auction.php")
+
+    @GET("/api/goods_info.php")
     Observable<AuctionDetailZhengChang> auctionDetailZhengChang(
             @Query("act_id") String act_id,
             @Query("goods_id") String goods_id

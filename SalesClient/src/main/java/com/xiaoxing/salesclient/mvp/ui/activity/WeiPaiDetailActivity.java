@@ -167,7 +167,7 @@ public class WeiPaiDetailActivity extends BaseActivity<WeiPaiDetailPresenter> im
         AuctionDetail.DataBean dataBean = auctionDetail.getData();
         if (dataBean == null)
             return;
-
+        tvTitle.setText(dataBean.getGoods_name());
         setBannerData(dataBean);
 
 
