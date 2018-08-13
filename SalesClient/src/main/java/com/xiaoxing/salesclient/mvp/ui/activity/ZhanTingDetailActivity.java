@@ -183,7 +183,7 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
         tvFenSi.setText("粉丝: " + dataBean.getCollect_store());
         tvChuJia.setText("排行: " + dataBean.getAllReview());
         tvBaoZhengJin.setText("保证金 ¥: " + dataBean.getAllReview());
-        tvXiaoShouE.setText("销售额 ¥: " + dataBean.getAllReview());
+        tvXiaoShouE.setText("销售额 ¥: 0");
 
 
         List<StoreInfo.DataBean.GoodsListBean> goodsListBeanList = storeInfo.getData().getGoods_list();
