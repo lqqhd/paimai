@@ -75,6 +75,9 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
     @Autowired
     String ru_id;
 
+    @BindView(R2.id.title)
+    TextView tvTitle;
+
     private final String[] mTitles = {"展厅商品", "微拍商品", "专场"};
     private List<StoreInfo.DataBean.GoodsListBean> mGoodsListBeans = new ArrayList<>();
 
@@ -174,6 +177,7 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
 
         GlideUtil.displayImg(this, dataBean.getStreet_thumb(), shopLogo);
 
+        tvTitle.setText(dataBean.getRz_shopName());
         tvShopName.setText(dataBean.getRz_shopName());
         tvName.setText(dataBean.getShopNameSuffix());
         tvFenSi.setText("粉丝: " + dataBean.getCollect_store());
