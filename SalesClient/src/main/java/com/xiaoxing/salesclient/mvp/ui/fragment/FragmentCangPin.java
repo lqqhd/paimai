@@ -84,8 +84,7 @@ public class FragmentCangPin extends Fragment implements OnRefreshListener {
         image.setImageResource(R.drawable.ic_empty);
 
         TextView empty = (TextView) root.findViewById(R.id.empty_text);
-        empty.setText("暂无数据下拉刷新");
-        mEmptyLayout.setVisibility(View.GONE);
+        empty.setText("暂无数据");
         List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean> goodsBeans = (List<Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean>) getArguments().getSerializable(PRODUCTS_LIST);
 
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
