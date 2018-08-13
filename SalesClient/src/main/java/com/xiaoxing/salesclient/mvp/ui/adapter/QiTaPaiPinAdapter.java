@@ -11,6 +11,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.AuctionDetail;
 
 import java.util.List;
 
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import xiaoxing.com.salesclient.R;
 
 
@@ -29,7 +30,8 @@ public class QiTaPaiPinAdapter extends BaseQuickAdapter<AuctionDetail.DataBean.O
     @Override
     protected void convert(BaseViewHolder helper, AuctionDetail.DataBean.OtherGoodsBean item) {
 
-        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.shop_logo));
+//        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.shop_logo));
+        GlideUtil.displayImg(mContext, item.getGoods_img(), helper.getView(R.id.shop_logo));
         helper.setText(R.id.tv_name, item.getGoods_name());
         helper.setText(R.id.tv_dang_qian_jia, "￥" + item.getShop_price());
 

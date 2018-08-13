@@ -44,6 +44,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.iwgang.countdownview.CountdownView;
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
@@ -211,7 +212,8 @@ public class WeiPaiDetailZhengChangActivity extends BaseActivity<WeiPaiDetailZhe
 
         if (dataBean.getShopinfo() != null) {
 
-            Glide.with(this).load(dataBean.getShopinfo().getShop_logo()).into(img_shop);
+//            Glide.with(this).load(dataBean.getShopinfo().getShop_logo()).into(img_shop);
+            GlideUtil.displayImg(this, dataBean.getShopinfo().getShop_logo(), img_shop);
             tvShopName.setText(dataBean.getShopinfo().getShop_name());
         }
 

@@ -14,6 +14,7 @@ import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome;
 
 import java.util.List;
 
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
 import xiaoxing.com.salesclient.R;
@@ -32,7 +33,8 @@ public class ZhanTingTuiGuangDetailAdapter extends BaseQuickAdapter<StoreInfo.Da
 
     @Override
     protected void convert(BaseViewHolder viewHolder, StoreInfo.DataBean.GoodsListBean item) {
-        Glide.with(mContext).load(item.getGoods_url()).into((ImageView) viewHolder.getView(R.id.lmi_avatar));
+//        Glide.with(mContext).load(item.getGoods_url()).into((ImageView) viewHolder.getView(R.id.lmi_avatar));
+        GlideUtil.displayImg(mContext, item.getGoods_url(), viewHolder.getView(R.id.lmi_avatar));
         viewHolder.setText(R.id.textview1, item.getGoods_name());
         RelativeLayout rl_wei_pai_item = viewHolder.getView(R.id.rl_wei_pai_item);
         rl_wei_pai_item.setOnClickListener(new View.OnClickListener() {

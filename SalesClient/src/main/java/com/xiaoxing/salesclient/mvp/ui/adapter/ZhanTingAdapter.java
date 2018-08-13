@@ -11,6 +11,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.StoreShop;
 
 import java.util.List;
 
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import xiaoxing.com.salesclient.R;
 
 
@@ -29,10 +30,16 @@ public class ZhanTingAdapter extends BaseQuickAdapter<StoreShop.DataBean, BaseVi
     @Override
     protected void convert(BaseViewHolder helper, StoreShop.DataBean item) {
 
-        Glide.with(mContext).load(item.getShop_logo()).into((ImageView) helper.getView(R.id.img_logo));
-        Glide.with(mContext).load(item.getLogo_thumb()).into((ImageView) helper.getView(R.id.rl1_img1));
-        Glide.with(mContext).load(item.getStreet_thumb()).into((ImageView) helper.getView(R.id.rl1_img2));
-        Glide.with(mContext).load(item.getBrand_thumb()).into((ImageView) helper.getView(R.id.rl1_img3));
+//        Glide.with(mContext).load(item.getShop_logo()).into((ImageView) helper.getView(R.id.img_logo));
+//        Glide.with(mContext).load(item.getLogo_thumb()).into((ImageView) helper.getView(R.id.rl1_img1));
+//        Glide.with(mContext).load(item.getStreet_thumb()).into((ImageView) helper.getView(R.id.rl1_img2));
+//        Glide.with(mContext).load(item.getBrand_thumb()).into((ImageView) helper.getView(R.id.rl1_img3));
+
+        GlideUtil.displayImg(mContext, item.getShop_logo(), helper.getView(R.id.img_logo));
+        GlideUtil.displayImg(mContext, item.getLogo_thumb(), helper.getView(R.id.rl1_img1));
+        GlideUtil.displayImg(mContext, item.getStreet_thumb(), helper.getView(R.id.rl1_img2));
+        GlideUtil.displayImg(mContext, item.getBrand_thumb(), helper.getView(R.id.rl1_img3));
+
 
         helper.setText(R.id.tv_name, item.getGrade_name());
         helper.setText(R.id.tv_shop_name, item.getShop_name().getShop_name());

@@ -12,6 +12,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.AuctionList;
 import java.util.List;
 
 import cn.iwgang.countdownview.CountdownView;
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import xiaoxing.com.salesclient.R;
 
 
@@ -31,8 +32,8 @@ public class WeiPaiAdapter extends BaseQuickAdapter<AuctionList.DataBean, BaseVi
     protected void convert(BaseViewHolder helper, AuctionList.DataBean item) {
 
 
-        Glide.with(mContext).load(item.getGoods_thumb()).into((ImageView) helper.getView(R.id.shop_logo));
-
+//        Glide.with(mContext).load(item.getGoods_thumb()).into((ImageView) helper.getView(R.id.shop_logo));
+        GlideUtil.displayImg(mContext, item.getGoods_thumb(), helper.getView(R.id.shop_logo));
         helper.setText(R.id.tv_name, item.getAct_name());
         helper.setText(R.id.tv_dang_qian_jia, "当前￥" + item.getCurrent_price());
         helper.setText(R.id.tv_chu_jia, "出价" + item.getCurrent_count() + "次");

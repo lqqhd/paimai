@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import xiaoxing.com.salesclient.R;
 
@@ -38,7 +39,8 @@ public class ScreenshotShowActivity extends Activity {
         String completePath = Environment.getExternalStorageDirectory() + "/" + FILE_NAME;
         RequestOptions options = new RequestOptions()
                 .skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE); // 磁盘缓存策略
-        Glide.with(ScreenshotShowActivity.this).load(completePath).apply(options).into(iv_image);
+//        Glide.with(ScreenshotShowActivity.this).load(completePath).apply(options).into(iv_image);
+        GlideUtil.displayImg(this, completePath, iv_image);
 
     }
 

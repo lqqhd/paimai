@@ -12,6 +12,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.Specialcat;
 import java.util.List;
 
 import cn.iwgang.countdownview.CountdownView;
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import xiaoxing.com.salesclient.R;
 
 
@@ -30,9 +31,12 @@ public class AllZhuanChangAdapter extends BaseQuickAdapter<Specialcat.DataBean, 
     @Override
     protected void convert(BaseViewHolder helper, Specialcat.DataBean item) {
 
-        Glide.with(mContext).load(item.getTouch_icon()).into((ImageView) helper.getView(R.id.img_1));
-        Glide.with(mContext).load(item.getTouch_icon()).into((ImageView) helper.getView(R.id.img_2));
-        Glide.with(mContext).load(item.getTouch_icon()).into((ImageView) helper.getView(R.id.img_3));
+//        Glide.with(mContext).load(item.getTouch_icon()).into((ImageView) helper.getView(R.id.img_1));
+//        Glide.with(mContext).load(item.getTouch_icon()).into((ImageView) helper.getView(R.id.img_2));
+//        Glide.with(mContext).load(item.getTouch_icon()).into((ImageView) helper.getView(R.id.img_3));
+        GlideUtil.displayImg(mContext, item.getTouch_icon(), helper.getView(R.id.img_1));
+        GlideUtil.displayImg(mContext, item.getTouch_icon(), helper.getView(R.id.img_2));
+        GlideUtil.displayImg(mContext, item.getTouch_icon(), helper.getView(R.id.img_3));
 
         helper.setText(R.id.tv_name, item.getCat_name());
         helper.setText(R.id.tv_title, item.getCat_desc());

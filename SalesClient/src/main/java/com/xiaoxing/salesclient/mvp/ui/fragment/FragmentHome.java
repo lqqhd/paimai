@@ -2,6 +2,7 @@ package com.xiaoxing.salesclient.mvp.ui.fragment;
 
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Movie;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -51,6 +52,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import cn.iwgang.countdownview.CountdownView;
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
+import me.jessyan.armscomponent.commonsdk.core.Constants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.StatusBarUtil;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
@@ -400,13 +403,22 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         List<Index.DataBean.StoreBean> storeBeanList = index.getData().getStore();
         if (storeBeanList == null)
             return;
-        Glide.with(getActivity()).load(storeBeanList.get(0).getShop_logo()).into(rl1Img1);
-        Glide.with(getActivity()).load(storeBeanList.get(0).getStreet_thumb()).into(rl1Img2);
-        Glide.with(getActivity()).load(storeBeanList.get(0).getBrand_thumb()).into(rl1Img3);
+//        Glide.with(getActivity()).load(storeBeanList.get(0).getShop_logo()).into(rl1Img1);
+//        Glide.with(getActivity()).load(storeBeanList.get(0).getStreet_thumb()).into(rl1Img2);
+//        Glide.with(getActivity()).load(storeBeanList.get(0).getBrand_thumb()).into(rl1Img3);
 
-        Glide.with(getActivity()).load(storeBeanList.get(1).getShop_logo()).into(rl2Img1);
-        Glide.with(getActivity()).load(storeBeanList.get(1).getStreet_thumb()).into(rl2Img2);
-        Glide.with(getActivity()).load(storeBeanList.get(1).getBrand_thumb()).into(rl2Img3);
+
+        GlideUtil.displayImg(getActivity(), storeBeanList.get(0).getShop_logo(), rl1Img1);
+        GlideUtil.displayImg(getActivity(), storeBeanList.get(0).getStreet_thumb(), rl1Img2);
+        GlideUtil.displayImg(getActivity(), storeBeanList.get(0).getBrand_thumb(), rl1Img3);
+
+//        Glide.with(getActivity()).load(storeBeanList.get(1).getShop_logo()).into(rl2Img1);
+//        Glide.with(getActivity()).load(storeBeanList.get(1).getStreet_thumb()).into(rl2Img2);
+//        Glide.with(getActivity()).load(storeBeanList.get(1).getBrand_thumb()).into(rl2Img3);
+
+        GlideUtil.displayImg(getActivity(), storeBeanList.get(1).getShop_logo(), rl2Img1);
+        GlideUtil.displayImg(getActivity(), storeBeanList.get(1).getStreet_thumb(), rl2Img2);
+        GlideUtil.displayImg(getActivity(), storeBeanList.get(1).getBrand_thumb(), rl2Img3);
 
 
     }
@@ -415,24 +427,39 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
         List<Index.DataBean.ZhuanchangBean> zhuanchangBeans = index.getData().getZhuanchang();
         if (zhuanchangBeans == null)
             return;
-        if (zhuanchangBeans.get(0).getGoods_img().size() > 0)
-            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(0).getImg_url()).into(img1);
-        if (zhuanchangBeans.get(0).getGoods_img().size() > 1)
-            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(1).getImg_url()).into(img2);
-        if (zhuanchangBeans.get(0).getGoods_img().size() > 2)
-            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(2).getImg_url()).into(img3);
+        if (zhuanchangBeans.get(0).getGoods_img().size() > 0) {
+//            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(0).getImg_url()).into(img1);
+
+            GlideUtil.displayImg(getActivity(), zhuanchangBeans.get(0).getGoods_img().get(0).getImg_url(), img1);
+        }
+        if (zhuanchangBeans.get(0).getGoods_img().size() > 1) {
+//            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(1).getImg_url()).into(img2);
+            GlideUtil.displayImg(getActivity(), zhuanchangBeans.get(0).getGoods_img().get(1).getImg_url(), img2);
+        }
+        if (zhuanchangBeans.get(0).getGoods_img().size() > 2) {
+//            Glide.with(getActivity()).load(zhuanchangBeans.get(0).getGoods_img().get(2).getImg_url()).into(img3);
+            GlideUtil.displayImg(getActivity(), zhuanchangBeans.get(0).getGoods_img().get(2).getImg_url(), img3);
+        }
+//        GlideUtil.displayImg(getActivity(), zhuanchangBeans.get(0).getGoods_img().get(0).getImg_url(), img1);
+        GlideUtil.displayImg(getActivity(), zhuanchangBeans.get(0).getGoods_img().get(0).getImg_url(), img1);
         tvName.setText(zhuanchangBeans.get(0).getCat_name());
         tvTitle.setText(zhuanchangBeans.get(0).getCat_desc());
 
         tvRenShu.setText(zhuanchangBeans.get(0).getOnlookers_num());
         long time1 = Long.parseLong(zhuanchangBeans.get(0).getEnd_time()) * 1000 - System.currentTimeMillis();
 
-        if (zhuanchangBeans.get(1).getGoods_img().size() > 0)
-            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(0).getImg_url()).into(img4);
-        if (zhuanchangBeans.get(1).getGoods_img().size() > 1)
-            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(1).getImg_url()).into(img5);
-        if (zhuanchangBeans.get(1).getGoods_img().size() > 2)
-            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(2).getImg_url()).into(img6);
+        if (zhuanchangBeans.get(1).getGoods_img().size() > 0) {
+//            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(0).getImg_url()).into(img4);
+            GlideUtil.displayImg(getActivity(), zhuanchangBeans.get(1).getGoods_img().get(0).getImg_url(), img4);
+        }
+        if (zhuanchangBeans.get(1).getGoods_img().size() > 1) {
+//            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(1).getImg_url()).into(img5);
+            GlideUtil.displayImg(getActivity(), zhuanchangBeans.get(1).getGoods_img().get(1).getImg_url(), img5);
+        }
+        if (zhuanchangBeans.get(1).getGoods_img().size() > 2) {
+//            Glide.with(getActivity()).load(zhuanchangBeans.get(1).getGoods_img().get(2).getImg_url()).into(img6);
+            GlideUtil.displayImg(getActivity(), zhuanchangBeans.get(1).getGoods_img().get(2).getImg_url(), img6);
+        }
         tvName1.setText(zhuanchangBeans.get(1).getCat_name());
         tvTitle1.setText(zhuanchangBeans.get(1).getCat_desc());
         tvRenShu1.setText(zhuanchangBeans.get(1).getOnlookers_num());
@@ -544,7 +571,7 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             R2.id.rl_tou_tiao, R2.id.img_zhuan_chang, R2.id.img_wei_pai,
             R2.id.img_cang_pin, R2.id.img_zhan_ting, R2.id.img_gu_sou,
             R2.id.rl_wei_pai_tui_guang, R2.id.rl_zhuan_chang_tui_guang, R2.id.rl_zhan_ting_tui_guang,
-            R2.id.rl_zhan_ting_detail, R2.id.rl_zhuan_chang_tui_guang_detail, R2.id.rl_zhuan_chang_tui_guang_detail_1, R2.id.btnRight})
+            R2.id.rl_zhan_ting_detail_1,R2.id.rl_zhan_ting_detail_2, R2.id.rl_zhuan_chang_tui_guang_detail, R2.id.rl_zhuan_chang_tui_guang_detail_1, R2.id.btnRight})
     public void onViewClicked(View view) {
 
         if (view.getId() == R.id.rl_tou_tiao) {
@@ -565,8 +592,12 @@ public class FragmentHome extends BaseFragment<FragmentHomePresenter> implements
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHUANCHANGACTIVITY);
         } else if (view.getId() == R.id.rl_zhan_ting_tui_guang) {
             Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_ACTIVITY);
-        } else if (view.getId() == R.id.rl_zhan_ting_detail) {
-            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
+        } else if (view.getId() == R.id.rl_zhan_ting_detail_1) {
+//            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
+            ARouter.getInstance().build(RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY).withString(Constants.STORE_ID, mIndex.getData().getStore().get(0).getShop_id()).navigation();
+        }else if (view.getId() == R.id.rl_zhan_ting_detail_2) {
+//            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY);
+            ARouter.getInstance().build(RouterHub.SALES_CLIENT_ZHAN_TING_DETAIL_ACTIVITY).withString(Constants.STORE_ID, mIndex.getData().getStore().get(1).getShop_id()).navigation();
         } else if (view.getId() == R.id.rl_zhuan_chang_tui_guang_detail) {
 //            Utils.navigation(getActivity(), RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY);
             ARouter.getInstance().build(RouterHub.SALES_CLIENT_ZHAN_TING_GOODS_LIST_ACTIVITY).withString("specialcat_id", mIndex.getData().getZhuanchang().get(0).getCat_id()).navigation();

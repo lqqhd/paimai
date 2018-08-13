@@ -37,6 +37,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import me.jessyan.armscomponent.commonres.utils.SlidingTabLayoutUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
@@ -169,7 +170,9 @@ public class ZhanTingDetailActivity extends BaseActivity<ZhanTingDetailPresenter
             return;
 
 
-        Glide.with(this).load(dataBean.getStreet_thumb()).into(shopLogo);
+//        Glide.with(this).load(dataBean.getStreet_thumb()).into(shopLogo);
+
+        GlideUtil.displayImg(this, dataBean.getStreet_thumb(), shopLogo);
 
         tvShopName.setText(dataBean.getRz_shopName());
         tvName.setText(dataBean.getShopNameSuffix());

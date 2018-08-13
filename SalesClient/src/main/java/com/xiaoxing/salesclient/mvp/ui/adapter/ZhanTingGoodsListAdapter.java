@@ -13,6 +13,7 @@ import com.xiaoxing.salesclient.mvp.model.entity.SpecialcatList;
 
 import java.util.List;
 
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import xiaoxing.com.salesclient.R;
 
 
@@ -36,7 +37,9 @@ public class ZhanTingGoodsListAdapter extends BaseQuickAdapter<SpecialcatList.Da
     protected void convert(BaseViewHolder helper, SpecialcatList.DataBean.GoodsBean item) {
 
 
-        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.shop_logo));
+//        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.shop_logo));
+        GlideUtil.displayImg(mContext, item.getGoods_img(), helper.getView(R.id.shop_logo));
+
 
         helper.setText(R.id.tv_name, item.getGoods_name());
         helper.setText(R.id.tv_dang_qian_chu_jia, "当前￥" + item.getGoods_number());

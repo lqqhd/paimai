@@ -401,12 +401,21 @@ public class Index {
              * sort_order : 100
              */
 
+            private String shop_id;
             private String ru_id;
             private String shop_logo;
             private String logo_thumb;
             private String street_thumb;
             private String brand_thumb;
             private String sort_order;
+
+            public String getShop_id() {
+                return shop_id;
+            }
+
+            public void setShop_id(String shop_id) {
+                this.shop_id = shop_id;
+            }
 
             public String getRu_id() {
                 return ru_id;

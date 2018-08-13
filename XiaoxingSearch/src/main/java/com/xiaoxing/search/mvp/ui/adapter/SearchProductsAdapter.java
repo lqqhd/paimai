@@ -12,6 +12,8 @@ import com.xiaoxing.search.mvp.model.entity.AuctionSearch;
 
 import java.util.List;
 
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
+
 
 /**
  * Created by tad on 2017/11/16.
@@ -29,7 +31,8 @@ public class SearchProductsAdapter extends BaseQuickAdapter<AuctionSearch.DataBe
     protected void convert(BaseViewHolder helper, AuctionSearch.DataBean item) {
 
 
-        Glide.with(mContext).load(item.getGoods_thumb()).into((ImageView) helper.getView(R.id.img));
+//        Glide.with(mContext).load(item.getGoods_thumb()).into((ImageView) helper.getView(R.id.img));
+        GlideUtil.displayImg(mContext, item.getGoods_thumb(), helper.getView(R.id.img));
         helper.setText(R.id.tv_name, item.getAct_name());
         helper.setText(R.id.tv_time, "当前￥" + item.getCurrent_price());
         helper.setText(R.id.tv_title, "出价" + item.getCurrent_count() + "次");

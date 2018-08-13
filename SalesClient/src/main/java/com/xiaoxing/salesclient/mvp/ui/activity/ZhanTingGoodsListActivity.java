@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.OnClick;
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import me.jessyan.armscomponent.commonres.utils.ToolbarUtils;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
@@ -210,9 +211,9 @@ public class ZhanTingGoodsListActivity extends BaseActivity<ZhanTingGoodsListPre
         tv_desc.setText(specialcatList.getData().getCat_desc());
         tv_shop_name.setText(specialcatList.getData().getShop_info().getRz_shopName());
 
-        Glide.with(this).load(specialcatList.getData().getShop_info().getShopinfo().getShop_logo()).into(shop_logo);
+//        Glide.with(this).load(specialcatList.getData().getShop_info().getShopinfo().getShop_logo()).into(shop_logo);
 
-
+        GlideUtil.displayImg(this, specialcatList.getData().getShop_info().getShopinfo().getShop_logo(), shop_logo);
         mDataBeans.addAll(specialcatList.getData().getGoods());
         mAdapter.notifyDataSetChanged();
         mEmptyLayout.setVisibility(View.GONE);

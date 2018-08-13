@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.iwgang.countdownview.CountdownView;
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import me.jessyan.armscomponent.commonres.view.CustomGridView;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
@@ -45,7 +46,9 @@ public class NavigationListRightAdapter extends BaseQuickAdapter<Category.DataBe
     @Override
     protected void convert(BaseViewHolder helper, Category.DataBean.FirstCategoryBean.SecondCategoryBean.GoodsBean item) {
 
-        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.img_product));
+//        Glide.with(mContext).load(item.getGoods_img()).into((ImageView) helper.getView(R.id.img_product));
+        GlideUtil.displayImg(mContext, item.getGoods_img(), helper.getView(R.id.img_product));
+
         helper.setText(R.id.item_navigation_tv, item.getGoods_name());
 
     }

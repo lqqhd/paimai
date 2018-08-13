@@ -12,6 +12,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.xiaoxing.salesclient.mvp.ui.fragment.FragmentHome;
 
 import cn.iwgang.countdownview.CountdownView;
+import me.jessyan.armscomponent.commonres.utils.GlideUtil;
 import me.jessyan.armscomponent.commonsdk.core.Constants;
 import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.commonsdk.utils.Utils;
@@ -29,7 +30,9 @@ public class WeiPaiTuiGuangHomeAdapter extends BaseQuickAdapter<FragmentHome.Mov
 
     @Override
     protected void convert(BaseViewHolder viewHolder, FragmentHome.Movie item) {
-        Glide.with(mContext).load(item.picaddr).into((ImageView) viewHolder.getView(R.id.lmi_avatar));
+//        Glide.with(mContext).load(item.picaddr).into((ImageView) viewHolder.getView(R.id.lmi_avatar));
+        GlideUtil.displayImg(mContext, item.picaddr, viewHolder.getView(R.id.lmi_avatar));
+
         RelativeLayout rl_wei_pai_item = viewHolder.getView(R.id.rl_wei_pai_item);
 
         long time = Long.parseLong(item.grade) * 1000 - System.currentTimeMillis();
