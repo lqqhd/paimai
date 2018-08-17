@@ -13,6 +13,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.LogUtils;
 import com.xiaoxing.salesclient.di.component.DaggerZhanTingComponent;
 import com.xiaoxing.salesclient.di.module.ZhanTingModule;
 import com.xiaoxing.salesclient.mvp.contract.ZhanTingContract;
@@ -67,6 +68,11 @@ public class ZhanTingActivity extends BaseActivity<ZhanTingPresenter> implements
 
         SlidingTabLayoutUtil.init(this, mTitles, mFragments);
 
+
+//        LogUtils.debugInfo("230dp == " + ArmsUtils.dip2px(this, 230));
+//        LogUtils.debugInfo("120dp == " + ArmsUtils.dip2px(this, 120));
+//        LogUtils.debugInfo("110dp == " + ArmsUtils.dip2px(this, 110));
+//        LogUtils.debugInfo("60dp == " + ArmsUtils.dip2px(this, 60));
     }
 
 
